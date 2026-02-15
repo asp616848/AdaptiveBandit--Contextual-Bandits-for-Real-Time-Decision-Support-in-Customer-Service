@@ -1,0 +1,137 @@
+Requirements:
+Empirical: Real Datasets -> Twitter Customer Support Dataset, Reddit Corpura and OpenAssistant Rated Conversations data
+Feature Engineering
+Model Building
+Evaluation
+Based on Data, Build a Business Scenario.
+Customer Base
+Ability to run experiments and experiment plan
+Cost Structure
+Assumptions and Insights [ an insight that survives reasonable perturbation of the assumptions]
+2. Decision Maker - Tech Companies with customer support bot [Head of Customer Experience at a digital banking app.]
+3. Cost of each bad conversation vs a good conversation, make assumptions and defend them
+4. What pivot/operating point will the decision maker use to choose our model. Evaluation model should optimize pivots, ranking etc and not just accuracy !
+5. What if the base of our assumptions change, change in economics.
+6. Which assumptions matter and which don’t?
+7. What do we need to reach the end goal? What we don’t have/ only with the firm?
+[ We are building SaaS customer Support bot]
+
+question and answers:
+1. Problem and Decision (half page). The business problem, the decision-maker, and the action your analysis informs. State the assumptions you are making about costs, constraints, and objectives. “Predict which subscribers will cancel in the next 30 days so the retention team can prioritize 500 outreach slots” — not “predict churn.”
+
+High cost Customer Service Agent to SaaS companies
+
+Decision Maker: CEO of the Slack[a cloud based team communication SaaS].
+
+The problem: How do I reduce customer service cost?
+Decision to be made: Which algo to use for fewer human escalations and better customer satisfaction?
+Action our analysis Informs: Which customer needs human support and how to prioritize customer? It also gives a pseudo idea of customer more likely to churn and difficult queries which customers are running into and bots can’t help with.
+Assumptions:
+Pricing : 
+Cost:
+Free Tier: Acquisition, CLSV + Potential CLV [Cost-> 20 Rs]
+Storage (90 days): Capping history at 90 days significantly reduces storage costs. ~₹5/user.
+Compute: Basic messaging routing (Websockets). ~₹10/user.
+Support: Community/Automated only (No human cost). ₹0.
+		Total Cost: ~₹15 - ₹20 per user/month
+Net Profit: -₹15 (Loss)
+
+Pro Tier: Perfect fit for smaller teams onboarding
+Storage (Unlimited): This is the biggest jump. Archiving years of files/messages is expensive. ~₹30/user.
+AI (Basic): "Conversation summaries" require LLM API calls. Even with caching, this adds compute cost. ~₹25/user.
+Payment Processing: ~3% of transaction. ~₹7.
+Support: Standard ticket support. ~₹15/user.
+		Total Cost: ~₹77 per user/month
+Net Profit: ~₹168 per user (68% Margin)
+
+Business+ Tier: Bigger teams, Monetizing AI and Security
+AI (Advanced): The "Slackbot personal agent" implies a more complex RAG (Retrieval-Augmented Generation) system that searches your docs to answer questions. This is compute-heavy. ~₹80/user.
+Uptime SLA: Ensuring 99.99% uptime requires expensive redundant servers/backups. ~₹40/user.
+SSO/Identity: Managing SAML/SCIM integrations adds operational overhead. ~₹10/user.
+Support: 24/7 priority support requires higher-paid staff. ~₹50/user
+Total Cost: ~₹180 - ₹200 per user/month
+Net Profit: ~₹357 per user (64% Margin)
+
+Enterprise+ Tier: A Custom tier, we consider it same as business+ tier for our analysis, since the company offers different combination but pricing remains consistent proportions. This tier might be more committed and higher Retention/CLV.
+3. Lower CSA cost + Minimize expected customer lifetime value loss
+Objectives: 
+Primary Objective: Minimize "Cost to Serve" via Ticket Deflection
+Secondary Objective: Minimize "Time-to-Resolution" (TTR)[Business+ and Enterprise tiers, "Uptime" and "Speed" are part of the value proposition. ]
+Tertiary Objective: Maximize CSAT [Better User sentiment score]
+
+4. Company can invest x amount in human Customer agents, each human customer agent takes y amount, max human agents available x/y.
+Constraints:
+The "Inference Budget" [RL agent shouldn’t exceed x% of Human CSA cost]
+Latency and Real-Time Performance [x second max average response time]
+Safety & 0 Hallucination/ Mistake/Accuracy/ Rude
+Data Privacy and Explainability which allows scaling
+
+
+Tier
+Est. Cost
+Est. Profit
+Primary ML/Biz Driver
+Free
+₹20
+-₹20 (Loss)
+Data Collection & Network Effect
+Pro
+₹77
+₹168
+Volume Cash Cow
+Business+
+₹200
+₹357
+AI Monetization (The focus of your ML course)
+
+
+
+
+We hypothesize the company to be Slack for the purpose of well directed assumptions instead of any general ‘SaaS’.
+
+
+2. Source, size, time period, key variables. Confirm access: include a sample (5–10 rows) or screenshot. If multiple sources, explain how they join.
+
+Reddit Corpora (DSTC8 Reddit Corpus)
+Time Period: 2017–2018
+Dataset Link
+Twitter (MO Customer Support Tweets 945k)
+Time Period: 2017-18
+Dataset Link
+Open Assistant Labeled Conversation Dataset
+Time Period: 2021–2023
+Dataset Link
+
+Size:
+Reddit: User Utterances: 5 million dialogues extracted from 1,000 subreddits
+Twitter: 2.8 million tweets and replies between customers and the biggest brands on the platform
+OpenAssistant:
+Total Messages: 161,443 messages.
+Conversation Trees: 66,497 total trees (including aborted/spam), with 10,364 "Ready For Export" trees.
+Quality Ratings: 461,292 annotations
+
+General Key Variables: 
+Conversation quality ratings (evaluation using openAssistant)
+Official company customer support replies. (Twitter)
+Score/upvotes as proxy for reward in Reddit. (Correction factor for simulating more data)
+Conversation length(turns count) and Ending notes of conversation. [Not an explicit column]
+We extract features like sentiment score or session rating using LLM as reviewer, validated by Truths from Redit and OpenAssistant dataset.
+
+Multiple resources and each’s purpose + join logic: 
+
+Purpose
+Dataset
+Real support behavior
+Twitter
+Quality signal
+OpenAssistant
+Multi-turn structure
+Reddit
+
+
+Twitter and Reddit ones are joined to retain only the conversation id and multi-turn conversation in merged dataset. [Forms the language understanding of RL model]  Proxy rewards such as turns till resolution, LLM Rating - Need for human escalation indicators and Sentiment score are used.
+While post training the well labelled Open Assistant dataset is used for benchmark of our agent in real world context against human ratings and responses.
+
+
+
+3. Summary Statistics (half page). Distribution of the target variable, missing value rates, and at least one visualization that reveals something non-trivial about the data.
