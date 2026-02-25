@@ -100,7 +100,7 @@ class CustomerServiceEnv:
         
         action_name = self.ACTIONS[action]
         self.turn += 1
-        reward = -0.1  # small penalty per turn to encourage efficiency
+        reward = -0.02  # small penalty per turn to encourage efficiency
         
         # --- action effects ---
         
