@@ -26,6 +26,8 @@ def compute_business_metrics(history: Dict, tier_label: str = "all") -> Dict:
     ----------
     history : dict
         Training history from train_bandit or train_dqn.
+        Bandit format uses 'rewards'/'actions'/'outcomes'.
+        DQN format uses 'episode_rewards'/'episode_lengths'.
     tier_label : str
         Which tier to compute for (or "all").
 
@@ -34,8 +36,26 @@ def compute_business_metrics(history: Dict, tier_label: str = "all") -> Dict:
     dict
         Business metrics.
     """
-    rewards = np.array(history['rewards'])
-    actions = np.array(history['actions'])
+    # Support both bandit (rewards/actions) and DQN (episode_rewards) formats
+    if 'rewards' in history:
+        rewards = np.array(history['rewards'])
+    elif 'episode_rewards' in history:
+        rewards = np.array(history['episode_rewards'])
+    else:
+        rewards = np.array([])
+
+    if 'actions' in history:
+        actions = np.array(history['actions'])
+    else:
+        # DQN doesn't track per-episode routing actions the same way;
+        # approximate escalation as episodes shorter than 3 turns
+        episode_lengths = history.get('episode_lengths', [])
+        if episode_lengths:
+            # In MDP mode, action 2 = escalate; proxy: short episodes often mean escalation
+            actions = np.array([1 if l <= 2 else 0 for l in episode_lengths])
+        else:
+            actions = np.zeros(len(rewards), dtype=int)
+
     outcomes = history.get('outcomes', [])
 
     n = len(rewards)
@@ -94,8 +114,20 @@ def compute_tier_stratified_metrics(history: Dict) -> Dict:
     """
     tier_metrics = {}
     tiers = history.get('tiers', [])
-    rewards = np.array(history['rewards'])
-    actions = np.array(history['actions'])
+
+    if 'rewards' in history:
+        rewards = np.array(history['rewards'])
+    elif 'episode_rewards' in history:
+        rewards = np.array(history['episode_rewards'])
+    else:
+        rewards = np.array([])
+
+    if 'actions' in history:
+        actions = np.array(history['actions'])
+    else:
+        episode_lengths = history.get('episode_lengths', [])
+        actions = np.array([1 if l <= 2 else 0 for l in episode_lengths]) if episode_lengths else np.zeros(len(rewards), dtype=int)
+
     outcomes = history.get('outcomes', [])
 
     for tier_name in TIER_NAMES:
