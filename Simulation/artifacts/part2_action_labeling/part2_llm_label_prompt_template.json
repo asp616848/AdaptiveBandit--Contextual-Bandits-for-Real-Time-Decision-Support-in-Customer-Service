@@ -1,0 +1,18 @@
+{
+  "system": "You are an expert customer support analyst.",
+  "instruction": "Classify the agent utterance into exactly one of the 7 actions.",
+  "actions": [
+    "Ask_for_Information",
+    "Provide_Solution",
+    "Affective_Repair",
+    "Escalate_to_Human",
+    "Close_with_Feedback",
+    "Proactive_Update",
+    "Set_Expectation"
+  ],
+  "output_format": {
+    "action_label": "string",
+    "confidence": "0.0-1.0",
+    "reasoning": "short rationale"
+  }
+}

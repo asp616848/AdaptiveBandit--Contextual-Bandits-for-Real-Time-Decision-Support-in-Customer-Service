@@ -1,0 +1,379 @@
+annotation_id,source_file,dataset_group,agent_text,action_label,action_id,action_confidence,label_reason,human_label,human_notes
+ann_0001,twcs.csv,twitter,@180054 Oh no! Have you tried logging out of the account and then logging back in to see if that helps? Please let us know! ^TG,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0002,twcs.csv,twitter,"@194588 It is disappointing to hear about your installation issues, AJ! We want to turn this experience around for you! Can you please DM us with your account information and more details regarding your tech appointment? We are here to help. We hope to hear from you soon! ^YanD",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0003,twcs.csv,twitter,"@211282 Oh no! You can deactivate all the devices off of your account to activate the ones you want, here: https://t.co/BZwY1dGjre",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b;Provide_Solution:\byou can\b,,
+ann_0004,twcs.csv,twitter,"@197632 It's unfortunate to hear of your Comcast billing experience, DM your account # so we can look further into this i... https://t.co/nQDN05FQW1",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0005,twcs.csv,twitter,@203606 I would be happy to help with any questions. Please DM me your account number if there is anything I can do to help. -Aaron,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b;Close_with_Feedback:\bhappy to help\b,,
+ann_0006,twcs.csv,twitter,"@146979 hi, please provide GT, region and if possible a video of situation by DM thanks ^JE",Ask_for_Information,0,0.62,Ask_for_Information:\bplease provide\b,,
+ann_0007,twcs.csv,twitter,@190914 We'd be happy to take a look. Please DM us your account email and the trip details so we can follow up.,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0008,twcs.csv,twitter,@132499 Hey there! Could you send us a DM with your account's email address? We'll take a look backstage /MA https://t.co/ldFdZRiNAt,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0009,twcs.csv,twitter,"@231468 Hi, I would be happy to help look into the services. Can you please send me a DM with your account number or phone number so I can assist you? -CLR",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b;Close_with_Feedback:\bhappy to help\b,,
+ann_0010,twcs.csv,twitter,@171354 Hello. We can check into the service interruption. Please DM us with your account # or address. Thanks. -FL,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0011,twcs.csv,twitter,"@170331 I understand your concern regarding the order. However, we'll not be able to access your account via Twitter. (1/2)^AP",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0012,twcs.csv,twitter,@212755 Hi there. Let's look into that. From the main menu go to Settings&gt; Account Management&gt; Activate as Your Primary PS4&gt; Activate.,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0013,twcs.csv,twitter,@149894 Good Morning! We'd be happy to look into the connection issues. Can you please follow/DM your account number as well as the full service address. ^SS,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0014,twcs.csv,twitter,@193988 Please provide by DM the full address and account number and name associated with your account. Thanks. - QS,Ask_for_Information,0,0.74,Ask_for_Information:\bplease provide\b;Ask_for_Information:\baccount\b,,
+ann_0015,twcs.csv,twitter,@195252 Please get in touch by Phone or Chat here: https://t.co/hApLpMlfHN for options as we can't access your account on Twitter. ^EZ,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0016,twcs.csv,twitter,"@225971 Hi Vishnu, we're here to help! Please DM us the listing link for follow up or if you have an account on Airbnb, please go to the listing and use Report feature, thank you. https://t.co/WCQEFGIlXC",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b;Close_with_Feedback:\bthank you\b,,
+ann_0017,twcs.csv,twitter,"@225201 Due to our privacy policy, we will have to speak directly to the account holder. Please have them contact us via https://t.co/QDn91HzZV0",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0018,twcs.csv,twitter,@160576 Can you send us your account's email address? We'll take a closer look /LM https://t.co/ldFdZRiNAt,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0019,twcs.csv,twitter,"@185809 Strange! By any chance, do you have another PS4 activated under your PSN account?",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0020,twcs.csv,twitter,@167980 I would be happy to assist with any billing questions or concerns. Could you please send a DM with your account information? -CRP,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0021,twcs.csv,twitter,@137450 (2/2) and create an account to check your billing but you cannot view website or pages accessed. ^LN,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0022,twcs.csv,twitter,"@151794 I would like to try and help. Please click on the link &amp; DM me your account type, and country your account was opened in. Please do not include any account numbers or your PIN. ^MG https://t.co/gvC4jAOA9c",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0023,twcs.csv,twitter,@135211 We never want this to happen and we're sure you wanted to wear it right away. Please DM us with you order number and the email address you used. Thanks so much.,Ask_for_Information,0,0.62,Ask_for_Information:\border number\b,,
+ann_0024,twcs.csv,twitter,"@205158 Please send a DM with your full name, address, and the phone number tied to your account. Thanks! -KW",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0025,twcs.csv,twitter,@205786 We'd like to look into this. Please DM us the email address linked to your account and we'll follow up.,Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0026,twcs.csv,twitter,"@170174 Thanks for reaching out to us! To clarify further, please click and send your account/card type and the country of your account (no account number/PINs please). TY, ^MM https://t.co/gvC4jAOA9c",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0027,twcs.csv,twitter,"@228476 We're afraid that we're currently unavailable in Vietnam, which is why it's not letting you update your country settings to Vietnam. Could you DM us your account's email address? We'll see what else we can suggest /MU https://t.co/ldFdZRiNAt",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0028,twcs.csv,twitter,"@200358 Hello, I am happy to look into your internet servcies. Can you DM your account name and full address. -CS",Ask_for_Information,0,0.62,Ask_for_Information:\baccount\b,,
+ann_0029,oasst1-train.csv,openassistant,"En pandas, puedes agrupar datos de un DataFrame por varias columnas a la vez utilizando el método groupby(). Simplemente pasa una lista de las columnas que deseas usar para agrupar a la función groupby().
+
+Aquí tienes un ejemplo: 
+
+import pandas as pd
+
+# Crea un ejemplo de DataFrame
+data = {'col1': ['A', 'B', 'C', 'A', 'B', 'C'],
+        'col2': ['W', 'X', 'Y', 'W', 'X', 'Y'],
+        'col3': [1, 2, 3, 4, 5, 6]}
+df = pd.DataFrame(data)
+
+# Agrupa por col1 y col2
+grouped = df.groupby(['col1', 'col2'])
+
+# Aplica una función a cada grupo
+result = grouped.sum()
+
+# Muestra el resultado
+print(result)
+El resultado será un nuevo DataFrame con los datos agrupados por las columnas col1 y col2, y la suma de las columnas numéricas calculadas para cada grupo:
+
+                 
+col1 col2  col3      
+A    W        5
+B    X        7
+C    Y        9
+
+Puedes aplicar cualquier función de agregación a cada grupo, como sum, mean, count, etc., y también puedes aplicar más de una función a la vez.",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0030,twcs.csv,twitter,"@126790 Try going to https://t.co/VMsMdhc8OZ and sign into Showtime from there.
+^FEM",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0031,twcs.csv,twitter,@162946 What exactly is the error message being encountered? Happy to look into this for you. ^CG,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0032,twcs.csv,twitter,@212126 Hey! Zip codes can have 4 digits after the dash to further pinpoint locations. The website adds them automatically. ^AJ,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0033,twcs.csv,twitter,"@234248 Hi Matt, I've had a look into this for you &amp; sadly it appears that this is still something we are looking into and resolving.",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0034,oasst1-train.csv,openassistant,"The word ""thesis"" has its origins in ancient Greek. It is derived from the Greek word ""θέσις"" (thésis), which means ""a proposition, a statement, or a thing laid down."" The term is formed from the verb ""τίθημι"" (títhēmi), which translates to ""to put, to place, or to set.""
+
+In its original context, ""thesis"" referred to an intellectual proposition or a statement that was put forth as an argument.",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0035,twcs.csv,twitter,@168920 Please DM the information ^S requested to verify. Happy to take a look on this side to see which options are available. ^CC,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0036,twcs.csv,twitter,@201220 Does a restart help? Which iPhone model do you have? Let us know in DM: https://t.co/GDrqU22YpT,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0037,twcs.csv,twitter,@189603 YAY!!! We are excited to have you onboard with us! 😃✈ *TJN,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0038,twcs.csv,twitter,"@171509 Hello, this may be completed online via the following link https://t.co/fPLXqv8KGq. Thanks. *ATJ",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0039,twcs.csv,twitter,@207581 You could also contact us via phone via:https://t.co/IHbY7JKGly click 'forgot password' and 'customer service' ^AV,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0040,oasst1-train.csv,openassistant,Affirmative. How can I assist you today?,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0041,twcs.csv,twitter,@169605 Thanks for the update. We'll get back to you with help as soon as possible. Appreciate your patience. ^MJ,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0042,twcs.csv,twitter,"@217797 Hi, Please send us details if you need assistance by sending clicking below. We're here to help. ^ra https://t.co/CoOXedUuUC",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0043,twcs.csv,twitter,@136924 We're taking a look at it now. We'll respond there soon.,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0044,oasst1-train.csv,openassistant,"""Reductio ad absurdum"" is a Latin term that means ""reduction to absurdity."" It is a type of argument that aims to disprove a claim or argument by demonstrating that its logical consequences are absurd or contradictory.
+
+The basic idea behind reductio ad absurdum is to assume that a given claim or argument is true, and then to show that this leads to a logical contradiction or absurdity. By doing so, the argument demonstrates that the original claim or argument must be false or incomplete.
+
+Synonyms for ""reductio ad absurdum"" include proof by contradiction, indirect proof, and proof by reductio. These terms are all used to describe a similar type of argumentative strategy that involves showing that a claim or argument leads to absurd or contradictory consequences.",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0045,twcs.csv,twitter,@198622 Can you tell us more about what you need help with? Just be sure not to post any personal information. ^EP,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0046,twcs.csv,twitter,@131274 Thanks for reaching out to us. We definitely understand your concern here. This email is not authentic. This is likely a phishing attempt to get personal information from you. You can learn more about how to identify phishing emails here: https://t.co/LNMCdqt6fD,Provide_Solution,1,0.62,Provide_Solution:\byou can\b,,
+ann_0047,twcs.csv,twitter,"@165434 We'd be happy to look into what's going on. To start, can you let us know which device and software version you're using?",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0048,twcs.csv,twitter,"@201793 We're here to help, 24/7! Feel free to send us a DM with your record locator, if you have any questions.",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0049,twcs.csv,twitter,@170514 That's not okay. Which location was this?,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0050,twcs.csv,twitter,"@192101 It's expected completion is 03/Oct/2017. Request for your kind patience. Regards, Mahindra",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0051,twcs.csv,twitter,"@217835 Please join us in DM to get started, and let us know when you installed the most recent update.",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0052,twcs.csv,twitter,"@176429 There's nothing better than some delicious fries! We’ve got plenty to share, Angel!",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0053,twcs.csv,twitter,@162488 or drop in your details through the link provided earlier (2/3) ^VM,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0054,twcs.csv,twitter,"@234669 Hey, help's here! Can you DM us your username and email address, along with that of the plan owner? We'll take a look backstage 🔍 /PX https://t.co/ldFdZRiNAt",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0055,oasst1-train.csv,openassistant,"Here are some tips for a college student to improve their resume if they have little relevant work experience:
+
+Include relevant coursework: If you have taken classes related to your field of study, you can list them on your resume. This will show that you have knowledge in the area even if you haven't had much hands-on experience.
+
+Highlight relevant projects: If you have completed any projects related to your desired field of study, list them on your resume. This will show potential employers that you have practical skills in the area even if you haven't had formal work experience.
+
+List any internships or volunteer experience: Even if your internships or volunteer work is not directly related to your desired field of study, they can still show potential employers that you are a hard worker and have experience working in a professional environment.
+
+Consider part-time jobs: Part-time jobs, even if they are not related to your field of study, can still show potential employers that you have experience working in a team and have time management skills.
+
+Highlight soft skills: Soft skills such as communication, leadership, and problem-solving are important in any job. If you have had experience in any extracurricular activities or volunteer work, make sure to highlight any soft skills you have developed.
+
+Seek out opportunities to gain more experience: Look for internships, volunteer work, or part-time jobs that will give you more experience in your desired field of study. You can also consider taking on freelance work or personal projects to build up your portfolio.
+
+Customize your resume for each job: Tailor your resume to each job you apply for, highlighting the experiences and skills that are most relevant to the position.
+
+Remember, employers are often looking for candidates who are willing to learn and grow. By demonstrating your passion and willingness to gain experience in your desired field, you can make a strong impression even with limited work experience.",Provide_Solution,1,0.62,Provide_Solution:\byou can\b,,
+ann_0056,twcs.csv,twitter,@184978 You can send a message here: https://t.co/0f6pFdYU9j -AC,Provide_Solution,1,0.62,Provide_Solution:\byou can\b,,
+ann_0057,twcs.csv,twitter,@214135 Our apologies. Please follow and DM with your confirmation number to this handle so we can assist. Thanks-KL,Affective_Repair,2,0.62,Affective_Repair:\bapolog\w*\b,,
+ann_0058,twcs.csv,twitter,@191798 Sorry again for the delay.^CD,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0059,twcs.csv,twitter,@185308 Apologies for any confusion caused Nigel - Josh,Affective_Repair,2,0.62,Affective_Repair:\bapolog\w*\b,,
+ann_0060,twcs.csv,twitter,@166424 I am sorry to hear about your experience. Please DM me if there is anything I can do to help. -Aaron,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0061,twcs.csv,twitter,@193341 Hi there! We're sorry for the wait. We've just sent you a bit more info over DM. We'll carry on helping out there /GN,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0062,twcs.csv,twitter,"@176710 I know how frustrating that can be. Can you DM me your full name, phone number, and address so I can look into this further? ^CL",Affective_Repair,2,0.62,Affective_Repair:\bfrustrat\w*\b,,
+ann_0063,twcs.csv,twitter,"@213977 This isn't considered a ""bug"" but we're tracking feedback and working to make changes. We understand where you're coming from!",Affective_Repair,2,0.62,Affective_Repair:\bwe understand\b,,
+ann_0064,twcs.csv,twitter,@126701 I'm sorry you haven't received your package! Can you tell us who the carrier is? Found here: https://t.co/q4LAMZ3tbE ^AC,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0065,twcs.csv,twitter,@172824 Sorry to hear that. Which restaurant location did you visit?,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0066,twcs.csv,twitter,"@227518 I am very sorry to hear this - can you please advise what the search was for, and if possible, provide a link or screenshot so we can investigate  ^TD",Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0067,twcs.csv,twitter,"@129573 Hey there, apologies for the delay. Were you able to successfully play the beta? Please let me know. ^MB",Affective_Repair,2,0.62,Affective_Repair:\bapolog\w*\b,,
+ann_0068,twcs.csv,twitter,@159049 I understand and I'm sorry about the stretch. We'd like help you. Please share your details on the link. ^HA,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0069,twcs.csv,twitter,@183704 I'd recommend that you attempt to reach out within that timeframe. Sorry for any inconvenience. ^Jessica,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0070,twcs.csv,twitter,@214807 Sorry! Rest assured our team is looking into this issue. We'd love to grab more details by phone/chat: https://t.co/6YdK7bvQN7.,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0071,twcs.csv,twitter,@120923 My apologies Erin. Has any re-delivery attempt information been provided? ^DC,Affective_Repair,2,0.62,Affective_Repair:\bapolog\w*\b,,
+ann_0072,twcs.csv,twitter,"@220025 Hi Alice ,Apologies on this ,We currently still awaiting approval on this case.Once done we will inform via email.Thanks",Affective_Repair,2,0.62,Affective_Repair:\bapolog\w*\b,,
+ann_0073,twcs.csv,twitter,@128622 Sorry you feel that way! We've offered to help &amp; you can reply back to the DM w/the rqsted info or call Cust Support. Thanks! M,Affective_Repair,2,0.62,Provide_Solution:\byou can\b;Affective_Repair:\bsorry\b,,
+ann_0074,twcs.csv,twitter,@146046 Sorry for any delay at Bag Drop this morning Lauren. A member of the team will assist you as soon as possible ^BM,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0075,twcs.csv,twitter,"@186258 We're sorry about that, Martin. Do you know why? Have you been able to make other arrangements? ^SR",Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0076,twcs.csv,twitter,@168323 I apologize for the issues you are having with the Wi-Fi. I will need the account holders name and service addres... https://t.co/kGGliCT6KG,Affective_Repair,2,0.62,Ask_for_Information:\baccount\b;Affective_Repair:\bapolog\w*\b,,
+ann_0077,twcs.csv,twitter,"@171115 Our team is expected to remain professional and courteous at all times, our apologies for any rudeness you received.",Affective_Repair,2,0.62,Affective_Repair:\bapolog\w*\b,,
+ann_0078,twcs.csv,twitter,@167589 We're sorry you feel that way - is there something we can do to help? ^michr,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0079,twcs.csv,twitter,"@132545 Sorry for the trouble caused.We request you to DM your idea number to assist you better.
+Regards,
+Shweta https://t.co/LBfZgLCSfr",Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0080,twcs.csv,twitter,"@225150 Some items may be shipped in the manufacturer packaging as part of the Frustration-Free Packaging program. If applicable, there may be an option to ""ship in Amazon box"" during checkout. Alternatively, you can select ""send as a gift."" That will guarantee packaging. ^SK",Affective_Repair,2,0.62,Provide_Solution:\byou can\b;Affective_Repair:\bfrustrat\w*\b,,
+ann_0081,twcs.csv,twitter,@144964 I'm so sorry for the frustration this has caused. This isn't what we strive for. I'd like a member of our team to escalate this for you to make sure the appropriate action is taken. Please provide us with your details here: https://t.co/zhNCm9J4Pm ^NS,Affective_Repair,2,0.74,Ask_for_Information:\bplease provide\b;Affective_Repair:\bsorry\b;Affective_Repair:\bfrustrat\w*\b;Escalate_to_Human:\bescalat\w*\b,,
+ann_0082,twcs.csv,twitter,"@129321 Sorry to hear that, Kim. Please e-mail us more details about your visit to __email__ &amp; we will address.",Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0083,twcs.csv,twitter,@129249 Sorry to hear you didn't love it. We'll keep working to perfect the unprocessed recipe. -AC,Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0084,twcs.csv,twitter,"@194923 I apologize the presentation was lacking, but glad you enjoyed it. 😋 *TJE",Affective_Repair,2,0.62,Affective_Repair:\bapolog\w*\b,,
+ann_0085,twcs.csv,twitter,@172133 to a supervisor. They’re available 24/7. Sorry for any inconvenience.^In,Escalate_to_Human,3,0.62,Affective_Repair:\bsorry\b;Escalate_to_Human:\bsupervisor\b,,
+ann_0086,twcs.csv,twitter,@164979 Goodness! We'd like to have a specialist look in to this with you! Please leave your info here: https://t.co/7z3hvtA0a7 ^KN,Escalate_to_Human,3,0.62,Escalate_to_Human:\bspecialist\b,,
+ann_0087,twcs.csv,twitter,"@140408 
+I am so sorry for the trouble, Bianca. We are here to help! Have you received an email from our account specialist? ^SC",Escalate_to_Human,3,0.62,Ask_for_Information:\baccount\b;Affective_Repair:\bsorry\b;Escalate_to_Human:\bspecialist\b,,
+ann_0088,twcs.csv,twitter,"@158390 That's strange. Please reply to the e-mail sent by our Social Media Escalation team, we'll revert shortly with an update. ^MP",Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0089,twcs.csv,twitter,@122041 Thanks for all the info Gary. We'll forward this to our buyers for internal review. Can I ask you to DM us via the link too with your... 1/2,Escalate_to_Human,3,0.62,Escalate_to_Human:\bforward this to\b,,
+ann_0090,twcs.csv,twitter,@145895 Apologies again Craig. Have you a delivery preference set up? Please get in touch -  https://t.co/JzP7hlA23B we'd like to escalate this further with the carrier. ^TP,Escalate_to_Human,3,0.62,Affective_Repair:\bapolog\w*\b;Escalate_to_Human:\bescalat\w*\b,,
+ann_0091,twcs.csv,twitter,@199870 Please call &amp; escalate your concerns to a Supervisor. ^Clarissa,Escalate_to_Human,3,0.74,Escalate_to_Human:\bescalat\w*\b;Escalate_to_Human:\bsupervisor\b,,
+ann_0092,twcs.csv,twitter,"@214048 Hi Colin, thx for tweeting us. Sorry to hear of the frustration. Have you escalate your concern to a supervisor? ^Naomi",Escalate_to_Human,3,0.74,Affective_Repair:\bsorry\b;Affective_Repair:\bfrustrat\w*\b;Escalate_to_Human:\bescalat\w*\b;Escalate_to_Human:\bsupervisor\b,,
+ann_0093,twcs.csv,twitter,"@171563 Hello, 
+We apologize for any inconvenience you may have experienced.The complaint has been escalated. Thank you. UO.",Escalate_to_Human,3,0.62,Affective_Repair:\bapolog\w*\b;Escalate_to_Human:\bescalat\w*\b;Close_with_Feedback:\bthank you\b,,
+ann_0094,twcs.csv,twitter,@170629 I'm sorry that you feel this way. Have you escalated this to our support team here: https://t.co/vlvfJr4nN9.^SB,Escalate_to_Human,3,0.62,Affective_Repair:\bsorry\b;Escalate_to_Human:\bescalat\w*\b,,
+ann_0095,twcs.csv,twitter,@177158 We'd like to get this escalated! Pls provide us your details in full here: https://t.co/m8p86TYFBC. Thanks in advance! ^KJ,Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0096,twcs.csv,twitter,@176329 Apologies for any lapse in service you've received. Pls call and escalate to a Supervisor. ^Clarissa,Escalate_to_Human,3,0.74,Affective_Repair:\bapolog\w*\b;Escalate_to_Human:\bescalat\w*\b;Escalate_to_Human:\bsupervisor\b,,
+ann_0097,twcs.csv,twitter,"@202174 Nate, could you let us know which store location this is? We will forward this to the operators of the store. Thanks!",Escalate_to_Human,3,0.62,Escalate_to_Human:\bforward this to\b,,
+ann_0098,twcs.csv,twitter,"@150862 That would be great. Once I have the footage, I can escalate the matter up to the Studio so they can dig into it. ^HB",Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0099,twcs.csv,twitter,"@158239 For account related issues, we can't assist you as this will be handled by our account specialist team.(1/2)^HR",Escalate_to_Human,3,0.62,Ask_for_Information:\baccount\b;Escalate_to_Human:\bspecialist\b,,
+ann_0100,twcs.csv,twitter,"@124653 I’d be happy to escalate your concerns. Please DM more details including your full name, address, and phone number. Thx ^KJ https://t.co/q1oBDuYAdh",Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0101,twcs.csv,twitter,@148038 Thank you for this information. I will be sure to forward this to the appropriate department for investigation. ^RO,Escalate_to_Human,3,0.62,Escalate_to_Human:\bforward this to\b;Close_with_Feedback:\bthank you\b,,
+ann_0102,twcs.csv,twitter,"@232820 Thank you for keeping us in the loop. I'd like a member of my team to escalate this for you. At your earliest convenience, please send us more detail about this order here: https://t.co/0FKkh9V0SL ^DW",Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b;Close_with_Feedback:\bthank you\b,,
+ann_0103,twcs.csv,twitter,@158468 I'm sorry for the stretch. Could you tell me if you've received any mail from our Social Media Escalations team? ^AU,Escalate_to_Human,3,0.62,Affective_Repair:\bsorry\b;Escalate_to_Human:\bescalat\w*\b,,
+ann_0104,twcs.csv,twitter,"@190145 Hey there, thanks for sending that over. I'll be sure to escalate this to the appropriate parties. Thanks for playing. ^OP",Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0105,oasst1-train.csv,openassistant,"John Wick has a very simple revenge story. It can be summarized as ""Keanu gets angry and shoots bad guys"" but what makes it special? It's directed by Chad Stahelski who's a stunt specialist, and boy does it show. The main selling point of the film is the real virtuoso action sequences with well made choreographies. Unlike today's action movies, it doesn't use quick-cuts or shaky cameras actually see what's going on. 8/10",Escalate_to_Human,3,0.62,Escalate_to_Human:\bspecialist\b,,
+ann_0106,twcs.csv,twitter,@190607 I'll be sure to forward this to our concerned team and have it reviewed. Thanks for the wonderful suggestion. ^SA,Escalate_to_Human,3,0.62,Escalate_to_Human:\bforward this to\b,,
+ann_0107,twcs.csv,twitter,@183817 Sry to hear this. I'd like to escalate ur concern to our partners n India. Pls click/send phn# only. No acct#s or PINs. ^BS https://t.co/gvC4jAOA9c,Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0108,twcs.csv,twitter,@127132 We apologize for any inconvenience you may have experienced.The complaint has been escalated. Thank you. UO.,Escalate_to_Human,3,0.62,Affective_Repair:\bapolog\w*\b;Escalate_to_Human:\bescalat\w*\b;Close_with_Feedback:\bthank you\b,,
+ann_0109,twcs.csv,twitter,@145861 I'm very sorry for the poor experience! I would like one of our Social Media specialists to look into this with you. Please provide the information that is requested here: https://t.co/9KKpqfGmRR so we can get this escalated to the proper team. ^ZW,Escalate_to_Human,3,0.62,Ask_for_Information:\bplease provide\b;Affective_Repair:\bsorry\b;Escalate_to_Human:\bescalat\w*\b,,
+ann_0110,twcs.csv,twitter,"@191307 Okay Hassan, your request will be escalated to management for action. Kindly be patient.  TT",Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0111,twcs.csv,twitter,@122886 We suggest that you keep working with our escalations team as they are the best team to provide you a resolution on this case. We have already notified them. Kindly remove the picture from the public tweet for security reasons.^KT https://t.co/oEoSPnwg0y,Escalate_to_Human,3,0.62,Escalate_to_Human:\bescalat\w*\b,,
+ann_0112,twcs.csv,twitter,@122366 Kindly reply to the email you've received from our account specialist team for further assistance on this issue. (2/2) ^RI,Escalate_to_Human,3,0.62,Ask_for_Information:\baccount\b;Escalate_to_Human:\bspecialist\b,,
+ann_0113,twcs.csv,twitter,"@176403 We'd be happy to help, but we could use more info. Could you follow &amp; DM @Xboxsupport with your Gamertag &amp; some details? ^EZ",Close_with_Feedback,4,0.62,Close_with_Feedback:\bhappy to help\b,,
+ann_0114,twcs.csv,twitter,"@137614 Thank you for bringing to our attention, Can you tell us the specific problem that you are experiencing? Which Windows version are you using.",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0115,twcs.csv,twitter,@160171 Thank you. Do you have access to your battery backup unit? ^DDD,Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0116,oasst1-train.csv,openassistant,Thank you! Is there anything else I can help you with?,Close_with_Feedback,4,0.74,Close_with_Feedback:\banything else\b;Close_with_Feedback:\bthank you\b,,
+ann_0117,twcs.csv,twitter,"@134900 Hello, Griffin. Wow! Great to hear this amazing feedback! Thank you for flying with us!  *ARD",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0118,twcs.csv,twitter,"@118422 Hello @118422, thank you. ^ANopo",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0119,twcs.csv,twitter,"@176622 We hear you, and we appreciate all the feedback. In the meantime, we'll be here if there's anything else 🙂 /M",Close_with_Feedback,4,0.62,Close_with_Feedback:\banything else\b,,
+ann_0120,twcs.csv,twitter,@172248 Thank you for your revert. We'll reach out to you with an update at the earliest. ^SA,Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0121,twcs.csv,twitter,@118064 Thank you for your suggestion! We will forward this for review. 😊,Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0122,twcs.csv,twitter,@192139 No worries! Let us know if you need anything else. We'll be... https://t.co/LgAM6ky9Vv 🙂 /NY,Close_with_Feedback,4,0.62,Close_with_Feedback:\banything else\b,,
+ann_0123,twcs.csv,twitter,"@147089 Kay, we will be happy to help you. Can you DM us your Airbnb email address, so we can locate your profile and assist? Thank you. https://t.co/WCQEFGIlXC",Close_with_Feedback,4,0.74,Close_with_Feedback:\bhappy to help\b;Close_with_Feedback:\bthank you\b,,
+ann_0124,twcs.csv,twitter,@169992 Kindly get in touch with us here: https://t.co/BKNulogsfB and we’ll be glad to help you. ^AG,Close_with_Feedback,4,0.62,Close_with_Feedback:\bglad to help\b,,
+ann_0125,twcs.csv,twitter,"@213356 I'd be happy to help you, what is going on? Please DM me the details. ^ML https://t.co/wKJHDXWGRQ",Close_with_Feedback,4,0.62,Close_with_Feedback:\bhappy to help\b,,
+ann_0126,twcs.csv,twitter,"@174201 @161615 Good evening, please select 3G only and restart the device. Thank you. SO",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0127,twcs.csv,twitter,"@162307 Thank you for updating us on your issue. Feel free to ask if you need help. We're always available for you,",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0128,twcs.csv,twitter,@174104 Thank you for the feedback. I will pass along to the in-flight leadership team.  *TJF,Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0129,twcs.csv,twitter,@165791 As requested earlier connect with our seller support team through the link provided above and we'll be happy to help. ^SH,Close_with_Feedback,4,0.62,Close_with_Feedback:\bhappy to help\b,,
+ann_0130,twcs.csv,twitter,@230597 @115913 Hi! We're here for you and would love to continue working with you in DM. Meet us there. Thank you! *AlissaFast,Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0131,twcs.csv,twitter,"@224609 We want to ensure it is delivered! If it doesn't arrive by December 2nd please, let us know: https://t.co/hApLpMlfHN Thank you for your patience. ^EB",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0132,twcs.csv,twitter,@194743 Hello. I never heard back from you; let me know if I can help. Have a great day! ^RK,Close_with_Feedback,4,0.62,Close_with_Feedback:\bhave a great day\b,,
+ann_0133,twcs.csv,twitter,@166173 . Please send us the financial center location. Thank you. ^sp,Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0134,twcs.csv,twitter,@200252 That's strange. Please report this to our support team here: https://t.co/vlvfJr4nN9 and we’ll be glad to help you. ^NK,Close_with_Feedback,4,0.62,Close_with_Feedback:\bglad to help\b,,
+ann_0135,twcs.csv,twitter,"@191842 Hello, Thank you for reaching out to us. We are able to look into your service trouble.  Please send us a DM with",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0136,twcs.csv,twitter,"@215524 Thank you for sharing your details. Once we receive them, we'll work on your concern and assist you. ^SV",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0137,twcs.csv,twitter,"@150249 @117128 Hello @117128, kindly assist with stated issue. Thank you. ^Osebi.",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0138,twcs.csv,twitter,"@172441 Hello @172441, for prompt response please contact @117128. This handle is for AIRTEL Nigeria Customers. Thank you for (1/2)",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0139,twcs.csv,twitter,@226490 Thank you for flagging. We'd like to take a closer look at the issue. Kindly drop your details here: https://t.co/PBwzbFYLok and we'll work on it. ^NS,Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0140,twcs.csv,twitter,@135630 Glad to hear it. Please reach out to us again if anything else comes up.,Close_with_Feedback,4,0.62,Close_with_Feedback:\banything else\b,,
+ann_0141,twcs.csv,twitter,"@120254 Good morning, please text cancel to 127 to deactivate auto renewal. However, revert with your number for status update. SO",Proactive_Update,5,0.62,Proactive_Update:\bstatus update\b,,
+ann_0142,twcs.csv,twitter,@122219 We are still working on this! Please be sure to watch your e-mail for further updates on this issue. ^MW,Proactive_Update,5,0.62,Proactive_Update:\bwe are still working\b,,
+ann_0143,twcs.csv,twitter,"@145625 Hi Dreyses18, we are still working to fix the HQ, please stay tuned via social media to see when will be available. 
+^FP",Proactive_Update,5,0.62,Provide_Solution:\bfix\b;Proactive_Update:\bwe are still working\b,,
+ann_0144,twcs.csv,twitter,@133513 I can see what can be done if you provide me your tracking number. While we are delivering to these areas we do have a lot of backlog that we are still working through. ^ML https://t.co/wKJHDXWGRQ,Proactive_Update,5,0.62,Proactive_Update:\bwe are still working\b,,
+ann_0145,twcs.csv,twitter,"@123250 I want to help. Are you located in RI? If so, we are still working to restore services ASAP.  -StephanieA",Proactive_Update,5,0.62,Proactive_Update:\bwe are still working\b,,
+ann_0146,twcs.csv,twitter,"@118794 Hi Steph, we've updated your case and asked our specialized team to give you a status update as soon as possible.",Proactive_Update,5,0.62,Proactive_Update:\bstatus update\b,,
+ann_0147,twcs.csv,twitter,@231229 Due to holiday volume we have a backlog of packages. This scan means that we are still working to get the shipment moving and in transit. ^ML,Proactive_Update,5,0.62,Proactive_Update:\bwe are still working\b,,
+ann_0148,twcs.csv,twitter,"We are still working to resolve the service outage affecting Southeastern States and parts of Texas, California, and Louisiana. Thank you.",Proactive_Update,5,0.62,Close_with_Feedback:\bthank you\b;Proactive_Update:\bwe are still working\b,,
+ann_0149,twcs.csv,twitter,"Call of Duty: WWII Status Update - Monday, 11/13 https://t.co/wtb1KM7O9L via @170140",Proactive_Update,5,0.62,Proactive_Update:\bstatus update\b,,
+ann_0150,twcs.csv,twitter,@122219 We are still working on this! Please be sure to check your e-mail for further updates. ^ZW,Proactive_Update,5,0.62,Proactive_Update:\bwe are still working\b,,
+ann_0151,twcs.csv,twitter,"@145814 Hello @145814, please note that we are still working on it. Kindly exercise patience. All inconveniences regretted. Thank you. ^TOwo",Proactive_Update,5,0.62,Close_with_Feedback:\bthank you\b;Proactive_Update:\bwe are still working\b,,
+ann_0152,oasst1-train.csv,openassistant,"Sure! Here's an updated version of the function with error handling and validation:
+
+import sqlite3
+
+def update_order_status(order_status, order_id):
+# Connect to the database
+try:
+conn = sqlite3.connect(""database.db"")
+cursor = conn.cursor()
+except sqlite3.Error as e:
+print(f""Error connecting to database: {e}"")
+return
+
+# Update the order status
+try:
+    cursor.execute(""UPDATE orders SET orderStatus = ? WHERE orderID = ?"", (order_status, order_id))
+    conn.commit()
+except sqlite3.Error as e:
+    print(f""Error updating order status: {e}"")
+    conn.rollback()
+    cursor.close()
+    conn.close()
+    return
+
+# Validate the update was successful
+cursor.execute(""SELECT orderStatus FROM orders WHERE orderID = ?"", (order_id,))
+updated_order = cursor.fetchone()
+if updated_order is None:
+    print(f""Order with ID {order_id} was not found in the database."")
+elif updated_order[0] == order_status:
+    print(f""Order with ID {order_id} was successfully updated to status: {order_status}"")
+else:
+    print(f""Error updating order with ID {order_id}. Order status: {updated_order[0]}"")
+
+# Close the connection to the database
+cursor.close()
+conn.close()
+
+Example usage
+update_order_status(""shipped"", 1)
+
+In this updated version, the function includes error handling for both the database connection and the order status update. If there is an error connecting to the database, the function prints an error message and returns. If there is an error updating the order status, the function rolls back the changes, prints an error message, and returns. After the update, the function validates that the update was successful by querying the database and comparing the updated order status to the desired order status.",Proactive_Update,5,0.62,Proactive_Update:\bstatus update\b,,
+ann_0153,twcs.csv,twitter,"@126786 We are still working on a resolution. As of now there is no update. 
+^TXA",Proactive_Update,5,0.62,Proactive_Update:\bwe are still working\b,,
+ann_0154,twcs.csv,twitter,"@181710 Hi. Aksh. Thank you so much for your patience, we are still working on resolving your issue. Our team will be in touch as soon as possible.",Proactive_Update,5,0.62,Close_with_Feedback:\bthank you\b;Proactive_Update:\bwe are still working\b,,
+ann_0155,twcs.csv,twitter,We are still working to resolve the issue in Brooklyn &amp; Queens.  Thank you for your continued patience.,Proactive_Update,5,0.62,Close_with_Feedback:\bthank you\b;Proactive_Update:\bwe are still working\b,,
+ann_0156,twcs.csv,twitter,@158418 We are still working on your pick up. Kindly wait and we will get back to you with an update at the earliest. ^HR,Proactive_Update,5,0.62,Proactive_Update:\bwe are still working\b,,
+ann_0157,twcs.csv,twitter,"@201773 In this situation, contact AT&amp;T for status update, since you ordered your Apple Watch from them. They are best suited to help.",Proactive_Update,5,0.62,Proactive_Update:\bstatus update\b,,
+ann_0158,twcs.csv,twitter,@140322 &gt; status update. Thanks- Mariya 2/2,Proactive_Update,5,0.62,Proactive_Update:\bstatus update\b,,
+ann_0159,oasst1-train.csv,openassistant,"This is a complicated topic, and even Marx's direct writings are subject to multiple interpretations. In general, according to Karl Marx, class conflict is the conflict or tension that inevitably arises in a capitalist mode of society between workers (those who must work for others for a living) and capitalists (those who own capital, which is the means of producing goods or services). Regardless of individual political beliefs, class conflict is thought to arise because the personal interests and incentives of the working class and the interests of the capitalist class are inevitably in conflict. To see this through a Marxist lens, you can think of a worker at a large corporation. One can expect that most workers would like to make additional money, have more free time, be less controlled by the company and more in control of how they perform their own, etc.; but these run directly against many of the direct interests of the owners of the company, who (in general) have financial incentives to pay the workers as little as possible and make them work as hard as possible. Looking at these incentives, it is unsurprising that groups of workers and groups of capitalists tend to support different policies around collective bargaining and unionization, workplace surveillance, minimum wage, etc.",Set_Expectation,6,0.62,Provide_Solution:\byou can\b;Set_Expectation:\bexpect\b,,
+ann_0160,twcs.csv,twitter,@125897 We're not able to make calls here. Please work with our airport team for the next steps.,Set_Expectation,6,0.62,Provide_Solution:\bsteps?\b;Set_Expectation:\bnext steps\b,,
+ann_0161,twcs.csv,twitter,"@145595 We would like to inform you that you will get the refund within 90 days through cheque at your billing address.
+
+Regards,
+Arti",Set_Expectation,6,0.62,Set_Expectation:\bwithin \d+\s?(minutes?|hours?|days?)\b,,
+ann_0162,twcs.csv,twitter,"@146411 Hi, what date were you advised to wait until ? If the item has been dispatched and has experienced a delay we would ask you to wait a certain period, as we would expect the item to arrive normally. ^CR",Set_Expectation,6,0.62,Set_Expectation:\bexpect\b,,
+ann_0163,twcs.csv,twitter,"@150975 Congrats on earning that achievement! We certainly understand wanting to make sure you get the badge as well. You will earn the award within 9 days of completing the Activity Challenge. Learn more: https://t.co/xwf6lrIgzJ
+
+ Let us know if you have any other questions!",Set_Expectation,6,0.62,Set_Expectation:\bwithin \d+\s?(minutes?|hours?|days?)\b,,
+ann_0164,twcs.csv,twitter,@148912 That's certainly not what we'd expect to happen with your replacement Apple Watch and we'd like to look in to this with you. Please DM us and we'll continue working together there. https://t.co/GDrqU22YpT,Set_Expectation,6,0.62,Set_Expectation:\bexpect\b,,
+ann_0165,twcs.csv,twitter,"@223219 We appreciate the heads up and expect the blazing speeds for you, Khris! I use my phone for everything from browsing to media! Let's make sure you can access it all. Send us a DM so we can check into this. *KeithM",Set_Expectation,6,0.62,Provide_Solution:\byou can\b;Set_Expectation:\bexpect\b,,
+ann_0166,twcs.csv,twitter,"@231104 Thanks for the question, Katisha. Two day shipping means that an item will arrive within 2 days after it dispatches. You can find out more info here: https://t.co/GeQJnQuGo2.^SM",Set_Expectation,6,0.62,Provide_Solution:\byou can\b;Set_Expectation:\bwithin \d+\s?(minutes?|hours?|days?)\b,,
+ann_0167,twcs.csv,twitter,"@165614 Good morning, yes if you auto re-subscribe within 3days after expiration, you'll get 100% data bonus otherwise you will get revised data. SO",Set_Expectation,6,0.62,Set_Expectation:\bwithin \d+\s?(minutes?|hours?|days?)\b,,
+ann_0168,twcs.csv,twitter,"@138001 We want to keep families flying this holiday season and fully expect to avoid cancellations, Cora.",Set_Expectation,6,0.62,Set_Expectation:\bexpect\b,,
+ann_0169,twcs.csv,twitter,@171976 Let's get to DM for our next steps. https://t.co/GDrqU22YpT,Set_Expectation,6,0.62,Provide_Solution:\bsteps?\b;Set_Expectation:\bnext steps\b,,
+ann_0170,twcs.csv,twitter,"@149041 I realize you've had an unforeseen experience, Saswata. We've received your response and are already working on it. Expect a correspondence from us soon. ^JC",Set_Expectation,6,0.62,Set_Expectation:\bexpect\b,,
+ann_0171,twcs.csv,twitter,@142484 This isn’t what we expect from our restaurants! Can you DM us so we can look into it? ^KR,Set_Expectation,6,0.62,Set_Expectation:\bexpect\b,,
+ann_0172,twcs.csv,twitter,"@213719 It's important that your iPhone's battery last as long as you expect it to, so we're happy to help you with this. Let's go to DM. https://t.co/GDrqU22YpT",Set_Expectation,6,0.62,Close_with_Feedback:\bhappy to help\b;Set_Expectation:\bexpect\b,,
+ann_0173,twcs.csv,twitter,"@141603 😔 We'd like to help Paul, we can give a rough estimate of a final bill, however, we're unable to give you an exact amount as it would be a pro rata charge. You'd receive the bill within 14 days of disconnection.",Set_Expectation,6,0.62,Set_Expectation:\bwithin \d+\s?(minutes?|hours?|days?)\b,,
+ann_0174,twcs.csv,twitter,"@131935 Hi Claire, this will be because Delay Repay has to be claimed within 28 days of the journey. ^MB",Set_Expectation,6,0.62,Set_Expectation:\bwithin \d+\s?(minutes?|hours?|days?)\b,,
+ann_0175,twcs.csv,twitter,@216362 We want your computer to work just as you expect. Check out this article for next steps to help: https://t.co/59OXeh3YgB,Set_Expectation,6,0.74,Provide_Solution:\bsteps?\b;Set_Expectation:\bexpect\b;Set_Expectation:\bnext steps\b,,
+ann_0176,oasst1-train.csv,openassistant,"In JavaScript, the value of the this keyword inside an arrow function is determined by the context in which it was created because arrow functions have a lexical this binding.
+
+Unlike regular functions, arrow functions do not have their own this keyword and instead inherit the this value from their surrounding context. This means that the value of this inside an arrow function is determined at the time the arrow function is defined, not at the time it is called.
+
+This has a number of implications for how arrow functions are used in JavaScript, particularly in situations where the value of this would otherwise change depending on how a function is called. By using an arrow function, you can ensure that the this value will always remain the same, regardless of how the function is invoked.
+
+For example, consider the following code:
+
+const obj = {
+  name: 'John',
+  greet: function() {
+    setTimeout(function() {
+      console.log(`Hello, my name is ${this.name}`);
+    }, 1000);
+  }
+};
+
+obj.greet(); // ""Hello, my name is undefined""
+
+
+In this code, the regular function inside the setTimeout call will have its own this value that is determined by how it is called, which in this case is window (or undefined in strict mode), rather than by the surrounding object obj. This results in the error ""Hello, my name is undefined"".
+
+However, if we use an arrow function instead, the this value will be inherited from the surrounding object obj, as follows:
+
+const obj = {
+  name: 'John',
+  greet: function() {
+    setTimeout(() => {
+      console.log(`Hello, my name is ${this.name}`);
+    }, 1000);
+  }
+};
+
+obj.greet(); // ""Hello, my name is John""
+
+
+In this code, the arrow function inside the setTimeout call will inherit the this value from the surrounding object obj, which is what we expect.",Set_Expectation,6,0.62,Provide_Solution:\byou can\b;Set_Expectation:\bexpect\b,,
+ann_0177,twcs.csv,twitter,@219194 That isn't the standard we expect! We'll be following up with the management team! ^KR,Set_Expectation,6,0.62,Set_Expectation:\bexpect\b,,
+ann_0178,oasst1-val.csv,openassistant,"The longest amount of time we can currently prove human existence using fossil evidence is around 300,000 years ago, with the discovery of early Homo sapiens fossils in Morocco. However, if we consider the broader category of hominins, which includes modern humans and their extinct ancestors, the timeline extends much further back.
+
+According to fossil evidence, the first early hominins appeared on Earth around 7 million years ago. These early hominins, such as Sahelanthropus tchadensis, were not fully human-like or bipedal, but they represent crucial stages in the evolution of our species. As new evidence and discoveries are made, our understanding of human evolution and the timeline of our species' development will continue to evolve.",Set_Expectation,6,0.62,Set_Expectation:\btimeline\b,,
+ann_0179,oasst1-train.csv,openassistant,"Sure, here is an updated status report that includes a timeline:
+
+Dear [Stakeholder],
+
+I am writing to provide an update on the progress made towards developing a privacy feature for recording devices that will automatically blur faces and other biometric details. I am pleased to report that we have made significant progress towards this goal.
+
+To date, I have begun collecting relevant existing models for training. This process has involved extensive research and evaluation of current state-of-the-art technologies in the field of privacy protection for recorded images and videos. I estimate that this initial data collection and annotation process will take approximately two months to complete.
+
+Once the data collection and annotation process is complete, I plan to spend another month preparing an offline prototype for testing and evaluation. This prototype will allow us to test and validate our algorithm before moving on to the implementation phase.
+
+I am optimistic that the progress we have made so far will allow us to deliver a high-quality privacy feature for recording devices. However, we still have a lot of work to do, and I will keep you updated on our progress in the coming weeks.
+
+Here is a timeline of the planned steps for this project:
+
+Month 1-2: Initial data collection and annotation
+Month 3: Preparation of offline prototype for testing and evaluation
+Month 4 and beyond: Implementation and further testing
+Please note that this timeline is subject to change based on the progress of the project and any unforeseen challenges that may arise.
+
+If you have any questions or concerns, please do not hesitate to reach out.
+
+Best regards,
+
+[Your Name]",Set_Expectation,6,0.62,Provide_Solution:\bsteps?\b;Set_Expectation:\btimeline\b,,
+ann_0180,twcs.csv,twitter,@197975 E-mail responses are expected within 12 hours. I recommend the phone option for a quicker resolution. ^GG,Set_Expectation,6,0.62,Set_Expectation:\bwithin \d+\s?(minutes?|hours?|days?)\b,,
+ann_0181,twcs.csv,twitter,@162086 We certainly don't expect that. Send us a DM and we'll look into this further with you. https://t.co/GDrqU22YpT,Set_Expectation,6,0.62,Set_Expectation:\bexpect\b,,
+ann_0182,twcs.csv,twitter,@174108 Let's take things to DM from here for our next steps. https://t.co/GDrqU22YpT,Set_Expectation,6,0.62,Provide_Solution:\bsteps?\b;Set_Expectation:\bnext steps\b,,
+ann_0183,twcs.csv,twitter,@121741 There's no timeline however please feel free to elaborate on your feedback by posting in this forum: https://t.co/UUJKeW13Ur  2 ^AL,Set_Expectation,6,0.62,Set_Expectation:\btimeline\b,,
+ann_0184,twcs.csv,twitter,"@153547 Thanks for letting us know, Dylan. If you send us a DM with your confirmation number, we'll follow-up with you there and see if we can advise on next steps. ^SF https://t.co/mQmfkXW4oV",Set_Expectation,6,0.62,Provide_Solution:\bsteps?\b;Set_Expectation:\bnext steps\b,,
+ann_0185,twcs.csv,twitter,@230754 Hey there! I see your direct message. I'll take a look and then give you the best next steps. Thanks for reaching out. ^KE,Set_Expectation,6,0.62,Provide_Solution:\bsteps?\b;Set_Expectation:\bnext steps\b,,
+ann_0186,twcs.csv,twitter,"@185169 Hi Carla, our website is regularly updated with new stock and we expect these items to be back soon. In the meantime, you can still pick these items up in store.",Set_Expectation,6,0.62,Provide_Solution:\byou can\b;Set_Expectation:\bexpect\b,,
+ann_0187,twcs.csv,twitter,"@222109 I am sorry to hear this. Please DM the tracking number, so we can look into this for you. ^WS",Affective_Repair,2,0.62,Affective_Repair:\bsorry\b,,
+ann_0188,oasst1-val.csv,openassistant,"Lo siento, no puedo revisar cuales son los paquetes más baratos debido a que no tengo una integración con una agencia de viajes.
+Puedes buscar paquetes a buen precio en agencias de viaje como LogiTravel, Kayak o TripAdvisor, que son las más conocidas.",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0189,twcs.csv,twitter,"@153170 @115913 We strive for world class customer service and absolutely don't want you to go, Shaun. Please DM us what happened so we can turn this around for you: https://t.co/cuEwtd2epS *DanKing",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0190,twcs.csv,twitter,@192112 provided they file w/in the correct timeframe. If you still have questions let me know &amp; I'll be happy to look into it. 2/2^C,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0191,twcs.csv,twitter,"@163473 Is that for the history channel or HBO?
+^JRA",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0192,twcs.csv,twitter,"@152230 Hi Melanie,
+Here are few help articles you should check for details about PDF export: 
+https://t.co/6RA2OF4t7V
+https://t.co/6RA2OF4t7V
+https://t.co/F2m2MUEWVz
+https://t.co/sxaVAXVg7p
+^OM",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0193,twcs.csv,twitter,@138250 Here is that link ^CK https://t.co/wKJHDXWGRQ,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0194,twcs.csv,twitter,"@127283 Thank you for reaching out today. I've responded to the DM you sent us, please let us know if you'd prefer that we reply here! ^GR",Close_with_Feedback,4,0.62,Close_with_Feedback:\bthank you\b,,
+ann_0195,twcs.csv,twitter,"@141138 It's so lovely seeing the British Overseas Airways Corporation aircraft! We're huge fans of the advert, kudos to Heathrow. ^Kimbers",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0196,twcs.csv,twitter,"@124587 Hi Jo, 😞 What's happened to make you say this? Can you please DM us? We want to help. https://t.co/X6jjaZO883",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0197,twcs.csv,twitter,"@188882 Our call to you has gone unanswered, kindly advise when ready for a call back. ^ST",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0198,twcs.csv,twitter,@138243 Based on the scans the package has arrived to destination but it has not been sorted for delivery. Please continue to monitor the progress at https://t.co/5oMU69kAgc and if you haven't already sign up for the Notify me with Updates feature that is available. ^AR,Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0199,oasst1-train.csv,openassistant,"El amor y la amistad son dos emociones distintas y únicas que tienen un papel importante en nuestras vidas. Aunque ambos son profundos y significativos, existen algunas diferencias clave entre ellos.
+
+Por un lado, el amor suele ser un sentimiento más intenso y apasionado. Se trata de una conexión profunda con otra persona que puede ser excluyente y provocar celos. El amor puede ser romántico o platónico, pero en ambos casos, se caracteriza por ser una emoción que requiere mucha dedicación y atención.
+
+Por otro lado, la amistad es un tipo de relación más relajada y menos intensa. Se basa en un vínculo incondicional entre dos o más personas, en el que se valora la presencia y la compañía de la otra persona por encima de todo lo demás. La amistad se caracteriza por ser una emoción duradera y constante, que se mantiene a lo largo del tiempo.
+
+En conclusión, el amor y la amistad son dos emociones distintas que complementan y enriquecen nuestra vida de diferentes maneras. Mientras que el amor nos da pasión y apoyo incondicional, la amistad nos brinda una red de apoyo duradero y una relación constante en nuestras vidas",Provide_Solution,1,0.35,no_pattern_match_default,,
+ann_0200,twcs.csv,twitter,@131518 This is not what we want for you. We handle all conversations right here through Twitter. Please send us a DM so we can look into this for you. - GW,Provide_Solution,1,0.35,no_pattern_match_default,,

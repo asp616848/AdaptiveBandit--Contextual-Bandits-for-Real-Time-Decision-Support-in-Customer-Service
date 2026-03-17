@@ -1,0 +1,5 @@
+metric,value
+turn_index_rows,150000
+turn_index_vocab,40000
+conversation_index_rows,80000
+conversation_index_vocab,50000

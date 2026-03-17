@@ -1,0 +1,5 @@
+metric,value
+source_rows_customer_turns,219701.0
+conversation_proxies,134419.0
+best_k_bic,6.0
+mean_cluster_confidence,0.999905109085328
