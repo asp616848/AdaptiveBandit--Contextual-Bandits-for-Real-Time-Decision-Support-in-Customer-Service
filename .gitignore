@@ -7,4 +7,8 @@
 _pycache_
 =======
 current report.txt
+<<<<<<< HEAD
 >>>>>>> cc3432e9f69061b550ff08c5ed80572737bd9f02
+=======
+/Simulation/artifacts
+>>>>>>> 48a79ed639df2b550b2af01a04bf54864cfae3d4
