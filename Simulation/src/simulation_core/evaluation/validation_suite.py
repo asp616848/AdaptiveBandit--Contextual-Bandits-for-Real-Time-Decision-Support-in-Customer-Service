@@ -85,12 +85,12 @@ class ValidationSuite:
 
         return scores
 
-    def run(self, simulated_df: pd.DataFrame, out_dir: Path) -> Dict[str, object]:
+    def run(self, simulated_df: pd.DataFrame, out_dir: Path, bandit_steps: int = 2000) -> Dict[str, object]:
         out_dir.mkdir(parents=True, exist_ok=True)
 
         f1 = self.distribution_fidelity(simulated_df)
         f2 = self.offline_policy_replay_proxy()
-        f3 = self.bandit_comparison(steps=2000)
+        f3 = self.bandit_comparison(steps=bandit_steps)
 
         result = {
             "distribution_fidelity": f1,

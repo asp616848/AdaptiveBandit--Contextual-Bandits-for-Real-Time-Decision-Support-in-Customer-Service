@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 import numpy as np
 import pandas as pd
 
-from simulation_core.config import ACTION_SPACE_7, LOW_CONFIDENCE_THRESHOLD
+from simulation_core.config import ACTION_SPACE_7, LOW_CONFIDENCE_THRESHOLD, TIER_VALUE_WEIGHT
 from simulation_core.env.pomdp_environment import CustomerSupportPOMDP
 from simulation_core.rewards.reward_model import load_reward_model
 
@@ -44,10 +45,12 @@ def _row_to_obs(r: pd.Series) -> np.ndarray:
     se = float(r.get("sentiment_score", 0.0) if pd.notna(r.get("sentiment_score", np.nan)) else 0.0)
     ti = float(r.get("turn_index", 1)) / max(float(r.get("conv_length", 10)), 1.0)
     conf = float(r.get("annotator_confidence", 0.0) if pd.notna(r.get("annotator_confidence", np.nan)) else 0.0)
-    return np.array([fr, se, ti, conf], dtype=np.float32)
+    tier = str(r.get("tier", "Pro"))
+    tier_weight = float(TIER_VALUE_WEIGHT.get(tier, 0.4))
+    return np.array([fr, se, ti, conf, tier_weight], dtype=np.float32)
 
 
-def behavior_cloning_train(labeled_df: pd.DataFrame, out_dir: Path) -> Dict[str, float]:
+def behavior_cloning_train(labeled_df: pd.DataFrame, out_dir: Path, epochs: int = 40) -> Dict[str, float]:
     if torch is None:
         raise RuntimeError("PyTorch is required for BC/CQL/PPO pipeline.")
 
@@ -75,14 +78,14 @@ def behavior_cloning_train(labeled_df: pd.DataFrame, out_dir: Path) -> Dict[str,
     X_val = torch.tensor(X[val_idx], dtype=torch.float32)
     y_val = torch.tensor(y[val_idx], dtype=torch.long)
 
-    model = PolicyNet(obs_dim=4, n_actions=len(ACTION_SPACE_7))
+    model = PolicyNet(obs_dim=X.shape[1], n_actions=len(ACTION_SPACE_7))
     opt = optim.Adam(model.parameters(), lr=1e-3)
     ce = nn.CrossEntropyLoss()
 
     best_acc = 0.0
     best_path = out_dir / "bc_policy.pt"
 
-    for _ in range(40):
+    for _ in range(epochs):
         model.train()
         opt.zero_grad()
         logits = model(X_train)
@@ -101,16 +104,22 @@ def behavior_cloning_train(labeled_df: pd.DataFrame, out_dir: Path) -> Dict[str,
     return {"bc_val_accuracy": best_acc, "bc_checkpoint": str(best_path)}
 
 
-def cql_lite_train(labeled_df: pd.DataFrame, reward_weights_path: Path, bc_checkpoint: Path, out_dir: Path) -> Dict[str, float]:
+def cql_lite_train(
+    labeled_df: pd.DataFrame,
+    reward_weights_path: Path,
+    bc_checkpoint: Path,
+    out_dir: Path,
+    gradient_steps: int = 200,
+) -> Dict[str, float]:
     if torch is None:
         raise RuntimeError("PyTorch is required for CQL training.")
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    model = PolicyNet(obs_dim=4, n_actions=len(ACTION_SPACE_7))
+    model = PolicyNet(obs_dim=5, n_actions=len(ACTION_SPACE_7))
     if bc_checkpoint.exists():
         model.load_state_dict(torch.load(bc_checkpoint, map_location="cpu"), strict=False)
 
-    target = PolicyNet(obs_dim=4, n_actions=len(ACTION_SPACE_7))
+    target = PolicyNet(obs_dim=5, n_actions=len(ACTION_SPACE_7))
     target.load_state_dict(model.state_dict())
 
     opt = optim.Adam(model.parameters(), lr=1e-3)
@@ -128,7 +137,7 @@ def cql_lite_train(labeled_df: pd.DataFrame, reward_weights_path: Path, bc_check
             "frustration": float(r.get("frustration_score", 0.5) if pd.notna(r.get("frustration_score", np.nan)) else 0.5),
             "sentiment": float(r.get("sentiment_score", 0.0) if pd.notna(r.get("sentiment_score", np.nan)) else 0.0),
             "turn_index_norm": float(r.get("turn_index", 1)) / max(float(r.get("conv_length", 10)), 1.0),
-            "tier": "Pro",
+            "tier": str(r.get("tier", "Pro")),
             "escalation_risk": float(r.get("frustration_score", 0.5) if pd.notna(r.get("frustration_score", np.nan)) else 0.5),
         }
         rewards.append(reward_model.score(state, str(r["action_label"])))
@@ -142,7 +151,7 @@ def cql_lite_train(labeled_df: pd.DataFrame, reward_weights_path: Path, bc_check
     gamma = 0.99
     alpha = 1.0
 
-    for _ in range(200):
+    for _ in range(gradient_steps):
         q = model(X_t)
         q_sa = q.gather(1, A_t.unsqueeze(1)).squeeze(1)
         with torch.no_grad():
@@ -183,7 +192,7 @@ def ppo_finetune_stub(cql_checkpoint: Path, out_dir: Path, total_steps: int = 10
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    policy = PolicyNet(obs_dim=4, n_actions=len(ACTION_SPACE_7))
+    policy = PolicyNet(obs_dim=5, n_actions=len(ACTION_SPACE_7))
     policy.load_state_dict(torch.load(cql_checkpoint, map_location="cpu"), strict=False)
 
     env = CustomerSupportPOMDP()
@@ -201,6 +210,7 @@ def ppo_finetune_stub(cql_checkpoint: Path, out_dir: Path, total_steps: int = 10
                     obs["belief_sentiment"],
                     float(obs["turn_index"]) / 12.0,
                     obs["belief_escalation_risk"],
+                    float(TIER_VALUE_WEIGHT.get(str(obs.get("tier", "Pro")), 0.4)),
                 ],
                 dtype=torch.float32,
             ).unsqueeze(0)
@@ -225,17 +235,33 @@ def ppo_finetune_stub(cql_checkpoint: Path, out_dir: Path, total_steps: int = 10
     return result
 
 
-def run_training_pipeline(labeled_df: pd.DataFrame, reward_weights_path: Path, out_dir: Path) -> Dict[str, object]:
+def run_training_pipeline(
+    labeled_df: pd.DataFrame,
+    reward_weights_path: Path,
+    out_dir: Path,
+    bc_epochs: int = 40,
+    cql_steps: int = 200,
+    ppo_steps: int = 500,
+) -> Dict[str, object]:
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    bc = behavior_cloning_train(labeled_df, out_dir / "bc")
+    t0 = time.time()
+    bc = behavior_cloning_train(labeled_df, out_dir / "bc", epochs=bc_epochs)
+    print(f"[training] BC done in {time.time() - t0:.1f}s")
+
+    t1 = time.time()
     cql = cql_lite_train(
         labeled_df,
         reward_weights_path=reward_weights_path,
         bc_checkpoint=Path(bc["bc_checkpoint"]),
         out_dir=out_dir / "cql",
+        gradient_steps=cql_steps,
     )
-    ppo = ppo_finetune_stub(Path(cql["cql_checkpoint"]), out_dir=out_dir / "ppo", total_steps=500)
+    print(f"[training] CQL done in {time.time() - t1:.1f}s")
+
+    t2 = time.time()
+    ppo = ppo_finetune_stub(Path(cql["cql_checkpoint"]), out_dir=out_dir / "ppo", total_steps=ppo_steps)
+    print(f"[training] PPO done in {time.time() - t2:.1f}s")
 
     summary = {"bc": bc, "cql": cql, "ppo": ppo}
     (out_dir / "training_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")

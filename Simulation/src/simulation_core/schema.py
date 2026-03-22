@@ -12,6 +12,10 @@ class TurnRecord:
     text_length: int
     turn_index: int
     conv_length: int
+    tier: Optional[str] = None
+    tier_probs: Optional[Dict[str, float]] = None
+    tier_confidence: Optional[float] = None
+    customer_value_weight: Optional[float] = None
     action_label: Optional[str] = None
     action_confidence: Optional[float] = None
     action_probs: Optional[Dict[str, float]] = None

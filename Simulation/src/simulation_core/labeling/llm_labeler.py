@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-import math
-import re
+import os
 from typing import Dict, List
 
 from simulation_core.config import ACTION_SPACE_8
@@ -11,17 +10,6 @@ try:
     from ollama import chat
 except Exception:  # pragma: no cover - runtime optional
     chat = None
-
-
-KEYWORDS = {
-    "Ask_for_Information": ["could you", "please provide", "order", "account", "can you share"],
-    "Provide_Solution": ["please try", "steps", "fix", "solution", "resolve", "you can"],
-    "Affective_Repair": ["sorry", "apolog", "understand", "frustrat", "thanks for your patience"],
-    "Escalate_to_Human": ["escalat", "human", "specialist", "supervisor", "support team"],
-    "Close_with_Feedback": ["anything else", "happy to help", "thank you", "great day"],
-    "Proactive_Update": ["quick update", "status update", "keeping you posted", "still working"],
-    "Set_Expectation": ["within", "eta", "timeline", "expect", "next steps", "by end of day"],
-}
 
 
 def _normalize_probs(raw: Dict[str, float]) -> Dict[str, float]:
@@ -34,22 +22,29 @@ def _normalize_probs(raw: Dict[str, float]) -> Dict[str, float]:
 
 
 def heuristic_action_probs(text: str) -> Dict[str, float]:
-    lowered = (text or "").lower()
-    scores = {k: 1.0 for k in ACTION_SPACE_8}
-    for label, keys in KEYWORDS.items():
-        for key in keys:
-            if key in lowered or re.search(re.escape(key), lowered):
-                scores[label] += 2.0
+    del text
+    # Keep fallback neutral to avoid brittle keyword rules.
+    base = 1.0 / len(ACTION_SPACE_8)
+    return {k: base for k in ACTION_SPACE_8}
 
-    if len(lowered.strip()) < 5:
-        scores["Unknown"] += 3.0
 
-    return _normalize_probs(scores)
+def _require_llm() -> bool:
+    # Strict by default: production labels should come from the configured LLM.
+    return os.getenv("SIM_REQUIRE_LLM", "1").strip().lower() not in {"0", "false", "no"}
+
+
+def _raise_llm_unavailable() -> None:
+    raise RuntimeError(
+        "LLM labeling is required but unavailable. Ensure Ollama is installed/running and the model is pulled. "
+        "Set SIM_REQUIRE_LLM=0 only for debugging fallback behavior."
+    )
 
 
 def label_action_with_llm(text: str, model: str = "qwen3:4b") -> Dict[str, object]:
     heuristic = heuristic_action_probs(text)
     if chat is None:
+        if _require_llm():
+            _raise_llm_unavailable()
         label = max(heuristic, key=heuristic.get)
         return {
             "action_label": label,
@@ -88,6 +83,8 @@ def label_action_with_llm(text: str, model: str = "qwen3:4b") -> Dict[str, objec
             "annotator_confidence": confidence,
         }
     except Exception:
+        if _require_llm():
+            raise
         label = max(heuristic, key=heuristic.get)
         return {
             "action_label": label,
@@ -119,6 +116,8 @@ def score_customer_state_with_llm(text: str, model: str = "qwen3:4b") -> Dict[st
     frustration = max(0.0, min(1.0, frustration))
 
     if chat is None:
+        if _require_llm():
+            _raise_llm_unavailable()
         return {
             "sentiment_score": sentiment,
             "sentiment_confidence": 0.55,
@@ -158,6 +157,8 @@ def score_customer_state_with_llm(text: str, model: str = "qwen3:4b") -> Dict[st
         out["annotator_confidence"] = min(out["sentiment_confidence"], out["frustration_confidence"])
         return out
     except Exception:
+        if _require_llm():
+            raise
         return {
             "sentiment_score": sentiment,
             "sentiment_confidence": 0.0,

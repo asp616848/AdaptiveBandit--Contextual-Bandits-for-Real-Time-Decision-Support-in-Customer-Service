@@ -7,7 +7,7 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 import pandas as pd
 
-from simulation_core.config import ACTION_SPACE_7, DEFAULT_TIER_DISTRIBUTION, TIER_VALUES
+from simulation_core.config import ACTION_SPACE_7, DEFAULT_TIER_DISTRIBUTION, TIER_VALUE_WEIGHT, TIER_VALUES
 
 try:
     import torch
@@ -198,10 +198,11 @@ class CustomerSupportPOMDP:
         done = self.resolved or self.escalated or self.turn_index >= self.max_turns
 
         reward = 1.5 * (self.belief.sentiment) - 1.2 * (self.belief.frustration)
+        tier_weight = float(TIER_VALUE_WEIGHT.get(self.tier, 0.4))
         if self.resolved:
-            reward += 4.0
+            reward += 3.0 + 2.0 * tier_weight
         if self.escalated:
-            reward -= 2.0
+            reward -= 1.5 + 2.5 * tier_weight
 
         info = {
             "resolved": self.resolved,

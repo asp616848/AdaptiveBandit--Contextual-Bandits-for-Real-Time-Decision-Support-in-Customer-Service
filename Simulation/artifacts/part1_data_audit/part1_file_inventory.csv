@@ -1,5 +1,0 @@
-dataset_group,file_path,file_name,size_mb,n_rows,n_columns
-openassistant,B:\College\RL\AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service\OpenAssistant Conversations Dataset\oasst1-train.csv,oasst1-train.csv,119.77,771472,18
-openassistant,B:\College\RL\AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service\OpenAssistant Conversations Dataset\oasst1-val.csv,oasst1-val.csv,6.27,41102,18
-twitter,B:\College\RL\AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service\twitter\sample.csv,sample.csv,0.02,99,7
-twitter,B:\College\RL\AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service\twitter\twcs\twcs.csv,twcs.csv,492.58,3003124,7
