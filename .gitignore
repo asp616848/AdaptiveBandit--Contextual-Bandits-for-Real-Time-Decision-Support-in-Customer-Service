@@ -6,3 +6,4 @@ current report.txt
 datasets/
 *.csv
 *.parquet
+Simulation/artifacts/part2_action_labeling/part2_llm_label_prompt_template.json
