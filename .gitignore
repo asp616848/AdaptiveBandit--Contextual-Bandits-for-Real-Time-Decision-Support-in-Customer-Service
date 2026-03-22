@@ -3,3 +3,6 @@
 /Ubuntu
 /Submissions_AML
 current report.txt
+datasets/
+*.csv
+*.parquet

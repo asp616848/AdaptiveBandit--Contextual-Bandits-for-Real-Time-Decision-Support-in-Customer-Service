@@ -7,7 +7,9 @@ features. Supports both:
   - MDP mode: multi-turn dialogue (ask, solve, escalate, close)
 """
 
+import json
 import numpy as np
+from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 import sys, os
@@ -17,6 +19,7 @@ from config import (
     BANDIT_ACTIONS, MDP_ACTIONS, NUM_BANDIT_ACTIONS, NUM_MDP_ACTIONS,
     MAX_TURNS, K_HUMAN_SLOTS_PER_HOUR,
     REWARD_WEIGHTS, BOT_INFERENCE_COST,
+    OUTPUT_DIR,
 )
 from data.feature_engineer import (
     build_feature_vector, assign_simulated_tier,
@@ -41,6 +44,7 @@ class CustomerSupportEnv:
     def __init__(self, mode: str = "bandit",
                  conversations: Optional[List[Dict]] = None,
                  capacity_k: int = K_HUMAN_SLOTS_PER_HOUR,
+                 calibration_path: Optional[str] = None,
                  seed: int = 42):
         """
         Parameters
@@ -62,6 +66,13 @@ class CustomerSupportEnv:
         self.mode = mode
         self.capacity_k = capacity_k
         self.rng = np.random.RandomState(seed)
+
+        # Load Task 1 calibration artifact (if available) so learned priors
+        # are used directly at runtime.
+        self.calibration_path = calibration_path or str(Path(OUTPUT_DIR) / "task1_calibration.json")
+        self.task1_calibration = self._load_task1_calibration(self.calibration_path)
+        self.task1_params = self.task1_calibration.get("task1_parameters", {})
+        self.tier_prior = self.task1_params.get("tier_prior", {})
 
         # Load or create conversations
         if conversations is not None:
@@ -112,7 +123,9 @@ class CustomerSupportEnv:
         texts = conv.get('texts', ['Hello, I need help.'])
         self.current_texts_seen = [texts[0]] if texts else ['']
 
-        tier = conv.get('tier', assign_simulated_tier(self.rng))
+        tier = conv.get('tier')
+        if tier not in TIER_NAMES:
+            tier = self._sample_tier()
         self.current_tier = tier
 
         return self._get_observation()
@@ -348,7 +361,7 @@ class CustomerSupportEnv:
 
         for i in range(n):
             is_hard = self.rng.random() < 0.35
-            tier = assign_simulated_tier(self.rng)
+            tier = self._sample_tier()
 
             if is_hard:
                 base = self.rng.choice(templates_hard)
@@ -380,6 +393,32 @@ class CustomerSupportEnv:
             })
 
         return conversations
+
+    def _load_task1_calibration(self, path: str) -> Dict:
+        """Load Task 1 calibration artifact if present; otherwise return empty."""
+        try:
+            p = Path(path)
+            if not p.exists():
+                return {}
+            with p.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict):
+                return data
+            return {}
+        except Exception:
+            # Environment should remain usable even if artifact is malformed.
+            return {}
+
+    def _sample_tier(self) -> str:
+        """Sample tier from calibrated prior when available, else fallback."""
+        if self.tier_prior:
+            probs = np.asarray([float(self.tier_prior.get(t, 0.0)) for t in TIER_NAMES], dtype=np.float64)
+            total = probs.sum()
+            if total > 0:
+                probs = probs / total
+                idx = int(self.rng.choice(len(TIER_NAMES), p=probs))
+                return TIER_NAMES[idx]
+        return assign_simulated_tier(self.rng)
 
     def get_capacity_info(self) -> Dict:
         """Return capacity utilization information."""

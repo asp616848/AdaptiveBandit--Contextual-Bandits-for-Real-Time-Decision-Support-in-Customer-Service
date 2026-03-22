@@ -6,6 +6,7 @@ All monetary values in INR (Indian Rupees).
 """
 
 import numpy as np
+from pathlib import Path
 
 # ═══════════════════════════════════════════════════════════
 # Tier Economics (per-user per-month, INR)
@@ -159,15 +160,17 @@ TRAINING_CONFIG = {
 # Data Paths
 # ═══════════════════════════════════════════════════════════
 
-BASE_DIR = r'B:\College\RL\AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service'
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATASET_ROOT = REPO_ROOT / "datasets"
+CUSTOMER_SUPPORT_BANDIT_ROOT = Path(__file__).resolve().parent
 
 DATA_PATHS = {
-    "twitter": f'{BASE_DIR}\\twitter\\twcs\\twcs.csv',
-    "openassistant_train": f'{BASE_DIR}\\OpenAssistant Conversations Dataset\\train.parquet',
-    "openassistant_val": f'{BASE_DIR}\\OpenAssistant Conversations Dataset\\valid.parquet',
-    "openassistant_train_csv": f'{BASE_DIR}\\OpenAssistant Conversations Dataset\\oasst1-train.csv',
-    "openassistant_val_csv": f'{BASE_DIR}\\OpenAssistant Conversations Dataset\\oasst1-val.csv',
+    "twitter": str(DATASET_ROOT / "twitter" / "twcs.csv"),
+    "openassistant_train": str(DATASET_ROOT / "openassistant" / "train.parquet"),
+    "openassistant_val": str(DATASET_ROOT / "openassistant" / "valid.parquet"),
+    "openassistant_train_csv": str(DATASET_ROOT / "openassistant" / "oasst1-train.csv"),
+    "openassistant_val_csv": str(DATASET_ROOT / "openassistant" / "oasst1-val.csv"),
 }
 
-OUTPUT_DIR = f'{BASE_DIR}\\CustomerSupportBandit\\outputs'
-WEIGHTS_DIR = f'{BASE_DIR}\\CustomerSupportBandit\\weights'
+OUTPUT_DIR = str(CUSTOMER_SUPPORT_BANDIT_ROOT / "outputs")
+WEIGHTS_DIR = str(CUSTOMER_SUPPORT_BANDIT_ROOT / "weights")
