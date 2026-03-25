@@ -12,3 +12,7 @@ current report.txt
 =======
 /Simulation/artifacts
 >>>>>>> 48a79ed639df2b550b2af01a04bf54864cfae3d4
+
+# Ignore statically generated Offline RL CSV datasets
+/New_Approach/offline_dataset_*.csv
+/New_Approach/nlp_offline_dataset_*.csv
