@@ -1,0 +1,1390 @@
+{
+  "recover_username": {
+    "lumo_label": "account_login_help",
+    "display_name": "Account Login Help",
+    "query_expansion": "login account access forgotten email workspace URL sign in cannot log in",
+    "primary_policy_sections": [
+      "4.3 Password Policies",
+      "4.1 Two-Factor Authentication"
+    ],
+    "variants": [
+      "forgotten which email address was used to sign up",
+      "wrong workspace URL — bookmarked old URL that no longer works",
+      "email address changed since original account creation",
+      "multiple Lumo accounts causing confusion about which one to use"
+    ]
+  },
+  "recover_password": {
+    "lumo_label": "password_reset",
+    "display_name": "Password Reset",
+    "query_expansion": "password reset email not received magic link SSO login credentials forgot password",
+    "primary_policy_sections": [
+      "4.3 Password Policies",
+      "4.2 Single Sign-On"
+    ],
+    "variants": [
+      "password reset email not arriving in inbox or spam folder",
+      "organization uses Okta SSO so password reset must go through identity provider not Lumo",
+      "magic link arrived but expired before customer clicked it (30 minute window)",
+      "corporate email security filter is blocking magic links from Lumo",
+      "customer has no Lumo password because they always signed in via Google SSO"
+    ]
+  },
+  "reset_2fa": {
+    "lumo_label": "two_factor_auth_locked",
+    "display_name": "2FA Locked Out",
+    "query_expansion": "two factor authentication 2FA locked out authenticator app SMS phone lost new device verification code",
+    "primary_policy_sections": [
+      "4.1 Two-Factor Authentication"
+    ],
+    "variants": [
+      "lost phone that had Google Authenticator installed — cannot generate codes",
+      "got a new phone and authenticator app did not transfer to new device",
+      "SMS 2FA codes not being received — possible carrier or country issue",
+      "workspace admin locked out of their own 2FA with no backup admin available",
+      "company enforcing org-wide 2FA but member cannot set it up on their device"
+    ]
+  },
+  "manage_pay_bill": {
+    "lumo_label": "billing_charge_question",
+    "display_name": "Billing Charge Question",
+    "query_expansion": "billing charge invoice unexpected amount what was I charged for seats renewal monthly annual",
+    "primary_policy_sections": [
+      "2.1 Upgrades",
+      "2.3 Seat Count Changes",
+      "3.2 Failed Payments",
+      "3.3 Invoice & Receipt Requests"
+    ],
+    "variants": [
+      "unexpected charge appeared on credit card statement — not sure what it is for",
+      "amount charged is higher than expected this month",
+      "annual renewal processed and customer forgot they were on annual billing",
+      "mid-month charge appeared after an admin added seats to the workspace",
+      "charge on company card but employee is not sure which workspace it belongs to"
+    ]
+  },
+  "manage_dispute_bill": {
+    "lumo_label": "billing_dispute",
+    "display_name": "Billing Dispute",
+    "query_expansion": "billing dispute overcharged wrong amount refund credit incorrect invoice",
+    "primary_policy_sections": [
+      "1.1 Standard Refund Window",
+      "1.2 Courtesy Refunds",
+      "1.3 Duplicate Charges"
+    ],
+    "variants": [
+      "still being charged Business+ after downgrading to Pro last month",
+      "charged for seats that were deactivated and removed",
+      "proration after mid-cycle upgrade seems incorrect",
+      "upgrade was never authorized but was charged anyway",
+      "two identical charges for the same workspace on the same date"
+    ]
+  },
+  "manage_cancel": {
+    "lumo_label": "cancel_subscription",
+    "display_name": "Cancel Subscription",
+    "query_expansion": "cancel subscription plan end account close workspace stop paying discontinue",
+    "primary_policy_sections": [
+      "2.4 Cancellations",
+      "5.1 Data Retention"
+    ],
+    "variants": [
+      "too expensive — want to cancel Pro plan and revert to Free",
+      "switching to Microsoft Teams because it is included in Office 365 subscription",
+      "company shutting down operations — need to export data before cancelling",
+      "team stopped using Lumo and moved to a different tool months ago",
+      "want to cancel but keep workspace data accessible for at least 3 months"
+    ]
+  },
+  "manage_downgrade": {
+    "lumo_label": "downgrade_plan",
+    "display_name": "Downgrade Plan",
+    "query_expansion": "downgrade plan lower tier reduce cost Business+ to Pro Pro to Free reduce seats",
+    "primary_policy_sections": [
+      "2.2 Downgrades"
+    ],
+    "variants": [
+      "upgraded to Business+ for SAML SSO but IT is using Google SSO instead — want to go back to Pro",
+      "cutting costs after company funding round fell through — want to go from Pro to Free",
+      "reducing team size significantly — want to reduce paid seat count",
+      "on annual plan — want to switch to monthly billing when downgrading",
+      "wants to downgrade but is worried about losing access to message history"
+    ]
+  },
+  "manage_upgrade": {
+    "lumo_label": "upgrade_plan",
+    "display_name": "Upgrade Plan",
+    "query_expansion": "upgrade plan higher tier Business+ SSO compliance SCIM AI features more seats",
+    "primary_policy_sections": [
+      "2.1 Upgrades",
+      "3.3 Invoice & Receipt Requests"
+    ],
+    "variants": [
+      "IT team now requires SAML SSO via Okta — need to upgrade to Business+",
+      "hit the 90-day message history limit on Free — want to upgrade to Pro",
+      "legal team needs compliance export of all DMs for a regulatory audit — need Business+",
+      "want advanced AI features like daily recaps and AI-powered search",
+      "growing team — need to add 25 more paid seats to existing workspace"
+    ]
+  },
+  "manage_change_address": {
+    "lumo_label": "update_billing_address",
+    "display_name": "Update Billing Address",
+    "query_expansion": "billing address update invoice address company moved tax jurisdiction",
+    "primary_policy_sections": [
+      "3.3 Invoice & Receipt Requests",
+      "3.4 Tax Policies"
+    ],
+    "variants": [
+      "company relocated from one city to another — invoices need new address for tax purposes",
+      "invoice still showing old office address after 3 months",
+      "moved from one US state to another — tax rate on invoices should change",
+      "company was acquired — billing entity name and address both need updating"
+    ]
+  },
+  "manage_change_name": {
+    "lumo_label": "update_account_name",
+    "display_name": "Update Workspace Name",
+    "query_expansion": "workspace name change company rebrand URL update display name rename",
+    "primary_policy_sections": [
+      "7.2 Workspace Name and URL Changes"
+    ],
+    "variants": [
+      "company rebranded completely — need to change both workspace display name and URL",
+      "want to change workspace display name only, not the URL",
+      "changed workspace URL last week and now desktop app bookmarks are broken for 30 team members",
+      "want to change workspace URL but worried it will break Jira and Zoom integrations"
+    ]
+  },
+  "manage_change_phone": {
+    "lumo_label": "update_contact_info",
+    "display_name": "Update Contact Information",
+    "query_expansion": "phone number update 2FA SMS contact information change new number",
+    "primary_policy_sections": [
+      "4.1 Two-Factor Authentication"
+    ],
+    "variants": [
+      "changed phone number and SMS 2FA codes are going to the old number",
+      "need to update the admin contact phone number on the account",
+      "lost access to old phone number entirely — need to switch 2FA to an authenticator app"
+    ]
+  },
+  "manage_payment_method": {
+    "lumo_label": "update_payment_method",
+    "display_name": "Update Payment Method",
+    "query_expansion": "payment method credit card update expired card failed payment billing new card",
+    "primary_policy_sections": [
+      "3.1 Accepted Payment Methods",
+      "3.2 Failed Payments"
+    ],
+    "variants": [
+      "credit card on file expired last month — need to update to new card before workspace downgrades",
+      "received a failed payment notice — want to update card details before the retry",
+      "company wants to switch from credit card to annual invoice billing",
+      "company issued a new corporate card with a different card number"
+    ]
+  },
+  "manage_create": {
+    "lumo_label": "new_workspace_setup",
+    "display_name": "New Workspace Setup",
+    "query_expansion": "new workspace setup create account onboarding getting started first time configure",
+    "primary_policy_sections": [
+      "2.2 Pro Plan",
+      "4. User Roles & Guest Policy"
+    ],
+    "variants": [
+      "setting up Lumo for the first time for a 15-person product team",
+      "already have a personal Lumo account but need a separate company workspace",
+      "migrating a team from Microsoft Teams and setting up Lumo from scratch",
+      "setting up a client-facing workspace using Lumo Connect for external collaboration"
+    ]
+  },
+  "manage_extension": {
+    "lumo_label": "trial_extension_request",
+    "display_name": "Trial Extension Request",
+    "query_expansion": "trial extension Pro trial ending more time evaluation period not ready to purchase",
+    "primary_policy_sections": [
+      "2.5 Trial Period Policies"
+    ],
+    "variants": [
+      "90-day Pro trial ending in 3 days but budget approval from finance is still pending",
+      "team has not fully onboarded yet — need 2 more weeks to properly evaluate",
+      "procurement process is taking longer than expected — trial about to expire",
+      "want to extend trial specifically to test Business+ features before committing to annual"
+    ]
+  },
+  "refund_initiate": {
+    "lumo_label": "refund_request",
+    "display_name": "Refund Request",
+    "query_expansion": "refund money back charge first month cancel payment accidental purchase",
+    "primary_policy_sections": [
+      "1.1 Standard Refund Window",
+      "1.2 Courtesy Refunds"
+    ],
+    "variants": [
+      "first charge within 30 days — wants full refund on Pro subscription",
+      "accidentally created a new paid workspace instead of joining company's existing one",
+      "upgraded to Business+ but immediately realized they don't need SAML SSO",
+      "on annual plan outside the 30-day window — appealing for an exception",
+      "employee created workspace on company card without authorization from IT"
+    ]
+  },
+  "refund_status": {
+    "lumo_label": "refund_status_check",
+    "display_name": "Refund Status Check",
+    "query_expansion": "refund status pending waiting credit card statement not showing processing timeline",
+    "primary_policy_sections": [
+      "1.1 Standard Refund Window"
+    ],
+    "variants": [
+      "submitted refund request 6 days ago — has not appeared on credit card statement yet",
+      "received refund confirmation email but bank shows no incoming credit",
+      "refund amount on confirmation email is different from what was expected",
+      "refund was supposed to go to a card that has since been cancelled"
+    ]
+  },
+  "refund_update": {
+    "lumo_label": "refund_follow_up",
+    "display_name": "Refund Follow-Up",
+    "query_expansion": "refund overdue not received follow up escalate bank 10 days 14 days",
+    "primary_policy_sections": [
+      "1.1 Standard Refund Window",
+      "1.6 Refund Method"
+    ],
+    "variants": [
+      "refund was processed 12 days ago but still has not appeared on the statement",
+      "bank says they have no record of any incoming refund from Lumo",
+      "partial refund was received but customer expected a full refund",
+      "refund went to a card that is no longer active — needs to be re-issued"
+    ]
+  },
+  "slow_speed": {
+    "lumo_label": "performance_issue",
+    "display_name": "Performance Issue",
+    "query_expansion": "slow loading performance lag timeout not responding crashing speed app frozen",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "Lumo desktop app taking 30+ seconds to switch between channels — started 2 days ago",
+      "search spinning indefinitely and never returning results",
+      "app crashing on startup on macOS after a recent system update",
+      "huddle audio has a 3-4 second delay making real-time conversation impossible",
+      "file uploads getting stuck at 0% and never completing"
+    ]
+  },
+  "search_results": {
+    "lumo_label": "search_not_working",
+    "display_name": "Search Not Working",
+    "query_expansion": "search results missing messages not found search broken no results history",
+    "primary_policy_sections": [
+      "3.8 Search"
+    ],
+    "variants": [
+      "searching for a specific message from 6 months ago — nothing coming up despite being on Business+",
+      "search is returning results from archived channels that should not be visible",
+      "file search returns zero results even though files were definitely shared in that channel",
+      "date range filter on search is not working correctly — ignoring the from/to dates",
+      "Free plan customer expecting to search full message history (misunderstanding 90-day limit)"
+    ]
+  },
+  "out_of_stock_general": {
+    "lumo_label": "feature_not_in_plan",
+    "display_name": "Feature Not Available on Current Plan",
+    "query_expansion": "feature not available plan upgrade required cannot access restricted Business+ Enterprise setting missing",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "trying to configure SAML SSO via Okta but the option is not visible in settings — on Pro plan",
+      "compliance export tool only shows public channels — need all channels including DMs",
+      "SCIM user provisioning option is missing from admin settings on Pro plan",
+      "advanced AI search not available — wants to know which plan includes it",
+      "trying to set a custom message retention policy — option not appearing in admin settings"
+    ]
+  },
+  "out_of_stock_one_item": {
+    "lumo_label": "integration_approval_issue",
+    "display_name": "Integration Access Issue",
+    "query_expansion": "app integration cannot install approval required admin blocked app directory permission denied",
+    "primary_policy_sections": [
+      "6.1 App Installation & Approval"
+    ],
+    "variants": [
+      "trying to install Jira integration but seeing Request to Install instead of Add to Lumo",
+      "admin has enabled app approval — member submitted request but heard nothing back in 3 days",
+      "Free plan workspace at 10-app limit — cannot add the 11th app without removing one",
+      "specific app was removed from the App Directory — can no longer find or reinstall it",
+      "integration requires a higher plan tier to unlock its full functionality"
+    ]
+  },
+  "missing": {
+    "lumo_label": "missing_invoice",
+    "display_name": "Missing Invoice",
+    "query_expansion": "invoice receipt missing not received billing history tax document finance audit",
+    "primary_policy_sections": [
+      "3.3 Invoice & Receipt Requests"
+    ],
+    "variants": [
+      "need invoice for a specific month but it was sent to an old billing email address",
+      "finance team needs all invoices from the past year for an annual audit",
+      "invoice still showing company's old name after a rebrand 2 months ago",
+      "need invoice with a specific VAT number format for European tax compliance",
+      "download button on the billing page returns an error and will not generate PDF"
+    ]
+  },
+  "bad_price_competitor": {
+    "lumo_label": "competitor_price_comparison",
+    "display_name": "Competitor Price Comparison",
+    "query_expansion": "competitor price Teams Discord cheaper alternative justify cost value retention switching",
+    "primary_policy_sections": [
+      "10. Promotional & Discount Policies"
+    ],
+    "variants": [
+      "Microsoft Teams is free with their Office 365 subscription — why pay for Lumo",
+      "Discord is much cheaper per month for a small technical team",
+      "Google Chat is already included in their Google Workspace subscription at no extra cost",
+      "per-seat pricing is becoming unsustainable as the team has grown past 60 people"
+    ]
+  },
+  "bad_price_yesterday": {
+    "lumo_label": "pricing_changed",
+    "display_name": "Price Increased",
+    "query_expansion": "price increase changed higher charge renewal more expensive plan cost went up surprise",
+    "primary_policy_sections": [
+      "10. Promotional & Discount Policies",
+      "2.2 Downgrades"
+    ],
+    "variants": [
+      "Business+ annual renewal processed at $15/user instead of previous $12.50/user rate",
+      "AI add-on was discontinued and bundled into a more expensive plan tier without clear notice",
+      "annual renewal was charged at the new price with no advance warning email sent",
+      "total monthly bill jumped significantly after price restructuring with no opt-out option"
+    ]
+  },
+  "promo_code_invalid": {
+    "lumo_label": "promo_code_not_working",
+    "display_name": "Promo Code Not Working",
+    "query_expansion": "promo code discount not working invalid error coupon code rejected checkout",
+    "primary_policy_sections": [
+      "10.2 Promotional Codes"
+    ],
+    "variants": [
+      "received a code from a webinar but checkout says the code is invalid",
+      "code says it has already been used but customer insists they have never used it",
+      "code appears to work for monthly billing but customer is trying to apply it to annual",
+      "code was given to the customer for new workspaces only but they are an existing customer"
+    ]
+  },
+  "promo_code_out_of_date": {
+    "lumo_label": "expired_promo_code",
+    "display_name": "Expired Promo Code",
+    "query_expansion": "expired promo code discount old promotion no longer valid past date campaign ended",
+    "primary_policy_sections": [
+      "10.2 Promotional Codes"
+    ],
+    "variants": [
+      "code from a conference 18 months ago is no longer valid",
+      "referral code from a discontinued partner program is being rejected",
+      "code was valid only for a limited regional promotion that has since ended",
+      "code expired last month — customer just found it in an old email"
+    ]
+  },
+  "credit_card": {
+    "lumo_label": "payment_failed",
+    "display_name": "Payment Failed",
+    "query_expansion": "credit card declined failed payment error card not going through billing charge rejected",
+    "primary_policy_sections": [
+      "3.2 Failed Payments",
+      "3.1 Accepted Payment Methods"
+    ],
+    "variants": [
+      "credit card expired — received failed payment notice and worried about workspace being downgraded",
+      "bank blocked the Lumo charge as suspicious even though the card is valid and active",
+      "updated card details in Lumo settings but still seeing a failed payment notification",
+      "3D Secure verification popup is appearing and failing — cannot complete the payment",
+      "corporate purchasing card requires a purchase order number for all SaaS charges"
+    ]
+  },
+  "mistimed_billing_never_bought": {
+    "lumo_label": "charged_without_account",
+    "display_name": "Charged Without Account",
+    "query_expansion": "charged no account unauthorized charge never signed up did not create workspace fraud",
+    "primary_policy_sections": [
+      "1.2 Courtesy Refunds",
+      "1.3 Duplicate Charges"
+    ],
+    "variants": [
+      "company credit card charged by Lumo but the organization has no Lumo account",
+      "employee created a paid workspace using company card without IT authorization",
+      "charge appeared on personal card and the person does not recognize it at all",
+      "former employee created a workspace with company email and card before leaving"
+    ]
+  },
+  "mistimed_billing_already_returned": {
+    "lumo_label": "duplicate_charge",
+    "display_name": "Duplicate Charge",
+    "query_expansion": "charged twice duplicate same amount billed twice double charge two identical charges",
+    "primary_policy_sections": [
+      "1.3 Duplicate Charges"
+    ],
+    "variants": [
+      "bank statement shows two identical charges from Lumo on exactly the same date",
+      "upgrade proration charge and regular monthly charge are appearing as duplicates",
+      "annual renewal was processed twice on the same day",
+      "customer only authorized one payment but bank shows two Lumo charges this month"
+    ]
+  },
+  "return_size": {
+    "lumo_label": "notification_overload",
+    "display_name": "Notification Issue",
+    "query_expansion": "notifications too many overloaded email spam channel notifications preferences mute",
+    "primary_policy_sections": [
+      "3.9 Notifications"
+    ],
+    "variants": [
+      "getting email notifications for every single message in a busy channel despite setting mentions-only",
+      "both mobile and desktop app are notifying simultaneously for the same message",
+      "getting notifications from a channel that was muted weeks ago",
+      "notifications stopped working completely on the mobile app after an iOS update"
+    ]
+  },
+  "return_color": {
+    "lumo_label": "message_delivery_issue",
+    "display_name": "Message Delivery Issue",
+    "query_expansion": "message not delivered not received sent but not seen DM not working delivery failed",
+    "primary_policy_sections": [
+      "3.2 Direct Messages"
+    ],
+    "variants": [
+      "sent an urgent DM to a colleague and they say they never received it",
+      "messages are showing as sent but recipient in another organization via Lumo Connect is not seeing them",
+      "DM sent to a user who was recently deactivated — message shows sent but bounced",
+      "messages in a shared channel are appearing out of order or with significant delay"
+    ]
+  },
+  "return_stain": {
+    "lumo_label": "data_missing",
+    "display_name": "Data or Message History Missing",
+    "query_expansion": "messages disappeared missing history gone channel empty downgrade Free plan data lost",
+    "primary_policy_sections": [
+      "5.1 Data Retention",
+      "8A Message History Disappeared After Downgrade"
+    ],
+    "variants": [
+      "downgraded from Pro to Free last month and now cannot see messages from before the downgrade",
+      "files that were shared in a channel 6 months ago have disappeared entirely",
+      "an entire channel appears empty after an admin accidentally archived and unarchived it",
+      "messages from a specific date range are missing from a channel — not sure if deleted"
+    ]
+  },
+  "status": {
+    "lumo_label": "general_account_status",
+    "display_name": "Account Status Question",
+    "query_expansion": "account status plan details what plan am I on billing cycle renewal date seats",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "3.3 Invoice & Receipt Requests"
+    ],
+    "variants": [
+      "wants to know exactly what plan they are on and what it includes",
+      "asking when their next billing date is and for how much",
+      "wants to know how many paid seats are on the account currently",
+      "asking whether they are on annual or monthly billing"
+    ]
+  },
+  "status_due_amount": {
+    "lumo_label": "billing_amount_question",
+    "display_name": "Billing Amount Question",
+    "query_expansion": "how much will I be charged next billing amount due upcoming charge calculation seats",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "2.3 Seat Count Changes"
+    ],
+    "variants": [
+      "wants to know the exact amount they will be charged at next renewal",
+      "added 5 new seats last week and wants to know how much more they will pay",
+      "switching from monthly to annual — wants exact calculation of annual savings",
+      "asking why their bill is different from what they calculated themselves"
+    ]
+  },
+  "status_due_date": {
+    "lumo_label": "billing_date_question",
+    "display_name": "Billing Date Question",
+    "query_expansion": "billing date next charge when renewal date billing cycle monthly annual",
+    "primary_policy_sections": [
+      "2. Plans & Pricing"
+    ],
+    "variants": [
+      "wants to know the exact date of their next billing charge",
+      "just upgraded — wants to know when the next full charge will happen",
+      "asking whether a downgrade they just made will affect this month's charge or next month's",
+      "wants to change their billing date to align with the company's monthly financial cycle"
+    ]
+  },
+  "status_delivery_time": {
+    "lumo_label": "feature_delivery_eta",
+    "display_name": "Feature Request or ETA",
+    "query_expansion": "feature request when will feature be available roadmap ETA timeline new feature",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "asking when a specific feature they need will be available in Lumo",
+      "submitted a feature request months ago and wants to know the status",
+      "asking whether a particular integration is on the product roadmap",
+      "wants to know if Business+ will include a specific capability they need"
+    ]
+  },
+  "status_quantity": {
+    "lumo_label": "seat_count_question",
+    "display_name": "Seat Count Question",
+    "query_expansion": "seat count how many seats users members paying for workspace user count",
+    "primary_policy_sections": [
+      "2.3 Seat Count Changes",
+      "4. User Roles & Guest Policy"
+    ],
+    "variants": [
+      "wants to know how many paid seats are currently active on the workspace",
+      "deactivated 8 members last month and wants to confirm the seat count decreased in billing",
+      "asking whether guest users count toward their paid seat count",
+      "wants to audit the member list to identify inactive accounts that are still being billed"
+    ]
+  },
+  "status_payment_method": {
+    "lumo_label": "payment_method_on_file",
+    "display_name": "Payment Method on File",
+    "query_expansion": "what card is on file payment method billing credit card on account details",
+    "primary_policy_sections": [
+      "3.1 Accepted Payment Methods"
+    ],
+    "variants": [
+      "wants to know which credit card is currently associated with their billing account",
+      "company card was replaced and wants to verify the new card details were saved correctly",
+      "asking how to see the last 4 digits of the card currently on file"
+    ]
+  },
+  "status_service_removed": {
+    "lumo_label": "feature_deprecated",
+    "display_name": "Feature Removed or Deprecated",
+    "query_expansion": "feature removed gone deprecated no longer available discontinued AI add-on plan change",
+    "primary_policy_sections": [
+      "3.5 Lumo AI"
+    ],
+    "variants": [
+      "the Lumo AI add-on disappeared from their account after their subscription renewed",
+      "an integration they relied on was removed from the App Directory without notice",
+      "a Workflow Builder feature they were using stopped working after a platform update",
+      "message formatting option they used regularly is no longer available in the editor"
+    ]
+  },
+  "status_service_added": {
+    "lumo_label": "new_feature_activated",
+    "display_name": "New Feature Appeared",
+    "query_expansion": "new feature appeared activated automatically AI button unexpected change workspace",
+    "primary_policy_sections": [
+      "3.5 Lumo AI",
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "Lumo AI button appeared in all channels after plan renewal — did not enable this",
+      "admin added a new app that is now showing notifications for all members unexpectedly",
+      "Salesforce integration appeared automatically after the organization connected Salesforce",
+      "new Workflow Builder automation started running that nobody remembers setting up"
+    ]
+  },
+  "status_mystery_fee": {
+    "lumo_label": "unexplained_charge",
+    "display_name": "Unexplained Invoice Line Item",
+    "query_expansion": "mystery fee unknown charge line item invoice unexplained what is this charge Lumo Connect",
+    "primary_policy_sections": [
+      "3.3 Invoice & Receipt Requests",
+      "3.7 Lumo Connect"
+    ],
+    "variants": [
+      "invoice has a Lumo Connect line item they do not recognize — team does not use Connect knowingly",
+      "tax line item on invoice is higher than expected given the billing address",
+      "small $6-8 monthly charge that appears separately from the main subscription charge",
+      "charge described as premium app subscription that nobody remembers enabling"
+    ]
+  },
+  "status_credit_missing": {
+    "lumo_label": "credit_not_applied",
+    "display_name": "Credit Not Applied",
+    "query_expansion": "credit missing not applied promotional credit referral credit account balance discount",
+    "primary_policy_sections": [
+      "1.1 Standard Refund Window",
+      "10.3 Referral Credits"
+    ],
+    "variants": [
+      "downgraded from Business+ to Pro and expected a prorated credit that has not appeared",
+      "referred a colleague's company to Lumo and should have received a referral credit — not showing",
+      "promotional credit from a campaign was supposed to apply to this month's invoice but did not",
+      "overpayment from a billing correction was supposed to become an account credit but is missing"
+    ]
+  },
+  "status_shipping_question": {
+    "lumo_label": "data_export_question",
+    "display_name": "Data Export Question",
+    "query_expansion": "export data messages download how to export compliance export JSON format archive",
+    "primary_policy_sections": [
+      "5.2 Export Capabilities",
+      "8B How to Export Data for Compliance"
+    ],
+    "variants": [
+      "needs to export all workspace messages for a legal discovery request — on Business+",
+      "asking what format the export comes in and whether their eDiscovery tool can read it",
+      "export job has been running for over 24 hours and has not completed",
+      "export does not include private channel messages — customer expected full export",
+      "asking whether deleted messages are included in the compliance export"
+    ]
+  },
+  "membership_1": {
+    "lumo_label": "feature_access_question",
+    "display_name": "Feature Access Question",
+    "query_expansion": "feature access cannot access expected feature plan include setting missing admin",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "on Pro plan and cannot find the AI search feature anywhere in the app",
+      "admin trying to set up message retention policies but the setting is not visible",
+      "member expecting to export DMs for compliance but only sees public channel option",
+      "trying to enable 2FA enforcement org-wide but the toggle is greyed out on Pro"
+    ]
+  },
+  "membership_2": {
+    "lumo_label": "feature_access_question",
+    "display_name": "Feature Access Question",
+    "query_expansion": "feature access cannot access expected feature plan include setting missing admin",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "Business+ admin trying to configure SCIM with Okta but provisioning tab is not appearing",
+      "thought advanced AI features were included in Pro but daily recaps are not showing",
+      "admin analytics dashboard shows no data despite workspace having 40 active members",
+      "SSO configuration page shows SAML option greyed out despite being on Business+"
+    ]
+  },
+  "membership_3": {
+    "lumo_label": "feature_access_question",
+    "display_name": "Feature Access Question",
+    "query_expansion": "feature access plan include setting missing admin permission workspace",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "Free plan user trying to start a group video call — only 1:1 is available",
+      "Pro plan user trying to access compliance export and being told to upgrade to Business+",
+      "member trying to install an app but getting a message that the workspace limit is reached",
+      "expecting Workflow Builder to have conditional branching but it only shows basic flows"
+    ]
+  },
+  "membership_4": {
+    "lumo_label": "feature_access_question",
+    "display_name": "Feature Access Question",
+    "query_expansion": "feature access plan include setting missing permission upgrade required",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "Enterprise Grid customer asking about data residency configuration for EU compliance",
+      "asking whether legal hold is available on Business+ or only Enterprise Grid",
+      "trying to connect two separate company workspaces under one billing account",
+      "asking about HIPAA BAA availability for a healthcare startup on Business+"
+    ]
+  },
+  "policy_1": {
+    "lumo_label": "policy_clarification",
+    "display_name": "Policy Clarification",
+    "query_expansion": "policy clarification terms what happens to data cancel refund rules SLA uptime guarantee",
+    "primary_policy_sections": [
+      "1. Billing & Refund Policies",
+      "5. Data & Compliance Policies"
+    ],
+    "variants": [
+      "asking what happens to all workspace data if they cancel — will it be immediately deleted",
+      "wants to understand exactly what the 99.99% SLA means in practical terms",
+      "asking whether Lumo is compliant with their country's data privacy regulations",
+      "wants to know who owns the data in their Lumo workspace — them or Lumo"
+    ]
+  },
+  "policy_2": {
+    "lumo_label": "policy_clarification",
+    "display_name": "Policy Clarification",
+    "query_expansion": "policy data retention GDPR privacy HIPAA compliance BAA healthcare legal",
+    "primary_policy_sections": [
+      "5. Data & Compliance Policies",
+      "8C GDPR Data Request"
+    ],
+    "variants": [
+      "healthcare startup asking whether Lumo will sign a HIPAA BAA and on which plan",
+      "asking about GDPR data subject rights and how an employee can request their data",
+      "legal team asking about data retention after cancellation for regulatory compliance",
+      "financial services firm asking about SOC 2 certification and where to get the report"
+    ]
+  },
+  "policy_3": {
+    "lumo_label": "policy_clarification",
+    "display_name": "Policy Clarification",
+    "query_expansion": "policy guest users external collaboration Lumo Connect shared channel pricing rules",
+    "primary_policy_sections": [
+      "8. Guest User Policies",
+      "6.3 Lumo Connect Policies"
+    ],
+    "variants": [
+      "asking whether single-channel guests count toward the paid seat minimum",
+      "wants to understand the difference between single-channel and multi-channel guests for billing",
+      "asking whether they can invite a client directly to a shared channel without the client paying",
+      "asking what happens to a shared Connect channel if the other organization cancels their plan"
+    ]
+  },
+  "policy_4": {
+    "lumo_label": "policy_clarification",
+    "display_name": "Policy Clarification",
+    "query_expansion": "policy workspace deletion ownership admin transfer member deactivation permanent",
+    "primary_policy_sections": [
+      "7. Workspace Management Policies",
+      "4. User Roles & Guest Policy"
+    ],
+    "variants": [
+      "asking whether deleting a workspace is permanent and reversible",
+      "wants to know if deactivating a member also deletes all their messages",
+      "asking who can transfer workspace ownership and what the process is",
+      "IT admin asking what happens to an employee's Lumo data when they are offboarded"
+    ]
+  },
+  "pricing_1": {
+    "lumo_label": "pricing_question",
+    "display_name": "Pricing Question",
+    "query_expansion": "pricing how much cost per user monthly annual Pro Business+ seats calculate total",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "10. Promotional & Discount Policies"
+    ],
+    "variants": [
+      "wants to know the exact monthly cost for 25 users on Business+ billed annually",
+      "asking whether there is a nonprofit or education discount and how to apply",
+      "wants a side-by-side cost comparison of monthly vs annual billing for their team size",
+      "startup asking about startup discount programs or extended trial options"
+    ]
+  },
+  "pricing_2": {
+    "lumo_label": "pricing_question",
+    "display_name": "Pricing Question",
+    "query_expansion": "pricing seats guest users multi-channel single-channel cost add members",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "8. Guest User Policies"
+    ],
+    "variants": [
+      "asking whether adding 10 guest users will cost extra on their Pro plan",
+      "wants to know the cost difference between adding full members vs multi-channel guests",
+      "asking how the 3-user minimum applies to a 2-person company",
+      "wants to understand how pricing scales when they grow from 20 to 100 users"
+    ]
+  },
+  "pricing_3": {
+    "lumo_label": "pricing_question",
+    "display_name": "Pricing Question",
+    "query_expansion": "pricing Enterprise Grid large organization 500 users custom contract negotiation volume",
+    "primary_policy_sections": [
+      "2.4 Enterprise Grid",
+      "10. Promotional & Discount Policies"
+    ],
+    "variants": [
+      "500-person company asking for an Enterprise Grid quote and what is included",
+      "asking whether multi-year contracts are available and what discounts apply",
+      "large organization asking about volume pricing tiers above 1000 users",
+      "asking whether professional services onboarding is included or priced separately"
+    ]
+  },
+  "pricing_4": {
+    "lumo_label": "pricing_question",
+    "display_name": "Pricing Question",
+    "query_expansion": "pricing add-ons premium support data residency compliance extras additional cost",
+    "primary_policy_sections": [
+      "2. Plans & Pricing"
+    ],
+    "variants": [
+      "asking whether data residency in EU is available on Business+ or only Enterprise Grid",
+      "asking about the cost of professional services for a large onboarding project",
+      "wanting to know if there are any hidden costs or add-ons they should budget for",
+      "asking whether premium 24/7 support can be purchased as an add-on to Business+"
+    ]
+  },
+  "timing_1": {
+    "lumo_label": "billing_cycle_question",
+    "display_name": "Billing Cycle Question",
+    "query_expansion": "billing cycle when charged renewal date prorated mid-month timing effective date",
+    "primary_policy_sections": [
+      "2.1 Upgrades",
+      "2.2 Downgrades",
+      "2.3 Seat Count Changes"
+    ],
+    "variants": [
+      "added 3 new seats today — wants to know if they will be charged immediately or at next cycle",
+      "submitted a downgrade request — asking when it will take effect",
+      "upgraded mid-month — asking when the next full charge at new rate will occur",
+      "annual plan — asking when exactly the renewal charge will be processed"
+    ]
+  },
+  "timing_2": {
+    "lumo_label": "billing_cycle_question",
+    "display_name": "Billing Cycle Question",
+    "query_expansion": "billing cycle trial end date when expires trial to paid conversion",
+    "primary_policy_sections": [
+      "2.5 Trial Period Policies"
+    ],
+    "variants": [
+      "trial is ending in 5 days and wants to know exactly what happens if they don't add a card",
+      "asking whether they will be charged immediately when the trial ends or after a grace period",
+      "wants to know if usage during the trial will be retained when they convert to paid",
+      "asking whether cancelling before trial end avoids any charges"
+    ]
+  },
+  "timing_3": {
+    "lumo_label": "billing_cycle_question",
+    "display_name": "Billing Cycle Question",
+    "query_expansion": "billing cycle seat removal deactivation effective billing next cycle timing",
+    "primary_policy_sections": [
+      "2.3 Seat Count Changes",
+      "2.4 Cancellations"
+    ],
+    "variants": [
+      "deactivated a member last week and wants to confirm they are no longer being billed for that seat",
+      "removed 5 seats from billing settings — asking when the reduction takes effect",
+      "asking whether they can get a credit for seats they are removing mid-cycle",
+      "wants to know the exact process to reduce seats without accidentally losing access"
+    ]
+  },
+  "timing_4": {
+    "lumo_label": "billing_cycle_question",
+    "display_name": "Billing Cycle Question",
+    "query_expansion": "billing cycle annual monthly switch proration credit timing change frequency",
+    "primary_policy_sections": [
+      "2.1 Upgrades",
+      "2.2 Downgrades"
+    ],
+    "variants": [
+      "wants to switch from monthly to annual billing mid-cycle — asking how proration works",
+      "on annual billing and wants to switch to monthly — asking if they get a refund for unused months",
+      "asking whether they can change their billing date to a different day of the month",
+      "wants to know what happens to their billing cycle if they upgrade and then immediately downgrade"
+    ]
+  },
+  "status_questions": {
+    "lumo_label": "general_account_status",
+    "display_name": "General Account Status",
+    "query_expansion": "account status general inquiry what plan seats members billing overview help",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "4. User Roles & Guest Policy"
+    ],
+    "variants": [
+      "new admin on workspace and wants a full overview of the current plan and settings",
+      "asking for a summary of what features are included in their current plan",
+      "general inquiry about workspace health — member count, billing status, plan tier",
+      "confused about the relationship between their personal Lumo account and company workspace"
+    ]
+  },
+  "cost": {
+    "lumo_label": "cost_estimate_request",
+    "display_name": "Cost Estimate Request",
+    "query_expansion": "cost estimate how much total price calculate seats plan monthly annual quote",
+    "primary_policy_sections": [
+      "2. Plans & Pricing",
+      "10. Promotional & Discount Policies"
+    ],
+    "variants": [
+      "asking for a total annual cost estimate for 40 users on Business+ with annual billing",
+      "wants to compare the total cost of Pro vs Business+ for their specific team size",
+      "asking for a written quote they can take to their procurement team for approval",
+      "wants to know the breakeven point between monthly and annual billing for their situation"
+    ]
+  },
+  "shopping_cart": {
+    "lumo_label": "checkout_issue",
+    "display_name": "Checkout Issue",
+    "query_expansion": "checkout upgrade payment page error cannot complete purchase plan selection error",
+    "primary_policy_sections": [
+      "3.1 Accepted Payment Methods",
+      "3.2 Failed Payments"
+    ],
+    "variants": [
+      "upgrade checkout page keeps erroring after entering credit card details — tried Chrome and Safari",
+      "promo code field not appearing on the checkout page",
+      "seat count adjustment slider on checkout page is not updating the price",
+      "getting a generic error message at the final confirmation step of the upgrade flow"
+    ]
+  },
+  "manage": {
+    "lumo_label": "account_management_general",
+    "display_name": "Account Management",
+    "query_expansion": "account management settings admin workspace general help configuration",
+    "primary_policy_sections": [
+      "4. User Roles & Guest Policy",
+      "7. Workspace Management Policies"
+    ],
+    "variants": [
+      "new workspace admin trying to understand which settings they have access to",
+      "asking how to transfer certain admin responsibilities to another team member",
+      "wants to understand the difference between Owner and Admin roles in Lumo",
+      "asking how to add a second admin to the workspace as a backup"
+    ]
+  },
+  "jacket_how_1": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to use feature setup configure tutorial getting started guide steps",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "asking how to set up a Workflow Builder automation to post a daily standup reminder",
+      "wants to know how to configure notification preferences to reduce noise",
+      "asking how to use Lumo AI to summarize a long thread they missed",
+      "wants to know how to create and use a channel canvas for meeting notes"
+    ]
+  },
+  "jacket_how_2": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature configure setup tutorial steps guide",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to set up SSO for their Okta organization",
+      "how to export workspace data for compliance",
+      "how to add and manage guest users in channels",
+      "how to use search modifiers to find specific messages"
+    ]
+  },
+  "jacket_how_3": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature configure setup tutorial steps guide",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to configure 2FA enforcement for all workspace members",
+      "how to set up Lumo Connect to share a channel with a client organization",
+      "how to archive a channel without losing the message history",
+      "how to transfer workspace ownership to a new admin"
+    ]
+  },
+  "jacket_how_4": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature configure setup tutorial steps guide",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to use huddle screen sharing for a team demo",
+      "how to set custom retention policies on a specific channel",
+      "how to bulk deactivate members who have left the organization",
+      "how to download all invoices from the billing history"
+    ]
+  },
+  "boots_how_1": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to pin important messages in a channel",
+      "how to use Lumo's reminder feature for follow-ups",
+      "how to create a private channel for a sensitive project",
+      "how to integrate Jira with Lumo for issue notifications"
+    ]
+  },
+  "boots_how_2": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to share a file in a channel and who can see it",
+      "how to mention an entire channel with @channel vs @here",
+      "how to set up automated welcome messages for new members",
+      "how to use Lumo's status feature to show availability"
+    ]
+  },
+  "boots_how_3": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to recover an accidentally archived channel",
+      "how to set up a Lumo Connect channel with an external organization",
+      "how to generate AI summaries for a long meeting thread",
+      "how to use message threading to keep channel conversations organized"
+    ]
+  },
+  "boots_how_4": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to restrict posting in a channel to admins only",
+      "how to use the Workflow Builder to collect standup updates via form",
+      "how to set up SCIM provisioning with their IdP",
+      "how to configure the admin analytics dashboard"
+    ]
+  },
+  "shirt_how_1": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to use Lumo search to find files shared months ago",
+      "how to configure mobile notification preferences differently from desktop",
+      "how to create a shared channel canvas for project documentation",
+      "how to schedule a message to send at a future time"
+    ]
+  },
+  "shirt_how_2": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to move a DM conversation into a channel",
+      "how to use Lumo AI to get answers from workspace knowledge",
+      "how to configure Do Not Disturb hours for the team",
+      "how to add emoji reactions and what they signal to others"
+    ]
+  },
+  "shirt_how_3": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to bulk-import users from a CSV file when setting up",
+      "how to use message formatting with code blocks and bold text",
+      "how to integrate GitHub so PR notifications appear in a dev channel",
+      "how to set up a Zoom integration so meeting links auto-post"
+    ]
+  },
+  "shirt_how_4": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to deactivate a member who has left the company",
+      "how to update billing information as the new account owner",
+      "how to find the workspace ID needed for a support request",
+      "how to enable or disable specific AI features for the workspace"
+    ]
+  },
+  "jeans_how_1": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to configure SAML SSO step by step with Okta",
+      "how to set up approval workflows using Workflow Builder",
+      "how to use Lumo's eDiscovery export for a legal hold",
+      "how to enable multi-workspace support under Enterprise Grid"
+    ]
+  },
+  "jeans_how_2": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to track which members are active and which are inactive",
+      "how to use Lumo Connect to collaborate with a vendor organization",
+      "how to generate AI daily recaps for a busy channel",
+      "how to restrict specific apps from being installed by members"
+    ]
+  },
+  "jeans_how_3": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to set up a helpdesk channel with triage workflows",
+      "how to use huddle notes to capture meeting action items automatically",
+      "how to share a Lumo canvas externally with someone outside the workspace",
+      "how to migrate message history when merging two workspaces manually"
+    ]
+  },
+  "jeans_how_4": {
+    "lumo_label": "how_to_use_feature",
+    "display_name": "How-To Question",
+    "query_expansion": "how to feature steps guide tutorial configure",
+    "primary_policy_sections": [
+      "3. Feature Reference"
+    ],
+    "variants": [
+      "how to configure data residency for EU storage requirements",
+      "how to set per-channel retention policies under Business+",
+      "how to use the admin analytics API for custom reporting",
+      "how to enforce specific integrations organization-wide as an admin"
+    ]
+  },
+  "jacket_other_1": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken error feature malfunction unexpected behavior glitch",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "workflow automation stopped triggering after the last Lumo update",
+      "AI summaries are generating for the wrong channel",
+      "Zoom integration is posting duplicate meeting notifications in the channel",
+      "channel canvas edits are not saving — showing last saved version from hours ago"
+    ]
+  },
+  "jacket_other_2": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken error feature malfunction unexpected",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "message formatting is breaking when pasting from Google Docs",
+      "emoji reactions are disappearing after being added",
+      "files shared via Google Drive integration show broken preview links",
+      "search filters are being ignored — showing results from all time instead of date range"
+    ]
+  },
+  "jacket_other_3": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken error malfunction unexpected behavior",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "notifications stopped showing on macOS desktop app after update",
+      "mobile app is crashing immediately on launch on Android",
+      "huddle video is freezing every 30 seconds for everyone in the call",
+      "workflow form responses are going to the wrong channel"
+    ]
+  },
+  "jacket_other_4": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken error malfunction",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "SCIM provisioning is creating duplicate user accounts instead of updating existing ones",
+      "SSO login is redirecting to an error page for new users only",
+      "admin can no longer see member list in settings after a plan change",
+      "message editing is not saving — changes revert after a few seconds"
+    ]
+  },
+  "boots_other_1": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error malfunction",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "@mentions are not triggering notifications for the mentioned person",
+      "channel is showing unread badge but all messages have been viewed",
+      "DM conversations are appearing in the wrong order by date",
+      "app is not syncing read status between mobile and desktop"
+    ]
+  },
+  "boots_other_2": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error unexpected",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "new members being added to the workspace are not appearing in the member list",
+      "workflow automation trigger is firing twice for a single event",
+      "search is returning results from a channel the user is not a member of",
+      "file previews are not loading in the channel feed"
+    ]
+  },
+  "boots_other_3": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error glitch",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "Lumo AI responses are significantly slower than they were 2 weeks ago",
+      "AI search is returning irrelevant results unrelated to the query",
+      "daily recap is not generating even though the feature is enabled",
+      "translation feature is translating into the wrong target language"
+    ]
+  },
+  "boots_other_4": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error malfunction unexpected behavior",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "Lumo Connect channel went silent — messages from the external org are no longer appearing",
+      "guest user cannot see the channel they were invited to",
+      "workspace URL change broke all integrations that used the old URL in webhooks",
+      "billing admin lost access to the billing settings page after a role change"
+    ]
+  },
+  "shirt_other_1": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error unexpected",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "scheduled messages are not sending at the configured time",
+      "pinned messages disappeared from a channel after it was unarchived",
+      "emoji reactions are only showing for some team members",
+      "export download link in email is returning a 404 error"
+    ]
+  },
+  "shirt_other_2": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error malfunction",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "thread replies are not appearing as part of the thread — showing inline instead",
+      "Jira integration is not posting status update notifications as expected",
+      "member list in admin settings shows wrong last active dates",
+      "workspace analytics dashboard shows zero data for the past 2 weeks"
+    ]
+  },
+  "shirt_other_3": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error glitch unexpected",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "guest user is seeing channels they were not invited to",
+      "deactivated member's name is still appearing in @mention suggestions",
+      "channel is not showing up in search results even though it is public",
+      "copy-pasting images into a message is not working on Windows desktop app"
+    ]
+  },
+  "shirt_other_4": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error unexpected behavior",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "admin settings page is timing out when the workspace has more than 500 members",
+      "profile picture is not updating after upload",
+      "custom emoji added by admin is not visible to all members",
+      "AI huddle notes are generating but not being posted to the channel"
+    ]
+  },
+  "jeans_other_1": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error malfunction",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "newly created channels are not appearing for members who should have access",
+      "Workflow Builder automation is failing with no error message",
+      "Lumo app on iPad is crashing when opening a file attachment",
+      "notification preferences are resetting to default after each app update"
+    ]
+  },
+  "jeans_other_2": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error unexpected behavior glitch",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "message history in a channel stops loading at a certain date with no error",
+      "Lumo AI is providing answers that reference deleted content",
+      "desktop app badge count is stuck at a number that does not match unread messages",
+      "workspace invite link is generating a 404 error for new joiners"
+    ]
+  },
+  "jeans_other_3": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error malfunction unexpected",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "Google Drive integration is asking for re-authorization every week",
+      "keyboard shortcuts have stopped working in the desktop app",
+      "message reactions are not syncing between mobile and desktop",
+      "compliance export is completing but the download file is empty or corrupted"
+    ]
+  },
+  "jeans_other_4": {
+    "lumo_label": "feature_bug_report",
+    "display_name": "Feature Bug Report",
+    "query_expansion": "bug not working broken feature error glitch unexpected",
+    "primary_policy_sections": [
+      "11. Known Issues & Platform Limitations"
+    ],
+    "variants": [
+      "SCIM deprovisioned user still has active sessions — did not log them out",
+      "admin audit log is missing entries for actions that were definitely taken",
+      "Lumo is indexing private channel content in search results for non-members",
+      "multi-workspace navigation under Enterprise Grid is broken after a recent update"
+    ]
+  }
+}

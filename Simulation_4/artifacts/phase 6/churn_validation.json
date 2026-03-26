@@ -1,0 +1,98 @@
+{
+  "formula": "sigmoid(c0 + cf*f + cs*failed_streak + ct*turn_count + ctau*tau)",
+  "coefficients": {
+    "c0": -3.8,
+    "cf": 3.0,
+    "cs": 0.1,
+    "ct": 0.08,
+    "ctau": -1.5
+  },
+  "default_coefficients": {
+    "c0": -3.8,
+    "cf": 4.2,
+    "cs": 0.4,
+    "ct": 0.08,
+    "ctau": -1.5
+  },
+  "defaults_valid": false,
+  "state_validation": [
+    {
+      "state": "S1",
+      "frustration": 0.1,
+      "failed_streak": 0,
+      "turn_count": 5,
+      "tau": 0.745,
+      "p_churn": 0.014521457070643133,
+      "expected_range": [
+        0.0,
+        0.03
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "S2",
+      "frustration": 0.3,
+      "failed_streak": 0,
+      "turn_count": 10,
+      "tau": 0.607,
+      "p_churn": 0.04695376605429381,
+      "expected_range": [
+        0.03,
+        0.08
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "S3",
+      "frustration": 0.5,
+      "failed_streak": 1,
+      "turn_count": 15,
+      "tau": 0.607,
+      "p_churn": 0.12892469017002708,
+      "expected_range": [
+        0.08,
+        0.18
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "S4",
+      "frustration": 0.7,
+      "failed_streak": 2,
+      "turn_count": 18,
+      "tau": 0.332,
+      "p_churn": 0.3640103472970111,
+      "expected_range": [
+        0.18,
+        0.4
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "S5",
+      "frustration": 0.85,
+      "failed_streak": 3,
+      "turn_count": 20,
+      "tau": 0.234,
+      "p_churn": 0.574198040320896,
+      "expected_range": [
+        0.4,
+        1.0
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "S6",
+      "frustration": 0.95,
+      "failed_streak": 4,
+      "turn_count": 20,
+      "tau": 0.174,
+      "p_churn": 0.6876165708708831,
+      "expected_range": [
+        0.6,
+        1.0
+      ],
+      "within_expected_range": true
+    }
+  ]
+}

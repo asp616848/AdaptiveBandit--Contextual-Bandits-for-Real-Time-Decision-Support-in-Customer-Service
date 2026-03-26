@@ -1,0 +1,58 @@
+{
+  "subflow": "reset_2fa",
+  "tier": "Pro",
+  "persona": "low_engagement_resolver",
+  "rho": 0.529539898908421,
+  "sigma": 0.26631559074016775,
+  "tau": 0.6247440410152024,
+  "initial_customer_message": "I'm having trouble resetting my two-factor authentication (2FA) for my account. I tried to reset it online, but the process keeps failing with an error message saying that my login credentials are incorrect even though I know they're right. This is really frustrating because I need to access my account urgently for a business trip tomorrow morning.",
+  "outcome": "escalated",
+  "total_reward": -2.213382371503081,
+  "turns": 2,
+  "episode_log": [
+    {
+      "turn": 1,
+      "action": "ProvideSolution",
+      "agent_text": "Hello. I understand that this may be frustrating. Please try loggin in from a partner or backup device.",
+      "customer_utterance": "That didn't work at all. I'm really disappointed that the suggested solution was just a Band-Aid fix when I'm still stuck with an inaccessible account. Can you please try a different approach or escalate this issue to someone who can actually help me resolve this?",
+      "state_post": {
+        "information": 0.2434,
+        "progress": 0.1316,
+        "frustration": 0.1327,
+        "failed_streak": 1
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "ProvideSolution",
+        "outcome": "failure",
+        "p_success_used": 0.0777,
+        "terminal_type": null,
+        "customer_utterance": "That didn't work at all. I'm really disappointed that the suggested solution was just a Band-Aid fix when I'm still stuck with an inaccessible account. Can you please try a different approach or escalate this issue to someone who can actually help me resolve this?",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "action": "Escalate",
+      "agent_text": "Okay, I am escalating it.",
+      "customer_utterance": "Thank you for escalating my case, I appreciate it when agents take my issue seriously! Can you please let me know what's going to happen next and an estimated time frame for resolving this problem?",
+      "state_post": {
+        "information": 0.2434,
+        "progress": 0.1316,
+        "frustration": 0.1327,
+        "failed_streak": 1
+      },
+      "reward": -2.1134,
+      "transition": {
+        "action": "Escalate",
+        "outcome": "escalated",
+        "terminal_type": "escalation",
+        "resolved": false,
+        "customer_utterance": "Thank you for escalating my case, I appreciate it when agents take my issue seriously! Can you please let me know what's going to happen next and an estimated time frame for resolving this problem?",
+        "per_turn_reward": -0.1,
+        "terminal_reward": -2.0134
+      }
+    }
+  ]
+}

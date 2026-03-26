@@ -1,0 +1,160 @@
+{
+  "reward_formula": {
+    "per_turn": "R_t = -lambda_turn",
+    "terminal": "R_terminal = eta*1_success - C_e(tier)*1_escalate + B_enterprise*1_escalate_enterprise - omega*P_churn_terminal*V",
+    "P_churn_terminal_by_outcome": {
+      "success": 0.0,
+      "escalation": "computed P_churn at time of escalation",
+      "dropout": 1.0,
+      "timeout": "computed P_churn at turn T_max"
+    }
+  },
+  "parameters": {
+    "eta_success": 5.0,
+    "lambda_turn": 0.1,
+    "omega": 0.16666666666666666,
+    "escalation_costs": {
+      "Free": 4.0,
+      "Pro": 2.0,
+      "Business": 0.5,
+      "Enterprise": 0.0
+    },
+    "escalation_bonus_enterprise": 1.0
+  },
+  "calibration": {
+    "moderate_state": {
+      "frustration": 0.55,
+      "failed_streak": 1,
+      "turn_count": 12,
+      "tau": 0.6123247614970179
+    },
+    "p_churn_moderate": 0.11831470247764311,
+    "avg_value_reference": 8.573043218482374,
+    "omega_selected": 0.16666666666666666,
+    "max_churn_cost": 3.0,
+    "max_churn_cost_constraint": "max_churn_cost < eta",
+    "eta": 5.0,
+    "T_max": 20,
+    "V_max_for_cap": 18.0,
+    "V_max_from_value_function": 18.0,
+    "lambda_turn_selected": 0.1,
+    "omega_formula": "omega = (eta - lambda_turn*T_max) / V_max"
+  },
+  "trajectory_sanity": {
+    "success_free": {
+      "tier": "Free",
+      "turns": 10,
+      "p_churn_terminal": 0.0,
+      "value_for_reward": 1.64,
+      "per_turn_total": -1.0,
+      "terminal_reward": 5.0,
+      "raw_episode_total": 4.0,
+      "episode_total": 4.0,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": true
+    },
+    "success_enterprise": {
+      "tier": "Enterprise",
+      "turns": 10,
+      "p_churn_terminal": 0.0,
+      "value_for_reward": 18.0,
+      "per_turn_total": -1.0,
+      "terminal_reward": 5.0,
+      "raw_episode_total": 4.0,
+      "episode_total": 4.0,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": true
+    },
+    "escalate_free": {
+      "tier": "Free",
+      "turns": 15,
+      "p_churn_terminal": 0.45,
+      "value_for_reward": 1.64,
+      "per_turn_total": -1.5,
+      "terminal_reward": -4.123,
+      "raw_episode_total": -5.623,
+      "episode_total": -5.623,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": false
+    },
+    "escalate_enterprise": {
+      "tier": "Enterprise",
+      "turns": 8,
+      "p_churn_terminal": 0.4,
+      "value_for_reward": 18.0,
+      "per_turn_total": -0.8,
+      "terminal_reward": -0.2,
+      "raw_episode_total": -1.0,
+      "episode_total": -1.0,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": true
+    },
+    "success_pro": {
+      "tier": "Pro",
+      "turns": 10,
+      "p_churn_terminal": 0.0,
+      "value_for_reward": 4.1225,
+      "per_turn_total": -1.0,
+      "terminal_reward": 5.0,
+      "raw_episode_total": 4.0,
+      "episode_total": 4.0,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": true
+    },
+    "escalate_pro": {
+      "tier": "Pro",
+      "turns": 15,
+      "p_churn_terminal": 0.45,
+      "value_for_reward": 4.1225,
+      "per_turn_total": -1.5,
+      "terminal_reward": -0.30918749999999995,
+      "raw_episode_total": -1.8091875,
+      "episode_total": -1.8091875,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": true
+    },
+    "dropout_gold": {
+      "tier": "Enterprise",
+      "turns": 20,
+      "p_churn_terminal": 1.0,
+      "value_for_reward": 18.0,
+      "per_turn_total": -2.0,
+      "terminal_reward": -3.0,
+      "raw_episode_total": -5.0,
+      "episode_total": -5.0,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": true
+    },
+    "escalate_gold": {
+      "tier": "Enterprise",
+      "turns": 10,
+      "p_churn_terminal": 0.6,
+      "value_for_reward": 18.0,
+      "per_turn_total": -1.0,
+      "terminal_reward": -3.8,
+      "raw_episode_total": -4.8,
+      "episode_total": -4.8,
+      "required_clipping": false,
+      "within_target_range_-5_to_5": true
+    }
+  },
+  "trajectory_checks": {
+    "episode_reward_escalate_free_lt_escalate_enterprise": true,
+    "episode_reward_escalate_free_lt_minus_2": true,
+    "episode_reward_escalate_enterprise_gte_minus_1": true,
+    "episode_reward_success_free_gt_escalate_free": true,
+    "episode_reward_success_enterprise_gt_escalate_enterprise": true
+  },
+  "trajectory_scale_note": "Escalation incentive checks focus on ordering and magnitude; some free-tier escalation trajectories can be below -5 in raw terms by design to strongly discourage wasteful escalation.",
+  "diagnostics": {
+    "transition_dropout_empirical_rate_phase3": 0.007568213503286198,
+    "extract1_resolution_rate": 0.8639713204540929,
+    "extract1_escalation_rate": 0.05875323640709022,
+    "extract3_mean_subflow_resolution_rate": 0.8786807605096291
+  },
+  "warnings": [
+    "Default churn coefficients failed target bands; calibrated coefficients were used.",
+    "Per-turn churn accumulation replaced with terminal-only churn cost to prevent reward-scale overflow.",
+    "Escalation costs are intentionally inverted by customer value tier; Enterprise escalation receives a +1.0 bonus."
+  ]
+}

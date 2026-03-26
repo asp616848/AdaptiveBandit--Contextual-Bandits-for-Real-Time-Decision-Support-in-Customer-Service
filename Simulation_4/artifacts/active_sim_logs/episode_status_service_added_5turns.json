@@ -1,0 +1,125 @@
+{
+  "subflow": "status_service_added",
+  "tier": "Enterprise",
+  "persona": "low_engagement_resolver",
+  "rho": 0.519679649819306,
+  "sigma": 0.33053573389086316,
+  "tau": 0.6156757671564288,
+  "initial_customer_message": "\"Hey, we're experiencing an unexpected issue with our Lumo workspace. A new AI button appeared out of nowhere and I'm not sure how to turn it off or what data it's accessing.\"",
+  "outcome": "escalated",
+  "total_reward": 0.35583092575973607,
+  "turns": 5,
+  "episode_log": [
+    {
+      "turn": 1,
+      "action": "ProvideSolution",
+      "agent_text": "Its nothing. It wont work unless you click on it. Lumo follows all privacy guidelines. Anything else?",
+      "customer_utterance": "\"Really? That's your solution? I'm still concerned about the AI button and what kind of data it's accessing. Can't we just turn it off?\"",
+      "state_post": {
+        "information": 0.0752,
+        "progress": 0.0203,
+        "frustration": 0.2758,
+        "failed_streak": 1
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "ProvideSolution",
+        "outcome": "failure",
+        "p_success_used": 0.024,
+        "terminal_type": null,
+        "customer_utterance": "\"Really? That's your solution? I'm still concerned about the AI button and what kind of data it's accessing. Can't we just turn it off?\"",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "action": "AffectiveRepair",
+      "agent_text": "When your Business+ plan renewed, Lumo automatically activated the advanced AI features that are now bundled into Business+ \u2014 previously these were a separate add-on. You are not being charged anything extra for this. It appeared because it is now a standard part of your plan.",
+      "customer_utterance": "\"Okay, I see what you're saying about the Business+ plan. But can you tell me more about how the AI feature works? What kind of data does it access and process?\"",
+      "state_post": {
+        "information": 0.0752,
+        "progress": 0.0203,
+        "frustration": 0.1561,
+        "failed_streak": 1
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AffectiveRepair",
+        "repair_effective": true,
+        "p_repair_used": 0.6079,
+        "outcome": "effective",
+        "terminal_type": null,
+        "customer_utterance": "\"Okay, I see what you're saying about the Business+ plan. But can you tell me more about how the AI feature works? What kind of data does it access and process?\"",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 3,
+      "action": "ProvideSolution",
+      "agent_text": "Lumo AI only accesses content within your own workspace \u2014 messages, files, and channels that your members have already posted. It does not share your data with other organizations or use it to train models. It works within the same access controls already in place \u2014 so AI search on a private channel only works for members who already have access to that channel.",
+      "customer_utterance": "\"I'm still concerned about this, it doesn't really answer my question. Can we just turn off the AI feature or limit its functionality somehow?\"",
+      "state_post": {
+        "information": 0.0752,
+        "progress": 0.0203,
+        "frustration": 0.271,
+        "failed_streak": 2
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "ProvideSolution",
+        "outcome": "failure",
+        "p_success_used": 0.024,
+        "terminal_type": null,
+        "customer_utterance": "\"I'm still concerned about this, it doesn't really answer my question. Can we just turn off the AI feature or limit its functionality somehow?\"",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 4,
+      "action": "ProvideSolution",
+      "agent_text": "If your compliance team wants it disabled, a workspace admin can turn it off for the entire workspace at Settings > Administration > AI Features > Disable Lumo AI. This removes the AI button for all members",
+      "customer_utterance": "\"Wait, what? That didn't work either. I'm really getting frustrated that this isn't being resolved.\"",
+      "state_post": {
+        "information": 0.0752,
+        "progress": 0.0203,
+        "frustration": 0.3898,
+        "failed_streak": 3
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "ProvideSolution",
+        "outcome": "failure",
+        "p_success_used": 0.024,
+        "terminal_type": null,
+        "customer_utterance": "\"Wait, what? That didn't work either. I'm really getting frustrated that this isn't being resolved.\"",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 5,
+      "action": "Escalate",
+      "agent_text": "Let me escalate you to a manager.",
+      "customer_utterance": "\"Thank you for trying to help, I appreciate it. I'm still frustrated that we haven't resolved this yet and my compliance team is getting anxious. Can the manager please take a look at our case and provide some guidance on how to address this issue?\"",
+      "state_post": {
+        "information": 0.0752,
+        "progress": 0.0203,
+        "frustration": 0.3898,
+        "failed_streak": 3
+      },
+      "reward": 0.7558,
+      "transition": {
+        "action": "Escalate",
+        "outcome": "escalated",
+        "terminal_type": "escalation",
+        "resolved": false,
+        "customer_utterance": "\"Thank you for trying to help, I appreciate it. I'm still frustrated that we haven't resolved this yet and my compliance team is getting anxious. Can the manager please take a look at our case and provide some guidance on how to address this issue?\"",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.8558
+      }
+    }
+  ]
+}

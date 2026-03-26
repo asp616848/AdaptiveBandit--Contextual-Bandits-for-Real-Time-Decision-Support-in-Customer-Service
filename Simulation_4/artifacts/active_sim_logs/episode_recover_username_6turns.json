@@ -1,0 +1,172 @@
+{
+  "subflow": "recover_username",
+  "tier": "Pro",
+  "persona": "high_engagement_resolver",
+  "rho": 0.713222705794166,
+  "sigma": 0.27844694456352187,
+  "tau": 0.7116074812591282,
+  "initial_customer_message": "I'm having some trouble accessing my account online because I think I forgot my username. It's really frustrating because I know I've used that same email address for all my accounts, and I just can't seem to remember what it was supposed to be. Can you help me figure out how to recover it?",
+  "outcome": "resolved",
+  "total_reward": 4.4,
+  "turns": 6,
+  "episode_log": [
+    {
+      "turn": 1,
+      "action": "AskInfo",
+      "agent_text": "Hello! Sure, I can try to help you out! Could you tell me a littl more details like what membership level your account was?",
+      "customer_utterance": "I'm not entirely sure what information you're looking for, but I can try to help you figure out my username. Can you please clarify what you need from me? Maybe that will trigger something in my memory and I'll be able to recall it.",
+      "state_post": {
+        "information": 0.4442,
+        "progress": 0.1298,
+        "frustration": 0.1993,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": false,
+        "gain_occurred": false,
+        "delta_i": 0.0,
+        "delta_cumulative_values": 0.0,
+        "outcome": "no_gain",
+        "terminal_type": null,
+        "customer_utterance": "I'm not entirely sure what information you're looking for, but I can try to help you figure out my username. Can you please clarify what you need from me? Maybe that will trigger something in my memory and I'll be able to recall it.",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "action": "AskInfo",
+      "agent_text": "Could you tell me whether or not it has a recovery phone number or email id associated with it we could use?",
+      "customer_utterance": "I'm trying to recall my username, and I think it's related to my email address... actually, I'm not entirely sure what my email address is either! It's a bit frustrating because I know I've used that same email for all my accounts. Order subflow is set to recover_username, if that helps at all.",
+      "state_post": {
+        "information": 0.6587,
+        "progress": 0.1405,
+        "frustration": 0.2013,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": true,
+        "gain_occurred": true,
+        "delta_i": 0.2144,
+        "delta_cumulative_values": 0.2144,
+        "outcome": "gain",
+        "terminal_type": null,
+        "revealed_slots": [
+          [
+            "personal.email",
+            "unknown@example.com"
+          ]
+        ],
+        "customer_utterance": "I'm trying to recall my username, and I think it's related to my email address... actually, I'm not entirely sure what my email address is either! It's a bit frustrating because I know I've used that same email for all my accounts. Order subflow is set to recover_username, if that helps at all.",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 3,
+      "action": "AskInfo",
+      "agent_text": "okay, do you have a phone number linked to your account?",
+      "customer_utterance": "I've tried logging in with some common username combinations that I think might be relevant, but nothing seems to work. I'm starting to get a little worried that my account is compromised or something!",
+      "state_post": {
+        "information": 0.8836,
+        "progress": 0.1518,
+        "frustration": 0.2027,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": true,
+        "gain_occurred": true,
+        "delta_i": 0.2249,
+        "delta_cumulative_values": 0.2249,
+        "outcome": "gain",
+        "terminal_type": null,
+        "revealed_slots": [
+          [
+            "order.subflow",
+            "recover_username"
+          ]
+        ],
+        "customer_utterance": "I've tried logging in with some common username combinations that I think might be relevant, but nothing seems to work. I'm starting to get a little worried that my account is compromised or something!",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 4,
+      "action": "AskInfo",
+      "agent_text": "are u currently logged into ur account on any device?",
+      "customer_utterance": "I'm not really sure what specific information you're looking for... Can you please clarify what would help you recover my username? I've tried giving you some context, but maybe there's something specific you need from me to move forward?",
+      "state_post": {
+        "information": 0.8836,
+        "progress": 0.1518,
+        "frustration": 0.2175,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": false,
+        "gain_occurred": false,
+        "delta_i": 0.0,
+        "delta_cumulative_values": 0.0,
+        "outcome": "no_gain",
+        "terminal_type": null,
+        "customer_utterance": "I'm not really sure what specific information you're looking for... Can you please clarify what would help you recover my username? I've tried giving you some context, but maybe there's something specific you need from me to move forward?",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 5,
+      "action": "ProvideSolution",
+      "agent_text": "Yes, I have sent an OTP to your number please use that to recover ur username.",
+      "customer_utterance": "Wow, thank you so much! I'm actually really relieved that we were able to figure out my username. I was starting to get a little worried that it was gone for good. You've been incredibly patient and helpful throughout this process, and I appreciate it more than you know. Thank you again for your assistance!",
+      "state_post": {
+        "information": 0.8836,
+        "progress": 0.5785,
+        "frustration": 0.0,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "ProvideSolution",
+        "outcome": "success",
+        "p_success_used": 0.6576,
+        "terminal_type": null,
+        "customer_utterance": "Wow, thank you so much! I'm actually really relieved that we were able to figure out my username. I was starting to get a little worried that it was gone for good. You've been incredibly patient and helpful throughout this process, and I appreciate it more than you know. Thank you again for your assistance!",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 6,
+      "action": "Close",
+      "agent_text": null,
+      "customer_utterance": "Thank you so much! It was great chatting with you, and I'm thrilled that we were able to get my username figured out. Have a fantastic day, and thank you again for your help!",
+      "state_post": {
+        "information": 0.8836,
+        "progress": 0.5785,
+        "frustration": 0.0,
+        "failed_streak": 0
+      },
+      "reward": 4.9,
+      "transition": {
+        "action": "Close",
+        "outcome": "success",
+        "resolved": true,
+        "p_success_used": 0.6576,
+        "close_score": 0.6751,
+        "terminal_type": "success",
+        "customer_utterance": "Thank you so much! It was great chatting with you, and I'm thrilled that we were able to get my username figured out. Have a fantastic day, and thank you again for your help!",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 5.0
+      }
+    }
+  ]
+}
