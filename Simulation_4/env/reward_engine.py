@@ -16,7 +16,7 @@ class RewardEngine:
     def __init__(self, reward_params: dict[str, Any], tier_config: dict[str, Any]):
         params = reward_params.get("parameters", {})
         self.eta = float(params.get("eta_success", 5.0))
-        self.lambda_turn = float(params.get("lambda_turn", 0.10))
+        self.lambda_turn = float(params.get("lambda_turn", 0.15))
         self.omega = float(params.get("omega", 0.16666666666666666))
 
         self.tier_config = tier_config
@@ -77,5 +77,7 @@ class RewardEngine:
             reward -= float(self.escalation_costs.get(tier, 0.0))
             if tier == "Enterprise":
                 reward += self.escalation_bonus_enterprise
+        elif outcome == "unresolved_close":
+            reward -= 1.0
 
         return float(np.clip(reward, -5.0, 5.0))

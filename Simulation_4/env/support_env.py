@@ -150,6 +150,7 @@ class SupportEnv(gym.Env):
         payload = dict(reward_model)
         payload.setdefault("parameters", {})
         payload["parameters"]["escalation_costs"] = tier_config.get("escalation_cost_by_tier", {})
+        payload["parameters"]["lambda_turn"] = 0.15
 
         # Phase 6 churn coefficients were calibrated to this selected set.
         payload["churn_model"] = {
@@ -421,6 +422,9 @@ class SupportEnv(gym.Env):
 
         reward = self.reward_engine.per_turn_reward()
         transition_outcome = self._dispatch_transition(action_name)
+        if action_name == "Close" and not bool(transition_outcome.get("resolved", False)):
+            transition_outcome["terminal_type"] = "unresolved_close"
+            transition_outcome["outcome"] = "unresolved_close"
 
         if self.nlg_enabled:
             agent_message = (agent_text or "").strip() or f"Agent action: {action_name}"

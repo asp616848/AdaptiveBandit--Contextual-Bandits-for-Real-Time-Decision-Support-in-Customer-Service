@@ -1,0 +1,15 @@
+{
+  "initial_num_timesteps": 500000,
+  "additional_timesteps": 500000,
+  "final_num_timesteps": 1007904,
+  "training_time_seconds": 1145.7399837970734,
+  "curriculum_enabled": true,
+  "reward_shaping_enabled": false,
+  "best_eval_reward": 1.5079912605782124,
+  "baseline_beaten": true,
+  "baseline_beaten_step": 520000,
+  "final_resolution_rate": 0.5134693417493237,
+  "n_envs": 4,
+  "seed": 42,
+  "checkpoint_path": "Simulation_4/artifacts/phase10_v3/models/best_model.zip"
+}

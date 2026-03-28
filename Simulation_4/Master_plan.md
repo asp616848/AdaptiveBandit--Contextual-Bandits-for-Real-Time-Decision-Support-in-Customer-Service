@@ -19,8 +19,8 @@ A **state-driven stochastic environment** where:
 - A text-in, text-out system
 
 ## Architecture in One Sentence
-> Real conversation data trains the transition model → state engine drives
-> the simulation → RAG injects realistic problems → RL agent learns on top.
+> Real conversation data trains the transition model -> state engine drives
+> the simulation -> RAG injects realistic problems -> RL agent learns on top.
 
 ## Why ABCD as Primary Dataset
 ABCD provides signals that MultiDoGO cannot:
@@ -28,7 +28,7 @@ ABCD provides signals that MultiDoGO cannot:
 - Genuine escalation events (notify-team action)
 - Clear resolution signal (nextstep = end_conversation)
 - Customer membership tier directly in scenario metadata
-- Realistic friction — conversations where policies prevent resolution
+- Realistic friction - conversations where policies prevent resolution
 - Human-to-human dialogues with natural language variation
 
 MultiDoGO is retained as a secondary reference for intent progression
@@ -50,7 +50,7 @@ structure and slot-filling patterns only. It is read-only in Simulation_4.
 
 ---
 
-# PHASE 1: DATA UNDERSTANDING — ABCD Signal Audit
+# PHASE 1: DATA UNDERSTANDING - ABCD Signal Audit
 
 ## 1.1 What ABCD Contains
 
@@ -64,7 +64,7 @@ Each conversation is a dict with four top-level keys:
 - `order`: order_id, address, num_products, product_names, image info
 - `product`: brand, product_type, dollar_amount
 - `flow`: high-level category (e.g., product_defect, manage_account)
-- `subflow`: specific intent (e.g., return_size, manage_cancel) — 55 unique
+- `subflow`: specific intent (e.g., return_size, manage_cancel) - 55 unique
 
 **`original`**: raw conversation as list of [speaker, text] pairs
 
@@ -85,13 +85,13 @@ Each conversation is a dict with four top-level keys:
 | `value` | slot values captured in this turn | 0% (empty list if none) |
 | `utterance_ranking` | target position in candidate pool | 0% (-1 if not applicable) |
 
-Note: nextstep and action are null for customer turns by design — these are
+Note: nextstep and action are null for customer turns by design - these are
 agent/system decisions only. This is not missing data.
 
 ## 1.3 Speaker Distribution
 
 | Speaker | Count | Percentage |
-|---------|-------|-----------|
+|---------|-------|-----------| 
 | agent | 95,127 | 43.05% |
 | customer | 89,369 | 40.44% |
 | action | 36,481 | 16.51% |
@@ -182,7 +182,7 @@ Unique member levels: bronze, silver, gold, platinum, vip, guest
 
 ## 2.1 Design Principles
 - Every variable must have a data justification or explicit latent justification
-- Keep dimensionality low (target: 10–12 variables)
+- Keep dimensionality low (target: 10-12 variables)
 - All continuous variables bounded [0, 1]
 - Interpretable to a human reviewer
 
@@ -196,7 +196,7 @@ $$s_t = \{\underbrace{subflow,\ tier,\ difficulty,\ persona}_{\text{static}},\ \
 - **Type**: Categorical (55 values from ABCD ontology)
 - **Justification**: ABCD directly labels every conversation with a subflow.
   Each subflow has a distinct action sequence, difficulty, and resolution
-  pattern. This replaces `domain` from MultiDoGO — it is strictly more
+  pattern. This replaces `domain` from MultiDoGO - it is strictly more
   informative.
 - **Init**: Sample from empirical subflow frequency in ABCD train split
 - **Effect**: Determines required action sequence, difficulty prior,
@@ -213,8 +213,8 @@ $$s_t = \{\underbrace{subflow,\ tier,\ difficulty,\ persona}_{\text{static}},\ \
 - **Effect**: Only touches reward model (Phase 6). Does NOT affect
   transition dynamics. Higher tier = higher escalation cost + higher
   churn value.
-- **Mapping to business tiers**: guest/bronze → Free, silver/gold → Pro,
-  platinum → Business, vip → Enterprise
+- **Mapping to business tiers**: guest/bronze -> Free, silver/gold -> Pro,
+  platinum -> Business, vip -> Enterprise
 
 ### Variable 3: `difficulty`
 - **Type**: Continuous [0, 1]
@@ -226,71 +226,71 @@ $$s_t = \{\underbrace{subflow,\ tier,\ difficulty,\ persona}_{\text{static}},\ \
   - normalization: global p95 cap across all conversations, clipped to [0.01, 0.99]
   - top5 hardest: status_due_amount, refund_initiate, return_size, status_due_date, return_stain
   - top5 easiest: refund_status, shopping_cart, search_results, credit_card, recover_username
-- **Init**: Beta(α_subflow, β_subflow), fit per canonical subflow from action-count-only proxy.
+- **Init**: Beta(alpha_subflow, beta_subflow), fit per canonical subflow from action-count-only proxy.
 - **Effect**: Reduces p_success; slows information gain per AskInfo
 
 ### Variable 4: `persona`
 - **Type**: Categorical {high_engagement_resolver, low_engagement_resolver,
-  silent_dropout, escalation_prone} with continuous parameters (ρ, σ, τ)
+  silent_dropout, escalation_prone} with continuous parameters (rho, sigma, tau)
 - **Justification**: Behavioral heterogeneity is directly observable in
   ABCD. Final persona labels and frequencies come from Phase 5 calibration
   (`persona_profiles.json`) and are reused as fixed priors in state reset.
-- **Init**: π_persona from clustering results (Phase 5)
+- **Init**: pi_persona from clustering results (Phase 5)
 - **Parameters**:
-  - ρ (patience) ∈ [0,1]: how slowly frustration grows per turn
-  - σ (sensitivity) ∈ [0,1]: how strongly failures spike frustration
-  - τ (failure tolerance) ∈ [0,1]: how much repeated failures amplify
+  - rho (patience) in [0,1]: how slowly frustration grows per turn
+  - sigma (sensitivity) in [0,1]: how strongly failures spike frustration
+  - tau (failure tolerance) in [0,1]: how much repeated failures amplify
     frustration
 
 ## 2.4 Dynamic Variables (Updated Each Turn)
 
-### Variable 5: `information` ∈ [0, 1]
-- **Justification**: Direct — value filling in ABCD targets[3].
+### Variable 5: `information` in [0, 1]
+- **Justification**: Direct - value filling in ABCD targets[3].
   Each action turn captures structured values from the customer
   (name, order_id, email, etc.). Information = fraction of required
   values collected.
 - **Meaning**: cumulative_values_provided / subflow_mean_total_values
-- **Init**: Beta(0.5, 1.6720), mean ≈ 0.23
+- **Init**: Beta(0.5, 1.6720), mean ~ 0.23
   (updated from empirical first-action-turn fit in Phase 2 calibration;
   previous default Beta(1.2, 6.0) was too conservative)
 - **Empirical grounding**: Extract 4 cumulative value curves per subflow
 
-### Variable 6: `progress` ∈ [0, 1]
+### Variable 6: `progress` in [0, 1]
 - **Justification**: ABCD action sequences have a required order per
   subflow (defined in Agent Guidelines). Progress = how far along the
   required action sequence the conversation has advanced.
 - **Meaning**: actions_completed / actions_required_for_subflow
-- **Init**: ≈ 0.3 × information_0 + small noise (progress lags info)
+- **Init**: ~ 0.3 x information_0 + small noise (progress lags info)
 - **Note**: Distinct from information. A customer can provide all values
   but the agent may not have executed the required actions yet.
 - **Empirical grounding**: Extract 2 action sequences + Extract 3
   subflow action counts
 
-### Variable 7: `frustration` ∈ [0, 1]
+### Variable 7: `frustration` in [0, 1]
 - **Justification**: Latent accumulator. ABCD contains genuine
-  frustration precursors — escalation events, policy rejections
+  frustration precursors - escalation events, policy rejections
   (e.g., return denied because >90 days), and clarification loops.
   These are empirically observable even without emotion labels.
 - **Meaning**: Readiness to escalate or abandon
-- **Init**: Beta(1.5, 8.0), mean ≈ 0.16 (customers start calm)
+- **Init**: Beta(1.5, 8.0), mean ~ 0.16 (customers start calm)
 - **Empirical proxy for validation**: frustration trajectory should
   predict notify-team events in ABCD
 
-### Variable 8: `failed_streak` ∈ {0, 1, 2, ...}
+### Variable 8: `failed_streak` in {0, 1, 2, ...}
 - **Justification**: Observable in ABCD as consecutive agent turns
   where nextstep = retrieve_utterance (agent speaks but does not
-  take action) with no new customer values provided — stall pattern.
+  take action) with no new customer values provided - stall pattern.
 - **Meaning**: Consecutive unsuccessful action attempts
 - **Init**: 0
 
-### Variable 9: `turn_count` ∈ {0, ..., T_max}
+### Variable 9: `turn_count` in {0, ..., T_max}
 - **Justification**: Direct observation. Empirical calibration gives
   mean = 22.01 turns, P95 = 35, and 46.97% of conversations complete
   within 20 turns (72.49% within 25). Recommendation stays T_max = 20 to
   keep episodes tractable while covering most successful trajectories.
 - **Init**: 0
 
-### Variable 10: `resolved` ∈ {0, 1}
+### Variable 10: `resolved` in {0, 1}
 - **Justification**: Resolved is detected using closing-phrase regex with
   no escalation (`resolution_flag=1` in Extract 1). ABCD v1.1 does not
   provide a reliable `nextstep=end_conversation` marker.
@@ -298,7 +298,7 @@ $$s_t = \{\underbrace{subflow,\ tier,\ difficulty,\ persona}_{\text{static}},\ \
 
 ## Phase 2 Status
 - ✅ n_values for subflow = 55 (fixed)
-- ✅ difficulty_proxy cap — fixed via p95 normalization (action-count-only, clipped to [0.01, 0.99])
+- ✅ difficulty_proxy cap - fixed via p95 normalization (action-count-only, clipped to [0.01, 0.99])
 
 ## 2.5 Derived (Not Independently Transitioned)
 
@@ -333,8 +333,8 @@ For each action type, extract empirical distributions:
 
 **For AskInfo**: Find all agent turns where nextstep = retrieve_utterance
 and the following action turn (within 3 turns) updates cumulative values.
-Measure Δcumulative_values from Extract 4 action-turn traces. Fit
-distribution to normalized Δinformation.
+Measure Delta cumulative_values from Extract 4 action-turn traces. Fit
+distribution to normalized Delta information.
 
 **For ProvideSolution**: Find all action turns where action is in
 solution set {offer-refund, send-link, update-order, update-account,
@@ -376,8 +376,8 @@ $$
   subflows require more total values. Low-engagement resolvers show higher
   normalized gain (0.617) because their tasks need fewer total values total.
   Both are correct: normalization reflects task-completion fraction.
-- Higher difficulty → less information gained per ask
-- Higher patience (ρ) increases probability of any information gain
+- Higher difficulty -> less information gained per ask
+- Higher patience (rho) increases probability of any information gain
 
 **Progress update**:
 $$progress_{t+1} = \text{clip}(progress_t + 0.05 \cdot \Delta i,\ 0,\ 1)$$
@@ -405,7 +405,7 @@ $$progress_{t+1} = \text{clip}(progress_t + 0.25 + 0.20 \cdot i_t,\ 0,\ 1)$$
 $$frustration_{t+1} = \text{clip}(frustration_t - 0.20 - 0.10 \cdot i_t,\ 0,\ 1)$$
 $$failed\_streak_{t+1} = 0$$
 
-If progress ≥ 0.85 after success → episode resolves (resolved = 1)
+If progress >= 0.85 after success -> episode resolves (resolved = 1)
 
 Calibration note: estimated p25(progress at resolution) = 0.8404.
 Difference from 0.85 is < 0.10, so threshold remains 0.85.
@@ -415,8 +415,8 @@ $$failed\_streak_{t+1} = failed\_streak_t + 1$$
 $$\Delta f_{failure} = 0.05 + 0.15\sigma + 0.10 \cdot \frac{failed\_streak}{failed\_streak + 3} \cdot (1 - \tau)$$
 $$frustration_{t+1} = \text{clip}(frustration_t + \Delta f_{failure},\ 0,\ 1)$$
 
-- Sensitive personas (high σ) spike hard on failure
-- Tolerant personas (high τ) absorb repeated failures better
+- Sensitive personas (high sigma) spike hard on failure
+- Tolerant personas (high tau) absorb repeated failures better
 - Empirical grounding: ABCD contains policy-rejection conversations
   (e.g., return denied) where frustration precursors appear
 
@@ -460,7 +460,7 @@ $$frustration_{t+1} = \text{clip}(frustration_t + 0.02,\ 0,\ 1)$$
 $$close\_score = 0.45 \cdot p_{success} + 0.35 \cdot progress
 + 0.20 \cdot information - 0.25 \cdot frustration$$
 
-- If close_score ≥ 0.5861: resolved = 1, success terminal
+- If close_score >= 0.5861: resolved = 1, success terminal
 - If close_score < 0.5861: resolved = 0, failure terminal
 - Threshold 0.5861 fit from ABCD resolved-vs-nonresolved score separation
 - Empirical grounding: Extract 4 cumulative values at close +
@@ -483,7 +483,7 @@ If dropout sampled: episode ends with resolved = 0, dropped_off = 1
 ## 3.4 Global Per-Turn Rules
 - Increment turn_count by 1 after every action
 - Hard clip all continuous variables to [0, 1]
-- If turn_count ≥ T_max: force episode end, resolved = 0
+- If turn_count >= T_max: force episode end, resolved = 0
 
 ---
 
@@ -508,46 +508,46 @@ $$p_{success} = \sigma(\theta_0 + \theta_i \cdot info\_proxy + \alpha_{subflow} 
 **Step 3**: Fit logistic regression using info_proxy as the sole continuous predictor.
 frustration_proxy was computed and tested but found to be confounded with
 info_proxy (both increase with conversation maturity). Removing frustration_proxy
-from p_success is empirically grounded — see frustration_proxy_diagnostic.txt.
+from p_success is empirically grounded - see frustration_proxy_diagnostic.txt.
 Frustration affects the simulator through dropout_probability and escalation_probability,
 not through p_success directly.
 
 **Step 4**: Validate coefficient signs and magnitudes:
-- θ_i > 0 (more values provided → higher success)
-- θ_d > 0 (more required actions → harder → lower success)
-- θ_f > 0 (more frustration proxies → lower success)
+- theta_i > 0 (more values provided -> higher success)
+- theta_d > 0 (more required actions -> harder -> lower success)
+- theta_f > 0 (more frustration proxies -> lower success)
 
 ## 4.3 Coefficient Table
 
 | Parameter | Value | Source |
 |-----------|-------|--------|
-| θ_0 | -4.6337 | Logistic regression intercept |
-| θ_i | 5.3246 | info_proxy coefficient — dominant predictor |
-| θ_d | REMOVED | Captured by α_subflow offsets |
-| θ_f | REMOVED | Frustration confounded with info_proxy; affects dropout/escalation only |
+| theta_0 | -4.6337 | Logistic regression intercept |
+| theta_i | 5.3246 | info_proxy coefficient - dominant predictor |
+| theta_d | REMOVED | Captured by alpha_subflow offsets |
+| theta_f | REMOVED | Frustration confounded with info_proxy; affects dropout/escalation only |
 
 ## 4.4 Action Offsets
 
-| Action | Offset α_action |
+| Action | Offset alpha_action |
 |--------|----------------|
 | ProvideSolution | +0.10 |
-| AskInfo | −0.15 |
-| AffectiveRepair | −0.05 |
+| AskInfo | -0.15 |
+| AffectiveRepair | -0.05 |
 
 ## 4.5 Subflow Offsets
 
 High-resolution subflows (e.g., recover_username, manage_change_address)
-get positive α_subflow. Low-resolution subflows (e.g., refund_initiate
-when policy blocks it, manage_dispute_bill) get negative α_subflow.
+get positive alpha_subflow. Low-resolution subflows (e.g., refund_initiate
+when policy blocks it, manage_dispute_bill) get negative alpha_subflow.
 Values fit from Extract 3 resolution rates per subflow.
 
 ## 4.6 Validation Checks
 
 After fitting, verify:
-- θ_i > 0 (more information → higher success)
-- θ_d: PASS with note — removed from regression; difficulty captured by subflow offsets
-- θ_f: PASS with note — removed from regression; frustration affects dropout/escalation dynamics
-- θ_0 in range (-8.0, 1.0)
+- theta_i > 0 (more information -> higher success)
+- theta_d: PASS with note - removed from regression; difficulty captured by subflow offsets
+- theta_f: PASS with note - removed from regression; frustration affects dropout/escalation dynamics
+- theta_0 in range (-8.0, 1.0)
 - p_success(info=0.9, alpha_subflow=0) > dynamic threshold (p_high_info - 0.05)
   where current fit gives p_high_info=0.5395 and threshold=0.4895
 - p_success(info=0.1, alpha_subflow=0) < 0.20
@@ -596,21 +596,21 @@ The final clustering feature set is these 6 features:
 
 ## 5.4 Finalized Cluster Profiles
 
-| Cluster | Label | Behavioral Signature | ρ | σ | τ |
+| Cluster | Label | Behavioral Signature | rho | sigma | tau |
 |---------|-------|---------------------|---|---|---|
 | C1 | high_engagement_resolver | High values/turn, high total values, resolves - task-heavy subflows (returns, billing, account changes) | 0.739 | 0.212 | 0.745 |
 | C2 | low_engagement_resolver | Low values/turn, low total values, resolves - information-light subflows (FAQ, pricing, status) | 0.547 | 0.355 | 0.607 |
 | C3 | silent_dropout | Resolution=0, escalation=0 - conversation failed without escalation, customer disengaged | 0.332 | 0.429 | 0.174 |
 | C4 | escalation_prone | Escalation flag=1 - notify-team action or explicit manager request | 0.234 | 0.894 | 0.159 |
 
-**Design note on the resolver split:** The high/low engagement split reflects task complexity, not purely individual patience differences. High-engagement resolvers are on subflows that structurally require more information exchange (returns, billing disputes, account changes). Low-engagement resolvers have simpler needs (FAQ lookups, pricing queries, status checks). The (ρ, σ, τ) parameters are derived from cluster feature means using explicit formulas - see persona_profiles.json for full derivation details and computed values.
+**Design note on the resolver split:** The high/low engagement split reflects task complexity, not purely individual patience differences. High-engagement resolvers are on subflows that structurally require more information exchange (returns, billing disputes, account changes). Low-engagement resolvers have simpler needs (FAQ lookups, pricing queries, status checks). The (rho, sigma, tau) parameters are derived from cluster feature means using explicit formulas - see persona_profiles.json for full derivation details and computed values.
 
 ## 5.5 Mapping Clusters to Simulator
 
-Each cluster -> Beta distributions over (ρ, σ, τ). At episode reset:
+Each cluster -> Beta distributions over (rho, sigma, tau). At episode reset:
 
-1. Sample cluster from π_persona (empirical cluster frequencies from fitted model)
-2. Sample (ρ, σ, τ) from cluster Beta priors using (mean, std) from persona_profiles.json
+1. Sample cluster from pi_persona (empirical cluster frequencies from fitted model)
+2. Sample (rho, sigma, tau) from cluster Beta priors using (mean, std) from persona_profiles.json
 3. These three scalars parameterize all persona effects in transition dynamics throughout the episode
 
 ## 5.6 Empirical Priors (From Fitted Clustering)
@@ -683,9 +683,9 @@ $$P_{churn} = \sigma(-3.8 + 3.0f_t + 0.1 \cdot failed\_streak
 + 0.08 \cdot turn\_count - 1.5\tau)$$
 
 Monotonicity constraints:
-- ∂P_churn/∂f_t > 0
-- ∂P_churn/∂failed_streak > 0
-- ∂P_churn/∂τ < 0
+- dP_churn/df_t > 0
+- dP_churn/dfailed_streak > 0
+- dP_churn/dtau < 0
 
 Sanity-state validation (all pass):
 - S1: 0.0145 in [0.00, 0.03]
@@ -709,10 +709,10 @@ $$R_{terminal} = \eta \cdot \mathbf{1}_{success} - C_e(tier) \cdot \mathbf{1}_{e
 
 | Term | Meaning | Sign |
 |------|---------|------|
-| η · 1_success | Bonus for resolving the issue | + |
-| C_e(tier) · 1_escalate | Cost of routing to human | − |
-| λ_turn | Per-turn interaction cost | − |
-| ω · P_churn,terminal · V | Terminal expected value at risk from churn | − |
+| eta * 1_success | Bonus for resolving the issue | + |
+| C_e(tier) * 1_escalate | Cost of routing to human | - |
+| lambda_turn | Per-turn interaction cost | - |
+| omega * P_churn,terminal * V | Terminal expected value at risk from churn | - |
 
 Calibrated parameters:
 - $\eta = 5.0$ (fixed anchor)
@@ -732,13 +732,13 @@ Omega calibration:
 - $\omega = (\eta - \lambda_{turn}T_{max})/V_{max} = (5.0-0.10\times20)/18.0 = 0.1667$
 - final: $\omega=0.1667$
 
-Scale target check: trajectory totals remain in [−5, +5].
+Scale target check: trajectory totals remain in [-5, +5].
 
 ## 6.6 Terminal Reward Decomposition
 
 | Terminal State | Reward Components |
 |----------------|-----------------|
-| Success (Close) | η bonus + zero churn term ($P_{churn,terminal}=0$) |
+| Success (Close) | eta bonus + zero churn term ($P_{churn,terminal}=0$) |
 | Escalation | C_e(tier) penalty + state-dependent churn term |
 | Dropout | Maximum churn penalty ($P_{churn,terminal}=1$) |
 | Timeout (T_max) | state-dependent churn term, no bonus |
@@ -775,11 +775,11 @@ Phase 6 status:
 ```
 ┌─────────────────────────────────────────────┐
 │              SupportEnv (Gym API)            │
-│  reset() → step(action) → obs, reward, done │
+│  reset() -> step(action) -> obs, reward, done │
 └─────────────┬───────────────────────────────┘
               │
      ┌────────▼─────────┐
-     │   State Engine    │  ← SOURCE OF TRUTH
+     │   State Engine    │  <- SOURCE OF TRUTH
      │  (transitions,    │
      │   p_success,      │
      │   dropout check)  │
@@ -845,7 +845,7 @@ Each step returns an info dict:
 - reward decomposition (which terms fired)
 - transition events (success/fail/dropout/escalate)
 - p_success at time of action
-- persona parameters (ρ, σ, τ) for current episode
+- persona parameters (rho, sigma, tau) for current episode
 - subflow and tier for current episode
 - optional conversation history (when NLG enabled)
 - last transition payload with `per_turn_reward` and `terminal_reward`
@@ -854,7 +854,7 @@ Each step returns an info dict:
 
 - All stochastic draws use a single seeded RNG object
 - Seed passed through reset()
-- Same seed → identical trajectory guaranteed
+- Same seed -> identical trajectory guaranteed
 
 Phase 7 smoke test status:
 - Test 1 (1000 random episodes): PASS
@@ -898,7 +898,7 @@ It does NOT:
 At episode reset, RAG retrieves a real support problem description:
 - Matches the sampled subflow (e.g., return_size, manage_cancel)
 - Optionally matches difficulty tier
-- Used as flavor text only — attached to episode_info, not state
+- Used as flavor text only - attached to episode_info, not state
 
 ## 8.3 RAG Data Source
 
@@ -919,9 +919,9 @@ Index construction:
 episode_info["problem_context"] = rag_retrieve(subflow, difficulty)
 
 # RAG output NEVER touches these
-state.information = ...    # ← state engine only
-state.frustration = ...    # ← state engine only
-state.progress = ...       # ← state engine only
+state.information = ...    # <- state engine only
+state.frustration = ...    # <- state engine only
+state.progress = ...       # <- state engine only
 ```
 
 ---
@@ -930,29 +930,29 @@ state.progress = ...       # ← state engine only
 
 ## 9.1 Three Levels of Validation
 
-### Level 1 — Statistical Realism (Does simulator match ABCD?)
+### Level 1 - Statistical Realism (Does simulator match ABCD?)
 
 | Check | Method | Threshold |
 |-------|--------|----------|
 | Turn count distribution | KS test vs ABCD empirical | KS < 0.15 |
 | Resolution rate | Chi-square vs ABCD rate | Within 10% |
 | Escalation frequency | Chi-square vs ABCD rate | Within 5% |
-| Information trajectory | Mean ± std by turn vs Extract 4 | Visual match |
+| Information trajectory | Mean +/- std by turn vs Extract 4 | Visual match |
 | Escalation precursors | Frustration level before escalation | f_t > 0.6 on average |
 
-### Level 2 — Transition Logic Sanity
+### Level 2 - Transition Logic Sanity
 
 | Check | Expected Result |
 |-------|----------------|
-| AskInfo increases information | Mean Δi > 0 always |
-| Failed ProvideSolution increases frustration | Mean Δf > 0 on failure |
-| Effective AffectiveRepair decreases frustration | Mean Δf < 0 on effective repair |
+| AskInfo increases information | Mean Delta i > 0 always |
+| Failed ProvideSolution increases frustration | Mean Delta f > 0 on failure |
+| Effective AffectiveRepair decreases frustration | Mean Delta f < 0 on effective repair |
 | Escalate/Close are terminal | done = True always |
 | failed_streak resets on success | Confirmed in trajectory trace |
 | Dropout risk grows with frustration | Monotone positive |
 | High-difficulty subflows fail more | p_success lower for hard subflows |
 
-### Level 3 — RL Signal Quality
+### Level 3 - RL Signal Quality
 
 Run 4 baseline policies and verify economic ordering:
 
@@ -961,7 +961,7 @@ Run 4 baseline policies and verify economic ordering:
 | Always Escalate | Worst | Maximum escalation cost, no resolution bonus |
 | Random | 3rd | Occasionally resolves by chance |
 | Threshold (escalate if f > 0.7) | 2nd | Reasonable heuristic |
-| Always Try to Solve | 2nd–1st | Some successes, avoids escalation cost |
+| Always Try to Solve | 2nd-1st | Some successes, avoids escalation cost |
 
 Trained RL policy should eventually beat all baselines.
 
@@ -1021,7 +1021,7 @@ Phase 1 (ABCD Data Extraction)
               │
               ├──► Phase 9 (Validation suite)
               │
-              └──► Phase 8 (RAG — future, independent)
+              └──► Phase 8 (RAG - future, independent)
 ```
 
 ## Task Breakdown
@@ -1032,7 +1032,7 @@ Phase 1 (ABCD Data Extraction)
 | T2 | 5 | Persona clustering notebook + cluster profiles | T1 Extract 5 |
 | T3 | 4 | p_success logistic regression fit | T1 Extract 1+2+3 |
 | T4 | 3 | Transition coefficient calibration | T1+T2+T3 |
-| T5 | 2 | Final state vector spec + init distributions | T1–T4 |
+| T5 | 2 | Final state vector spec + init distributions | T1-T4 |
 | T6 | 6 | Reward model + churn function | T5 |
 | T7 | 7 | SupportEnv implementation | T5+T6 |
 | T8 | 9 | Validation suite (3 levels) | T7 |
@@ -1061,10 +1061,10 @@ rate. Then replace placeholder coefficients with ABCD-fit values.
 | Primary dataset | ABCD | Explicit action labels, escalation, resolution, tier |
 | Secondary dataset | MultiDoGO (read-only) | Intent progression structure only |
 | Subflow vs domain | subflow (55 types) | Strictly more informative than domain |
-| difficulty_proxy = subflow-relative action_count / subflow_mean_action_count (not global mean) | High action-count subflows have HIGH resolution — difficulty ≠ action count | Preserves subflow-relative calibration while avoiding global-mean distortion |
+| difficulty_proxy = subflow-relative action_count / subflow_mean_action_count (not global mean) | High action-count subflows have HIGH resolution - difficulty != action count | Preserves subflow-relative calibration while avoiding global-mean distortion |
 | Tier source | ABCD member_level | Direct empirical grounding |
 | Frustration treatment | Latent accumulator, deterministic rules | No emotion labels; keeps dynamics stable |
-| Persona treatment | 4 clusters, (ρ, σ, τ) | ABCD behavioral clustering |
+| Persona treatment | 4 clusters, (rho, sigma, tau) | ABCD behavioral clustering |
 | Business variables | Tier + value in reward only | Clean separation |
 | RAG data source | ABCD scenarios | Already grounded in subflow |
 | p_success estimation | Logistic regression on ABCD | Empirically fit, interpretable |
