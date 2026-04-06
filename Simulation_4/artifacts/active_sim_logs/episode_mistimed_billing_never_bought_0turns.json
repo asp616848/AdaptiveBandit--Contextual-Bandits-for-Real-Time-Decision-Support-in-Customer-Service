@@ -1,0 +1,13 @@
+{
+  "subflow": "mistimed_billing_never_bought",
+  "tier": "Business",
+  "persona": "low_engagement_resolver",
+  "rho": 0.6635246582646172,
+  "sigma": 0.39169871346569185,
+  "tau": 0.6143502220280036,
+  "initial_customer_message": "Hi, I need help with mistimed billing never bought.",
+  "outcome": "timeout",
+  "total_reward": 0.0,
+  "turns": 0,
+  "episode_log": []
+}

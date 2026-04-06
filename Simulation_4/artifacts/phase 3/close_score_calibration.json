@@ -1,0 +1,9 @@
+{
+  "mean_close_score_resolved": 0.7096097656487006,
+  "mean_close_score_nonresolved": 0.6232004573357526,
+  "p10_close_score_resolved": 0.31321267480766735,
+  "p90_close_score_nonresolved": 0.85901045759924,
+  "recommended_threshold_midpoint": 0.5861115662034537,
+  "threshold_changed": true,
+  "close_score_threshold_final": 0.5861115662034537
+}

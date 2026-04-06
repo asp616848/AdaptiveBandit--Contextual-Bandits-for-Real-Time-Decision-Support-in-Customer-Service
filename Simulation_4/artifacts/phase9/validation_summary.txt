@@ -1,0 +1,41 @@
+PHASE 9 VALIDATION SUMMARY
+Timestamp: 2026-03-26 17:50:07
+
+level1_statistical
+- [PASS] check1_terminal_outcomes
+- [PASS] check2_turn_distribution
+- [PASS] check3_information_trajectory
+- [PASS] check4_frustration_trajectory
+- [FAIL] check5_persona_differentiation
+- [PASS] check6_tier_reward_ordering
+- [FAIL] summary_level1_metrics
+
+level2_transition
+- [PASS] check1_askinfo_gain
+- [PASS] check2_provide_solution_dynamics
+- [PASS] check3_affective_repair
+- [PASS] check4_escalate_close_terminal
+- [PASS] check5_failed_streak_reset
+- [PASS] check6_dropout_monotone
+- [PASS] check7_psuccess_vs_information
+- [PASS] check8_autoresolve
+
+level3_rl_signal
+- [FAIL] check1_policy_ordering
+- [PASS] check2_reward_signal_strength
+- [PASS] check3_resolution_doc_vs_always_solve
+- [PASS] check4_random_negative_reward
+- [PASS] check5_document_guided_profitability
+- [FAIL] policy_metrics
+
+level4_rag_coverage
+- [PASS] check1_subflow_coverage
+- [PASS] check2_identity_slot_completeness
+- [PASS] check3_scenario_grounding_quality
+- [PASS] check4_doc_type_isolation
+- [PASS] check5_retrieval_spot_checks
+
+Total checks: 24
+Passed checks: 22
+Failed checks: 2
+Overall pass: False

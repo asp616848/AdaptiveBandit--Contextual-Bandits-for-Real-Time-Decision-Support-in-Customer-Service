@@ -1,0 +1,118 @@
+{
+  "subflow": "bad_price_competitor",
+  "tier": "Business",
+  "persona": "low_engagement_resolver",
+  "rho": 0.6960459671423209,
+  "sigma": 0.3129042926645114,
+  "tau": 0.621610191456177,
+  "initial_customer_message": "Hey there! I'm having a bit of a frustrating experience with your product. I was considering purchasing the premium version, but then I saw that a competitor is offering similar features at a significantly lower price point - like $20 cheaper than what you're asking for. This is really throwing me off and making me question whether it's worth the extra cost to go with your brand.",
+  "outcome": "timeout",
+  "total_reward": -0.41732563959117397,
+  "turns": 4,
+  "episode_log": [
+    {
+      "turn": 1,
+      "action": "AffectiveRepair",
+      "agent_text": "Hi! Thank you for coming to me with this issue today! Let's discuss what would be the best kind of product for you usecase.",
+      "customer_utterance": "Appreciate the apology, but I'm still not seeing a reason why your product should be more expensive than the competitor's. Can you help me understand what additional value I'd get for that extra $20?",
+      "state_post": {
+        "information": 0.1082,
+        "progress": 0.0148,
+        "frustration": 0.0371,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AffectiveRepair",
+        "repair_effective": false,
+        "p_repair_used": 0.6784,
+        "outcome": "ineffective",
+        "terminal_type": null,
+        "customer_utterance": "Appreciate the apology, but I'm still not seeing a reason why your product should be more expensive than the competitor's. Can you help me understand what additional value I'd get for that extra $20?",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "action": "AskInfo",
+      "agent_text": "Yes, of course. Could you tell me what specific use case you are looking for from our product? Then we could discuss which is better.",
+      "customer_utterance": "Honestly, I'm not convinced that your product is worth the extra cost. The competitor's offering seems to have similar features and a much better price point. As someone who was considering purchasing the premium version, seeing this difference really threw me off. (order.subflow = bad_price_competitor)",
+      "state_post": {
+        "information": 0.5107,
+        "progress": 0.0349,
+        "frustration": 0.0321,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": true,
+        "gain_occurred": true,
+        "delta_i": 0.4025,
+        "delta_cumulative_values": 0.4025,
+        "outcome": "gain",
+        "terminal_type": null,
+        "revealed_slots": [
+          [
+            "order.order_id",
+            "N/A"
+          ],
+          [
+            "personal.email",
+            "unknown@example.com"
+          ]
+        ],
+        "customer_utterance": "Honestly, I'm not convinced that your product is worth the extra cost. The competitor's offering seems to have similar features and a much better price point. As someone who was considering purchasing the premium version, seeing this difference really threw me off. (order.subflow = bad_price_competitor)",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 3,
+      "action": "ProvideSolution",
+      "agent_text": "ALright, our product may on the surface level look like it is offering the same features. But they are of better quality, lower latency, and for 20 dollars extra you get 30 more days!",
+      "customer_utterance": "Wow, I'm really glad to hear that you can offer me a discount! That makes all the difference for me. Being able to stay within my budget is a huge relief. Thank you so much for working with me to find a solution!",
+      "state_post": {
+        "information": 0.5107,
+        "progress": 0.3871,
+        "frustration": 0.0,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "ProvideSolution",
+        "outcome": "success",
+        "p_success_used": 0.1983,
+        "terminal_type": null,
+        "customer_utterance": "Wow, I'm really glad to hear that you can offer me a discount! That makes all the difference for me. Being able to stay within my budget is a huge relief. Thank you so much for working with me to find a solution!",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 4,
+      "action": "Close",
+      "agent_text": "Of course. No issues. Have a good day.",
+      "customer_utterance": "I appreciate you acknowledging my concerns, but I'm still left feeling like this discount doesn't go far enough to make up for the initial price difference. Hopefully, future customers won't have to face this same issue.",
+      "state_post": {
+        "information": 0.5107,
+        "progress": 0.3871,
+        "frustration": 0.0,
+        "failed_streak": 0
+      },
+      "reward": -0.1173,
+      "transition": {
+        "action": "Close",
+        "outcome": "failure",
+        "resolved": false,
+        "p_success_used": 0.1983,
+        "close_score": 0.3269,
+        "terminal_type": "timeout",
+        "customer_utterance": "I appreciate you acknowledging my concerns, but I'm still left feeling like this discount doesn't go far enough to make up for the initial price difference. Hopefully, future customers won't have to face this same issue.",
+        "per_turn_reward": -0.1,
+        "terminal_reward": -0.0173
+      }
+    }
+  ]
+}
