@@ -57,6 +57,7 @@ def compute_business_metrics(history: Dict, tier_label: str = "all") -> Dict:
             actions = np.zeros(len(rewards), dtype=int)
 
     outcomes = history.get('outcomes', [])
+    has_outcomes = len(outcomes) == len(rewards) and len(outcomes) > 0
 
     n = len(rewards)
     n_escalated = np.sum(actions == 1)
@@ -81,21 +82,21 @@ def compute_business_metrics(history: Dict, tier_label: str = "all") -> Dict:
         # Accuracy
         'correct_routing_rate': float(
             (correct_deflections + correct_escalations) / max(n, 1)
-        ),
+        ) if has_outcomes else float('nan'),
         'correct_deflection_rate': float(
             correct_deflections / max(n_bot, 1)
-        ),
+        ) if has_outcomes else float('nan'),
         'correct_escalation_rate': float(
             correct_escalations / max(n_escalated, 1)
-        ),
+        ) if has_outcomes else float('nan'),
 
         # Errors
         'missed_escalation_rate': float(
             missed_escalations / max(n, 1)
-        ),
+        ) if has_outcomes else float('nan'),
         'unnecessary_escalation_rate': float(
             unnecessary_escalations / max(n, 1)
-        ),
+        ) if has_outcomes else float('nan'),
 
         # Economic
         'estimated_cost_savings_per_conv': float(
@@ -199,6 +200,11 @@ def generate_comparison_table(results: Dict) -> str:
 
     rows = [header, separator]
 
+    def _fmt_pct(value: float) -> str:
+        if np.isnan(value):
+            return "       N/A"
+        return f"{value:>10.1%}"
+
     for agent_name in ['rule_based', 'linucb', 'thompson_sampling', 'dqn']:
         if agent_name not in results:
             continue
@@ -206,10 +212,10 @@ def generate_comparison_table(results: Dict) -> str:
 
         row = (f"{agent_name:<20} "
                f"{metrics['avg_reward']:>+10.3f} "
-               f"{metrics['escalation_rate']:>10.1%} "
-               f"{metrics['correct_routing_rate']:>10.1%} "
-               f"{metrics['missed_escalation_rate']:>10.1%} "
-               f"{metrics['unnecessary_escalation_rate']:>12.1%}")
+             f"{metrics['escalation_rate']:>10.1%} "
+             f"{_fmt_pct(metrics['correct_routing_rate'])} "
+             f"{_fmt_pct(metrics['missed_escalation_rate'])} "
+             f"{_fmt_pct(metrics['unnecessary_escalation_rate']).rjust(12)}")
         rows.append(row)
 
     return "\n".join(rows)

@@ -139,6 +139,9 @@ def train_dqn(agent: DQNAgent,
         'eval_points': [],
         'eval_rewards': [],
         'epsilon_history': [],
+        'actions': [],          # Binary routing proxy: 1 if final action is escalate, else 0
+        'outcomes': [],         # Bandit-compatible routing outcome labels
+        'tiers': [],            # Tier for each episode
     }
 
     start = time.time()
@@ -147,10 +150,14 @@ def train_dqn(agent: DQNAgent,
         obs = env.reset()
         episode_reward = 0.0
         episode_length = 0
+        final_action = None
+        final_info = {}
 
         while not env.done:
             action = agent.select_action(obs)
             next_obs, reward, done, info = env.step(action)
+            final_action = action
+            final_info = info
 
             loss = agent.update(obs, action, reward, next_obs, done)
             if loss is not None:
@@ -163,6 +170,9 @@ def train_dqn(agent: DQNAgent,
         history['episode_rewards'].append(episode_reward)
         history['episode_lengths'].append(episode_length)
         history['epsilon_history'].append(agent.epsilon)
+        history['actions'].append(1 if final_action == 2 else 0)
+        history['outcomes'].append(final_info.get('outcome', ''))
+        history['tiers'].append(final_info.get('tier', ''))
 
         if (ep + 1) % eval_every == 0:
             avg_reward = np.mean(history['episode_rewards'][-eval_every:])

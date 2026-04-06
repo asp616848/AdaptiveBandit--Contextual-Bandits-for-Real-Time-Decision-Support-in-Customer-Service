@@ -177,6 +177,7 @@ class CustomerSupportEnv:
         tier = self.current_tier
         cfg = TIER_CONFIG[tier]
         texts = conv.get('texts', [])
+        escalation_needed = conv.get('escalation_needed', 0)
 
         self.current_turn += 1
 
@@ -202,6 +203,14 @@ class CustomerSupportEnv:
         info['action_name'] = MDP_ACTIONS[action]
         info['turn'] = self.current_turn
         info['done'] = self.done
+        info['escalation_needed'] = escalation_needed
+
+        # Map terminal MDP outcomes to the same routing labels used in bandit mode.
+        if self.done:
+            if action == 2:  # escalate
+                info['outcome'] = 'correct_escalation' if escalation_needed == 1 else 'unnecessary_escalation'
+            else:
+                info['outcome'] = 'missed_escalation' if escalation_needed == 1 else 'correct_deflection'
 
         return obs, reward, self.done, info
 
