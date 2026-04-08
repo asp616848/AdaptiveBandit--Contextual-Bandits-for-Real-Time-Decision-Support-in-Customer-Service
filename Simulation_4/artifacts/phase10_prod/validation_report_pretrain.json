@@ -1,0 +1,1396 @@
+{
+  "timestamp": "2026-04-08 15:54:53",
+  "level1_statistical": {
+    "check1_terminal_outcomes": {
+      "passed": true,
+      "value": {
+        "resolution_rate": 0.509,
+        "escalation_rate": 0.122,
+        "dropout_rate": 0.226,
+        "timeout_rate": 0.143,
+        "sum": 1.0
+      },
+      "threshold": "resolution>0.40, escalation<0.20, sum within 1.0\u00b10.001",
+      "check": "check1_terminal_outcomes"
+    },
+    "check2_turn_distribution": {
+      "passed": true,
+      "value": {
+        "mean_turn_count": 11.897,
+        "zero_turn_episodes": 0,
+        "turn_ge_10_share": 0.647
+      },
+      "threshold": "5<=mean_turn<=18, zero_turn_episodes==0, turn>=10 share>=0.10",
+      "check": "check2_turn_distribution"
+    },
+    "check3_information_trajectory": {
+      "passed": true,
+      "value": {
+        "mean_information_by_turn": {
+          "1": 0.22751217364129145,
+          "3": 0.3586155093815056,
+          "5": 0.4590303711360743,
+          "7": 0.5449496398656078,
+          "10": 0.6246537948402763
+        },
+        "turn5_gt_turn1": true,
+        "bounded_0_1": true
+      },
+      "threshold": "monotone non-decreasing means, mean_info_t5>mean_info_t1, information in [0,1]",
+      "check": "check3_information_trajectory"
+    },
+    "check4_frustration_trajectory": {
+      "passed": true,
+      "value": {
+        "mean_frustration_by_turn": {
+          "1": 0.17704995613933586,
+          "3": 0.20635209527778522,
+          "5": 0.23249782945989328,
+          "7": 0.2463921144134867,
+          "10": 0.2482965537589387
+        },
+        "mean_delta_f_affective_repair": -0.06494538544117291,
+        "mean_delta_f_provide_solution_failure": 0.10692589896405164
+      },
+      "threshold": "mean_frustration_t10<=0.50, mean_delta_f(repair)<0, mean_delta_f(solution_failure)>0",
+      "check": "check4_frustration_trajectory"
+    },
+    "check5_persona_differentiation": {
+      "passed": false,
+      "value": {
+        "persona_outcome_rates": {
+          "high_engagement_resolver": {
+            "resolution_rate": 0.414,
+            "escalation_rate": 0.175,
+            "dropout_rate": 0.205,
+            "timeout_rate": 0.206
+          },
+          "low_engagement_resolver": {
+            "resolution_rate": 0.722,
+            "escalation_rate": 0.102,
+            "dropout_rate": 0.13,
+            "timeout_rate": 0.046
+          },
+          "silent_dropout": {
+            "resolution_rate": 0.313,
+            "escalation_rate": 0.042,
+            "dropout_rate": 0.56,
+            "timeout_rate": 0.085
+          },
+          "escalation_prone": {
+            "resolution_rate": 0.331,
+            "escalation_rate": 0.019,
+            "dropout_rate": 0.599,
+            "timeout_rate": 0.051
+          }
+        },
+        "persona_counts": {
+          "high_engagement_resolver": 1000,
+          "low_engagement_resolver": 1000,
+          "silent_dropout": 1000,
+          "escalation_prone": 1000
+        },
+        "best_resolution_persona": "low_engagement_resolver"
+      },
+      "threshold": "escalation_prone escalates more than high_engagement; silent_dropout drops out more than high_engagement; high_engagement has highest resolution",
+      "check": "check5_persona_differentiation"
+    },
+    "check6_tier_reward_ordering": {
+      "passed": true,
+      "value": {
+        "mean_rewards_by_tier": {
+          "Free": {
+            "resolved": 3.553529411764705,
+            "escalated": -5.877400936947184
+          },
+          "Pro": {
+            "resolved": 3.4332699619771865,
+            "escalated": -4.025753735867514
+          },
+          "Business": {
+            "resolved": 3.434883720930232,
+            "escalated": -2.586643325713351
+          },
+          "Enterprise": {
+            "resolved": 3.4943396226415095,
+            "escalated": -1.2542626312653447
+          }
+        },
+        "tier_counts": {
+          "Free": 500,
+          "Pro": 500,
+          "Business": 500,
+          "Enterprise": 500
+        }
+      },
+      "threshold": "Enterprise escalation reward > Free escalation reward; resolved > escalated by tier; Free vs Enterprise resolved rewards approximately equal around +4",
+      "check": "check6_tier_reward_ordering"
+    },
+    "summary_level1_metrics": {
+      "passed": false,
+      "value": {
+        "resolution_rate": 0.509,
+        "escalation_rate": 0.122,
+        "dropout_rate": 0.226,
+        "timeout_rate": 0.143,
+        "mean_turn_count": 11.897
+      },
+      "threshold": "informational"
+    }
+  },
+  "level2_transition": {
+    "check1_askinfo_gain": {
+      "passed": true,
+      "value": {
+        "mean_delta_i_when_gain": 0.26260127719079424,
+        "max_abs_delta_i_when_no_gain": 0.0,
+        "p_gain_occurred": 0.3129973474801061,
+        "delta_i_non_negative": true
+      },
+      "threshold": "mean_delta_i(gain)>0.10, delta_i(no_gain)==0, 0.15<=p_gain<=0.45, delta_i>=0",
+      "check": "check1_askinfo_gain"
+    },
+    "check2_provide_solution_dynamics": {
+      "passed": true,
+      "value": {
+        "mean_delta_f_failure": 0.11049763375855465,
+        "mean_delta_f_success": -0.1224774543860153,
+        "failed_streak_increment_exactly_1_on_failure": true,
+        "failed_streak_reset_0_on_success": true
+      },
+      "threshold": "failure delta_f>0, success delta_f<0, streak +1 on failure, streak 0 on success",
+      "check": "check2_provide_solution_dynamics"
+    },
+    "check3_affective_repair": {
+      "passed": true,
+      "value": {
+        "mean_delta_f_effective": -0.09252307488173181,
+        "mean_delta_f_ineffective": 0.02,
+        "p_repair_effective": 0.6424870466321243,
+        "high_rho_effective_rate": 0.7053140096618358,
+        "low_rho_effective_rate": 0.38095238095238093
+      },
+      "threshold": "effective delta_f<0, ineffective delta_f>=0, 0.35<=p_effective<=0.85, high_rho_rate>low_rho_rate",
+      "check": "check3_affective_repair"
+    },
+    "check4_escalate_close_terminal": {
+      "passed": true,
+      "value": {
+        "escalate_terminal_assertions": true,
+        "close_terminal_assertions": true,
+        "n_escalate": 409,
+        "n_close": 378
+      },
+      "threshold": "All Escalate/Close actions terminal with expected flags",
+      "check": "check4_escalate_close_terminal"
+    },
+    "check5_failed_streak_reset": {
+      "passed": true,
+      "value": {
+        "n_successful_provide_solution": 36,
+        "all_reset_to_zero": true
+      },
+      "threshold": "failed_streak==0 immediately after successful ProvideSolution",
+      "check": "check5_failed_streak_reset"
+    },
+    "check6_dropout_monotone": {
+      "passed": true,
+      "value": {
+        "mean_pdrop_f08": 0.3010931453394567,
+        "mean_pdrop_f04": 0.017132810955384905,
+        "mean_pdrop_f01": 0.0036299815291146926,
+        "corr_frustration_pdrop": 0.59833080028929
+      },
+      "threshold": "pdrop(0.8)>pdrop(0.4)>pdrop(0.1), corr(frustration,pdrop)>0.5",
+      "check": "check6_dropout_monotone"
+    },
+    "check7_psuccess_vs_information": {
+      "passed": true,
+      "value": {
+        "mean_psuccess_info_lt_0_3": 0.04294375424600973,
+        "mean_psuccess_info_gt_0_6": 0.5586109964695386,
+        "n_low_info_samples": 327,
+        "n_high_info_samples": 7
+      },
+      "threshold": "mean p_success at info>0.6 should exceed mean p_success at info<0.3",
+      "check": "check7_psuccess_vs_information"
+    },
+    "check8_autoresolve": {
+      "check": "check8_autoresolve",
+      "passed": false,
+      "value": "RuntimeError: No successful ProvideSolution transitions with post_progress>=0.85 observed",
+      "threshold": "No exception",
+      "details": "Traceback (most recent call last):\n  File \"B:\\College\\RL\\AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service\\Simulation_4\\validation\\init.py\", line 117, in safe_check\n    out = fn()\n          ^^^^\n  File \"B:\\College\\RL\\AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service\\Simulation_4\\validation\\level2_transition.py\", line 251, in check_autoresolve_trigger\n    raise RuntimeError(\"No successful ProvideSolution transitions with post_progress>=0.85 observed\")\nRuntimeError: No successful ProvideSolution transitions with post_progress>=0.85 observed\n"
+    }
+  },
+  "level3_rl_signal": {
+    "check1_policy_ordering": {
+      "passed": false,
+      "value": {
+        "sorted_by_reward": [
+          "document_guided",
+          "threshold_escalate",
+          "random",
+          "always_escalate",
+          "always_solve"
+        ],
+        "expected_order": [
+          "document_guided",
+          "threshold_escalate",
+          "random",
+          "always_solve",
+          "always_escalate"
+        ],
+        "mean_rewards": {
+          "document_guided": 0.27762172811623753,
+          "threshold_escalate": -1.476019234975022,
+          "random": -1.5212814042600744,
+          "always_solve": -1.944813228229791,
+          "always_escalate": -1.589883345080557
+        }
+      },
+      "threshold": "policy ordering should match expected economic ordering",
+      "check": "check1_policy_ordering"
+    },
+    "check2_reward_signal_strength": {
+      "passed": false,
+      "value": {
+        "document_guided_mean_reward": 0.27762172811623753,
+        "always_escalate_mean_reward": -1.589883345080557,
+        "reward_gap": 1.8675050731967944
+      },
+      "threshold": "document_guided>0, always_escalate<-1.0, gap>2.0",
+      "check": "check2_reward_signal_strength"
+    },
+    "check3_resolution_doc_vs_always_solve": {
+      "passed": true,
+      "value": {
+        "document_guided_resolution_rate": 0.513,
+        "always_solve_resolution_rate": 0.064
+      },
+      "threshold": "document_guided resolution_rate > always_solve resolution_rate",
+      "check": "check3_resolution_doc_vs_always_solve"
+    },
+    "check4_random_negative_reward": {
+      "passed": true,
+      "value": {
+        "random_mean_episode_reward": -1.5212814042600744
+      },
+      "threshold": "random mean reward < 0",
+      "check": "check4_random_negative_reward"
+    },
+    "check5_document_guided_profitability": {
+      "passed": true,
+      "value": {
+        "document_guided_mean_episode_reward": 0.27762172811623753
+      },
+      "threshold": "document_guided mean reward > 0",
+      "check": "check5_document_guided_profitability"
+    },
+    "policy_metrics": {
+      "passed": false,
+      "value": {
+        "document_guided": {
+          "mean_episode_reward": 0.27762172811623753,
+          "std_episode_reward": 3.473168786634121,
+          "resolution_rate": 0.513,
+          "escalation_rate": 0.144,
+          "dropout_rate": 0.233,
+          "timeout_rate": 0.11,
+          "mean_turns_to_resolution": 9.857699805068226,
+          "n_escalations_free": 36,
+          "n_escalations_enterprise": 32,
+          "mean_escalation_reward_free": -5.962360547974284,
+          "mean_escalation_reward_enterprise": -1.4115949619457009
+        },
+        "threshold_escalate": {
+          "mean_episode_reward": -1.476019234975022,
+          "std_episode_reward": 0.9427603537599416,
+          "resolution_rate": 0.021,
+          "escalation_rate": 0.019,
+          "dropout_rate": 0.043,
+          "timeout_rate": 0.917,
+          "mean_turns_to_resolution": 8.380952380952381,
+          "n_escalations_free": 4,
+          "n_escalations_enterprise": 6,
+          "mean_escalation_reward_free": -4.998851282730123,
+          "mean_escalation_reward_enterprise": -0.6540569013454495
+        },
+        "random": {
+          "mean_episode_reward": -1.5212814042600744,
+          "std_episode_reward": 1.3729152889692595,
+          "resolution_rate": 0.005,
+          "escalation_rate": 0.475,
+          "dropout_rate": 0.019,
+          "timeout_rate": 0.501,
+          "mean_turns_to_resolution": 6.0,
+          "n_escalations_free": 114,
+          "n_escalations_enterprise": 123,
+          "mean_escalation_reward_free": -4.34785093945798,
+          "mean_escalation_reward_enterprise": 0.612100311757892
+        },
+        "always_solve": {
+          "mean_episode_reward": -1.944813228229791,
+          "std_episode_reward": 1.772061795248212,
+          "resolution_rate": 0.064,
+          "escalation_rate": 0.0,
+          "dropout_rate": 0.936,
+          "timeout_rate": 0.0,
+          "mean_turns_to_resolution": 7.890625,
+          "n_escalations_free": 0,
+          "n_escalations_enterprise": 0,
+          "mean_escalation_reward_free": null,
+          "mean_escalation_reward_enterprise": null
+        },
+        "always_escalate": {
+          "mean_episode_reward": -1.589883345080557,
+          "std_episode_reward": 1.8677403645468467,
+          "resolution_rate": 0.0,
+          "escalation_rate": 1.0,
+          "dropout_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_turns_to_resolution": null,
+          "n_escalations_free": 268,
+          "n_escalations_enterprise": 251,
+          "mean_escalation_reward_free": -4.155617107950522,
+          "mean_escalation_reward_enterprise": 0.8078384923267217
+        }
+      },
+      "threshold": "informational"
+    }
+  },
+  "level4_rag_coverage": {
+    "check1_subflow_coverage": {
+      "passed": true,
+      "value": {
+        "n_subflows": 95,
+        "full_template_coverage_count": 95,
+        "fallback_count": 0,
+        "coverage_table": [
+          {
+            "subflow": "bad_price_competitor",
+            "lumo_label": "competitor_price_comparison",
+            "variant_id": "competitor_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "bad_price_yesterday",
+            "lumo_label": "pricing_changed",
+            "variant_id": "price_change_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_how_1",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_how_2",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_how_3",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_how_4",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_other_1",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_other_2",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_other_3",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "boots_other_4",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "cost",
+            "lumo_label": "cost_estimate_request",
+            "variant_id": "cost_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "credit_card",
+            "lumo_label": "payment_failed",
+            "variant_id": "payment_failed_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_how_1",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_how_2",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_how_3",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_how_4",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_other_1",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_other_2",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_other_3",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jacket_other_4",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_how_1",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_how_2",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_how_3",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_how_4",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_other_1",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_other_2",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_other_3",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "jeans_other_4",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage",
+            "lumo_label": "account_management_general",
+            "variant_id": "account_mgmt_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_cancel",
+            "lumo_label": "cancel_subscription",
+            "variant_id": "cancel_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_change_address",
+            "lumo_label": "update_billing_address",
+            "variant_id": "billing_address_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_change_name",
+            "lumo_label": "update_account_name",
+            "variant_id": "account_name_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_change_phone",
+            "lumo_label": "update_contact_info",
+            "variant_id": "contact_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_create",
+            "lumo_label": "new_workspace_setup",
+            "variant_id": "setup_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_dispute_bill",
+            "lumo_label": "billing_dispute",
+            "variant_id": "billing_dispute_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_downgrade",
+            "lumo_label": "downgrade_plan",
+            "variant_id": "downgrade_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_extension",
+            "lumo_label": "trial_extension_request",
+            "variant_id": "trial_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_pay_bill",
+            "lumo_label": "billing_charge_question",
+            "variant_id": "billing_charge_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_payment_method",
+            "lumo_label": "update_payment_method",
+            "variant_id": "payment_method_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "manage_upgrade",
+            "lumo_label": "upgrade_plan",
+            "variant_id": "upgrade_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "membership_1",
+            "lumo_label": "feature_access_question",
+            "variant_id": "feature_access_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "membership_2",
+            "lumo_label": "feature_access_question",
+            "variant_id": "feature_access_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "membership_3",
+            "lumo_label": "feature_access_question",
+            "variant_id": "feature_access_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "membership_4",
+            "lumo_label": "feature_access_question",
+            "variant_id": "feature_access_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "missing",
+            "lumo_label": "missing_invoice",
+            "variant_id": "invoice_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "mistimed_billing_already_returned",
+            "lumo_label": "duplicate_charge",
+            "variant_id": "duplicate_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "mistimed_billing_never_bought",
+            "lumo_label": "charged_without_account",
+            "variant_id": "no_account_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "out_of_stock_general",
+            "lumo_label": "feature_not_in_plan",
+            "variant_id": "feature_plan_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "out_of_stock_one_item",
+            "lumo_label": "integration_approval_issue",
+            "variant_id": "integration_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "policy_1",
+            "lumo_label": "policy_clarification",
+            "variant_id": "policy_v4",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "policy_2",
+            "lumo_label": "policy_clarification",
+            "variant_id": "policy_v4",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "policy_3",
+            "lumo_label": "policy_clarification",
+            "variant_id": "policy_v4",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "policy_4",
+            "lumo_label": "policy_clarification",
+            "variant_id": "policy_v4",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "pricing_1",
+            "lumo_label": "pricing_question",
+            "variant_id": "pricing_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "pricing_2",
+            "lumo_label": "pricing_question",
+            "variant_id": "pricing_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "pricing_3",
+            "lumo_label": "pricing_question",
+            "variant_id": "pricing_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "pricing_4",
+            "lumo_label": "pricing_question",
+            "variant_id": "pricing_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "promo_code_invalid",
+            "lumo_label": "promo_code_not_working",
+            "variant_id": "promo_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "promo_code_out_of_date",
+            "lumo_label": "expired_promo_code",
+            "variant_id": "expired_promo_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "recover_password",
+            "lumo_label": "password_reset",
+            "variant_id": "password_reset_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "recover_username",
+            "lumo_label": "account_login_help",
+            "variant_id": "account_login_help_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "refund_initiate",
+            "lumo_label": "refund_request",
+            "variant_id": "refund_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "refund_status",
+            "lumo_label": "refund_status_check",
+            "variant_id": "refund_status_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "refund_update",
+            "lumo_label": "refund_follow_up",
+            "variant_id": "refund_followup_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "reset_2fa",
+            "lumo_label": "two_factor_auth_locked",
+            "variant_id": "2fa_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "return_color",
+            "lumo_label": "message_delivery_issue",
+            "variant_id": "message_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "return_size",
+            "lumo_label": "notification_overload",
+            "variant_id": "notification_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "return_stain",
+            "lumo_label": "data_missing",
+            "variant_id": "data_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "search_results",
+            "lumo_label": "search_not_working",
+            "variant_id": "search_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_how_1",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_how_2",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_how_3",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_how_4",
+            "lumo_label": "how_to_use_feature",
+            "variant_id": "how_to_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_other_1",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_other_2",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_other_3",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shirt_other_4",
+            "lumo_label": "feature_bug_report",
+            "variant_id": "bug_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "shopping_cart",
+            "lumo_label": "checkout_issue",
+            "variant_id": "checkout_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "slow_speed",
+            "lumo_label": "performance_issue",
+            "variant_id": "perf_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status",
+            "lumo_label": "general_account_status",
+            "variant_id": "status_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_credit_missing",
+            "lumo_label": "credit_not_applied",
+            "variant_id": "credit_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_delivery_time",
+            "lumo_label": "feature_delivery_eta",
+            "variant_id": "eta_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_due_amount",
+            "lumo_label": "billing_amount_question",
+            "variant_id": "amount_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_due_date",
+            "lumo_label": "billing_date_question",
+            "variant_id": "date_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_mystery_fee",
+            "lumo_label": "unexplained_charge",
+            "variant_id": "unexplained_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_payment_method",
+            "lumo_label": "payment_method_on_file",
+            "variant_id": "payment_on_file_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_quantity",
+            "lumo_label": "seat_count_question",
+            "variant_id": "seats_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_questions",
+            "lumo_label": "general_account_status",
+            "variant_id": "status_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_service_added",
+            "lumo_label": "new_feature_activated",
+            "variant_id": "new_feature_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_service_removed",
+            "lumo_label": "feature_deprecated",
+            "variant_id": "deprecated_v1",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "status_shipping_question",
+            "lumo_label": "data_export_question",
+            "variant_id": "export_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "timing_1",
+            "lumo_label": "billing_cycle_question",
+            "variant_id": "billing_cycle_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "timing_2",
+            "lumo_label": "billing_cycle_question",
+            "variant_id": "billing_cycle_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "timing_3",
+            "lumo_label": "billing_cycle_question",
+            "variant_id": "billing_cycle_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          },
+          {
+            "subflow": "timing_4",
+            "lumo_label": "billing_cycle_question",
+            "variant_id": "billing_cycle_v2",
+            "has_mapping": true,
+            "slot_list_non_empty": true,
+            "policy_chunks_non_empty": true,
+            "used_fallback": false,
+            "passed": true
+          }
+        ]
+      },
+      "threshold": "all subflows mapped, non-empty slot_list and policy_chunks, no fallback variant",
+      "check": "check1_subflow_coverage"
+    },
+    "check2_identity_slot_completeness": {
+      "passed": true,
+      "value": {
+        "total_variants": 98,
+        "missing_fields": []
+      },
+      "threshold": "every variant has identity(customer_name,billing_email), slots(issue_detail), free_info(how_discovered)",
+      "check": "check2_identity_slot_completeness"
+    },
+    "check3_scenario_grounding_quality": {
+      "passed": true,
+      "value": {
+        "sample_size": 50,
+        "issues": []
+      },
+      "threshold": "issue_detail > 50 chars, no placeholders, no fallback names",
+      "check": "check3_scenario_grounding_quality"
+    },
+    "check4_doc_type_isolation": {
+      "passed": true,
+      "value": {
+        "policy_chunks_with_playbooks": [],
+        "non_playbook_in_playbook_retrieval": []
+      },
+      "threshold": "policy_chunks exclude playbooks; retrieve_agent_playbook returns only playbooks",
+      "check": "check4_doc_type_isolation"
+    },
+    "check5_retrieval_spot_checks": {
+      "passed": true,
+      "value": {
+        "spot_checks": [
+          {
+            "subflow": "reset_2fa",
+            "expected_keyword": "Security",
+            "top_section_title": "4. Security & Authentication Policies (continued)",
+            "passed": true
+          },
+          {
+            "subflow": "manage_dispute_bill",
+            "expected_keyword": "Billing",
+            "top_section_title": "1. Billing & Refund Policies (continued)",
+            "passed": true
+          },
+          {
+            "subflow": "slow_speed",
+            "expected_keyword": "Known Issues",
+            "top_section_title": "11. Known Issues & Platform Limitations",
+            "passed": true
+          },
+          {
+            "subflow": "refund_initiate",
+            "expected_keyword": "Billing",
+            "top_section_title": "1. Billing & Refund Policies (continued)",
+            "passed": true
+          },
+          {
+            "subflow": "recover_password",
+            "expected_keyword": "Security",
+            "top_section_title": "4. Security & Authentication Policies (continued)",
+            "passed": true
+          }
+        ]
+      },
+      "threshold": "top section title contains expected keyword",
+      "check": "check5_retrieval_spot_checks"
+    }
+  },
+  "total_checks": 24,
+  "passed_checks": 20,
+  "failed_checks": 4,
+  "overall_pass": false
+}

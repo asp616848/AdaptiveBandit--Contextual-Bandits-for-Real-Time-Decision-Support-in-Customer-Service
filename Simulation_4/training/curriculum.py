@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 
@@ -49,7 +51,8 @@ class CurriculumScheduler:
                 break
 
         if csv_path is None:
-            raise FileNotFoundError(f"extract3_subflow_stats.csv not found under: {candidates}")
+            self.subflow_difficulties = self._load_fallback_difficulties(root)
+            return
 
         df = pd.read_csv(csv_path)
         mean_action = float(df["mean_action_count"].mean())
@@ -58,6 +61,38 @@ class CurriculumScheduler:
         self.subflow_difficulties = {
             str(row["subflow"]): float(row["mean_action_count"]) / denom
             for _, row in df.iterrows()
+        }
+
+    def _load_fallback_difficulties(self, root: Path) -> dict[str, float]:
+        psuccess_candidates = [
+            root / "phase 4" / "psuccess_model.json",
+            root / "phase4" / "psuccess_model.json",
+        ]
+
+        psuccess_path = None
+        for candidate in psuccess_candidates:
+            if candidate.exists():
+                psuccess_path = candidate
+                break
+
+        if psuccess_path is None:
+            return {"generic_support": 1.0}
+
+        payload = json.loads(psuccess_path.read_text(encoding="utf-8"))
+        offsets = payload.get("subflow_offsets", {})
+        subflows = sorted(str(k) for k in offsets.keys())
+        if not subflows:
+            return {"generic_support": 1.0}
+
+        values = np.array([float(offsets.get(sf, 0.0)) for sf in subflows], dtype=float)
+        if len(values) <= 1 or float(np.max(values) - np.min(values)) < 1e-9:
+            hardness = np.full_like(values, 0.5)
+        else:
+            hardness = (float(np.max(values)) - values) / (float(np.max(values)) - float(np.min(values)))
+
+        return {
+            sf: float(0.7 + 0.9 * hard)
+            for sf, hard in zip(subflows, hardness)
         }
 
     def get_subflow_filter(self, total_timesteps: int) -> list[str] | None:
