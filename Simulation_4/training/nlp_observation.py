@@ -15,9 +15,9 @@ Observation vector (9D):
   [3] suggested_action_norm — LLM hint: which action fits (0=AskInfo … 1=Close)
   [4] escalation_flag    — 1 if LLM thinks escalation is needed, else 0
   [5] info_completeness  — LLM estimate of how complete the customer's info is
-  [6] tier_norm          — customer tier (0=Free … 1=Enterprise)
-  [7] turn_count_norm    — turn_count / T_max
-  [8] failed_streak_norm — consecutive failures / 5, proxy for difficulty
+    [6] turn_count_norm    — turn_count / T_max (tracked by wrapper)
+    [7] history_depth_norm — normalised length of conversation history
+    [8] customer_len_norm  — latest customer message length proxy
 
 The wrapper also calls AgentResponseGenerator (if available) to produce natural-
 language agent text for each action before calling env.step().  This feeds the
@@ -66,10 +66,6 @@ class NLPObservationWrapper(gym.Wrapper):
         self._conversation_history: list[dict[str, str]] = []
 
     @property
-    def state(self) -> dict[str, Any]:
-        return getattr(self.env, "state", {})
-
-    @property
     def ACTION_NAMES(self) -> dict[int, str]:
         return getattr(self.env, "ACTION_NAMES", {})
 
@@ -83,8 +79,16 @@ class NLPObservationWrapper(gym.Wrapper):
             return str(rag.get("policy_context", ""))
         return ""
 
-    def _get_subflow(self) -> str:
-        return str(self.state.get("subflow", ""))
+    def _latest_customer_text(self, info: dict[str, Any]) -> str:
+        history = info.get("conversation_history", self._conversation_history)
+        if isinstance(history, list):
+            for msg in reversed(history):
+                if not isinstance(msg, dict):
+                    continue
+                role = str(msg.get("role", "")).strip()
+                if role == "assistant":
+                    return str(msg.get("content", "")).strip()
+        return ""
 
     def _build_obs(self, info: dict[str, Any]) -> np.ndarray:
         history = info.get("conversation_history", self._conversation_history)
@@ -92,19 +96,16 @@ class NLPObservationWrapper(gym.Wrapper):
         classification = self.intent_classifier.classify(
             conversation_history=history,
             policy_context=self._get_policy_context(),
-            subflow=self._get_subflow(),
+            subflow="",
         )
         self._last_classification = classification
         intent_features = self.intent_classifier.to_feature_vector(classification)
-        # intent_features = [intent_norm, confidence, sentiment_norm,
-        #                     action_norm, escalation_flag, info_completeness]
 
-        state = self.state
-        tier_norm = float(state.get("tier_idx", 0)) / 3.0
-        turn_norm = float(state.get("turn_count", 0)) / 20.0
-        streak_norm = float(min(state.get("failed_streak", 0), 5)) / 5.0
+        turn_norm = float(min(len(history) // 2, 20)) / 20.0 if isinstance(history, list) else 0.0
+        history_depth_norm = float(min(len(history), 40)) / 40.0 if isinstance(history, list) else 0.0
+        customer_len_norm = float(min(len(self._latest_customer_text(info)), 300)) / 300.0
 
-        obs = np.array(intent_features + [tier_norm, turn_norm, streak_norm], dtype=np.float32)
+        obs = np.array(intent_features + [turn_norm, history_depth_norm, customer_len_norm], dtype=np.float32)
         return np.clip(obs, 0.0, 1.0)
 
     def _generate_agent_text(self, action_name: str, info: dict[str, Any]) -> str:

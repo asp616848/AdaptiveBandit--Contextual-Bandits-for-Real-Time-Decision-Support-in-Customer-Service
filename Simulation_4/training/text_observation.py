@@ -8,9 +8,8 @@ sentence-transformers/all-MiniLM-L6-v2 (384D, dense semantic embeddings).
 The same model is already used by LumoRAG, so no new dependency is added.
 
 Two extra floats are appended to the embedding:
-  [384] tier_norm     — customer tier (0=Free … 1=Enterprise), legitimately
-                        observable since the agent knows who they are talking to
-  [385] turn_count_norm — normalised turn counter, equally observable
+    [384] turn_count_norm   — normalised turn counter (agent-observable)
+    [385] history_depth_norm — conversation depth from chat history length
 
 Total observation dimension: 386.
 
@@ -24,7 +23,7 @@ import gymnasium as gym
 import numpy as np
 
 _EMBED_DIM = 384  # all-MiniLM-L6-v2 output dimension
-OBS_DIM = _EMBED_DIM + 2  # + tier_norm + turn_count_norm
+OBS_DIM = _EMBED_DIM + 2  # + turn_count_norm + history_depth_norm
 
 
 def _load_model():
@@ -60,11 +59,11 @@ def _embed_text(text: str) -> tuple:
 class TextOnlyObservationWrapper(gym.Wrapper):
     """Expose only text-derived observations to the RL policy.
 
-    The wrapped policy never sees hidden simulator state variables (frustration,
-    progress, persona). It receives a 386-dimensional vector:
+        The wrapped policy never sees hidden simulator state variables (frustration,
+        progress, persona, tier). It receives a 386-dimensional vector:
       - [0:384] sentence-transformer embedding of conversation context
-      - [384]   tier_norm (legitimately observable)
-      - [385]   turn_count_norm (legitimately observable)
+            - [384]   turn_count_norm (legitimately observable)
+            - [385]   history_depth_norm (from conversation history)
     """
 
     ACTION_NAME_TO_TEXT = {
@@ -155,12 +154,11 @@ class TextOnlyObservationWrapper(gym.Wrapper):
 
         embed = np.array(_embed_text(text), dtype=np.float32)  # shape (384,)
 
-        # Append observable state features that the agent legitimately knows.
-        state = self.state
-        tier_norm = float(state.get("tier_idx", 0)) / 3.0
-        turn_norm = float(state.get("turn_count", self._turn_index)) / 20.0
+        turn_norm = float(self._turn_index) / 20.0
+        history = info.get("conversation_history", [])
+        history_depth_norm = float(min(len(history), 40)) / 40.0 if isinstance(history, list) else 0.0
 
-        obs = np.concatenate([embed, [tier_norm, turn_norm]]).astype(np.float32)
+        obs = np.concatenate([embed, [turn_norm, history_depth_norm]]).astype(np.float32)
         return obs
 
     def reset(self, *, seed: int | None = None, options: dict | None = None):

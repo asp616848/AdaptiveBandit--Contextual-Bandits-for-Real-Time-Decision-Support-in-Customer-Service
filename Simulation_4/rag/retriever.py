@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -27,7 +28,16 @@ class Retriever:
         self.index: Any | None = None
         self._embeddings: np.ndarray | None = None
         self.chunks: list[dict[str, Any]] = []
-        self.model = SentenceTransformer(self.model_name)
+        self.model: SentenceTransformer | None = None
+        self._model_init_error: str | None = None
+        self._lexical_cache: list[set[str]] = []
+
+        try:
+            self.model = SentenceTransformer(self.model_name)
+        except Exception as exc:
+            # Offline-safe fallback: keep training running with lexical retrieval.
+            self.model = None
+            self._model_init_error = str(exc)
 
         if index_path and (Path(index_path) / "faiss.index").exists():
             self.load_index(index_path)
@@ -39,8 +49,17 @@ class Retriever:
         norms = np.clip(norms, 1e-12, None)
         return embeddings / norms
 
+    def _tokenize(self, text: str) -> set[str]:
+        return set(re.findall(r"[a-z0-9_]+", text.lower()))
+
+    def _ensure_lexical_cache(self) -> None:
+        if self._lexical_cache and len(self._lexical_cache) == len(self.chunks):
+            return
+        self._lexical_cache = [self._tokenize(c.get("content", "")) for c in self.chunks]
+
     def _build_index(self) -> None:
         self.chunks = self.document_store.get_all_chunks()
+        self._lexical_cache = []
         corpus = [c["content"] for c in self.chunks]
         if not corpus:
             if faiss is not None:
@@ -48,6 +67,12 @@ class Retriever:
             else:
                 self.index = None
                 self._embeddings = np.zeros((0, 384), dtype=np.float32)
+            return
+
+        if self.model is None:
+            self.index = None
+            self._embeddings = None
+            self._ensure_lexical_cache()
             return
 
         emb = self.model.encode(corpus, convert_to_numpy=True, show_progress_bar=False)
@@ -91,11 +116,59 @@ class Retriever:
         saved_model = config.get("model_name", self.model_name)
         if saved_model != self.model_name:
             self.model_name = saved_model
-            self.model = SentenceTransformer(self.model_name)
+            try:
+                self.model = SentenceTransformer(self.model_name)
+                self._model_init_error = None
+            except Exception as exc:
+                self.model = None
+                self._model_init_error = str(exc)
 
         if self.index is None and self._embeddings is None and self.chunks:
             # Backward compatibility for index folders that only contain faiss.index when faiss isn't available.
             self._build_index()
+
+    def _retrieve_lexical(
+        self,
+        query: str,
+        top_k: int,
+        doc_type_filter: str | None,
+    ) -> list[dict[str, Any]]:
+        self._ensure_lexical_cache()
+        q_tokens = self._tokenize(query)
+        if not q_tokens:
+            q_tokens = set(query.lower().split())
+
+        scored: list[tuple[float, int]] = []
+        for idx, chunk in enumerate(self.chunks):
+            if doc_type_filter and chunk.get("doc_type") != doc_type_filter:
+                continue
+            c_tokens = self._lexical_cache[idx]
+            overlap = len(q_tokens & c_tokens)
+            if overlap == 0:
+                continue
+            score = overlap / max(len(q_tokens), 1)
+            scored.append((float(score), idx))
+
+        if not scored:
+            # Deterministic fallback so caller still receives context.
+            fallback: list[dict[str, Any]] = []
+            for chunk in self.chunks:
+                if doc_type_filter and chunk.get("doc_type") != doc_type_filter:
+                    continue
+                item = dict(chunk)
+                item["similarity_score"] = 0.0
+                fallback.append(item)
+                if len(fallback) >= top_k:
+                    break
+            return fallback
+
+        scored.sort(key=lambda x: x[0], reverse=True)
+        out: list[dict[str, Any]] = []
+        for score, idx in scored[:top_k]:
+            item = dict(self.chunks[idx])
+            item["similarity_score"] = score
+            out.append(item)
+        return out
 
     def retrieve(
         self,
@@ -106,8 +179,15 @@ class Retriever:
         if not self.chunks:
             return []
 
-        q = self.model.encode([query], convert_to_numpy=True, show_progress_bar=False).astype(np.float32)
-        q = self._normalize(q)
+        if self.model is None:
+            return self._retrieve_lexical(query=query, top_k=top_k, doc_type_filter=doc_type_filter)
+
+        try:
+            q = self.model.encode([query], convert_to_numpy=True, show_progress_bar=False).astype(np.float32)
+            q = self._normalize(q)
+        except Exception:
+            self.model = None
+            return self._retrieve_lexical(query=query, top_k=top_k, doc_type_filter=doc_type_filter)
 
         if doc_type_filter:
             # When filtering by doc_type, over-fetch from the full corpus first;
