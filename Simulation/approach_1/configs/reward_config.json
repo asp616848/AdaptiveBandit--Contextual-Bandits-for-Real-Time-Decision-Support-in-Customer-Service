@@ -1,0 +1,10 @@
+{
+  "correct_step_reward": 1.0,
+  "wrong_action_penalty": -1.0,
+  "completion_bonus": 5.0,
+  "ask_info_penalty": -0.1,
+  "escalate_penalty": -2.0,
+  "close_early_penalty": -3.0,
+  "timeout_penalty": -5.0,
+  "timeout_slack": 3
+}
