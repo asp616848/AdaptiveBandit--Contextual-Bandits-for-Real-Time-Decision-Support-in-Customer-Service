@@ -84,8 +84,7 @@ def train_ppo(
     save_dir.mkdir(parents=True, exist_ok=True)
     log_dir.mkdir(parents=True, exist_ok=True)
 
-    # v2 baseline: disable shaping to avoid reward-hacking through dense bonuses.
-    reward_shaper = RewardShaper(enabled=False, strict_potential=True)
+    reward_shaper = RewardShaper(enabled=bool(use_reward_shaping), strict_potential=True)
     curriculum = CurriculumScheduler(str(artifacts_root_path)) if use_curriculum else None
     initial_filter = curriculum.get_subflow_filter(0) if curriculum is not None else None
 
@@ -162,7 +161,7 @@ def train_ppo(
         "total_timesteps": int(timesteps),
         "training_time_seconds": elapsed,
         "curriculum_enabled": bool(use_curriculum),
-        "reward_shaping_enabled": False,
+        "reward_shaping_enabled": bool(use_reward_shaping),
         "nlg_enabled": bool(nlg_enabled),
         "text_only_observation": bool(text_only_observation),
         "text_observation_dim": int(text_observation_dim),

@@ -14,8 +14,8 @@
     "lambda_turn": 0.1,
     "omega": 0.16666666666666666,
     "escalation_costs": {
-      "Free": 4.0,
-      "Pro": 2.0,
+      "Free": 6.0,
+      "Pro": 3.0,
       "Business": 0.5,
       "Enterprise": 0.0
     },
