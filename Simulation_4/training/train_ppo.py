@@ -15,6 +15,7 @@ from Simulation_4.training.action_masking import ActionMaskedEnv
 from Simulation_4.training.callbacks import BestModelCallback, CurriculumCallback, TrainingMetricsCallback
 from Simulation_4.training.curriculum import CurriculumScheduler
 from Simulation_4.training.reward_shaping import RewardShapedWrapper, RewardShaper
+from Simulation_4.training.text_observation import TextOnlyObservationWrapper
 
 
 PPO_CONFIG: dict[str, Any] = {
@@ -44,13 +45,18 @@ def make_env(
     artifacts_root: str,
     reward_shaper: RewardShaper,
     subflow_filter: list[str] | None = None,
+    nlg_enabled: bool = False,
+    text_only_observation: bool = False,
+    text_observation_dim: int = 512,
 ):
     def _init():
         env = SupportEnv(
             artifacts_root=artifacts_root,
-            nlg_enabled=False,
+            nlg_enabled=bool(nlg_enabled),
             subflow_filter=subflow_filter,
         )
+        if text_only_observation:
+            env = TextOnlyObservationWrapper(env, n_features=int(text_observation_dim))
         env = RewardShapedWrapper(env, reward_shaper)
         env = ActionMaskedEnv(env)
         env = Monitor(env)
@@ -67,6 +73,9 @@ def train_ppo(
     output_subdir: str = "phase10",
     n_envs: int = 4,
     seed: int = 42,
+    nlg_enabled: bool = False,
+    text_only_observation: bool = False,
+    text_observation_dim: int = 512,
 ) -> dict[str, Any]:
     artifacts_root_path = Path(artifacts_root)
     phase10_root = artifacts_root_path / output_subdir
@@ -81,13 +90,27 @@ def train_ppo(
     initial_filter = curriculum.get_subflow_filter(0) if curriculum is not None else None
 
     train_env = make_vec_env(
-        make_env(str(artifacts_root_path), reward_shaper, initial_filter),
+        make_env(
+            str(artifacts_root_path),
+            reward_shaper,
+            initial_filter,
+            nlg_enabled=bool(nlg_enabled),
+            text_only_observation=bool(text_only_observation),
+            text_observation_dim=int(text_observation_dim),
+        ),
         n_envs=n_envs,
         seed=seed,
     )
 
     eval_shaper = RewardShaper(enabled=False)
-    eval_env = make_env(str(artifacts_root_path), eval_shaper, subflow_filter=None)()
+    eval_env = make_env(
+        str(artifacts_root_path),
+        eval_shaper,
+        subflow_filter=None,
+        nlg_enabled=bool(nlg_enabled),
+        text_only_observation=bool(text_only_observation),
+        text_observation_dim=int(text_observation_dim),
+    )()
 
     model = PPO(
         policy=PPO_CONFIG["policy"],
@@ -140,6 +163,9 @@ def train_ppo(
         "training_time_seconds": elapsed,
         "curriculum_enabled": bool(use_curriculum),
         "reward_shaping_enabled": False,
+        "nlg_enabled": bool(nlg_enabled),
+        "text_only_observation": bool(text_only_observation),
+        "text_observation_dim": int(text_observation_dim),
         "best_eval_reward": float(best_model_callback.best_mean_reward),
         "baseline_beaten": bool(best_model_callback.baseline_beaten),
         "baseline_beaten_step": best_model_callback.baseline_beaten_step,
@@ -168,6 +194,9 @@ def continue_ppo_from_checkpoint(
     n_envs: int = 4,
     seed: int = 42,
     tb_log_name: str = "ppo_v3_continued",
+    nlg_enabled: bool = False,
+    text_only_observation: bool = False,
+    text_observation_dim: int = 512,
 ) -> dict[str, Any]:
     artifacts_root_path = Path(artifacts_root)
     phase_root = artifacts_root_path / output_subdir
@@ -180,7 +209,14 @@ def continue_ppo_from_checkpoint(
 
     # Build env first, then initialize curriculum filter from the loaded model step count.
     train_env = make_vec_env(
-        make_env(str(artifacts_root_path), reward_shaper, subflow_filter=None),
+        make_env(
+            str(artifacts_root_path),
+            reward_shaper,
+            subflow_filter=None,
+            nlg_enabled=bool(nlg_enabled),
+            text_only_observation=bool(text_only_observation),
+            text_observation_dim=int(text_observation_dim),
+        ),
         n_envs=n_envs,
         seed=seed,
     )
@@ -194,7 +230,14 @@ def continue_ppo_from_checkpoint(
         train_env.env_method("set_subflow_filter", initial_filter)
 
     eval_shaper = RewardShaper(enabled=bool(use_reward_shaping))
-    eval_env = make_env(str(artifacts_root_path), eval_shaper, subflow_filter=None)()
+    eval_env = make_env(
+        str(artifacts_root_path),
+        eval_shaper,
+        subflow_filter=None,
+        nlg_enabled=bool(nlg_enabled),
+        text_only_observation=bool(text_only_observation),
+        text_observation_dim=int(text_observation_dim),
+    )()
 
     metrics_callback = TrainingMetricsCallback(eval_freq=5000, verbose=1)
     best_model_callback = BestModelCallback(
@@ -237,6 +280,9 @@ def continue_ppo_from_checkpoint(
         "training_time_seconds": elapsed,
         "curriculum_enabled": bool(use_curriculum),
         "reward_shaping_enabled": bool(use_reward_shaping),
+        "nlg_enabled": bool(nlg_enabled),
+        "text_only_observation": bool(text_only_observation),
+        "text_observation_dim": int(text_observation_dim),
         "best_eval_reward": float(best_model_callback.best_mean_reward),
         "baseline_beaten": bool(best_model_callback.baseline_beaten),
         "baseline_beaten_step": best_model_callback.baseline_beaten_step,

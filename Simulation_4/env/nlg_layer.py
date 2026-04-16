@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from typing import Any
 
 from openai import OpenAI
@@ -8,13 +9,14 @@ from openai import OpenAI
 class NLGLayer:
     """Optional Ollama-powered customer utterance generation."""
 
-    def __init__(self, enabled: bool = True, model: str = "llama3"):
+    def __init__(self, enabled: bool = True, model: str | None = None, endpoint: str | None = None):
         self.enabled = bool(enabled)
-        self.model = model
+        self.model = model or os.getenv("SUPPORT_SIM_LLM_MODEL", "llama3")
+        self.endpoint = endpoint or os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1")
         if self.enabled:
             try:
                 self.client = OpenAI(
-                    base_url="http://localhost:11434/v1",
+                    base_url=self.endpoint,
                     api_key="ollama",
                 )
             except Exception:
@@ -26,10 +28,14 @@ class NLGLayer:
         return bool(self.enabled and self.client is not None)
 
     def check_ollama_available(self) -> bool:
+        tags_url = self.endpoint.rstrip("/")
+        if tags_url.endswith("/v1"):
+            tags_url = tags_url[:-3]
+        tags_url = tags_url + "/api/tags"
         try:
             import requests
 
-            r = requests.get("http://localhost:11434/api/tags", timeout=3)
+            r = requests.get(tags_url, timeout=3)
             return r.status_code == 200
         except Exception:
             return False

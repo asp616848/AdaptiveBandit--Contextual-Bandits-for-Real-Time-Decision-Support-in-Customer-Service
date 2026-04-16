@@ -109,7 +109,12 @@ class Retriever:
         q = self.model.encode([query], convert_to_numpy=True, show_progress_bar=False).astype(np.float32)
         q = self._normalize(q)
 
-        search_k = min(max(top_k * 6, top_k), len(self.chunks))
+        if doc_type_filter:
+            # When filtering by doc_type, over-fetch from the full corpus first;
+            # otherwise relevant filtered chunks can be missed in the initial top slice.
+            search_k = len(self.chunks)
+        else:
+            search_k = min(max(top_k * 6, top_k), len(self.chunks))
         if self.index is not None:
             scores, indices = self.index.search(q, search_k)
             row_scores = scores[0]

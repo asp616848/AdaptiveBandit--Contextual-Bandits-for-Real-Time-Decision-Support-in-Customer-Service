@@ -6,3 +6,5 @@ current report.txt
 datasets/
 *.csv
 *.parquet
+/.linux_deploy
+Simulation_4/abcd_v1.1.json

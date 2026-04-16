@@ -19,6 +19,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from Simulation_4.env.support_env import SupportEnv
+from Simulation_4.training.text_observation import TextOnlyObservationWrapper
 from Simulation_4.training.train_ppo import continue_ppo_from_checkpoint, train_ppo
 from Simulation_4.validation.baseline_policies import POLICY_REGISTRY
 from Simulation_4.validation.level1_statistical import run_level1
@@ -35,6 +36,18 @@ def _terminal_from_info(info: dict[str, Any]) -> str:
     if isinstance(lto, dict):
         return str(lto.get("terminal_type", "timeout"))
     return "timeout"
+
+
+def _build_ppo_env(
+    artifacts_root: str,
+    nlg_enabled: bool,
+    text_only_observation: bool,
+    text_observation_dim: int,
+):
+    env = SupportEnv(artifacts_root=artifacts_root, nlg_enabled=bool(nlg_enabled))
+    if text_only_observation:
+        env = TextOnlyObservationWrapper(env, n_features=int(text_observation_dim))
+    return env
 
 
 def run_validation_suite(
@@ -71,9 +84,17 @@ def evaluate_ppo_model(
     artifacts_root: str,
     n_episodes: int,
     seed_offset: int,
+    nlg_enabled: bool,
+    text_only_observation: bool,
+    text_observation_dim: int,
 ) -> dict[str, Any]:
     model = PPO.load(model_path)
-    env = SupportEnv(artifacts_root=artifacts_root, nlg_enabled=False)
+    env = _build_ppo_env(
+        artifacts_root=artifacts_root,
+        nlg_enabled=bool(nlg_enabled),
+        text_only_observation=bool(text_only_observation),
+        text_observation_dim=int(text_observation_dim),
+    )
 
     rewards: list[float] = []
     outcomes = {"success": 0, "escalation": 0, "dropout": 0, "timeout": 0}
@@ -106,16 +127,16 @@ def evaluate_ppo_model(
         rewards.append(ep_reward)
         turns_all.append(int(env.state.get("turn_count", 0)))
 
-        tier = str(env.state.get("tier", "Free"))
+        tier = str(getattr(env, "state", {}).get("tier", "Free"))
         if tier in tier_counts:
             tier_counts[tier] += 1
 
-        persona = str(env.state.get("persona_label", "unknown"))
+        persona = str(getattr(env, "state", {}).get("persona_label", "unknown"))
         persona_counts[persona] = int(persona_counts.get(persona, 0)) + 1
 
         if terminal == "success":
             outcomes["success"] += 1
-            turns_to_resolution.append(int(env.state.get("turn_count", 0)))
+            turns_to_resolution.append(int(getattr(env, "state", {}).get("turn_count", 0)))
             persona_resolution_counts[persona] = int(persona_resolution_counts.get(persona, 0)) + 1
         elif terminal == "escalation":
             outcomes["escalation"] += 1
@@ -223,9 +244,17 @@ def generate_demo_rollouts(
     output_file: Path,
     n_episodes: int = 10,
     seed_offset: int = 99000,
+    nlg_enabled: bool = False,
+    text_only_observation: bool = False,
+    text_observation_dim: int = 512,
 ) -> None:
     model = PPO.load(model_path)
-    env = SupportEnv(artifacts_root=artifacts_root, nlg_enabled=False)
+    env = _build_ppo_env(
+        artifacts_root=artifacts_root,
+        nlg_enabled=bool(nlg_enabled),
+        text_only_observation=bool(text_only_observation),
+        text_observation_dim=int(text_observation_dim),
+    )
     rows: list[dict[str, Any]] = []
 
     for ep in range(int(n_episodes)):
@@ -235,11 +264,11 @@ def generate_demo_rollouts(
         info: dict[str, Any] = {}
 
         while not done:
-            pre = dict(env.state)
+            pre = dict(getattr(env, "state", {}))
             action, _ = model.predict(obs, deterministic=True)
             action_id = int(action)
             obs, reward, done, truncated, info = env.step(action_id)
-            post = dict(env.state)
+            post = dict(getattr(env, "state", {}))
             transition = dict(info.get("last_transition_outcome", {}) or {})
 
             trajectory.append(
@@ -315,7 +344,15 @@ def train_agent(
     continue_from: str | None,
     n_envs: int,
     seed: int,
+    nlg_enabled: bool,
+    text_only_observation: bool,
+    text_observation_dim: int,
 ) -> dict[str, Any]:
+    checkpoint_ignored_for_text_observation = False
+    if text_only_observation and continue_from:
+        checkpoint_ignored_for_text_observation = True
+        continue_from = None
+
     if continue_from:
         summary = continue_ppo_from_checkpoint(
             artifacts_root=str(artifacts_root),
@@ -327,8 +364,12 @@ def train_agent(
             n_envs=int(n_envs),
             seed=int(seed),
             tb_log_name=f"ppo_{output_subdir}",
+            nlg_enabled=bool(nlg_enabled),
+            text_only_observation=bool(text_only_observation),
+            text_observation_dim=int(text_observation_dim),
         )
         summary["training_mode"] = "continue"
+        summary["checkpoint_ignored_for_text_observation"] = checkpoint_ignored_for_text_observation
         return summary
 
     summary = train_ppo(
@@ -339,8 +380,12 @@ def train_agent(
         output_subdir=output_subdir,
         n_envs=int(n_envs),
         seed=int(seed),
+        nlg_enabled=bool(nlg_enabled),
+        text_only_observation=bool(text_only_observation),
+        text_observation_dim=int(text_observation_dim),
     )
     summary["training_mode"] = "fresh"
+    summary["checkpoint_ignored_for_text_observation"] = checkpoint_ignored_for_text_observation
     return summary
 
 
@@ -359,6 +404,9 @@ def main() -> int:
     parser.add_argument("--skip-validation", action="store_true")
     parser.add_argument("--skip-training", action="store_true")
     parser.add_argument("--demo-episodes", type=int, default=12)
+    parser.add_argument("--nlg-enabled", action="store_true")
+    parser.add_argument("--text-only-observation", action="store_true")
+    parser.add_argument("--text-observation-dim", type=int, default=512)
     args = parser.parse_args()
 
     artifacts_root = Path(args.artifacts_root)
@@ -413,6 +461,9 @@ def main() -> int:
             continue_from=checkpoint,
             n_envs=int(args.n_envs),
             seed=int(args.seed),
+            nlg_enabled=bool(args.nlg_enabled),
+            text_only_observation=bool(args.text_only_observation),
+            text_observation_dim=int(args.text_observation_dim),
         )
         report["training"] = train_summary
         print(
@@ -431,6 +482,9 @@ def main() -> int:
         artifacts_root=str(artifacts_root),
         n_episodes=int(args.eval_episodes),
         seed_offset=60_000,
+        nlg_enabled=bool(args.nlg_enabled),
+        text_only_observation=bool(args.text_only_observation),
+        text_observation_dim=int(args.text_observation_dim),
     )
     baseline_metrics = evaluate_baselines(
         artifacts_root=str(artifacts_root),
@@ -464,6 +518,9 @@ def main() -> int:
         output_file=demo_path,
         n_episodes=int(args.demo_episodes),
         seed_offset=120_000,
+        nlg_enabled=bool(args.nlg_enabled),
+        text_only_observation=bool(args.text_only_observation),
+        text_observation_dim=int(args.text_observation_dim),
     )
     report["demo_rollouts_path"] = str(demo_path)
 
