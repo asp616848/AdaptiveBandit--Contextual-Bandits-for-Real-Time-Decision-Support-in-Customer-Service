@@ -8,3 +8,4 @@ datasets/
 *.parquet
 /.linux_deploy
 Simulation_4/abcd_v1.1.json
+Simulation/approach_1/simulatorFineTune/abcd_v1.1.json
