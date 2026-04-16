@@ -7,3 +7,4 @@ datasets/
 *.csv
 *.parquet
 /New_Approach
+/.linux_deploy
