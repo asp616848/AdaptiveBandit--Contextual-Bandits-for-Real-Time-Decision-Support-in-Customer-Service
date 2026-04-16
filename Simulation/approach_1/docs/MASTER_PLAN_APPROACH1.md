@@ -60,8 +60,14 @@ Work:
 
 - Parse train/dev/test splits.
 - Extract subflow and action sequence.
-- Derive simple success label.
+- Derive robust success label (not only `end_conversation`).
+  - Start with `end_conversation`.
+  - Add fallback heuristics and uncertainty flags for ambiguous cases.
 - Build subflow catalog from successful conversations.
+- Add action-vocab pruning policy.
+  - Build global action frequencies.
+  - Keep top-K frequent actions for Phase 2.
+  - Map rare actions to `OTHER_ACTION` for controlled action-space size.
 
 Acceptance:
 
@@ -70,6 +76,14 @@ Acceptance:
   - number of subflows
   - number of usable conversations
   - min/mean/max sequence length
+- Success-label quality report generated:
+  - exact `end_conversation` count
+  - heuristic-labeled count
+  - ambiguous count
+- Action-vocab report generated:
+  - full vocabulary size
+  - top-K coverage percentage
+  - rare-action percentage
 
 ### Phase 2 - Deterministic Environment (Learnable Core)
 
@@ -134,9 +148,15 @@ Acceptance:
 
 Add only one feature each cycle:
 
-1. Stochastic success on correct action (`p` from data).
+1. Stochastic transitions on correct action (`p` from data).
 2. Information gate before solution actions.
 3. Frustration as simple scalar.
+
+Not-yet-implemented items tracked in this phase:
+
+- Stochastic transitions are currently deterministic in Phase 2 core and must be added here.
+- Information gate is not active in current core and must be added here.
+- Frustration variable is not active in current core and must be added here.
 
 Rules:
 
@@ -162,7 +182,11 @@ Risk: action-space explosion.
 
 Risk: ambiguous success label.
 
-- Control: start with explicit `end_conversation`; log uncertain cases.
+- Control: start with explicit `end_conversation`; add heuristic fallback and log uncertain cases.
+
+Risk: action-space explosion from long-tail actions.
+
+- Control: enforce top-K action pruning with `OTHER_ACTION` bucket and track coverage.
 
 Risk: reward hacking.
 

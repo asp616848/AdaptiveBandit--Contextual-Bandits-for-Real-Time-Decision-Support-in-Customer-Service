@@ -6,7 +6,10 @@
 2. Run parser on ABCD JSON.
 3. Inspect generated `tasks_minimal.jsonl`.
 4. Inspect generated `subflow_catalog.json`.
-5. Freeze top-K actions for first env version.
+5. Implement robust success-label logic (beyond only `end_conversation`).
+6. Generate success-label audit report (`strict`, `heuristic`, `ambiguous`).
+7. Freeze top-K actions for first env version.
+8. Map rare actions to `OTHER_ACTION` and record coverage stats.
 
 ## Milestone B - Environment Core
 
@@ -31,10 +34,12 @@
 
 ## Milestone E - Iterative Realism
 
-1. Add one realism feature.
-2. Re-run tests.
-3. Re-train short run.
-4. Compare with previous benchmark.
+1. Add stochastic transitions (one feature only) and benchmark.
+2. Add information gate (one feature only) and benchmark.
+3. Add frustration scalar (one feature only) and benchmark.
+4. Re-run tests after each increment.
+5. Re-train short run after each increment.
+6. Compare with previous benchmark after each increment.
 
 ## Working Agreement
 
