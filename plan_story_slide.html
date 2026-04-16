@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How We Plan To Address This</title>
+  <style>
+    :root {
+      --bg: #f2efe8;
+      --paper: #f8f5ef;
+      --ink: #121212;
+      --blue: #0b4ea2;
+      --blue-2: #1b63bd;
+      --muted: #3f4b59;
+      --line: #1f4f9e;
+      --accent: #f0b144;
+      --shadow: 0 12px 28px rgba(16, 33, 58, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(1600px 700px at 20% -10%, #ffffff 0%, var(--bg) 52%, #ebe6dd 100%);
+      color: var(--ink);
+      font-family: "Segoe UI", "Trebuchet MS", Tahoma, sans-serif;
+    }
+
+    .slide {
+      width: min(1400px, 96vw);
+      margin: 22px auto;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.5));
+      border: 2px solid rgba(12, 56, 120, 0.15);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 26px 30px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide::before,
+    .slide::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .slide::before {
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(27, 99, 189, 0.14), rgba(27, 99, 189, 0));
+      right: -80px;
+      top: -80px;
+    }
+
+    .slide::after {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240, 177, 68, 0.14), rgba(240, 177, 68, 0));
+      left: -120px;
+      bottom: -180px;
+    }
+
+    .title {
+      margin: 2px 0 4px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-size: clamp(32px, 4.5vw, 64px);
+      font-weight: 900;
+      text-align: center;
+      animation: riseIn 0.65s ease-out both;
+    }
+
+    .title .blue {
+      color: var(--blue);
+    }
+
+    .subtitle {
+      margin: 0 auto 16px;
+      max-width: 980px;
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(15px, 1.4vw, 22px);
+      font-weight: 600;
+      animation: fadeIn 0.9s ease-out both;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    .card {
+      border: 1.5px solid rgba(11, 78, 162, 0.22);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      padding: 14px 14px 12px;
+      animation: riseIn 0.7s ease-out both;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: clamp(18px, 1.6vw, 28px);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      flex: 0 0 auto;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 10px rgba(11, 78, 162, 0.28);
+    }
+
+    .steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      border: 1px solid rgba(31, 79, 158, 0.25);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(243, 249, 255, 0.95), rgba(235, 244, 255, 0.84));
+      padding: 10px 10px 9px;
+      display: grid;
+      gap: 2px;
+      transform: translateY(8px);
+      opacity: 0;
+      animation: fadeStep 0.55s ease-out forwards;
+    }
+
+    .step:nth-child(1) { animation-delay: 0.18s; }
+    .step:nth-child(2) { animation-delay: 0.28s; }
+    .step:nth-child(3) { animation-delay: 0.38s; }
+    .step:nth-child(4) { animation-delay: 0.48s; }
+
+    .step-title {
+      color: #103f87;
+      font-size: clamp(15px, 1.25vw, 21px);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .step-text {
+      color: #273849;
+      font-size: clamp(13px, 1.04vw, 17px);
+      line-height: 1.34;
+      font-weight: 600;
+    }
+
+    .experiment-list {
+      margin: 3px 0 0;
+      padding-left: 18px;
+      color: #243545;
+      font-size: clamp(13px, 1.03vw, 17px);
+      font-weight: 600;
+      line-height: 1.36;
+    }
+
+    .experiment-list li {
+      margin-bottom: 5px;
+    }
+
+    .bottom {
+      border: 2px solid rgba(11, 78, 162, 0.34);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 242, 235, 0.95));
+      padding: 10px;
+      animation: riseIn 0.75s ease-out both;
+      animation-delay: 0.2s;
+    }
+
+    .bottom-head {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: clamp(16px, 1.35vw, 22px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .line {
+      width: 22px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      flex: 0 0 auto;
+    }
+
+    .architecture {
+      width: 100%;
+      max-height: 280px;
+      object-fit: contain;
+      border-radius: 10px;
+      border: 1px solid rgba(7, 41, 87, 0.2);
+      background: #fff;
+      display: block;
+    }
+
+    .caption {
+      margin-top: 6px;
+      color: #34495d;
+      font-size: clamp(12px, 0.92vw, 15px);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .highlight {
+      color: #0e4a98;
+      font-weight: 800;
+    }
+
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeStep {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .slide {
+        width: 96vw;
+        padding: 16px 14px 12px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .badge {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+      }
+
+      .architecture {
+        max-height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide" role="img" aria-label="Story slide: data to simulator to RL training and evaluation plan">
+    <h1 class="title">How Do We <span class="blue">Plan To Address This?</span></h1>
+    <p class="subtitle">
+      We will use <span class="highlight">real customer-support data</span> to build a realistic simulator, then train and compare RL agents safely before deployment.
+    </p>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-head"><span class="badge">1</span> Story: Data -> Simulator -> Agent</div>
+        <ol class="steps">
+          <li class="step">
+            <div class="step-title">Step A: Mine behavior from logs</div>
+            <div class="step-text">Extract dialogue state, user intent shifts, escalation signals, and resolution patterns from OpenAssistant/Twitter data.</div>
+          </li>
+          <li class="step">
+            <div class="step-title">Step B: Build the simulator environment</div>
+            <div class="step-text">Create a user-response model and transition dynamics so the environment behaves like real customer journeys.</div>
+          </li>
+          <li class="step">
+            <div class="step-title">Step C: Train the policy inside simulation</div>
+            <div class="step-text">Train contextual bandits/RL agents quickly with many safe rollouts and reward shaping.</div>
+          </li>
+          <li class="step">
+            <div class="step-title">Step D: Validate against offline and baseline methods</div>
+            <div class="step-text">Compare to static/bandit baselines and check if policy gains transfer across domains and dialogue lengths.</div>
+          </li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span class="badge">2</span> What We Plan To Try</div>
+        <ul class="experiment-list">
+          <li><span class="highlight">Simulator fidelity checks:</span> turn-level prediction error, escalation realism, dialogue-length realism.</li>
+          <li><span class="highlight">Training strategy:</span> warm-start with behavior cloning, then offline RL/bandit fine-tuning.</li>
+          <li><span class="highlight">Robustness tests:</span> short vs long conversations, domain transfer (Twitter vs OpenAssistant), noisy user behavior.</li>
+          <li><span class="highlight">Evaluation metrics:</span> cumulative reward, regret vs baseline, resolution rate, time-to-resolution, escalation frequency.</li>
+          <li><span class="highlight">Significance:</span> multiple seeds and bootstrap confidence intervals before any claim.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="bottom">
+      <h2 class="bottom-head"><span class="line"></span> System Blueprint (Use as Visual Anchor)</h2>
+      <img class="architecture" src="revised_rl_architecture.svg" alt="Pipeline architecture from data and labeling to simulator, training, and validation" />
+      <div class="caption">
+        Presenter line: <span class="highlight">"This is our loop: data teaches the simulator, simulator trains the agent, evaluation improves both."</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

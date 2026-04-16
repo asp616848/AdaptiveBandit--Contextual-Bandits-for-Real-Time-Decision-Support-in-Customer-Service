@@ -16,3 +16,4 @@ current report.txt
 # Ignore statically generated Offline RL CSV datasets
 /New_Approach/offline_dataset_*.csv
 /New_Approach/nlp_offline_dataset_*.csv
+.v
