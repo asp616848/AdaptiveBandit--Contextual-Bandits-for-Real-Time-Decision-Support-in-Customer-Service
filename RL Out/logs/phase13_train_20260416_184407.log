@@ -1,0 +1,44 @@
+nohup: ignoring input
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 1s [Retry 1/5].
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 1s [Retry 1/5].
+/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+=================================================================
+  PHASE 13: PPO TRAINING — FULL NLP AGENT
+=================================================================
+  Timesteps:      500,000
+  Curriculum:     enabled
+  Reward shaping: enabled
+  Intent model:   llama3
+  Agent model:    llama3 (default)
+  Parallel envs:  1
+  Observation:    9D NLP intent vector
+  Network:        [64, 32] Tanh MLP
+  Escalation cost: Free=6.0, Pro=3.0, Business=0.5, Enterprise=0.0
+  Action mask:    Escalate blocked for turn_count < 3
+=================================================================
+
+NOTE: Two LLMs run concurrently (intent classifier + customer NLG).
+  Intent: llama3 | Customer: llama3
+  If VRAM is limited, use --intent-model tinyllama --n-envs 1
+
+DocumentStore loaded:
+  lumo_doc1_company_product_overview.md: 22 chunks
+  lumo_doc2_support_policies.md: 48 chunks
+  lumo_doc3_issue_playbooks.md: 59 chunks
+  Total chunks: 129
+  Mean chunk size: 787 characters
+  Min chunk size: 45 characters
+  Max chunk size: 1000 characters
+DocumentStore loaded:
+  lumo_doc1_company_product_overview.md: 22 chunks
+  lumo_doc2_support_policies.md: 48 chunks
+  lumo_doc3_issue_playbooks.md: 59 chunks
+  Total chunks: 129
+  Mean chunk size: 787 characters
+  Min chunk size: 45 characters
+  Max chunk size: 1000 characters
+Using cuda device
+Logging to Simulation_4/artifacts/phase13/tensorboard/PPO_1
