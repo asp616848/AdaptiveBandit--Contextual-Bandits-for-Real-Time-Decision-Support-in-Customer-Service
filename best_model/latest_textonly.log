@@ -1,4 +1,4 @@
-========================================================================
+    ========================================================================
 Phase 10 Full Pipeline: validate -> train -> evaluate -> demos
 ========================================================================
 
@@ -12,7 +12,9 @@ DocumentStore loaded:
   Min chunk size: 45 characters
   Max chunk size: 1000 characters
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10895.40it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10895.40it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -30,7 +32,9 @@ DocumentStore loaded:
   Mean chunk size: 787 characters
   Min chunk size: 45 characters
   Max chunk size: 1000 characters
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11128.63it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11128.63it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -59,7 +63,9 @@ Retrying in 8s [Retry 4/5].
 HTTP Error 503 thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
 Retrying in 8s [Retry 5/5].
 HTTP Error 503 thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11597.98it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11597.98it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -98,7 +104,9 @@ HTTP Error 503 thrown while requesting HEAD https://huggingface.co/sentence-tran
 Retrying in 4s [Retry 3/5].
 HTTP Error 503 thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
 Retrying in 8s [Retry 4/5].
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12224.83it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12224.83it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -118,7 +126,9 @@ DocumentStore loaded:
   Mean chunk size: 787 characters
   Min chunk size: 45 characters
   Max chunk size: 1000 characters
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9647.89it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9647.89it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -134,7 +144,9 @@ DocumentStore loaded:
   Mean chunk size: 787 characters
   Min chunk size: 45 characters
   Max chunk size: 1000 characters
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10314.77it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10314.77it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -150,7 +162,9 @@ DocumentStore loaded:
   Mean chunk size: 787 characters
   Min chunk size: 45 characters
   Max chunk size: 1000 characters
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7871.10it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7871.10it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -166,7 +180,9 @@ DocumentStore loaded:
   Mean chunk size: 787 characters
   Min chunk size: 45 characters
   Max chunk size: 1000 characters
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12673.47it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12673.47it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -182,7 +198,9 @@ DocumentStore loaded:
   Mean chunk size: 787 characters
   Min chunk size: 45 characters
   Max chunk size: 1000 characters
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10554.93it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10554.93it/s]
 [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
 Key                     | Status     |  | 
 ------------------------+------------+--+-
@@ -679,6 +697,7 @@ Step 120,000 | Mean reward: -1.155 | Resolution: 7.1% | Escalation: 90.1%
 |    n_updates                 | 140          |
 |    policy_gradient_loss      | -0.0158      |
 |    value_loss                | 0.827        |
+
 -----------------------------------------------
  100% ━━━━━━━━━━━━━━━━━━ 122,880/120,000  [ 1 day, 14:08:31 < 0:00:00 , 1 it/s ]
 Training done: best_eval_reward=-1.1710, final_resolution_rate=0.0712
