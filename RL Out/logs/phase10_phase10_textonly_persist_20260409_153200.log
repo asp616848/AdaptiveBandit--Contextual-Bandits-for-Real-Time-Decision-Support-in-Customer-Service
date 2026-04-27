@@ -1,0 +1,24 @@
+========================================================================
+Phase 10 Full Pipeline: validate -> train -> evaluate -> demos
+========================================================================
+
+[1/4] Running simulator validation suite...
+DocumentStore loaded:
+  lumo_doc1_company_product_overview.md: 22 chunks
+  lumo_doc2_support_policies.md: 48 chunks
+  lumo_doc3_issue_playbooks.md: 59 chunks
+  Total chunks: 129
+  Mean chunk size: 787 characters
+  Min chunk size: 45 characters
+  Max chunk size: 1000 characters
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11547.14it/s]
+[1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+  [Level1] episode 0/1000
+  [Level1] episode 500/1000

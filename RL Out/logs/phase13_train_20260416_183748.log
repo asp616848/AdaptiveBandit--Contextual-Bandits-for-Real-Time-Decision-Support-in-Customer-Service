@@ -1,0 +1,119 @@
+nohup: ignoring input
+'[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 1s [Retry 1/5].
+=================================================================
+  PHASE 13: PPO TRAINING — FULL NLP AGENT
+=================================================================
+  Timesteps:      500,000
+  Curriculum:     enabled
+  Reward shaping: enabled
+  Intent model:   tinyllama
+  Agent model:    llama3 (default)
+  Parallel envs:  1
+  Observation:    9D NLP intent vector
+  Network:        [64, 32] Tanh MLP
+  Escalation cost: Free=6.0, Pro=3.0, Business=0.5, Enterprise=0.0
+  Action mask:    Escalate blocked for turn_count < 3
+=================================================================
+
+NOTE: Two LLMs run concurrently (intent classifier + customer NLG).
+  Intent: tinyllama | Customer: llama3
+  If VRAM is limited, use --intent-model tinyllama --n-envs 1
+
+DocumentStore loaded:
+  lumo_doc1_company_product_overview.md: 22 chunks
+  lumo_doc2_support_policies.md: 48 chunks
+  lumo_doc3_issue_playbooks.md: 59 chunks
+  Total chunks: 129
+  Mean chunk size: 787 characters
+  Min chunk size: 45 characters
+  Max chunk size: 1000 characters
+Traceback (most recent call last):
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/scripts/phase13_train.py", line 289, in <module>
+    train(parser.parse_args())
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/scripts/phase13_train.py", line 254, in train
+    summary = train_nlp_ppo(
+              ^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/scripts/phase13_train.py", line 136, in train_nlp_ppo
+    train_env = make_vec_env(
+                ^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/stable_baselines3/common/env_util.py", line 126, in make_vec_env
+    vec_env = vec_env_cls([make_env(i + start_index) for i in range(n_envs)], **vec_env_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/stable_baselines3/common/vec_env/dummy_vec_env.py", line 31, in __init__
+    self.envs = [_patch_env(fn()) for fn in env_fns]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/stable_baselines3/common/vec_env/dummy_vec_env.py", line 31, in <listcomp>
+    self.envs = [_patch_env(fn()) for fn in env_fns]
+                            ^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/stable_baselines3/common/env_util.py", line 99, in _init
+    env = env_id(**env_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/scripts/phase13_train.py", line 92, in _init
+    env = SupportEnv(
+          ^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/env/support_env.py", line 87, in __init__
+    self.lumo_rag = LumoRAG(
+                    ^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/rag/lumo_rag.py", line 28, in __init__
+    self.retriever = Retriever(
+                     ^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/rag/retriever.py", line 30, in __init__
+    self.model = SentenceTransformer(self.model_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 327, in __init__
+    modules, self.module_kwargs = self._load_sbert_model(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 2323, in _load_sbert_model
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/sentence_transformers/models/Transformer.py", line 436, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/sentence_transformers/models/Transformer.py", line 120, in __init__
+    config, is_peft_model = self._load_config(model_name_or_path, cache_dir, backend, config_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/sentence_transformers/models/Transformer.py", line 171, in _load_config
+    find_adapter_config_file(
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/transformers/utils/peft_utils.py", line 84, in find_adapter_config_file
+    adapter_cached_filename = cached_file(
+                              ^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/transformers/utils/hub.py", line 512, in cached_files
+    raise e
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/file_download.py", line 995, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/file_download.py", line 1128, in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/file_download.py", line 1665, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/file_download.py", line 1587, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
+    response = http_backoff(
+               ^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
+    return next(
+           ^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/.venv311/lib64/python3.11/site-packages/httpx/_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
