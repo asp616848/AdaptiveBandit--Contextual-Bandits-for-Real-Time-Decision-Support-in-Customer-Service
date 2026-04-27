@@ -1,0 +1,9 @@
+{
+  "episodes": 25,
+  "mean_cumulative_reward": -1.8432800015804143,
+  "std_cumulative_reward": 1.8478969931407176,
+  "mean_turns": 3.88,
+  "resolution_rate": 0.0,
+  "escalation_rate": 0.0,
+  "dropoff_rate": 0.0
+}
