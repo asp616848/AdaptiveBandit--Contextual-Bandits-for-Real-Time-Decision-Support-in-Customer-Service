@@ -3,7 +3,10 @@ from __future__ import annotations
 import os
 from typing import Any
 
-from openai import OpenAI
+try:
+    from openai import OpenAI  # type: ignore
+except Exception:  # pragma: no cover
+    OpenAI = None  # type: ignore
 
 
 class NLGLayer:
@@ -13,7 +16,7 @@ class NLGLayer:
         self.enabled = bool(enabled)
         self.model = model or os.getenv("SUPPORT_SIM_LLM_MODEL", "llama3")
         self.endpoint = endpoint or os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1")
-        if self.enabled:
+        if self.enabled and OpenAI is not None:
             try:
                 self.client = OpenAI(
                     base_url=self.endpoint,
@@ -33,7 +36,7 @@ class NLGLayer:
             tags_url = tags_url[:-3]
         tags_url = tags_url + "/api/tags"
         try:
-            import requests
+            import requests  # type: ignore
 
             r = requests.get(tags_url, timeout=3)
             return r.status_code == 200

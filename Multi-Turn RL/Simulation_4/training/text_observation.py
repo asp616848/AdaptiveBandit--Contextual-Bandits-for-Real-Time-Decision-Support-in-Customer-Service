@@ -17,6 +17,7 @@ A simple LRU text cache avoids redundant model calls for repeated inputs.
 """
 
 from functools import lru_cache
+import hashlib
 from typing import Any
 
 import gymnasium as gym
@@ -35,6 +36,35 @@ def _load_model():
         return None
 
 
+def _hash_embed(text: str, dim: int = _EMBED_DIM) -> np.ndarray:
+    """Offline-safe hashing embedder.
+
+    Produces a dense, deterministic vector in [-1, 1] using token hashing.
+    This avoids any network/model downloads during evaluation.
+    """
+    if not text:
+        return np.zeros(dim, dtype=np.float32)
+
+    # Simple tokenization: keep alnum/underscore runs.
+    import re
+
+    tokens = re.findall(r"[A-Za-z0-9_]+", text.lower())
+    if not tokens:
+        tokens = text.lower().split()
+    vec = np.zeros(dim, dtype=np.float32)
+
+    for tok in tokens[:2048]:
+        h = hashlib.blake2b(tok.encode("utf-8"), digest_size=8).digest()
+        idx = int.from_bytes(h[:4], "little") % dim
+        sign = 1.0 if (h[4] & 1) == 0 else -1.0
+        vec[idx] += sign
+
+    norm = float(np.linalg.norm(vec))
+    if norm > 1e-12:
+        vec = vec / norm
+    return vec
+
+
 # Module-level singleton — shared across all wrapper instances in a process.
 _model = None
 
@@ -51,9 +81,14 @@ def _embed_text(text: str) -> tuple:
     """Embed a string and return a tuple (hashable for lru_cache)."""
     model = _get_model()
     if model is None:
-        return tuple(np.zeros(_EMBED_DIM, dtype=np.float32).tolist())
-    vec = model.encode(text, normalize_embeddings=True, show_progress_bar=False)
-    return tuple(float(x) for x in vec)
+        vec = _hash_embed(text, dim=_EMBED_DIM)
+        return tuple(float(x) for x in vec)
+    try:
+        vec = model.encode(text, normalize_embeddings=True, show_progress_bar=False)
+        return tuple(float(x) for x in vec)
+    except Exception:
+        vec = _hash_embed(text, dim=_EMBED_DIM)
+        return tuple(float(x) for x in vec)
 
 
 class TextOnlyObservationWrapper(gym.Wrapper):

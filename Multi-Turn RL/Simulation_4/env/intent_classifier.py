@@ -23,7 +23,7 @@ import os
 import re
 from typing import Any
 
-from openai import OpenAI
+from Simulation_4.llm.backends import ChatBackend, make_backend
 
 
 # Ordered list of canonical intents derived from the 55 ABCD subflows.
@@ -79,17 +79,24 @@ def _conversation_key(conversation_history: list[dict[str, str]], policy_context
 class IntentClassifier:
     """Classify customer intent from conversation history via a small LLM."""
 
-    def __init__(self, model: str | None = None, endpoint: str | None = None):
+    def __init__(
+        self,
+        model: str | None = None,
+        endpoint: str | None = None,
+        backend: ChatBackend | None = None,
+    ):
         self.model = model or os.getenv("SUPPORT_SIM_INTENT_MODEL", "phi3")
         self.endpoint = endpoint or os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1")
         self._cache: dict[str, dict[str, Any]] = {}
-        try:
-            self.client = OpenAI(base_url=self.endpoint, api_key="ollama")
-        except Exception:
-            self.client = None
+
+        # Prefer explicitly provided backend; otherwise build from env vars.
+        # Endpoint is kept for backwards compatibility with old callers.
+        self.backend: ChatBackend | None = backend
+        if self.backend is None:
+            self.backend = make_backend()
 
     def is_available(self) -> bool:
-        return self.client is not None
+        return bool(self.backend is not None and self.backend.is_available())
 
     def _fallback(self) -> dict[str, Any]:
         """Return a neutral, low-confidence classification when LLM is unavailable."""
@@ -161,7 +168,7 @@ class IntentClassifier:
             intent, confidence, sentiment, suggested_action,
             escalation_needed, info_completeness
         """
-        if not self.client:
+        if not self.is_available():
             return self._fallback()
 
         cache_key = _conversation_key(conversation_history, policy_context)
@@ -190,13 +197,13 @@ class IntentClassifier:
         ]
 
         try:
-            response = self.client.chat.completions.create(
+            assert self.backend is not None
+            raw = self.backend.chat(
                 model=self.model,
                 messages=messages,
                 max_tokens=200,
                 temperature=0.0,  # deterministic for RL stability
             )
-            raw = (response.choices[0].message.content or "").strip()
             parsed = self._parse_response(raw)
             result = self._validate(parsed) if parsed else self._fallback()
         except Exception:

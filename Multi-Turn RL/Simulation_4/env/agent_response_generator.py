@@ -23,7 +23,7 @@ Model selection:
 import os
 from typing import Any
 
-from openai import OpenAI
+from Simulation_4.llm.backends import ChatBackend, make_backend
 
 
 _SYSTEM_PROMPT = """\
@@ -52,20 +52,25 @@ class AgentResponseGenerator:
         "Close": "I am glad we could resolve your issue today. Do not hesitate to reach out if you need anything else.",
     }
 
-    def __init__(self, model: str | None = None, endpoint: str | None = None):
+    def __init__(
+        self,
+        model: str | None = None,
+        endpoint: str | None = None,
+        backend: ChatBackend | None = None,
+    ):
         self.model = (
             model
             or os.getenv("SUPPORT_SIM_AGENT_MODEL")
             or os.getenv("SUPPORT_SIM_LLM_MODEL", "llama3")
         )
         self.endpoint = endpoint or os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1")
-        try:
-            self.client = OpenAI(base_url=self.endpoint, api_key="ollama")
-        except Exception:
-            self.client = None
+
+        self.backend: ChatBackend | None = backend
+        if self.backend is None:
+            self.backend = make_backend()
 
     def is_available(self) -> bool:
-        return self.client is not None
+        return bool(self.backend is not None and self.backend.is_available())
 
     def generate(
         self,
@@ -87,7 +92,7 @@ class AgentResponseGenerator:
         classification : dict
             Latest intent classification from IntentClassifier (optional).
         """
-        if not self.client:
+        if not self.is_available():
             return self.FALLBACK_TEXTS.get(action_name, f"Agent action: {action_name}")
 
         action_instruction = self._action_instruction(action_name, classification)
@@ -108,13 +113,13 @@ class AgentResponseGenerator:
         })
 
         try:
-            response = self.client.chat.completions.create(
+            assert self.backend is not None
+            text = self.backend.chat(
                 model=self.model,
                 messages=messages,
                 max_tokens=100,
                 temperature=0.6,
             )
-            text = (response.choices[0].message.content or "").strip()
             return text if text else self.FALLBACK_TEXTS.get(action_name, f"Agent: {action_name}")
         except Exception:
             return self.FALLBACK_TEXTS.get(action_name, f"Agent: {action_name}")

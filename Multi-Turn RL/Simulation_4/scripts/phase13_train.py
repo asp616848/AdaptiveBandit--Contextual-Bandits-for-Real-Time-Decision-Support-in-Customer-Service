@@ -229,7 +229,7 @@ def train_nlp_ppo(
 
 
 def train(args: argparse.Namespace) -> dict:
-    artifacts_root = Path("Simulation_4/artifacts")
+    artifacts_root = repo_root / "Simulation_4" / "artifacts"
 
     print("=" * 65)
     print("  PHASE 13: PPO TRAINING — FULL NLP AGENT")
@@ -265,7 +265,7 @@ def train(args: argparse.Namespace) -> dict:
 
     print("\nTraining summary:")
     print(json.dumps(summary, indent=2))
-    print("\nArtifacts saved to: Simulation_4/artifacts/phase13/")
+    print("\nArtifacts saved to: Multi-Turn RL/Simulation_4/artifacts/phase13/")
     return summary
 
 

@@ -1,0 +1,9 @@
+# Minimal dependencies to run the end-to-end pipeline in Ubuntu 22.04
+# (NLP features are implemented with an offline-safe hashing fallback.)
+
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.7
+
+gymnasium>=0.29
+stable-baselines3>=2.2.1

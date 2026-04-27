@@ -6,7 +6,11 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
+
+try:
+    from sentence_transformers import SentenceTransformer  # type: ignore
+except Exception:  # pragma: no cover
+    SentenceTransformer = None  # type: ignore
 
 try:
     import faiss  # type: ignore
@@ -28,14 +32,16 @@ class Retriever:
         self.index: Any | None = None
         self._embeddings: np.ndarray | None = None
         self.chunks: list[dict[str, Any]] = []
-        self.model: SentenceTransformer | None = None
+        self.model: Any | None = None
         self._model_init_error: str | None = None
         self._lexical_cache: list[set[str]] = []
 
         try:
+            if SentenceTransformer is None:
+                raise ImportError("sentence-transformers is not installed")
             self.model = SentenceTransformer(self.model_name)
         except Exception as exc:
-            # Offline-safe fallback: keep training running with lexical retrieval.
+            # Offline-safe fallback: keep running with lexical retrieval.
             self.model = None
             self._model_init_error = str(exc)
 
@@ -117,6 +123,8 @@ class Retriever:
         if saved_model != self.model_name:
             self.model_name = saved_model
             try:
+                if SentenceTransformer is None:
+                    raise ImportError("sentence-transformers is not installed")
                 self.model = SentenceTransformer(self.model_name)
                 self._model_init_error = None
             except Exception as exc:
