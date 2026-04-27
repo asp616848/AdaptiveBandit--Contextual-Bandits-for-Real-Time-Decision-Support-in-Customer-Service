@@ -24,14 +24,14 @@ After `run.sh`, you should see:
 
 ```
 output/
-	numerical-multi-turn/
-		reports/
-		plots/
+	numerical/
+		*.json
 		models/
-	nlp-multi-turn/
-		reports/
 		plots/
+	text/
+		*.json
 		models/
+		plots/
 ```
 
 ## Repository structure

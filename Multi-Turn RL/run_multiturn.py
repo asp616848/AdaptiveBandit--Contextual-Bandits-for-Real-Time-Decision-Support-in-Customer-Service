@@ -94,7 +94,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Artifacts root directory",
     )
     p10_common.add_argument("--run-subdir", required=True, help="Subdir under artifacts_root to write this run")
-    p10_common.add_argument("--out-dir", required=True, help="Output folder under ./output/")
+    p10_common.add_argument(
+        "--out-dir",
+        required=True,
+        help="Method output directory (will contain logs/ and plots/)",
+    )
     p10_common.add_argument("--timesteps", type=int, default=20000)
     p10_common.add_argument("--eval-episodes", type=int, default=200)
     p10_common.add_argument("--demo-episodes", type=int, default=6)

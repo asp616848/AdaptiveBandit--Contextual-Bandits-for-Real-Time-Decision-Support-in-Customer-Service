@@ -1,5 +1,5 @@
 .venv/
-output/
+.venv_smoke/
 
 __pycache__/
 **/__pycache__/

@@ -34,6 +34,7 @@ class SupportEnv(gym.Env):
         artifacts_root: str,
         nlg_enabled: bool = False,
         subflow_filter: list[str] | None = None,
+        observation_mode: str = "public",
     ):
         super().__init__()
         self.T_max = 20
@@ -83,6 +84,12 @@ class SupportEnv(gym.Env):
         self.reward_engine = RewardEngine(reward_payload, self.tier_config)
         self.nlg_enabled = bool(nlg_enabled)
         self.nlg_layer = NLGLayer(enabled=self.nlg_enabled)
+
+        observation_mode = str(observation_mode or "public").strip().lower()
+        if observation_mode not in {"public", "full"}:
+            raise ValueError("observation_mode must be one of: public, full")
+        self.observation_mode = observation_mode
+
         rag_dir = self.artifacts_root.parent / "rag"
         self.lumo_rag = LumoRAG(
             rag_dir=str(rag_dir),
@@ -124,6 +131,10 @@ class SupportEnv(gym.Env):
         self.system_prompt: str | None = None
         self.conversation_history: list[dict[str, str]] = []
         self.last_transition_outcome: dict[str, Any] = {}
+
+        # For 'public' observation mode features (trend signals).
+        self._prev_frustration_for_trend: float = 0.0
+        self._last_action_id: int = 0
 
     def _resolve_artifact(self, candidates: list[str]) -> Path:
         for rel in candidates:
@@ -417,7 +428,10 @@ class SupportEnv(gym.Env):
                 free_info=self.rag_context.get("scenario", {}).get("free_info", {}),
             )
 
-        return self._get_obs(), self._get_info()
+        self._prev_frustration_for_trend = float(self.state.get("frustration", 0.0))
+        self._last_action_id = 0
+
+        return self._get_obs(prev_frustration=self._prev_frustration_for_trend), self._get_info()
 
     def _dispatch_transition(self, action_name: str) -> dict[str, Any]:
         if action_name == "AskInfo":
@@ -455,6 +469,9 @@ class SupportEnv(gym.Env):
     def step(self, action: int, agent_text: str | None = None):
         assert action in range(5), f"Invalid action {action}"
         action_name = self.ACTION_NAMES[action]
+
+        prev_frustration = float(self.state.get("frustration", 0.0))
+        self._last_action_id = int(action)
 
         reward = self.reward_engine.per_turn_reward()
         transition_outcome = self._dispatch_transition(action_name)
@@ -508,22 +525,63 @@ class SupportEnv(gym.Env):
         self.last_transition_outcome["per_turn_reward"] = self.reward_engine.per_turn_reward()
         self.last_transition_outcome["terminal_reward"] = terminal_reward
 
-        return self._get_obs(), reward, bool(self.state["done"]), False, self._get_info()
+        obs = self._get_obs(prev_frustration=prev_frustration)
+        self._prev_frustration_for_trend = float(self.state.get("frustration", 0.0))
+        return obs, reward, bool(self.state["done"]), False, self._get_info()
 
-    def _get_obs(self) -> np.ndarray:
-        subflow_id_norm = float(self.state["subflow_idx"]) / max(len(self.subflow_list) - 1, 1)
-        tier_id_norm = float(self.state["tier_idx"]) / 3.0
+    def _get_obs(self, *, prev_frustration: float | None = None) -> np.ndarray:
+        if self.observation_mode == "full":
+            subflow_id_norm = float(self.state["subflow_idx"]) / max(len(self.subflow_list) - 1, 1)
+            tier_id_norm = float(self.state["tier_idx"]) / 3.0
+            return np.array(
+                [
+                    subflow_id_norm,
+                    tier_id_norm,
+                    float(np.clip(self.state["difficulty"], 0.0, 1.0)),
+                    float(np.clip(self.state["information"], 0.0, 1.0)),
+                    float(np.clip(self.state["progress"], 0.0, 1.0)),
+                    float(np.clip(self.state["frustration"], 0.0, 1.0)),
+                    float(np.clip(self.state["failed_streak"] / 5.0, 0.0, 1.0)),
+                    float(np.clip(self.state["turn_count"] / self.T_max, 0.0, 1.0)),
+                    float(self.state["resolved"]),
+                ],
+                dtype=np.float32,
+            )
+
+        # "public" mode: only expose features that a real agent could infer from the dialogue
+        # (sentiment/frustration trends, info completeness, and interaction outcomes).
+        frustration = float(np.clip(self.state.get("frustration", 0.0), 0.0, 1.0))
+        sentiment = float(np.clip(1.0 - frustration, 0.0, 1.0))
+
+        prev_f = float(prev_frustration) if prev_frustration is not None else float(self._prev_frustration_for_trend)
+        prev_f = float(np.clip(prev_f, 0.0, 1.0))
+        delta_f = float(np.clip(frustration - prev_f, -1.0, 1.0))
+        # Map delta from [-1,1] to [0,1]. >0 means worsening sentiment.
+        frustration_trend = float(np.clip(0.5 + 0.5 * delta_f, 0.0, 1.0))
+
+        info_proxy = 0.0
+        if self.slot_tracker is not None:
+            info_proxy = float(
+                self.slot_tracker.information_proxy(
+                    self.subflow_mean_values.get(str(self.state.get("subflow", "")), 1.0)
+                )
+            )
+
+        last_outcome = str(self.last_transition_outcome.get("outcome", ""))
+        last_success = 1.0 if last_outcome in {"success", "gain", "effective"} else 0.0
+        last_action_norm = float(np.clip(float(getattr(self, "_last_action_id", 0)) / 4.0, 0.0, 1.0))
+
         return np.array(
             [
-                subflow_id_norm,
-                tier_id_norm,
-                float(np.clip(self.state["difficulty"], 0.0, 1.0)),
-                float(np.clip(self.state["information"], 0.0, 1.0)),
-                float(np.clip(self.state["progress"], 0.0, 1.0)),
-                float(np.clip(self.state["frustration"], 0.0, 1.0)),
-                float(np.clip(self.state["failed_streak"] / 5.0, 0.0, 1.0)),
-                float(np.clip(self.state["turn_count"] / self.T_max, 0.0, 1.0)),
-                float(self.state["resolved"]),
+                sentiment,
+                frustration_trend,
+                frustration,
+                float(np.clip(info_proxy, 0.0, 1.0)),
+                float(np.clip(float(self.state.get("failed_streak", 0)) / 5.0, 0.0, 1.0)),
+                float(np.clip(float(self.state.get("turn_count", 0)) / float(self.T_max), 0.0, 1.0)),
+                last_action_norm,
+                float(last_success),
+                float(self.state.get("resolved", 0.0)),
             ],
             dtype=np.float32,
         )

@@ -1,0 +1,156 @@
+{
+  "timestamp": "2026-04-27 18:27:05",
+  "config": {
+    "artifacts_root": "Multi-Turn RL\\Simulation_4\\artifacts",
+    "output_subdir": "smoke_numerical",
+    "timesteps": 3000,
+    "continue_from": "_none_",
+    "n_envs": 1,
+    "seed": 42,
+    "eval_episodes": 10,
+    "validation_level1_episodes": 1500,
+    "validation_level2_episodes": 1200,
+    "validation_level3_episodes": 1500,
+    "skip_validation": true,
+    "skip_training": false,
+    "demo_episodes": 1,
+    "nlg_enabled": false,
+    "text_only_observation": false,
+    "text_observation_dim": 512
+  },
+  "validation": {
+    "skipped": true
+  },
+  "selected_checkpoint": null,
+  "training": {
+    "total_timesteps": 3000,
+    "training_time_seconds": 2.7570910453796387,
+    "curriculum_enabled": true,
+    "reward_shaping_enabled": false,
+    "nlg_enabled": false,
+    "text_only_observation": false,
+    "text_observation_dim": 512,
+    "best_eval_reward": -Infinity,
+    "baseline_beaten": false,
+    "baseline_beaten_step": null,
+    "final_resolution_rate": 0.0,
+    "n_envs": 1,
+    "seed": 42,
+    "training_mode": "fresh",
+    "checkpoint_ignored_for_text_observation": false
+  },
+  "model_path": "Multi-Turn RL\\Simulation_4\\artifacts\\smoke_numerical\\models\\final_model.zip",
+  "evaluation": {
+    "ppo": {
+      "model_path": "Multi-Turn RL\\Simulation_4\\artifacts\\smoke_numerical\\models\\final_model.zip",
+      "mean_reward": -1.7186491605900323,
+      "std_reward": 1.971255307696793,
+      "resolution_rate": 0.0,
+      "escalation_rate": 1.0,
+      "dropout_rate": 0.0,
+      "timeout_rate": 0.0,
+      "mean_turns": 1.0,
+      "p90_turns": 1.0,
+      "mean_turns_to_resolution": 0.0,
+      "action_distribution": {
+        "AskInfo": 0.0,
+        "ProvideSolution": 0.0,
+        "AffectiveRepair": 0.0,
+        "Escalate": 1.0,
+        "Close": 0.0
+      },
+      "escalation_by_tier": {
+        "Free": 1.0,
+        "Pro": 1.0,
+        "Business": 1.0,
+        "Enterprise": 1.0
+      },
+      "persona_resolution_rate": {
+        "high_engagement_resolver": 0.0,
+        "silent_dropout": 0.0,
+        "low_engagement_resolver": 0.0
+      }
+    },
+    "baselines": {
+      "document_guided": {
+        "mean_reward": -0.09446000387479643,
+        "std_reward": 3.7174145216983616,
+        "resolution_rate": 0.5,
+        "escalation_rate": 0.2,
+        "dropout_rate": 0.3,
+        "timeout_rate": 0.0,
+        "mean_turns": 11.1,
+        "mean_turns_to_resolution": 10.2
+      },
+      "threshold_escalate": {
+        "mean_reward": -1.5417011234392592,
+        "std_reward": 0.3788181351508751,
+        "resolution_rate": 0.0,
+        "escalation_rate": 0.0,
+        "dropout_rate": 0.0,
+        "timeout_rate": 1.0,
+        "mean_turns": 3.4,
+        "mean_turns_to_resolution": 0.0
+      },
+      "random": {
+        "mean_reward": -2.140778485761692,
+        "std_reward": 1.1356040874994862,
+        "resolution_rate": 0.0,
+        "escalation_rate": 0.3,
+        "dropout_rate": 0.0,
+        "timeout_rate": 0.7,
+        "mean_turns": 2.7,
+        "mean_turns_to_resolution": 0.0
+      },
+      "always_solve": {
+        "mean_reward": -1.9913360309646613,
+        "std_reward": 0.8014901552864643,
+        "resolution_rate": 0.0,
+        "escalation_rate": 0.0,
+        "dropout_rate": 1.0,
+        "timeout_rate": 0.0,
+        "mean_turns": 6.4,
+        "mean_turns_to_resolution": 0.0
+      },
+      "always_escalate": {
+        "mean_reward": -2.068003707957332,
+        "std_reward": 1.946535644853349,
+        "resolution_rate": 0.0,
+        "escalation_rate": 1.0,
+        "dropout_rate": 0.0,
+        "timeout_rate": 0.0,
+        "mean_turns": 1.0,
+        "mean_turns_to_resolution": 0.0
+      }
+    },
+    "leaderboard": [
+      {
+        "policy": "document_guided",
+        "mean_reward": -0.09446000387479643
+      },
+      {
+        "policy": "threshold_escalate",
+        "mean_reward": -1.5417011234392592
+      },
+      {
+        "policy": "ppo_trained",
+        "mean_reward": -1.7186491605900323
+      },
+      {
+        "policy": "always_solve",
+        "mean_reward": -1.9913360309646613
+      },
+      {
+        "policy": "always_escalate",
+        "mean_reward": -2.068003707957332
+      },
+      {
+        "policy": "random",
+        "mean_reward": -2.140778485761692
+      }
+    ],
+    "ppo_beats_document_guided": false
+  },
+  "demo_rollouts_path": "Multi-Turn RL\\Simulation_4\\artifacts\\smoke_numerical\\demo_rollouts.json",
+  "runtime_seconds": 4.021188735961914
+}

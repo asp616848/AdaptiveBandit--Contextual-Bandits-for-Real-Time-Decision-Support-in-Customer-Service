@@ -33,7 +33,7 @@ export MPLBACKEND=Agg
 # -----------------------------
 # 2) Output directories
 # -----------------------------
-mkdir -p output/nlp-multi-turn output/numerical-multi-turn
+mkdir -p output/text output/numerical
 
 ARTIFACTS_ROOT="Multi-Turn RL/Simulation_4/artifacts"
 PIPELINE_SCRIPT="Multi-Turn RL/Simulation_4/scripts/phase10_full_pipeline.py"
@@ -62,7 +62,7 @@ python "$PIPELINE_SCRIPT" \
 python tools/export_multiturn_results.py \
   --artifacts-root "$ARTIFACTS_ROOT" \
   --run-subdir "run_numerical" \
-  --out-dir "output/numerical-multi-turn"
+  --out-dir "output/numerical"
 
 # -----------------------------
 # 4) NLP/text-observation run
@@ -82,6 +82,6 @@ python "$PIPELINE_SCRIPT" \
 python tools/export_multiturn_results.py \
   --artifacts-root "$ARTIFACTS_ROOT" \
   --run-subdir "run_nlp" \
-  --out-dir "output/nlp-multi-turn"
+  --out-dir "output/text"
 
 echo "\nDone. Outputs written under ./output/"

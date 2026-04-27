@@ -1,0 +1,26 @@
+[
+  {
+    "episode": 0,
+    "subflow": "manage_downgrade",
+    "tier": "Enterprise",
+    "persona": "low_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": 0.8221364954999314,
+        "pre_information": 0.04798433413347136,
+        "pre_progress": 0.024225744885432568,
+        "pre_frustration": 0.07412311908530124,
+        "post_information": 0.04798433413347136,
+        "post_progress": 0.024225744885432568,
+        "post_frustration": 0.07412311908530124,
+        "terminal_type": "escalation"
+      }
+    ]
+  }
+]

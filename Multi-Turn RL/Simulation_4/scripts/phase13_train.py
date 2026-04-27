@@ -81,6 +81,16 @@ NLP_PPO_CONFIG: dict[str, Any] = {
 }
 
 
+def _progress_bar_available() -> bool:
+    try:
+        import tqdm  # type: ignore  # noqa: F401
+        import rich  # type: ignore  # noqa: F401
+
+        return True
+    except Exception:
+        return False
+
+
 def make_nlp_env(
     artifacts_root: str,
     reward_shaper: RewardShaper,
@@ -187,7 +197,11 @@ def train_nlp_ppo(
         callbacks.append(CurriculumCallback(curriculum, train_env, verbose=1))
 
     start = time.time()
-    model.learn(total_timesteps=int(timesteps), callback=callbacks, progress_bar=True)
+    model.learn(
+        total_timesteps=int(timesteps),
+        callback=callbacks,
+        progress_bar=_progress_bar_available(),
+    )
     elapsed = float(time.time() - start)
 
     model.save(str(save_dir / "final_model"))

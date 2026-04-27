@@ -41,6 +41,25 @@ PPO_CONFIG: dict[str, Any] = {
 }
 
 
+def _tensorboard_available() -> bool:
+    try:
+        import tensorboard  # type: ignore  # noqa: F401
+
+        return True
+    except Exception:
+        return False
+
+
+def _progress_bar_available() -> bool:
+    try:
+        import tqdm  # type: ignore  # noqa: F401
+        import rich  # type: ignore  # noqa: F401
+
+        return True
+    except Exception:
+        return False
+
+
 def make_env(
     artifacts_root: str,
     reward_shaper: RewardShaper,
@@ -125,7 +144,7 @@ def train_ppo(
         vf_coef=PPO_CONFIG["vf_coef"],
         max_grad_norm=PPO_CONFIG["max_grad_norm"],
         learning_rate=PPO_CONFIG["learning_rate"],
-        tensorboard_log=str(log_dir),
+        tensorboard_log=str(log_dir) if _tensorboard_available() else None,
         verbose=PPO_CONFIG["verbose"],
         seed=seed,
     )
@@ -145,7 +164,11 @@ def train_ppo(
         callbacks.append(CurriculumCallback(curriculum, train_env, verbose=1))
 
     start = time.time()
-    model.learn(total_timesteps=int(timesteps), callback=callbacks, progress_bar=True)
+    model.learn(
+        total_timesteps=int(timesteps),
+        callback=callbacks,
+        progress_bar=_progress_bar_available(),
+    )
     elapsed = float(time.time() - start)
 
     model.save(str(save_dir / "final_model"))
@@ -221,6 +244,8 @@ def continue_ppo_from_checkpoint(
     )
 
     model = PPO.load(checkpoint_path, env=train_env)
+    # Avoid SB3 raising when tensorboard isn't installed.
+    model.tensorboard_log = str(log_dir) if _tensorboard_available() else None
     initial_num_timesteps = int(getattr(model, "num_timesteps", 0))
 
     curriculum = CurriculumScheduler(str(artifacts_root_path)) if use_curriculum else None
@@ -258,7 +283,7 @@ def continue_ppo_from_checkpoint(
         callback=callbacks,
         reset_num_timesteps=False,
         tb_log_name=tb_log_name,
-        progress_bar=True,
+        progress_bar=_progress_bar_available(),
     )
     elapsed = float(time.time() - start)
 
