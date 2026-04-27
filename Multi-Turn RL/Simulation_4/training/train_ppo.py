@@ -15,7 +15,6 @@ from Simulation_4.training.action_masking import ActionMaskedEnv
 from Simulation_4.training.callbacks import BestModelCallback, CurriculumCallback, TrainingMetricsCallback
 from Simulation_4.training.curriculum import CurriculumScheduler
 from Simulation_4.training.reward_shaping import RewardShapedWrapper, RewardShaper
-from Simulation_4.training.text_observation import TextOnlyObservationWrapper
 
 
 PPO_CONFIG: dict[str, Any] = {
@@ -65,8 +64,6 @@ def make_env(
     reward_shaper: RewardShaper,
     subflow_filter: list[str] | None = None,
     nlg_enabled: bool = False,
-    text_only_observation: bool = False,
-    text_observation_dim: int = 512,
 ):
     def _init():
         env = SupportEnv(
@@ -74,8 +71,6 @@ def make_env(
             nlg_enabled=bool(nlg_enabled),
             subflow_filter=subflow_filter,
         )
-        if text_only_observation:
-            env = TextOnlyObservationWrapper(env, n_features=int(text_observation_dim))
         env = RewardShapedWrapper(env, reward_shaper)
         env = ActionMaskedEnv(env)
         env = Monitor(env)
@@ -93,8 +88,6 @@ def train_ppo(
     n_envs: int = 4,
     seed: int = 42,
     nlg_enabled: bool = False,
-    text_only_observation: bool = False,
-    text_observation_dim: int = 512,
 ) -> dict[str, Any]:
     artifacts_root_path = Path(artifacts_root)
     phase10_root = artifacts_root_path / output_subdir
@@ -113,8 +106,6 @@ def train_ppo(
             reward_shaper,
             initial_filter,
             nlg_enabled=bool(nlg_enabled),
-            text_only_observation=bool(text_only_observation),
-            text_observation_dim=int(text_observation_dim),
         ),
         n_envs=n_envs,
         seed=seed,
@@ -126,8 +117,6 @@ def train_ppo(
         eval_shaper,
         subflow_filter=None,
         nlg_enabled=bool(nlg_enabled),
-        text_only_observation=bool(text_only_observation),
-        text_observation_dim=int(text_observation_dim),
     )()
 
     model = PPO(
@@ -186,8 +175,6 @@ def train_ppo(
         "curriculum_enabled": bool(use_curriculum),
         "reward_shaping_enabled": bool(use_reward_shaping),
         "nlg_enabled": bool(nlg_enabled),
-        "text_only_observation": bool(text_only_observation),
-        "text_observation_dim": int(text_observation_dim),
         "best_eval_reward": float(best_model_callback.best_mean_reward),
         "baseline_beaten": bool(best_model_callback.baseline_beaten),
         "baseline_beaten_step": best_model_callback.baseline_beaten_step,
@@ -217,8 +204,6 @@ def continue_ppo_from_checkpoint(
     seed: int = 42,
     tb_log_name: str = "ppo_v3_continued",
     nlg_enabled: bool = False,
-    text_only_observation: bool = False,
-    text_observation_dim: int = 512,
 ) -> dict[str, Any]:
     artifacts_root_path = Path(artifacts_root)
     phase_root = artifacts_root_path / output_subdir
@@ -236,8 +221,6 @@ def continue_ppo_from_checkpoint(
             reward_shaper,
             subflow_filter=None,
             nlg_enabled=bool(nlg_enabled),
-            text_only_observation=bool(text_only_observation),
-            text_observation_dim=int(text_observation_dim),
         ),
         n_envs=n_envs,
         seed=seed,
@@ -259,8 +242,6 @@ def continue_ppo_from_checkpoint(
         eval_shaper,
         subflow_filter=None,
         nlg_enabled=bool(nlg_enabled),
-        text_only_observation=bool(text_only_observation),
-        text_observation_dim=int(text_observation_dim),
     )()
 
     metrics_callback = TrainingMetricsCallback(eval_freq=5000, verbose=1)
@@ -305,8 +286,6 @@ def continue_ppo_from_checkpoint(
         "curriculum_enabled": bool(use_curriculum),
         "reward_shaping_enabled": bool(use_reward_shaping),
         "nlg_enabled": bool(nlg_enabled),
-        "text_only_observation": bool(text_only_observation),
-        "text_observation_dim": int(text_observation_dim),
         "best_eval_reward": float(best_model_callback.best_mean_reward),
         "baseline_beaten": bool(best_model_callback.baseline_beaten),
         "baseline_beaten_step": best_model_callback.baseline_beaten_step,

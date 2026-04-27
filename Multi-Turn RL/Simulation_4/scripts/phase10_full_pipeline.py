@@ -19,7 +19,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from Simulation_4.env.support_env import SupportEnv
-from Simulation_4.training.text_observation import TextOnlyObservationWrapper
+from Simulation_4.training.action_masking import ActionMaskedEnv
 from Simulation_4.training.train_ppo import continue_ppo_from_checkpoint, train_ppo
 from Simulation_4.validation.baseline_policies import POLICY_REGISTRY
 from Simulation_4.validation.level1_statistical import run_level1
@@ -41,12 +41,9 @@ def _terminal_from_info(info: dict[str, Any]) -> str:
 def _build_ppo_env(
     artifacts_root: str,
     nlg_enabled: bool,
-    text_only_observation: bool,
-    text_observation_dim: int,
 ):
     env = SupportEnv(artifacts_root=artifacts_root, nlg_enabled=bool(nlg_enabled))
-    if text_only_observation:
-        env = TextOnlyObservationWrapper(env, n_features=int(text_observation_dim))
+    env = ActionMaskedEnv(env)
     return env
 
 
@@ -85,15 +82,11 @@ def evaluate_ppo_model(
     n_episodes: int,
     seed_offset: int,
     nlg_enabled: bool,
-    text_only_observation: bool,
-    text_observation_dim: int,
 ) -> dict[str, Any]:
     model = PPO.load(model_path)
     env = _build_ppo_env(
         artifacts_root=artifacts_root,
         nlg_enabled=bool(nlg_enabled),
-        text_only_observation=bool(text_only_observation),
-        text_observation_dim=int(text_observation_dim),
     )
 
     rewards: list[float] = []
@@ -178,7 +171,7 @@ def evaluate_ppo_model(
 
 
 def evaluate_baselines(artifacts_root: str, n_episodes: int, seed_offset: int) -> dict[str, Any]:
-    env = SupportEnv(artifacts_root=artifacts_root, nlg_enabled=False)
+    env = ActionMaskedEnv(SupportEnv(artifacts_root=artifacts_root, nlg_enabled=False))
     baselines = ["document_guided", "threshold_escalate", "random", "always_solve", "always_escalate"]
     results: dict[str, Any] = {}
 
@@ -245,15 +238,11 @@ def generate_demo_rollouts(
     n_episodes: int = 10,
     seed_offset: int = 99000,
     nlg_enabled: bool = False,
-    text_only_observation: bool = False,
-    text_observation_dim: int = 512,
 ) -> None:
     model = PPO.load(model_path)
     env = _build_ppo_env(
         artifacts_root=artifacts_root,
         nlg_enabled=bool(nlg_enabled),
-        text_only_observation=bool(text_only_observation),
-        text_observation_dim=int(text_observation_dim),
     )
     rows: list[dict[str, Any]] = []
 
@@ -345,14 +334,7 @@ def train_agent(
     n_envs: int,
     seed: int,
     nlg_enabled: bool,
-    text_only_observation: bool,
-    text_observation_dim: int,
 ) -> dict[str, Any]:
-    checkpoint_ignored_for_text_observation = False
-    if text_only_observation and continue_from:
-        checkpoint_ignored_for_text_observation = True
-        continue_from = None
-
     if continue_from:
         summary = continue_ppo_from_checkpoint(
             artifacts_root=str(artifacts_root),
@@ -365,11 +347,8 @@ def train_agent(
             seed=int(seed),
             tb_log_name=f"ppo_{output_subdir}",
             nlg_enabled=bool(nlg_enabled),
-            text_only_observation=bool(text_only_observation),
-            text_observation_dim=int(text_observation_dim),
         )
         summary["training_mode"] = "continue"
-        summary["checkpoint_ignored_for_text_observation"] = checkpoint_ignored_for_text_observation
         return summary
 
     summary = train_ppo(
@@ -381,11 +360,8 @@ def train_agent(
         n_envs=int(n_envs),
         seed=int(seed),
         nlg_enabled=bool(nlg_enabled),
-        text_only_observation=bool(text_only_observation),
-        text_observation_dim=int(text_observation_dim),
     )
     summary["training_mode"] = "fresh"
-    summary["checkpoint_ignored_for_text_observation"] = checkpoint_ignored_for_text_observation
     return summary
 
 
@@ -405,8 +381,6 @@ def main() -> int:
     parser.add_argument("--skip-training", action="store_true")
     parser.add_argument("--demo-episodes", type=int, default=12)
     parser.add_argument("--nlg-enabled", action="store_true")
-    parser.add_argument("--text-only-observation", action="store_true")
-    parser.add_argument("--text-observation-dim", type=int, default=512)
     args = parser.parse_args()
 
     artifacts_root = Path(args.artifacts_root)
@@ -462,8 +436,6 @@ def main() -> int:
             n_envs=int(args.n_envs),
             seed=int(args.seed),
             nlg_enabled=bool(args.nlg_enabled),
-            text_only_observation=bool(args.text_only_observation),
-            text_observation_dim=int(args.text_observation_dim),
         )
         report["training"] = train_summary
         print(
@@ -483,8 +455,6 @@ def main() -> int:
         n_episodes=int(args.eval_episodes),
         seed_offset=60_000,
         nlg_enabled=bool(args.nlg_enabled),
-        text_only_observation=bool(args.text_only_observation),
-        text_observation_dim=int(args.text_observation_dim),
     )
     baseline_metrics = evaluate_baselines(
         artifacts_root=str(artifacts_root),
@@ -519,8 +489,6 @@ def main() -> int:
         n_episodes=int(args.demo_episodes),
         seed_offset=120_000,
         nlg_enabled=bool(args.nlg_enabled),
-        text_only_observation=bool(args.text_only_observation),
-        text_observation_dim=int(args.text_observation_dim),
     )
     report["demo_rollouts_path"] = str(demo_path)
 

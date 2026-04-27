@@ -33,14 +33,13 @@ export MPLBACKEND=Agg
 # -----------------------------
 # 2) Output directories
 # -----------------------------
-mkdir -p output/text output/numerical
+mkdir -p output/numerical
 
 ARTIFACTS_ROOT="Multi-Turn RL/Simulation_4/artifacts"
 PIPELINE_SCRIPT="Multi-Turn RL/Simulation_4/scripts/phase10_full_pipeline.py"
 
-# Faster defaults for docker evaluation (override by exporting env vars)
-NUM_TIMESTEPS="${NUM_TIMESTEPS:-20000}"
-NLP_TIMESTEPS="${NLP_TIMESTEPS:-20000}"
+# Defaults (override by exporting env vars)
+NUM_TIMESTEPS="${NUM_TIMESTEPS:-150000}"
 EVAL_EPISODES="${EVAL_EPISODES:-200}"
 DEMO_EPISODES="${DEMO_EPISODES:-6}"
 N_ENVS="${N_ENVS:-1}"
@@ -48,10 +47,10 @@ N_ENVS="${N_ENVS:-1}"
 # -----------------------------
 # 3) Numerical/state-only run
 # -----------------------------
-echo "=== [1/2] Multi-turn numerical (state observation) ==="
+echo "=== Multi-turn numerical (state observation) ==="
 python "$PIPELINE_SCRIPT" \
   --artifacts-root "$ARTIFACTS_ROOT" \
-  --output-subdir "run_numerical" \
+  --output-subdir "numerical_150k" \
   --timesteps "$NUM_TIMESTEPS" \
   --eval-episodes "$EVAL_EPISODES" \
   --demo-episodes "$DEMO_EPISODES" \
@@ -61,27 +60,7 @@ python "$PIPELINE_SCRIPT" \
 
 python tools/export_multiturn_results.py \
   --artifacts-root "$ARTIFACTS_ROOT" \
-  --run-subdir "run_numerical" \
+  --run-subdir "numerical_150k" \
   --out-dir "output/numerical"
 
-# -----------------------------
-# 4) NLP/text-observation run
-# -----------------------------
-echo "=== [2/2] Multi-turn NLP (text-only observation; offline-safe) ==="
-python "$PIPELINE_SCRIPT" \
-  --artifacts-root "$ARTIFACTS_ROOT" \
-  --output-subdir "run_nlp" \
-  --timesteps "$NLP_TIMESTEPS" \
-  --eval-episodes "$EVAL_EPISODES" \
-  --demo-episodes "$DEMO_EPISODES" \
-  --n-envs "$N_ENVS" \
-  --continue-from "_none_" \
-  --skip-validation \
-  --text-only-observation
-
-python tools/export_multiturn_results.py \
-  --artifacts-root "$ARTIFACTS_ROOT" \
-  --run-subdir "run_nlp" \
-  --out-dir "output/text"
-
-echo "\nDone. Outputs written under ./output/"
+echo "\nDone. Outputs written under ./output/numerical"

@@ -55,7 +55,6 @@ def train(args: argparse.Namespace) -> dict:
         n_envs=4,
         seed=42,
         nlg_enabled=True,
-        text_only_observation=False,
     )
 
     print("\nTraining summary:")
