@@ -88,6 +88,10 @@ class RewardEngine:
             base_cost = float(self.escalation_costs.get(tier, 0.0))
             appropriateness = frustration * 3.0 + min(failed_streak * 0.7, 2.5)
             effective_cost = max(base_cost - appropriateness, 0.0)
+            # Cap penalty so worst-case unnecessary escalation is -1.5, not -4.
+            # Without this cap, bimodal reward variance (-4 to +4) collapses policy
+            # to 0% escalation — strong negative gradient dominates the rare positives.
+            effective_cost = min(effective_cost, 1.5)
             reward -= effective_cost
 
             if tier == "Enterprise":
