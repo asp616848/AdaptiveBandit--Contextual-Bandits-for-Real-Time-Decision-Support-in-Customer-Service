@@ -44,7 +44,7 @@ Using cpu device
 |    ep_len_mean     | 4.58     |
 |    ep_rew_mean     | -1.36    |
 | time/              |          |
-|    fps             | 2232     |
+|    fps             | 2284     |
 |    iterations      | 1        |
 |    time_elapsed    | 0        |
 |    total_timesteps | 2048     |
@@ -54,9 +54,9 @@ Using cpu device
 |    ep_len_mean          | 5.21      |
 |    ep_rew_mean          | -1.13     |
 | time/                   |           |
-|    fps                  | 1819      |
+|    fps                  | 2052      |
 |    iterations           | 2         |
-|    time_elapsed         | 2         |
+|    time_elapsed         | 1         |
 |    total_timesteps      | 4096      |
 | train/                  |           |
 |    approx_kl            | 0.0173171 |
@@ -83,7 +83,7 @@ Step 5,000 | Mean reward: -0.697 | Resolution: 64.9% | Escalation: 0.0%
 |    ep_len_mean               | 6.38        |
 |    ep_rew_mean               | -0.664      |
 | time/                        |             |
-|    fps                       | 1785        |
+|    fps                       | 1912        |
 |    iterations                | 3           |
 |    time_elapsed              | 3           |
 |    total_timesteps           | 6144        |
@@ -104,7 +104,7 @@ Step 5,000 | Mean reward: -0.697 | Resolution: 64.9% | Escalation: 0.0%
 |    ep_len_mean          | 6.94        |
 |    ep_rew_mean          | -0.462      |
 | time/                   |             |
-|    fps                  | 1758        |
+|    fps                  | 1920        |
 |    iterations           | 4           |
 |    time_elapsed         | 4           |
 |    total_timesteps      | 8192        |
@@ -138,9 +138,9 @@ New best model saved: -0.729
 |    ep_len_mean               | 7.26        |
 |    ep_rew_mean               | -0.373      |
 | time/                        |             |
-|    fps                       | 1613        |
+|    fps                       | 1726        |
 |    iterations                | 5           |
-|    time_elapsed              | 6           |
+|    time_elapsed              | 5           |
 |    total_timesteps           | 10240       |
 | train/                       |             |
 |    approx_kl                 | 0.013287689 |
@@ -159,7 +159,7 @@ New best model saved: -0.729
 |    ep_len_mean          | 7.62        |
 |    ep_rew_mean          | 0.0674      |
 | time/                   |             |
-|    fps                  | 1637        |
+|    fps                  | 1737        |
 |    iterations           | 6           |
 |    time_elapsed         | 7           |
 |    total_timesteps      | 12288       |
@@ -180,7 +180,7 @@ New best model saved: -0.729
 |    ep_len_mean          | 8.88        |
 |    ep_rew_mean          | 0.371       |
 | time/                   |             |
-|    fps                  | 1654        |
+|    fps                  | 1756        |
 |    iterations           | 7           |
 |    time_elapsed         | 8           |
 |    total_timesteps      | 14336       |
@@ -209,7 +209,7 @@ Step 15,000 | Mean reward: 1.067 | Resolution: 68.8% | Escalation: 0.0%
 |    ep_len_mean               | 9.58        |
 |    ep_rew_mean               | 0.811       |
 | time/                        |             |
-|    fps                       | 1668        |
+|    fps                       | 1764        |
 |    iterations                | 8           |
 |    time_elapsed              | 9           |
 |    total_timesteps           | 16384       |
@@ -230,7 +230,7 @@ Step 15,000 | Mean reward: 1.067 | Resolution: 68.8% | Escalation: 0.0%
 |    ep_len_mean          | 9.24        |
 |    ep_rew_mean          | 0.982       |
 | time/                   |             |
-|    fps                  | 1700        |
+|    fps                  | 1769        |
 |    iterations           | 9           |
 |    time_elapsed         | 10          |
 |    total_timesteps      | 18432       |
@@ -248,3 +248,2985 @@ Step 15,000 | Mean reward: 1.067 | Resolution: 68.8% | Escalation: 0.0%
 -----------------------------------------
 Step 20,000 | Mean reward: 1.363 | Resolution: 69.8% | Escalation: 0.0%
 New best model saved: -0.333
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.279       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 9.61        |
+|    mean_reward_100ep         | 1.36        |
+|    resolution_rate           | 0.698       |
+|    timeout_rate              | 0.0223      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | -0.333      |
+|    resolution_rate           | 0.43        |
+| rollout/                     |             |
+|    ep_len_mean               | 9.31        |
+|    ep_rew_mean               | 1.38        |
+| time/                        |             |
+|    fps                       | 1684        |
+|    iterations                | 10          |
+|    time_elapsed              | 12          |
+|    total_timesteps           | 20480       |
+| train/                       |             |
+|    approx_kl                 | 0.005784921 |
+|    clip_fraction             | 0.0701      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.12       |
+|    explained_variance        | 0.293       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.28        |
+|    n_updates                 | 90          |
+|    policy_gradient_loss      | -0.0083     |
+|    value_loss                | 4.74        |
+----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 9.93        |
+|    ep_rew_mean          | 1.42        |
+| time/                   |             |
+|    fps                  | 1706        |
+|    iterations           | 11          |
+|    time_elapsed         | 13          |
+|    total_timesteps      | 22528       |
+| train/                  |             |
+|    approx_kl            | 0.007903531 |
+|    clip_fraction        | 0.0854      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -1.05       |
+|    explained_variance   | 0.259       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.05        |
+|    n_updates            | 100         |
+|    policy_gradient_loss | -0.0108     |
+|    value_loss           | 4.46        |
+-----------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 9.53        |
+|    ep_rew_mean          | 1.8         |
+| time/                   |             |
+|    fps                  | 1718        |
+|    iterations           | 12          |
+|    time_elapsed         | 14          |
+|    total_timesteps      | 24576       |
+| train/                  |             |
+|    approx_kl            | 0.002502222 |
+|    clip_fraction        | 0.038       |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -1.03       |
+|    explained_variance   | 0.223       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.06        |
+|    n_updates            | 110         |
+|    policy_gradient_loss | -0.00527    |
+|    value_loss           | 4.6         |
+-----------------------------------------
+Step 25,000 | Mean reward: 1.534 | Resolution: 71.0% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.27        |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 9.66        |
+|    mean_reward_100ep         | 1.53        |
+|    resolution_rate           | 0.71        |
+|    timeout_rate              | 0.0198      |
+| rollout/                     |             |
+|    ep_len_mean               | 10.6        |
+|    ep_rew_mean               | 1.77        |
+| time/                        |             |
+|    fps                       | 1734        |
+|    iterations                | 13          |
+|    time_elapsed              | 15          |
+|    total_timesteps           | 26624       |
+| train/                       |             |
+|    approx_kl                 | 0.007447606 |
+|    clip_fraction             | 0.0659      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.975      |
+|    explained_variance        | 0.239       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.4         |
+|    n_updates                 | 120         |
+|    policy_gradient_loss      | -0.00763    |
+|    value_loss                | 4.48        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 10.7         |
+|    ep_rew_mean          | 2.1          |
+| time/                   |              |
+|    fps                  | 1747         |
+|    iterations           | 14           |
+|    time_elapsed         | 16           |
+|    total_timesteps      | 28672        |
+| train/                  |              |
+|    approx_kl            | 0.0074497918 |
+|    clip_fraction        | 0.0527       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.942       |
+|    explained_variance   | 0.229        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.7          |
+|    n_updates            | 130          |
+|    policy_gradient_loss | -0.00643     |
+|    value_loss           | 4.12         |
+------------------------------------------
+Step 30,000 | Mean reward: 1.969 | Resolution: 72.7% | Escalation: 0.0%
+New best model saved: 0.195
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.253       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 10.5        |
+|    mean_reward_100ep         | 1.97        |
+|    resolution_rate           | 0.727       |
+|    timeout_rate              | 0.0197      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.195       |
+|    resolution_rate           | 0.515       |
+| rollout/                     |             |
+|    ep_len_mean               | 10.2        |
+|    ep_rew_mean               | 2.04        |
+| time/                        |             |
+|    fps                       | 1683        |
+|    iterations                | 15          |
+|    time_elapsed              | 18          |
+|    total_timesteps           | 30720       |
+| train/                       |             |
+|    approx_kl                 | 0.010527082 |
+|    clip_fraction             | 0.0539      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.906      |
+|    explained_variance        | 0.234       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.29        |
+|    n_updates                 | 140         |
+|    policy_gradient_loss      | -0.0061     |
+|    value_loss                | 4.03        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 10.9         |
+|    ep_rew_mean          | 1.78         |
+| time/                   |              |
+|    fps                  | 1696         |
+|    iterations           | 16           |
+|    time_elapsed         | 19           |
+|    total_timesteps      | 32768        |
+| train/                  |              |
+|    approx_kl            | 0.0052928017 |
+|    clip_fraction        | 0.019        |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.867       |
+|    explained_variance   | 0.223        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.9          |
+|    n_updates            | 150          |
+|    policy_gradient_loss | -0.00243     |
+|    value_loss           | 3.65         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 10.2         |
+|    ep_rew_mean          | 2            |
+| time/                   |              |
+|    fps                  | 1706         |
+|    iterations           | 17           |
+|    time_elapsed         | 20           |
+|    total_timesteps      | 34816        |
+| train/                  |              |
+|    approx_kl            | 0.0070550526 |
+|    clip_fraction        | 0.0444       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.832       |
+|    explained_variance   | 0.24         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.26         |
+|    n_updates            | 160          |
+|    policy_gradient_loss | -0.0031      |
+|    value_loss           | 3.99         |
+------------------------------------------
+Step 35,000 | Mean reward: 2.261 | Resolution: 73.8% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.242        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 9.54         |
+|    mean_reward_100ep         | 2.26         |
+|    resolution_rate           | 0.738        |
+|    timeout_rate              | 0.0199       |
+| rollout/                     |              |
+|    ep_len_mean               | 10.5         |
+|    ep_rew_mean               | 2.51         |
+| time/                        |              |
+|    fps                       | 1709         |
+|    iterations                | 18           |
+|    time_elapsed              | 21           |
+|    total_timesteps           | 36864        |
+| train/                       |              |
+|    approx_kl                 | 0.0073059127 |
+|    clip_fraction             | 0.0597       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.837       |
+|    explained_variance        | 0.283        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 1.73         |
+|    n_updates                 | 170          |
+|    policy_gradient_loss      | -0.00503     |
+|    value_loss                | 3.51         |
+-----------------------------------------------
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 10.7       |
+|    ep_rew_mean          | 1.96       |
+| time/                   |            |
+|    fps                  | 1711       |
+|    iterations           | 19         |
+|    time_elapsed         | 22         |
+|    total_timesteps      | 38912      |
+| train/                  |            |
+|    approx_kl            | 0.00895408 |
+|    clip_fraction        | 0.0576     |
+|    clip_range           | 0.2        |
+|    entropy_loss         | -0.787     |
+|    explained_variance   | 0.116      |
+|    learning_rate        | 0.0003     |
+|    loss                 | 2.03       |
+|    n_updates            | 180        |
+|    policy_gradient_loss | -0.00621   |
+|    value_loss           | 3.78       |
+----------------------------------------
+Step 40,000 | Mean reward: 2.233 | Resolution: 74.6% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.235       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 10.6        |
+|    mean_reward_100ep         | 2.23        |
+|    resolution_rate           | 0.746       |
+|    timeout_rate              | 0.0192      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.142       |
+|    resolution_rate           | 0.51        |
+| rollout/                     |             |
+|    ep_len_mean               | 10.2        |
+|    ep_rew_mean               | 2.17        |
+| time/                        |             |
+|    fps                       | 1681        |
+|    iterations                | 20          |
+|    time_elapsed              | 24          |
+|    total_timesteps           | 40960       |
+| train/                       |             |
+|    approx_kl                 | 0.010136211 |
+|    clip_fraction             | 0.0353      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.791      |
+|    explained_variance        | 0.25        |
+|    learning_rate             | 0.0003      |
+|    loss                      | 1.54        |
+|    n_updates                 | 190         |
+|    policy_gradient_loss      | -0.00262    |
+|    value_loss                | 3.77        |
+----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.8        |
+|    ep_rew_mean          | 1.65        |
+| time/                   |             |
+|    fps                  | 1681        |
+|    iterations           | 21          |
+|    time_elapsed         | 25          |
+|    total_timesteps      | 43008       |
+| train/                  |             |
+|    approx_kl            | 0.010843171 |
+|    clip_fraction        | 0.0681      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.769      |
+|    explained_variance   | 0.28        |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.67        |
+|    n_updates            | 200         |
+|    policy_gradient_loss | -0.00676    |
+|    value_loss           | 3.45        |
+-----------------------------------------
+Step 45,000 | Mean reward: 1.987 | Resolution: 75.0% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.232        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.5         |
+|    mean_reward_100ep         | 1.99         |
+|    resolution_rate           | 0.75         |
+|    timeout_rate              | 0.018        |
+| rollout/                     |              |
+|    ep_len_mean               | 10.4         |
+|    ep_rew_mean               | 2.13         |
+| time/                        |              |
+|    fps                       | 1684         |
+|    iterations                | 22           |
+|    time_elapsed              | 26           |
+|    total_timesteps           | 45056        |
+| train/                       |              |
+|    approx_kl                 | 0.0040863054 |
+|    clip_fraction             | 0.0448       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.746       |
+|    explained_variance        | 0.244        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.27         |
+|    n_updates                 | 210          |
+|    policy_gradient_loss      | -0.00445     |
+|    value_loss                | 4.04         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 9.58        |
+|    ep_rew_mean          | 2.62        |
+| time/                   |             |
+|    fps                  | 1680        |
+|    iterations           | 23          |
+|    time_elapsed         | 28          |
+|    total_timesteps      | 47104       |
+| train/                  |             |
+|    approx_kl            | 0.006942494 |
+|    clip_fraction        | 0.048       |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.726      |
+|    explained_variance   | 0.15        |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2           |
+|    n_updates            | 220         |
+|    policy_gradient_loss | -0.00269    |
+|    value_loss           | 4.07        |
+-----------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.6        |
+|    ep_rew_mean          | 2.03        |
+| time/                   |             |
+|    fps                  | 1681        |
+|    iterations           | 24          |
+|    time_elapsed         | 29          |
+|    total_timesteps      | 49152       |
+| train/                  |             |
+|    approx_kl            | 0.010183741 |
+|    clip_fraction        | 0.04        |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.755      |
+|    explained_variance   | 0.229       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.73        |
+|    n_updates            | 230         |
+|    policy_gradient_loss | -0.0026     |
+|    value_loss           | 3.51        |
+-----------------------------------------
+Step 50,000 | Mean reward: 2.189 | Resolution: 75.7% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.224       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 10.5        |
+|    mean_reward_100ep         | 2.19        |
+|    resolution_rate           | 0.757       |
+|    timeout_rate              | 0.0186      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.167       |
+|    resolution_rate           | 0.51        |
+| rollout/                     |             |
+|    ep_len_mean               | 10.1        |
+|    ep_rew_mean               | 2.52        |
+| time/                        |             |
+|    fps                       | 1643        |
+|    iterations                | 25          |
+|    time_elapsed              | 31          |
+|    total_timesteps           | 51200       |
+| train/                       |             |
+|    approx_kl                 | 0.011730127 |
+|    clip_fraction             | 0.0488      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.721      |
+|    explained_variance        | 0.22        |
+|    learning_rate             | 0.0003      |
+|    loss                      | 1.8         |
+|    n_updates                 | 240         |
+|    policy_gradient_loss      | -0.00349    |
+|    value_loss                | 3.48        |
+----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.2        |
+|    ep_rew_mean          | 2.09        |
+| time/                   |             |
+|    fps                  | 1645        |
+|    iterations           | 26          |
+|    time_elapsed         | 32          |
+|    total_timesteps      | 53248       |
+| train/                  |             |
+|    approx_kl            | 0.004530642 |
+|    clip_fraction        | 0.0342      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.665      |
+|    explained_variance   | 0.232       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.73        |
+|    n_updates            | 250         |
+|    policy_gradient_loss | -0.00304    |
+|    value_loss           | 3.18        |
+-----------------------------------------
+Step 55,000 | Mean reward: 2.466 | Resolution: 76.6% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.216        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.4         |
+|    mean_reward_100ep         | 2.47         |
+|    resolution_rate           | 0.766        |
+|    timeout_rate              | 0.0172       |
+| rollout/                     |              |
+|    ep_len_mean               | 10.7         |
+|    ep_rew_mean               | 2.33         |
+| time/                        |              |
+|    fps                       | 1642         |
+|    iterations                | 27           |
+|    time_elapsed              | 33           |
+|    total_timesteps           | 55296        |
+| train/                       |              |
+|    approx_kl                 | 0.0029180287 |
+|    clip_fraction             | 0.0351       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.625       |
+|    explained_variance        | 0.241        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 1.57         |
+|    n_updates                 | 260          |
+|    policy_gradient_loss      | -0.00495     |
+|    value_loss                | 3.05         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 11           |
+|    ep_rew_mean          | 2.13         |
+| time/                   |              |
+|    fps                  | 1646         |
+|    iterations           | 28           |
+|    time_elapsed         | 34           |
+|    total_timesteps      | 57344        |
+| train/                  |              |
+|    approx_kl            | 0.0030578638 |
+|    clip_fraction        | 0.0329       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.627       |
+|    explained_variance   | 0.291        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.39         |
+|    n_updates            | 270          |
+|    policy_gradient_loss | -0.00215     |
+|    value_loss           | 2.8          |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 10.5         |
+|    ep_rew_mean          | 1.85         |
+| time/                   |              |
+|    fps                  | 1650         |
+|    iterations           | 29           |
+|    time_elapsed         | 35           |
+|    total_timesteps      | 59392        |
+| train/                  |              |
+|    approx_kl            | 0.0055969264 |
+|    clip_fraction        | 0.0371       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.628       |
+|    explained_variance   | 0.224        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.54         |
+|    n_updates            | 280          |
+|    policy_gradient_loss | -0.00278     |
+|    value_loss           | 3.2          |
+------------------------------------------
+Step 60,000 | Mean reward: 2.265 | Resolution: 77.2% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.211        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.1         |
+|    mean_reward_100ep         | 2.27         |
+|    resolution_rate           | 0.772        |
+|    timeout_rate              | 0.0178       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.0802       |
+|    resolution_rate           | 0.495        |
+| rollout/                     |              |
+|    ep_len_mean               | 10.8         |
+|    ep_rew_mean               | 2.38         |
+| time/                        |              |
+|    fps                       | 1623         |
+|    iterations                | 30           |
+|    time_elapsed              | 37           |
+|    total_timesteps           | 61440        |
+| train/                       |              |
+|    approx_kl                 | 0.0034964941 |
+|    clip_fraction             | 0.0374       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.651       |
+|    explained_variance        | 0.312        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 1.55         |
+|    n_updates                 | 290          |
+|    policy_gradient_loss      | -0.00407     |
+|    value_loss                | 3.64         |
+-----------------------------------------------
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 9.9        |
+|    ep_rew_mean          | 2.32       |
+| time/                   |            |
+|    fps                  | 1624       |
+|    iterations           | 31         |
+|    time_elapsed         | 39         |
+|    total_timesteps      | 63488      |
+| train/                  |            |
+|    approx_kl            | 0.00616345 |
+|    clip_fraction        | 0.0597     |
+|    clip_range           | 0.2        |
+|    entropy_loss         | -0.57      |
+|    explained_variance   | 0.239      |
+|    learning_rate        | 0.0003     |
+|    loss                 | 1.44       |
+|    n_updates            | 300        |
+|    policy_gradient_loss | -0.00592   |
+|    value_loss           | 3.07       |
+----------------------------------------
+Step 65,000 | Mean reward: 2.003 | Resolution: 77.4% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.207        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.2         |
+|    mean_reward_100ep         | 2            |
+|    resolution_rate           | 0.774        |
+|    timeout_rate              | 0.0187       |
+| rollout/                     |              |
+|    ep_len_mean               | 10.1         |
+|    ep_rew_mean               | 2.28         |
+| time/                        |              |
+|    fps                       | 1625         |
+|    iterations                | 32           |
+|    time_elapsed              | 40           |
+|    total_timesteps           | 65536        |
+| train/                       |              |
+|    approx_kl                 | 0.0043115597 |
+|    clip_fraction             | 0.0224       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.563       |
+|    explained_variance        | 0.203        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2            |
+|    n_updates                 | 310          |
+|    policy_gradient_loss      | -0.00256     |
+|    value_loss                | 3.95         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 9.94        |
+|    ep_rew_mean          | 2.61        |
+| time/                   |             |
+|    fps                  | 1625        |
+|    iterations           | 33          |
+|    time_elapsed         | 41          |
+|    total_timesteps      | 67584       |
+| train/                  |             |
+|    approx_kl            | 0.005723303 |
+|    clip_fraction        | 0.0668      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.59       |
+|    explained_variance   | 0.227       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.9         |
+|    n_updates            | 320         |
+|    policy_gradient_loss | -0.00568    |
+|    value_loss           | 4.05        |
+-----------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.8        |
+|    ep_rew_mean          | 2.17        |
+| time/                   |             |
+|    fps                  | 1626        |
+|    iterations           | 34          |
+|    time_elapsed         | 42          |
+|    total_timesteps      | 69632       |
+| train/                  |             |
+|    approx_kl            | 0.006157241 |
+|    clip_fraction        | 0.0212      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.594      |
+|    explained_variance   | 0.217       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.91        |
+|    n_updates            | 330         |
+|    policy_gradient_loss | -0.00179    |
+|    value_loss           | 3.45        |
+-----------------------------------------
+Step 70,000 | Mean reward: 2.134 | Resolution: 77.6% | Escalation: 0.0%
+New best model saved: 0.273
+---------------------------------------------
+| custom/                      |            |
+|    dropout_rate              | 0.205      |
+|    escalation_rate           | 0          |
+|    mean_episode_length_100ep | 11         |
+|    mean_reward_100ep         | 2.13       |
+|    resolution_rate           | 0.776      |
+|    timeout_rate              | 0.019      |
+| eval/                        |            |
+|    escalation_rate           | 0          |
+|    mean_reward               | 0.273      |
+|    resolution_rate           | 0.53       |
+| rollout/                     |            |
+|    ep_len_mean               | 10.8       |
+|    ep_rew_mean               | 2.21       |
+| time/                        |            |
+|    fps                       | 1613       |
+|    iterations                | 35         |
+|    time_elapsed              | 44         |
+|    total_timesteps           | 71680      |
+| train/                       |            |
+|    approx_kl                 | 0.00593483 |
+|    clip_fraction             | 0.036      |
+|    clip_range                | 0.2        |
+|    entropy_loss              | -0.614     |
+|    explained_variance        | 0.264      |
+|    learning_rate             | 0.0003     |
+|    loss                      | 1.91       |
+|    n_updates                 | 340        |
+|    policy_gradient_loss      | -0.00262   |
+|    value_loss                | 3.62       |
+---------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 9.92         |
+|    ep_rew_mean          | 2.53         |
+| time/                   |              |
+|    fps                  | 1621         |
+|    iterations           | 36           |
+|    time_elapsed         | 45           |
+|    total_timesteps      | 73728        |
+| train/                  |              |
+|    approx_kl            | 0.0068260166 |
+|    clip_fraction        | 0.0563       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.605       |
+|    explained_variance   | 0.221        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.77         |
+|    n_updates            | 350          |
+|    policy_gradient_loss | -0.0032      |
+|    value_loss           | 3.7          |
+------------------------------------------
+Step 75,000 | Mean reward: 2.186 | Resolution: 77.9% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.202       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 10.6        |
+|    mean_reward_100ep         | 2.19        |
+|    resolution_rate           | 0.779       |
+|    timeout_rate              | 0.0192      |
+| rollout/                     |             |
+|    ep_len_mean               | 9.56        |
+|    ep_rew_mean               | 2.46        |
+| time/                        |             |
+|    fps                       | 1629        |
+|    iterations                | 37          |
+|    time_elapsed              | 46          |
+|    total_timesteps           | 75776       |
+| train/                       |             |
+|    approx_kl                 | 0.007839482 |
+|    clip_fraction             | 0.0344      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.624      |
+|    explained_variance        | 0.163       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 1.49        |
+|    n_updates                 | 360         |
+|    policy_gradient_loss      | -0.00203    |
+|    value_loss                | 3.3         |
+----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.3        |
+|    ep_rew_mean          | 1.98        |
+| time/                   |             |
+|    fps                  | 1637        |
+|    iterations           | 38          |
+|    time_elapsed         | 47          |
+|    total_timesteps      | 77824       |
+| train/                  |             |
+|    approx_kl            | 0.005008407 |
+|    clip_fraction        | 0.0456      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.622      |
+|    explained_variance   | 0.239       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.46        |
+|    n_updates            | 370         |
+|    policy_gradient_loss | -0.00321    |
+|    value_loss           | 3.19        |
+-----------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.2        |
+|    ep_rew_mean          | 2.24        |
+| time/                   |             |
+|    fps                  | 1639        |
+|    iterations           | 39          |
+|    time_elapsed         | 48          |
+|    total_timesteps      | 79872       |
+| train/                  |             |
+|    approx_kl            | 0.005870529 |
+|    clip_fraction        | 0.0511      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.659      |
+|    explained_variance   | 0.208       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.59        |
+|    n_updates            | 380         |
+|    policy_gradient_loss | -0.00368    |
+|    value_loss           | 3.46        |
+-----------------------------------------
+Step 80,000 | Mean reward: 2.202 | Resolution: 78.1% | Escalation: 0.0%
+New best model saved: 0.449
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.201        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.1         |
+|    mean_reward_100ep         | 2.2          |
+|    resolution_rate           | 0.781        |
+|    timeout_rate              | 0.0184       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.449        |
+|    resolution_rate           | 0.56         |
+| rollout/                     |              |
+|    ep_len_mean               | 10.6         |
+|    ep_rew_mean               | 2.55         |
+| time/                        |              |
+|    fps                       | 1625         |
+|    iterations                | 40           |
+|    time_elapsed              | 50           |
+|    total_timesteps           | 81920        |
+| train/                       |              |
+|    approx_kl                 | 0.0066170897 |
+|    clip_fraction             | 0.0197       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.66        |
+|    explained_variance        | 0.134        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 1.72         |
+|    n_updates                 | 390          |
+|    policy_gradient_loss      | -0.00147     |
+|    value_loss                | 3.41         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.1        |
+|    ep_rew_mean          | 2.46        |
+| time/                   |             |
+|    fps                  | 1629        |
+|    iterations           | 41          |
+|    time_elapsed         | 51          |
+|    total_timesteps      | 83968       |
+| train/                  |             |
+|    approx_kl            | 0.004925102 |
+|    clip_fraction        | 0.0181      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.635      |
+|    explained_variance   | 0.198       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.22        |
+|    n_updates            | 400         |
+|    policy_gradient_loss | -0.000908   |
+|    value_loss           | 2.95        |
+-----------------------------------------
+Step 85,000 | Mean reward: 2.525 | Resolution: 78.5% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.197        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.6         |
+|    mean_reward_100ep         | 2.53         |
+|    resolution_rate           | 0.785        |
+|    timeout_rate              | 0.018        |
+| rollout/                     |              |
+|    ep_len_mean               | 10.7         |
+|    ep_rew_mean               | 2.01         |
+| time/                        |              |
+|    fps                       | 1632         |
+|    iterations                | 42           |
+|    time_elapsed              | 52           |
+|    total_timesteps           | 86016        |
+| train/                       |              |
+|    approx_kl                 | 0.0019200421 |
+|    clip_fraction             | 0.0144       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.63        |
+|    explained_variance        | 0.179        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 1.41         |
+|    n_updates                 | 410          |
+|    policy_gradient_loss      | -0.00122     |
+|    value_loss                | 2.82         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 11.4         |
+|    ep_rew_mean          | 1.97         |
+| time/                   |              |
+|    fps                  | 1633         |
+|    iterations           | 43           |
+|    time_elapsed         | 53           |
+|    total_timesteps      | 88064        |
+| train/                  |              |
+|    approx_kl            | 0.0058690757 |
+|    clip_fraction        | 0.0492       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.57        |
+|    explained_variance   | 0.189        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.73         |
+|    n_updates            | 420          |
+|    policy_gradient_loss | -0.00448     |
+|    value_loss           | 3.54         |
+------------------------------------------
+Step 90,000 | Mean reward: 2.567 | Resolution: 78.6% | Escalation: 0.0%
+New best model saved: 0.533
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.195        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.7         |
+|    mean_reward_100ep         | 2.57         |
+|    resolution_rate           | 0.786        |
+|    timeout_rate              | 0.019        |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.533        |
+|    resolution_rate           | 0.575        |
+| rollout/                     |              |
+|    ep_len_mean               | 10.7         |
+|    ep_rew_mean               | 2.57         |
+| time/                        |              |
+|    fps                       | 1616         |
+|    iterations                | 44           |
+|    time_elapsed              | 55           |
+|    total_timesteps           | 90112        |
+| train/                       |              |
+|    approx_kl                 | 0.0026957784 |
+|    clip_fraction             | 0.0205       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.563       |
+|    explained_variance        | 0.243        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 1.68         |
+|    n_updates                 | 430          |
+|    policy_gradient_loss      | -0.000758    |
+|    value_loss                | 3.6          |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 10.3         |
+|    ep_rew_mean          | 2.13         |
+| time/                   |              |
+|    fps                  | 1618         |
+|    iterations           | 45           |
+|    time_elapsed         | 56           |
+|    total_timesteps      | 92160        |
+| train/                  |              |
+|    approx_kl            | 0.0031454675 |
+|    clip_fraction        | 0.0268       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.596       |
+|    explained_variance   | 0.291        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.53         |
+|    n_updates            | 440          |
+|    policy_gradient_loss | -0.00216     |
+|    value_loss           | 3.38         |
+------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 10.2        |
+|    ep_rew_mean          | 2.73        |
+| time/                   |             |
+|    fps                  | 1619        |
+|    iterations           | 46          |
+|    time_elapsed         | 58          |
+|    total_timesteps      | 94208       |
+| train/                  |             |
+|    approx_kl            | 0.002960522 |
+|    clip_fraction        | 0.0273      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.6        |
+|    explained_variance   | 0.195       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.98        |
+|    n_updates            | 450         |
+|    policy_gradient_loss | -0.00233    |
+|    value_loss           | 3.72        |
+-----------------------------------------
+Step 95,000 | Mean reward: 2.274 | Resolution: 78.8% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.194       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 10.7        |
+|    mean_reward_100ep         | 2.27        |
+|    resolution_rate           | 0.788       |
+|    timeout_rate              | 0.0184      |
+| rollout/                     |             |
+|    ep_len_mean               | 10.5        |
+|    ep_rew_mean               | 2.55        |
+| time/                        |             |
+|    fps                       | 1621        |
+|    iterations                | 47          |
+|    time_elapsed              | 59          |
+|    total_timesteps           | 96256       |
+| train/                       |             |
+|    approx_kl                 | 0.005961094 |
+|    clip_fraction             | 0.061       |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.643      |
+|    explained_variance        | 0.346       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 1.5         |
+|    n_updates                 | 460         |
+|    policy_gradient_loss      | -0.00478    |
+|    value_loss                | 2.69        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 10.4         |
+|    ep_rew_mean          | 2.32         |
+| time/                   |              |
+|    fps                  | 1623         |
+|    iterations           | 48           |
+|    time_elapsed         | 60           |
+|    total_timesteps      | 98304        |
+| train/                  |              |
+|    approx_kl            | 0.0060526505 |
+|    clip_fraction        | 0.0351       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.609       |
+|    explained_variance   | 0.344        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.54         |
+|    n_updates            | 470          |
+|    policy_gradient_loss | -0.00375     |
+|    value_loss           | 3.01         |
+------------------------------------------
+Step 100,000 | Mean reward: 1.905 | Resolution: 78.8% | Escalation: 0.0%
+Curriculum advanced to stage: medium
+[Curriculum] Stage -> medium (subflows=91)
+-----------------------------------------------
+| curriculum/                  |              |
+|    stage_index               | 1            |
+| custom/                      |              |
+|    dropout_rate              | 0.193        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 10.2         |
+|    mean_reward_100ep         | 1.9          |
+|    resolution_rate           | 0.788        |
+|    timeout_rate              | 0.0188       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.484        |
+|    resolution_rate           | 0.565        |
+| rollout/                     |              |
+|    ep_len_mean               | 11           |
+|    ep_rew_mean               | 1.69         |
+| time/                        |              |
+|    fps                       | 1609         |
+|    iterations                | 49           |
+|    time_elapsed              | 62           |
+|    total_timesteps           | 100352       |
+| train/                       |              |
+|    approx_kl                 | 0.0048450436 |
+|    clip_fraction             | 0.03         |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.606       |
+|    explained_variance        | 0.163        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.01         |
+|    n_updates                 | 480          |
+|    policy_gradient_loss      | -0.00188     |
+|    value_loss                | 4.03         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.4        |
+|    ep_rew_mean          | 0.443       |
+| time/                   |             |
+|    fps                  | 1611        |
+|    iterations           | 50          |
+|    time_elapsed         | 63          |
+|    total_timesteps      | 102400      |
+| train/                  |             |
+|    approx_kl            | 0.005235461 |
+|    clip_fraction        | 0.0279      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.633      |
+|    explained_variance   | 0.201       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 1.69        |
+|    n_updates            | 490         |
+|    policy_gradient_loss | -0.00224    |
+|    value_loss           | 4.26        |
+-----------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.1         |
+|    ep_rew_mean          | 0.415        |
+| time/                   |              |
+|    fps                  | 1611         |
+|    iterations           | 51           |
+|    time_elapsed         | 64           |
+|    total_timesteps      | 104448       |
+| train/                  |              |
+|    approx_kl            | 0.0043975757 |
+|    clip_fraction        | 0.0253       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.639       |
+|    explained_variance   | 0.269        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.02         |
+|    n_updates            | 500          |
+|    policy_gradient_loss | -0.00222     |
+|    value_loss           | 4.53         |
+------------------------------------------
+Step 105,000 | Mean reward: 0.663 | Resolution: 77.9% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.2         |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.2        |
+|    mean_reward_100ep         | 0.663       |
+|    resolution_rate           | 0.779       |
+|    timeout_rate              | 0.0203      |
+| rollout/                     |             |
+|    ep_len_mean               | 11.9        |
+|    ep_rew_mean               | 0.417       |
+| time/                        |             |
+|    fps                       | 1612        |
+|    iterations                | 52          |
+|    time_elapsed              | 66          |
+|    total_timesteps           | 106496      |
+| train/                       |             |
+|    approx_kl                 | 0.008085396 |
+|    clip_fraction             | 0.0447      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.669      |
+|    explained_variance        | 0.223       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.59        |
+|    n_updates                 | 510         |
+|    policy_gradient_loss      | -0.00352    |
+|    value_loss                | 5.23        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 11.1         |
+|    ep_rew_mean          | 0.855        |
+| time/                   |              |
+|    fps                  | 1615         |
+|    iterations           | 53           |
+|    time_elapsed         | 67           |
+|    total_timesteps      | 108544       |
+| train/                  |              |
+|    approx_kl            | 0.0030131978 |
+|    clip_fraction        | 0.0288       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.67        |
+|    explained_variance   | 0.18         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.58         |
+|    n_updates            | 520          |
+|    policy_gradient_loss | -0.00285     |
+|    value_loss           | 5.39         |
+------------------------------------------
+Step 110,000 | Mean reward: -0.051 | Resolution: 77.0% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.209       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.5        |
+|    mean_reward_100ep         | -0.0509     |
+|    resolution_rate           | 0.77        |
+|    timeout_rate              | 0.0213      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.511       |
+|    resolution_rate           | 0.57        |
+| rollout/                     |             |
+|    ep_len_mean               | 12.6        |
+|    ep_rew_mean               | 0.438       |
+| time/                        |             |
+|    fps                       | 1604        |
+|    iterations                | 54          |
+|    time_elapsed              | 68          |
+|    total_timesteps           | 110592      |
+| train/                       |             |
+|    approx_kl                 | 0.006472859 |
+|    clip_fraction             | 0.0114      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.665      |
+|    explained_variance        | 0.22        |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.22        |
+|    n_updates                 | 530         |
+|    policy_gradient_loss      | -0.00103    |
+|    value_loss                | 4.72        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.5         |
+|    ep_rew_mean          | 0.0318       |
+| time/                   |              |
+|    fps                  | 1607         |
+|    iterations           | 55           |
+|    time_elapsed         | 70           |
+|    total_timesteps      | 112640       |
+| train/                  |              |
+|    approx_kl            | 0.0020986754 |
+|    clip_fraction        | 0.0268       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.673       |
+|    explained_variance   | 0.227        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.54         |
+|    n_updates            | 540          |
+|    policy_gradient_loss | -0.00202     |
+|    value_loss           | 4.83         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.8         |
+|    ep_rew_mean          | 0.567        |
+| time/                   |              |
+|    fps                  | 1610         |
+|    iterations           | 56           |
+|    time_elapsed         | 71           |
+|    total_timesteps      | 114688       |
+| train/                  |              |
+|    approx_kl            | 0.0027783732 |
+|    clip_fraction        | 0.0134       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.662       |
+|    explained_variance   | 0.182        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.3          |
+|    n_updates            | 550          |
+|    policy_gradient_loss | -0.000689    |
+|    value_loss           | 5.14         |
+------------------------------------------
+Step 115,000 | Mean reward: 0.724 | Resolution: 76.2% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.215        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.2         |
+|    mean_reward_100ep         | 0.724        |
+|    resolution_rate           | 0.762        |
+|    timeout_rate              | 0.0226       |
+| rollout/                     |              |
+|    ep_len_mean               | 11.9         |
+|    ep_rew_mean               | 0.194        |
+| time/                        |              |
+|    fps                       | 1612         |
+|    iterations                | 57           |
+|    time_elapsed              | 72           |
+|    total_timesteps           | 116736       |
+| train/                       |              |
+|    approx_kl                 | 0.0016215802 |
+|    clip_fraction             | 0.0175       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.669       |
+|    explained_variance        | 0.223        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.48         |
+|    n_updates                 | 560          |
+|    policy_gradient_loss      | -0.00147     |
+|    value_loss                | 4.99         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.6        |
+|    ep_rew_mean          | 0.746       |
+| time/                   |             |
+|    fps                  | 1614        |
+|    iterations           | 58          |
+|    time_elapsed         | 73          |
+|    total_timesteps      | 118784      |
+| train/                  |             |
+|    approx_kl            | 0.003320338 |
+|    clip_fraction        | 0.0202      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.665      |
+|    explained_variance   | 0.209       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.7         |
+|    n_updates            | 570         |
+|    policy_gradient_loss | -0.00279    |
+|    value_loss           | 5.21        |
+-----------------------------------------
+Step 120,000 | Mean reward: -0.183 | Resolution: 75.4% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.222       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 13.1        |
+|    mean_reward_100ep         | -0.183      |
+|    resolution_rate           | 0.754       |
+|    timeout_rate              | 0.0239      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.527       |
+|    resolution_rate           | 0.575       |
+| rollout/                     |             |
+|    ep_len_mean               | 12.6        |
+|    ep_rew_mean               | -0.0207     |
+| time/                        |             |
+|    fps                       | 1606        |
+|    iterations                | 59          |
+|    time_elapsed              | 75          |
+|    total_timesteps           | 120832      |
+| train/                       |             |
+|    approx_kl                 | 0.011547579 |
+|    clip_fraction             | 0.048       |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.64       |
+|    explained_variance        | 0.244       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.44        |
+|    n_updates                 | 580         |
+|    policy_gradient_loss      | -0.00403    |
+|    value_loss                | 4.81        |
+----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.8        |
+|    ep_rew_mean          | 0.529       |
+| time/                   |             |
+|    fps                  | 1606        |
+|    iterations           | 60          |
+|    time_elapsed         | 76          |
+|    total_timesteps      | 122880      |
+| train/                  |             |
+|    approx_kl            | 0.008193081 |
+|    clip_fraction        | 0.0221      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.631      |
+|    explained_variance   | 0.136       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.52        |
+|    n_updates            | 590         |
+|    policy_gradient_loss | -0.00119    |
+|    value_loss           | 5.31        |
+-----------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 13.1         |
+|    ep_rew_mean          | 0.0496       |
+| time/                   |              |
+|    fps                  | 1605         |
+|    iterations           | 61           |
+|    time_elapsed         | 77           |
+|    total_timesteps      | 124928       |
+| train/                  |              |
+|    approx_kl            | 0.0017720159 |
+|    clip_fraction        | 0.0312       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.649       |
+|    explained_variance   | 0.212        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.39         |
+|    n_updates            | 600          |
+|    policy_gradient_loss | -0.00218     |
+|    value_loss           | 5.09         |
+------------------------------------------
+Step 125,000 | Mean reward: 0.088 | Resolution: 74.7% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.229       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 13.1        |
+|    mean_reward_100ep         | 0.0879      |
+|    resolution_rate           | 0.747       |
+|    timeout_rate              | 0.0242      |
+| rollout/                     |             |
+|    ep_len_mean               | 11.6        |
+|    ep_rew_mean               | 1.22        |
+| time/                        |             |
+|    fps                       | 1608        |
+|    iterations                | 62          |
+|    time_elapsed              | 78          |
+|    total_timesteps           | 126976      |
+| train/                       |             |
+|    approx_kl                 | 0.008814085 |
+|    clip_fraction             | 0.0293      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.628      |
+|    explained_variance        | 0.136       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.2         |
+|    n_updates                 | 610         |
+|    policy_gradient_loss      | -0.00171    |
+|    value_loss                | 5.16        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.1         |
+|    ep_rew_mean          | 0.983        |
+| time/                   |              |
+|    fps                  | 1610         |
+|    iterations           | 63           |
+|    time_elapsed         | 80           |
+|    total_timesteps      | 129024       |
+| train/                  |              |
+|    approx_kl            | 0.0027291663 |
+|    clip_fraction        | 0.0108       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.634       |
+|    explained_variance   | 0.199        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.67         |
+|    n_updates            | 620          |
+|    policy_gradient_loss | -0.000574    |
+|    value_loss           | 4.95         |
+------------------------------------------
+Step 130,000 | Mean reward: 0.482 | Resolution: 74.2% | Escalation: 0.0%
+New best model saved: 0.571
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.233        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.3         |
+|    mean_reward_100ep         | 0.482        |
+|    resolution_rate           | 0.742        |
+|    timeout_rate              | 0.0245       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.571        |
+|    resolution_rate           | 0.585        |
+| rollout/                     |              |
+|    ep_len_mean               | 11.9         |
+|    ep_rew_mean               | 1.28         |
+| time/                        |              |
+|    fps                       | 1601         |
+|    iterations                | 64           |
+|    time_elapsed              | 81           |
+|    total_timesteps           | 131072       |
+| train/                       |              |
+|    approx_kl                 | 0.0040018633 |
+|    clip_fraction             | 0.0191       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.652       |
+|    explained_variance        | 0.228        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.54         |
+|    n_updates                 | 630          |
+|    policy_gradient_loss      | -0.000866    |
+|    value_loss                | 5.03         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.5         |
+|    ep_rew_mean          | 1.09         |
+| time/                   |              |
+|    fps                  | 1606         |
+|    iterations           | 65           |
+|    time_elapsed         | 82           |
+|    total_timesteps      | 133120       |
+| train/                  |              |
+|    approx_kl            | 0.0077010402 |
+|    clip_fraction        | 0.0254       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.625       |
+|    explained_variance   | 0.164        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.73         |
+|    n_updates            | 640          |
+|    policy_gradient_loss | -0.0036      |
+|    value_loss           | 5.23         |
+------------------------------------------
+Step 135,000 | Mean reward: 1.123 | Resolution: 73.9% | Escalation: 0.0%
+---------------------------------------------
+| custom/                      |            |
+|    dropout_rate              | 0.236      |
+|    escalation_rate           | 0          |
+|    mean_episode_length_100ep | 12.1       |
+|    mean_reward_100ep         | 1.12       |
+|    resolution_rate           | 0.739      |
+|    timeout_rate              | 0.0254     |
+| rollout/                     |            |
+|    ep_len_mean               | 11.6       |
+|    ep_rew_mean               | 0.951      |
+| time/                        |            |
+|    fps                       | 1608       |
+|    iterations                | 66         |
+|    time_elapsed              | 84         |
+|    total_timesteps           | 135168     |
+| train/                       |            |
+|    approx_kl                 | 0.00949266 |
+|    clip_fraction             | 0.0277     |
+|    clip_range                | 0.2        |
+|    entropy_loss              | -0.594     |
+|    explained_variance        | 0.247      |
+|    learning_rate             | 0.0003     |
+|    loss                      | 2.2        |
+|    n_updates                 | 650        |
+|    policy_gradient_loss      | -0.00246   |
+|    value_loss                | 4.67       |
+---------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.6         |
+|    ep_rew_mean          | 0.255        |
+| time/                   |              |
+|    fps                  | 1611         |
+|    iterations           | 67           |
+|    time_elapsed         | 85           |
+|    total_timesteps      | 137216       |
+| train/                  |              |
+|    approx_kl            | 0.0057400027 |
+|    clip_fraction        | 0.0256       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.609       |
+|    explained_variance   | 0.205        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.44         |
+|    n_updates            | 660          |
+|    policy_gradient_loss | -0.00152     |
+|    value_loss           | 5.03         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 11.7         |
+|    ep_rew_mean          | 0.322        |
+| time/                   |              |
+|    fps                  | 1614         |
+|    iterations           | 68           |
+|    time_elapsed         | 86           |
+|    total_timesteps      | 139264       |
+| train/                  |              |
+|    approx_kl            | 0.0054937364 |
+|    clip_fraction        | 0.034        |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.608       |
+|    explained_variance   | 0.154        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.6          |
+|    n_updates            | 670          |
+|    policy_gradient_loss | -0.00375     |
+|    value_loss           | 5.41         |
+------------------------------------------
+Step 140,000 | Mean reward: 0.818 | Resolution: 73.3% | Escalation: 0.0%
+New best model saved: 0.625
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.241        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.3         |
+|    mean_reward_100ep         | 0.818        |
+|    resolution_rate           | 0.733        |
+|    timeout_rate              | 0.0257       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.625        |
+|    resolution_rate           | 0.595        |
+| rollout/                     |              |
+|    ep_len_mean               | 11.7         |
+|    ep_rew_mean               | 1.24         |
+| time/                        |              |
+|    fps                       | 1604         |
+|    iterations                | 69           |
+|    time_elapsed              | 88           |
+|    total_timesteps           | 141312       |
+| train/                       |              |
+|    approx_kl                 | 0.0054409266 |
+|    clip_fraction             | 0.0321       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.588       |
+|    explained_variance        | 0.177        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.68         |
+|    n_updates                 | 680          |
+|    policy_gradient_loss      | -0.00294     |
+|    value_loss                | 5.13         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12          |
+|    ep_rew_mean          | 0.493       |
+| time/                   |             |
+|    fps                  | 1609        |
+|    iterations           | 70          |
+|    time_elapsed         | 89          |
+|    total_timesteps      | 143360      |
+| train/                  |             |
+|    approx_kl            | 0.005477893 |
+|    clip_fraction        | 0.0395      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.582      |
+|    explained_variance   | 0.199       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.51        |
+|    n_updates            | 690         |
+|    policy_gradient_loss | -0.00371    |
+|    value_loss           | 4.82        |
+-----------------------------------------
+Step 145,000 | Mean reward: 0.219 | Resolution: 72.8% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.246        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.1         |
+|    mean_reward_100ep         | 0.219        |
+|    resolution_rate           | 0.728        |
+|    timeout_rate              | 0.0259       |
+| rollout/                     |              |
+|    ep_len_mean               | 12.2         |
+|    ep_rew_mean               | 0.127        |
+| time/                        |              |
+|    fps                       | 1613         |
+|    iterations                | 71           |
+|    time_elapsed              | 90           |
+|    total_timesteps           | 145408       |
+| train/                       |              |
+|    approx_kl                 | 0.0066108415 |
+|    clip_fraction             | 0.0354       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.565       |
+|    explained_variance        | 0.14         |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.63         |
+|    n_updates                 | 700          |
+|    policy_gradient_loss      | -0.003       |
+|    value_loss                | 5.43         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.2         |
+|    ep_rew_mean          | 1.19         |
+| time/                   |              |
+|    fps                  | 1617         |
+|    iterations           | 72           |
+|    time_elapsed         | 91           |
+|    total_timesteps      | 147456       |
+| train/                  |              |
+|    approx_kl            | 0.0051284656 |
+|    clip_fraction        | 0.0186       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.567       |
+|    explained_variance   | 0.213        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.54         |
+|    n_updates            | 710          |
+|    policy_gradient_loss | -0.00154     |
+|    value_loss           | 5.23         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.5         |
+|    ep_rew_mean          | 0.618        |
+| time/                   |              |
+|    fps                  | 1618         |
+|    iterations           | 73           |
+|    time_elapsed         | 92           |
+|    total_timesteps      | 149504       |
+| train/                  |              |
+|    approx_kl            | 0.0029868325 |
+|    clip_fraction        | 0.00991      |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.572       |
+|    explained_variance   | 0.198        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.64         |
+|    n_updates            | 720          |
+|    policy_gradient_loss | -0.000659    |
+|    value_loss           | 5.13         |
+------------------------------------------
+Step 150,000 | Mean reward: 0.448 | Resolution: 72.4% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.249       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.6        |
+|    mean_reward_100ep         | 0.448       |
+|    resolution_rate           | 0.724       |
+|    timeout_rate              | 0.0267      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.605       |
+|    resolution_rate           | 0.595       |
+| rollout/                     |             |
+|    ep_len_mean               | 12.5        |
+|    ep_rew_mean               | 0.272       |
+| time/                        |             |
+|    fps                       | 1610        |
+|    iterations                | 74          |
+|    time_elapsed              | 94          |
+|    total_timesteps           | 151552      |
+| train/                       |             |
+|    approx_kl                 | 0.005278959 |
+|    clip_fraction             | 0.0361      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.553      |
+|    explained_variance        | 0.174       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.26        |
+|    n_updates                 | 730         |
+|    policy_gradient_loss      | -0.00331    |
+|    value_loss                | 4.91        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.2         |
+|    ep_rew_mean          | 0.828        |
+| time/                   |              |
+|    fps                  | 1612         |
+|    iterations           | 75           |
+|    time_elapsed         | 95           |
+|    total_timesteps      | 153600       |
+| train/                  |              |
+|    approx_kl            | 0.0019720988 |
+|    clip_fraction        | 0.0222       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.528       |
+|    explained_variance   | 0.194        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.57         |
+|    n_updates            | 740          |
+|    policy_gradient_loss | -0.000634    |
+|    value_loss           | 5.15         |
+------------------------------------------
+Step 155,000 | Mean reward: 0.623 | Resolution: 72.0% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.252        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12           |
+|    mean_reward_100ep         | 0.623        |
+|    resolution_rate           | 0.72         |
+|    timeout_rate              | 0.0273       |
+| rollout/                     |              |
+|    ep_len_mean               | 12.8         |
+|    ep_rew_mean               | 0.971        |
+| time/                        |              |
+|    fps                       | 1616         |
+|    iterations                | 76           |
+|    time_elapsed              | 96           |
+|    total_timesteps           | 155648       |
+| train/                       |              |
+|    approx_kl                 | 0.0022672708 |
+|    clip_fraction             | 0.0203       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.545       |
+|    explained_variance        | 0.198        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.53         |
+|    n_updates                 | 750          |
+|    policy_gradient_loss      | -0.00141     |
+|    value_loss                | 5.01         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.1         |
+|    ep_rew_mean          | 0.87         |
+| time/                   |              |
+|    fps                  | 1618         |
+|    iterations           | 77           |
+|    time_elapsed         | 97           |
+|    total_timesteps      | 157696       |
+| train/                  |              |
+|    approx_kl            | 0.0049192607 |
+|    clip_fraction        | 0.0245       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.506       |
+|    explained_variance   | 0.191        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.22         |
+|    n_updates            | 760          |
+|    policy_gradient_loss | -0.00286     |
+|    value_loss           | 4.93         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.7         |
+|    ep_rew_mean          | 0.517        |
+| time/                   |              |
+|    fps                  | 1621         |
+|    iterations           | 78           |
+|    time_elapsed         | 98           |
+|    total_timesteps      | 159744       |
+| train/                  |              |
+|    approx_kl            | 0.0043154676 |
+|    clip_fraction        | 0.0202       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.502       |
+|    explained_variance   | 0.183        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.66         |
+|    n_updates            | 770          |
+|    policy_gradient_loss | -0.00131     |
+|    value_loss           | 4.83         |
+------------------------------------------
+Step 160,000 | Mean reward: 0.616 | Resolution: 71.7% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.255        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.6         |
+|    mean_reward_100ep         | 0.616        |
+|    resolution_rate           | 0.717        |
+|    timeout_rate              | 0.0276       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.572        |
+|    resolution_rate           | 0.59         |
+| rollout/                     |              |
+|    ep_len_mean               | 11.8         |
+|    ep_rew_mean               | 0.324        |
+| time/                        |              |
+|    fps                       | 1612         |
+|    iterations                | 79           |
+|    time_elapsed              | 100          |
+|    total_timesteps           | 161792       |
+| train/                       |              |
+|    approx_kl                 | 0.0047621047 |
+|    clip_fraction             | 0.0383       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.476       |
+|    explained_variance        | 0.152        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.23         |
+|    n_updates                 | 780          |
+|    policy_gradient_loss      | -0.00255     |
+|    value_loss                | 4.89         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 11.9        |
+|    ep_rew_mean          | 1.08        |
+| time/                   |             |
+|    fps                  | 1614        |
+|    iterations           | 80          |
+|    time_elapsed         | 101         |
+|    total_timesteps      | 163840      |
+| train/                  |             |
+|    approx_kl            | 0.002740325 |
+|    clip_fraction        | 0.0124      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.494      |
+|    explained_variance   | 0.224       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.42        |
+|    n_updates            | 790         |
+|    policy_gradient_loss | -0.00169    |
+|    value_loss           | 4.83        |
+-----------------------------------------
+Step 165,000 | Mean reward: 0.705 | Resolution: 71.4% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.258        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.5         |
+|    mean_reward_100ep         | 0.705        |
+|    resolution_rate           | 0.714        |
+|    timeout_rate              | 0.0277       |
+| rollout/                     |              |
+|    ep_len_mean               | 11.7         |
+|    ep_rew_mean               | 1.06         |
+| time/                        |              |
+|    fps                       | 1617         |
+|    iterations                | 81           |
+|    time_elapsed              | 102          |
+|    total_timesteps           | 165888       |
+| train/                       |              |
+|    approx_kl                 | 0.0034067777 |
+|    clip_fraction             | 0.0326       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.454       |
+|    explained_variance        | 0.122        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.78         |
+|    n_updates                 | 800          |
+|    policy_gradient_loss      | -0.00232     |
+|    value_loss                | 5.2          |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12           |
+|    ep_rew_mean          | 0.46         |
+| time/                   |              |
+|    fps                  | 1614         |
+|    iterations           | 82           |
+|    time_elapsed         | 104          |
+|    total_timesteps      | 167936       |
+| train/                  |              |
+|    approx_kl            | 0.0032174278 |
+|    clip_fraction        | 0.0341       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.426       |
+|    explained_variance   | 0.197        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.19         |
+|    n_updates            | 810          |
+|    policy_gradient_loss | -0.00264     |
+|    value_loss           | 4.58         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.7         |
+|    ep_rew_mean          | 0.839        |
+| time/                   |              |
+|    fps                  | 1615         |
+|    iterations           | 83           |
+|    time_elapsed         | 105          |
+|    total_timesteps      | 169984       |
+| train/                  |              |
+|    approx_kl            | 0.0028434563 |
+|    clip_fraction        | 0.0346       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.441       |
+|    explained_variance   | 0.15         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.4          |
+|    n_updates            | 820          |
+|    policy_gradient_loss | -0.00309     |
+|    value_loss           | 5            |
+------------------------------------------
+Step 170,000 | Mean reward: 0.782 | Resolution: 71.2% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.26        |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.7        |
+|    mean_reward_100ep         | 0.782       |
+|    resolution_rate           | 0.712       |
+|    timeout_rate              | 0.0282      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.597       |
+|    resolution_rate           | 0.595       |
+| rollout/                     |             |
+|    ep_len_mean               | 13.1        |
+|    ep_rew_mean               | 0.000914    |
+| time/                        |             |
+|    fps                       | 1605        |
+|    iterations                | 84          |
+|    time_elapsed              | 107         |
+|    total_timesteps           | 172032      |
+| train/                       |             |
+|    approx_kl                 | 0.002753127 |
+|    clip_fraction             | 0.0173      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.462      |
+|    explained_variance        | 0.204       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.16        |
+|    n_updates                 | 830         |
+|    policy_gradient_loss      | -0.00127    |
+|    value_loss                | 4.53        |
+----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.2        |
+|    ep_rew_mean          | 0.498       |
+| time/                   |             |
+|    fps                  | 1602        |
+|    iterations           | 85          |
+|    time_elapsed         | 108         |
+|    total_timesteps      | 174080      |
+| train/                  |             |
+|    approx_kl            | 0.002923824 |
+|    clip_fraction        | 0.0234      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.456      |
+|    explained_variance   | 0.209       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.43        |
+|    n_updates            | 840         |
+|    policy_gradient_loss | -0.000896   |
+|    value_loss           | 4.98        |
+-----------------------------------------
+Step 175,000 | Mean reward: 0.489 | Resolution: 70.8% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.264        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 11.8         |
+|    mean_reward_100ep         | 0.489        |
+|    resolution_rate           | 0.708        |
+|    timeout_rate              | 0.0287       |
+| rollout/                     |              |
+|    ep_len_mean               | 12.2         |
+|    ep_rew_mean               | 0.76         |
+| time/                        |              |
+|    fps                       | 1604         |
+|    iterations                | 86           |
+|    time_elapsed              | 109          |
+|    total_timesteps           | 176128       |
+| train/                       |              |
+|    approx_kl                 | 0.0025594868 |
+|    clip_fraction             | 0.0232       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.483       |
+|    explained_variance        | 0.206        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.51         |
+|    n_updates                 | 850          |
+|    policy_gradient_loss      | -0.00162     |
+|    value_loss                | 4.88         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.8         |
+|    ep_rew_mean          | 0.111        |
+| time/                   |              |
+|    fps                  | 1605         |
+|    iterations           | 87           |
+|    time_elapsed         | 110          |
+|    total_timesteps      | 178176       |
+| train/                  |              |
+|    approx_kl            | 0.0040396573 |
+|    clip_fraction        | 0.0138       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.462       |
+|    explained_variance   | 0.248        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.29         |
+|    n_updates            | 860          |
+|    policy_gradient_loss | -0.00189     |
+|    value_loss           | 4.79         |
+------------------------------------------
+Step 180,000 | Mean reward: 0.767 | Resolution: 70.5% | Escalation: 0.0%
+New best model saved: 0.640
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.266        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12           |
+|    mean_reward_100ep         | 0.767        |
+|    resolution_rate           | 0.705        |
+|    timeout_rate              | 0.0292       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.64         |
+|    resolution_rate           | 0.605        |
+| rollout/                     |              |
+|    ep_len_mean               | 11.7         |
+|    ep_rew_mean               | 0.775        |
+| time/                        |              |
+|    fps                       | 1595         |
+|    iterations                | 88           |
+|    time_elapsed              | 112          |
+|    total_timesteps           | 180224       |
+| train/                       |              |
+|    approx_kl                 | 0.0017442424 |
+|    clip_fraction             | 0.0127       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.431       |
+|    explained_variance        | 0.165        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.74         |
+|    n_updates                 | 870          |
+|    policy_gradient_loss      | -0.000389    |
+|    value_loss                | 5.21         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 11.9         |
+|    ep_rew_mean          | 0.495        |
+| time/                   |              |
+|    fps                  | 1595         |
+|    iterations           | 89           |
+|    time_elapsed         | 114          |
+|    total_timesteps      | 182272       |
+| train/                  |              |
+|    approx_kl            | 0.0039499886 |
+|    clip_fraction        | 0.0263       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.434       |
+|    explained_variance   | 0.189        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.3          |
+|    n_updates            | 880          |
+|    policy_gradient_loss | -0.00109     |
+|    value_loss           | 5.02         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 11.7         |
+|    ep_rew_mean          | 1.18         |
+| time/                   |              |
+|    fps                  | 1595         |
+|    iterations           | 90           |
+|    time_elapsed         | 115          |
+|    total_timesteps      | 184320       |
+| train/                  |              |
+|    approx_kl            | 0.0026267793 |
+|    clip_fraction        | 0.0237       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.441       |
+|    explained_variance   | 0.183        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.31         |
+|    n_updates            | 890          |
+|    policy_gradient_loss | -0.00132     |
+|    value_loss           | 5.16         |
+------------------------------------------
+Step 185,000 | Mean reward: 0.843 | Resolution: 70.2% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.269       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.3        |
+|    mean_reward_100ep         | 0.843       |
+|    resolution_rate           | 0.702       |
+|    timeout_rate              | 0.0295      |
+| rollout/                     |             |
+|    ep_len_mean               | 12.2        |
+|    ep_rew_mean               | 1.06        |
+| time/                        |             |
+|    fps                       | 1595        |
+|    iterations                | 91          |
+|    time_elapsed              | 116         |
+|    total_timesteps           | 186368      |
+| train/                       |             |
+|    approx_kl                 | 0.003266143 |
+|    clip_fraction             | 0.0324      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.46       |
+|    explained_variance        | 0.213       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.46        |
+|    n_updates                 | 900         |
+|    policy_gradient_loss      | -0.00215    |
+|    value_loss                | 4.95        |
+----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.8        |
+|    ep_rew_mean          | 0.505       |
+| time/                   |             |
+|    fps                  | 1596        |
+|    iterations           | 92          |
+|    time_elapsed         | 118         |
+|    total_timesteps      | 188416      |
+| train/                  |             |
+|    approx_kl            | 0.003454825 |
+|    clip_fraction        | 0.0174      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.449      |
+|    explained_variance   | 0.17        |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.5         |
+|    n_updates            | 910         |
+|    policy_gradient_loss | -0.00119    |
+|    value_loss           | 4.93        |
+-----------------------------------------
+Step 190,000 | Mean reward: 0.450 | Resolution: 69.9% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.271       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.8        |
+|    mean_reward_100ep         | 0.45        |
+|    resolution_rate           | 0.699       |
+|    timeout_rate              | 0.0301      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.637       |
+|    resolution_rate           | 0.605       |
+| rollout/                     |             |
+|    ep_len_mean               | 12.1        |
+|    ep_rew_mean               | 0.762       |
+| time/                        |             |
+|    fps                       | 1587        |
+|    iterations                | 93          |
+|    time_elapsed              | 119         |
+|    total_timesteps           | 190464      |
+| train/                       |             |
+|    approx_kl                 | 0.006467194 |
+|    clip_fraction             | 0.0352      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.479      |
+|    explained_variance        | 0.211       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.41        |
+|    n_updates                 | 920         |
+|    policy_gradient_loss      | -0.00327    |
+|    value_loss                | 4.56        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.4         |
+|    ep_rew_mean          | 0.285        |
+| time/                   |              |
+|    fps                  | 1588         |
+|    iterations           | 94           |
+|    time_elapsed         | 121          |
+|    total_timesteps      | 192512       |
+| train/                  |              |
+|    approx_kl            | 0.0036178536 |
+|    clip_fraction        | 0.0286       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.435       |
+|    explained_variance   | 0.22         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.18         |
+|    n_updates            | 930          |
+|    policy_gradient_loss | -0.00167     |
+|    value_loss           | 4.65         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.6         |
+|    ep_rew_mean          | 1.16         |
+| time/                   |              |
+|    fps                  | 1585         |
+|    iterations           | 95           |
+|    time_elapsed         | 122          |
+|    total_timesteps      | 194560       |
+| train/                  |              |
+|    approx_kl            | 0.0027118304 |
+|    clip_fraction        | 0.0202       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.434       |
+|    explained_variance   | 0.209        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.19         |
+|    n_updates            | 940          |
+|    policy_gradient_loss | -0.000406    |
+|    value_loss           | 4.84         |
+------------------------------------------
+Step 195,000 | Mean reward: 1.050 | Resolution: 69.7% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.272        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.2         |
+|    mean_reward_100ep         | 1.05         |
+|    resolution_rate           | 0.697        |
+|    timeout_rate              | 0.0309       |
+| rollout/                     |              |
+|    ep_len_mean               | 11.5         |
+|    ep_rew_mean               | 1.15         |
+| time/                        |              |
+|    fps                       | 1587         |
+|    iterations                | 96           |
+|    time_elapsed              | 123          |
+|    total_timesteps           | 196608       |
+| train/                       |              |
+|    approx_kl                 | 0.0028937627 |
+|    clip_fraction             | 0.0312       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.429       |
+|    explained_variance        | 0.147        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.59         |
+|    n_updates                 | 950          |
+|    policy_gradient_loss      | -0.00249     |
+|    value_loss                | 4.93         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.7        |
+|    ep_rew_mean          | 1.05        |
+| time/                   |             |
+|    fps                  | 1588        |
+|    iterations           | 97          |
+|    time_elapsed         | 125         |
+|    total_timesteps      | 198656      |
+| train/                  |             |
+|    approx_kl            | 0.004021801 |
+|    clip_fraction        | 0.0402      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.492      |
+|    explained_variance   | 0.202       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.14        |
+|    n_updates            | 960         |
+|    policy_gradient_loss | -0.0037     |
+|    value_loss           | 4.87        |
+-----------------------------------------
+Step 200,000 | Mean reward: 1.055 | Resolution: 69.6% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.273        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.1         |
+|    mean_reward_100ep         | 1.05         |
+|    resolution_rate           | 0.696        |
+|    timeout_rate              | 0.0312       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.635        |
+|    resolution_rate           | 0.605        |
+| rollout/                     |              |
+|    ep_len_mean               | 12.4         |
+|    ep_rew_mean               | 0.77         |
+| time/                        |              |
+|    fps                       | 1581         |
+|    iterations                | 98           |
+|    time_elapsed              | 126          |
+|    total_timesteps           | 200704       |
+| train/                       |              |
+|    approx_kl                 | 0.0042612897 |
+|    clip_fraction             | 0.0334       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.45        |
+|    explained_variance        | 0.162        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.54         |
+|    n_updates                 | 970          |
+|    policy_gradient_loss      | -0.00312     |
+|    value_loss                | 4.68         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 11.5         |
+|    ep_rew_mean          | 0.969        |
+| time/                   |              |
+|    fps                  | 1581         |
+|    iterations           | 99           |
+|    time_elapsed         | 128          |
+|    total_timesteps      | 202752       |
+| train/                  |              |
+|    approx_kl            | 0.0010509032 |
+|    clip_fraction        | 0.0193       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.445       |
+|    explained_variance   | 0.221        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.21         |
+|    n_updates            | 980          |
+|    policy_gradient_loss | -0.00179     |
+|    value_loss           | 4.5          |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.6         |
+|    ep_rew_mean          | 1.02         |
+| time/                   |              |
+|    fps                  | 1582         |
+|    iterations           | 100          |
+|    time_elapsed         | 129          |
+|    total_timesteps      | 204800       |
+| train/                  |              |
+|    approx_kl            | 0.0030350548 |
+|    clip_fraction        | 0.0213       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.471       |
+|    explained_variance   | 0.167        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.52         |
+|    n_updates            | 990          |
+|    policy_gradient_loss | -0.00118     |
+|    value_loss           | 4.76         |
+------------------------------------------
+Step 205,000 | Mean reward: 0.915 | Resolution: 69.4% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.275        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.9         |
+|    mean_reward_100ep         | 0.915        |
+|    resolution_rate           | 0.694        |
+|    timeout_rate              | 0.0318       |
+| rollout/                     |              |
+|    ep_len_mean               | 12.4         |
+|    ep_rew_mean               | 1.15         |
+| time/                        |              |
+|    fps                       | 1583         |
+|    iterations                | 101          |
+|    time_elapsed              | 130          |
+|    total_timesteps           | 206848       |
+| train/                       |              |
+|    approx_kl                 | 0.0028520203 |
+|    clip_fraction             | 0.0312       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.454       |
+|    explained_variance        | 0.153        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.35         |
+|    n_updates                 | 1000         |
+|    policy_gradient_loss      | -0.00203     |
+|    value_loss                | 4.83         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.9         |
+|    ep_rew_mean          | 0.849        |
+| time/                   |              |
+|    fps                  | 1584         |
+|    iterations           | 102          |
+|    time_elapsed         | 131          |
+|    total_timesteps      | 208896       |
+| train/                  |              |
+|    approx_kl            | 0.0027170866 |
+|    clip_fraction        | 0.0167       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.425       |
+|    explained_variance   | 0.162        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.55         |
+|    n_updates            | 1010         |
+|    policy_gradient_loss | -0.00167     |
+|    value_loss           | 4.89         |
+------------------------------------------
+Step 210,000 | Mean reward: 0.456 | Resolution: 69.1% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.276        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.4         |
+|    mean_reward_100ep         | 0.456        |
+|    resolution_rate           | 0.691        |
+|    timeout_rate              | 0.0323       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.595        |
+|    resolution_rate           | 0.595        |
+| rollout/                     |              |
+|    ep_len_mean               | 12.5         |
+|    ep_rew_mean               | 1.16         |
+| time/                        |              |
+|    fps                       | 1578         |
+|    iterations                | 103          |
+|    time_elapsed              | 133          |
+|    total_timesteps           | 210944       |
+| train/                       |              |
+|    approx_kl                 | 0.0020315405 |
+|    clip_fraction             | 0.0157       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.425       |
+|    explained_variance        | 0.196        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.65         |
+|    n_updates                 | 1020         |
+|    policy_gradient_loss      | -0.000982    |
+|    value_loss                | 4.83         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.4        |
+|    ep_rew_mean          | 0.74        |
+| time/                   |             |
+|    fps                  | 1581        |
+|    iterations           | 104         |
+|    time_elapsed         | 134         |
+|    total_timesteps      | 212992      |
+| train/                  |             |
+|    approx_kl            | 0.003732843 |
+|    clip_fraction        | 0.03        |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.456      |
+|    explained_variance   | 0.191       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.35        |
+|    n_updates            | 1030        |
+|    policy_gradient_loss | -0.00139    |
+|    value_loss           | 4.95        |
+-----------------------------------------
+Step 215,000 | Mean reward: 0.546 | Resolution: 68.9% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.278        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.3         |
+|    mean_reward_100ep         | 0.546        |
+|    resolution_rate           | 0.689        |
+|    timeout_rate              | 0.0328       |
+| rollout/                     |              |
+|    ep_len_mean               | 12.4         |
+|    ep_rew_mean               | 0.63         |
+| time/                        |              |
+|    fps                       | 1582         |
+|    iterations                | 105          |
+|    time_elapsed              | 135          |
+|    total_timesteps           | 215040       |
+| train/                       |              |
+|    approx_kl                 | 0.0022071318 |
+|    clip_fraction             | 0.0227       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.477       |
+|    explained_variance        | 0.19         |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.21         |
+|    n_updates                 | 1040         |
+|    policy_gradient_loss      | -0.000996    |
+|    value_loss                | 4.86         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.1        |
+|    ep_rew_mean          | 0.925       |
+| time/                   |             |
+|    fps                  | 1580        |
+|    iterations           | 106         |
+|    time_elapsed         | 137         |
+|    total_timesteps      | 217088      |
+| train/                  |             |
+|    approx_kl            | 0.004337714 |
+|    clip_fraction        | 0.0276      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.533      |
+|    explained_variance   | 0.173       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.47        |
+|    n_updates            | 1050        |
+|    policy_gradient_loss | -0.00257    |
+|    value_loss           | 5.18        |
+-----------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 13.2         |
+|    ep_rew_mean          | 0.274        |
+| time/                   |              |
+|    fps                  | 1581         |
+|    iterations           | 107          |
+|    time_elapsed         | 138          |
+|    total_timesteps      | 219136       |
+| train/                  |              |
+|    approx_kl            | 0.0017173213 |
+|    clip_fraction        | 0.0138       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.537       |
+|    explained_variance   | 0.182        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.45         |
+|    n_updates            | 1060         |
+|    policy_gradient_loss | -0.00107     |
+|    value_loss           | 5.19         |
+------------------------------------------
+Step 220,000 | Mean reward: 0.343 | Resolution: 68.7% | Escalation: 0.0%
+New best model saved: 0.643
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.28         |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 13.4         |
+|    mean_reward_100ep         | 0.343        |
+|    resolution_rate           | 0.687        |
+|    timeout_rate              | 0.033        |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.643        |
+|    resolution_rate           | 0.605        |
+| rollout/                     |              |
+|    ep_len_mean               | 12.9         |
+|    ep_rew_mean               | 0.649        |
+| time/                        |              |
+|    fps                       | 1575         |
+|    iterations                | 108          |
+|    time_elapsed              | 140          |
+|    total_timesteps           | 221184       |
+| train/                       |              |
+|    approx_kl                 | 0.0027278315 |
+|    clip_fraction             | 0.0373       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.521       |
+|    explained_variance        | 0.186        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.62         |
+|    n_updates                 | 1070         |
+|    policy_gradient_loss      | -0.00477     |
+|    value_loss                | 4.9          |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 13.4         |
+|    ep_rew_mean          | 0.569        |
+| time/                   |              |
+|    fps                  | 1577         |
+|    iterations           | 109          |
+|    time_elapsed         | 141          |
+|    total_timesteps      | 223232       |
+| train/                  |              |
+|    approx_kl            | 0.0027795339 |
+|    clip_fraction        | 0.0261       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.527       |
+|    explained_variance   | 0.19         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.47         |
+|    n_updates            | 1080         |
+|    policy_gradient_loss | -0.00203     |
+|    value_loss           | 4.72         |
+------------------------------------------
+Step 225,000 | Mean reward: 0.507 | Resolution: 68.6% | Escalation: 0.0%
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.281       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.6        |
+|    mean_reward_100ep         | 0.507       |
+|    resolution_rate           | 0.686       |
+|    timeout_rate              | 0.033       |
+| rollout/                     |             |
+|    ep_len_mean               | 11.9        |
+|    ep_rew_mean               | 0.777       |
+| time/                        |             |
+|    fps                       | 1579        |
+|    iterations                | 110         |
+|    time_elapsed              | 142         |
+|    total_timesteps           | 225280      |
+| train/                       |             |
+|    approx_kl                 | 0.004208741 |
+|    clip_fraction             | 0.0203      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.527      |
+|    explained_variance        | 0.238       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.34        |
+|    n_updates                 | 1090        |
+|    policy_gradient_loss      | -0.00314    |
+|    value_loss                | 4.6         |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.4         |
+|    ep_rew_mean          | 0.538        |
+| time/                   |              |
+|    fps                  | 1581         |
+|    iterations           | 111          |
+|    time_elapsed         | 143          |
+|    total_timesteps      | 227328       |
+| train/                  |              |
+|    approx_kl            | 0.0035396337 |
+|    clip_fraction        | 0.0277       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.538       |
+|    explained_variance   | 0.214        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.33         |
+|    n_updates            | 1100         |
+|    policy_gradient_loss | -0.00123     |
+|    value_loss           | 4.62         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.5         |
+|    ep_rew_mean          | 0.987        |
+| time/                   |              |
+|    fps                  | 1582         |
+|    iterations           | 112          |
+|    time_elapsed         | 144          |
+|    total_timesteps      | 229376       |
+| train/                  |              |
+|    approx_kl            | 0.0037339628 |
+|    clip_fraction        | 0.0117       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.51        |
+|    explained_variance   | 0.24         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.32         |
+|    n_updates            | 1110         |
+|    policy_gradient_loss | -0.00141     |
+|    value_loss           | 4.94         |
+------------------------------------------
+Step 230,000 | Mean reward: 0.754 | Resolution: 68.4% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.282        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.3         |
+|    mean_reward_100ep         | 0.754        |
+|    resolution_rate           | 0.684        |
+|    timeout_rate              | 0.0333       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.605        |
+|    resolution_rate           | 0.6          |
+| rollout/                     |              |
+|    ep_len_mean               | 12.5         |
+|    ep_rew_mean               | 1.03         |
+| time/                        |              |
+|    fps                       | 1576         |
+|    iterations                | 113          |
+|    time_elapsed              | 146          |
+|    total_timesteps           | 231424       |
+| train/                       |              |
+|    approx_kl                 | 0.0050288057 |
+|    clip_fraction             | 0.0395       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.46        |
+|    explained_variance        | 0.203        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.38         |
+|    n_updates                 | 1120         |
+|    policy_gradient_loss      | -0.00472     |
+|    value_loss                | 4.91         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.3         |
+|    ep_rew_mean          | 0.905        |
+| time/                   |              |
+|    fps                  | 1578         |
+|    iterations           | 114          |
+|    time_elapsed         | 147          |
+|    total_timesteps      | 233472       |
+| train/                  |              |
+|    approx_kl            | 0.0026665796 |
+|    clip_fraction        | 0.0084       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.445       |
+|    explained_variance   | 0.227        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.44         |
+|    n_updates            | 1130         |
+|    policy_gradient_loss | -0.00127     |
+|    value_loss           | 4.71         |
+------------------------------------------
+Step 235,000 | Mean reward: 0.841 | Resolution: 68.3% | Escalation: 0.0%
+---------------------------------------------
+| custom/                      |            |
+|    dropout_rate              | 0.283      |
+|    escalation_rate           | 0          |
+|    mean_episode_length_100ep | 12.4       |
+|    mean_reward_100ep         | 0.841      |
+|    resolution_rate           | 0.683      |
+|    timeout_rate              | 0.0334     |
+| rollout/                     |            |
+|    ep_len_mean               | 12.4       |
+|    ep_rew_mean               | 1.31       |
+| time/                        |            |
+|    fps                       | 1579       |
+|    iterations                | 115        |
+|    time_elapsed              | 149        |
+|    total_timesteps           | 235520     |
+| train/                       |            |
+|    approx_kl                 | 0.00457191 |
+|    clip_fraction             | 0.035      |
+|    clip_range                | 0.2        |
+|    entropy_loss              | -0.448     |
+|    explained_variance        | 0.18       |
+|    learning_rate             | 0.0003     |
+|    loss                      | 2.56       |
+|    n_updates                 | 1140       |
+|    policy_gradient_loss      | -0.00285   |
+|    value_loss                | 4.84       |
+---------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.8         |
+|    ep_rew_mean          | 0.963        |
+| time/                   |              |
+|    fps                  | 1578         |
+|    iterations           | 116          |
+|    time_elapsed         | 150          |
+|    total_timesteps      | 237568       |
+| train/                  |              |
+|    approx_kl            | 0.0029525596 |
+|    clip_fraction        | 0.0363       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.445       |
+|    explained_variance   | 0.219        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.04         |
+|    n_updates            | 1150         |
+|    policy_gradient_loss | -0.00337     |
+|    value_loss           | 4.41         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.8         |
+|    ep_rew_mean          | 0.628        |
+| time/                   |              |
+|    fps                  | 1580         |
+|    iterations           | 117          |
+|    time_elapsed         | 151          |
+|    total_timesteps      | 239616       |
+| train/                  |              |
+|    approx_kl            | 0.0027883914 |
+|    clip_fraction        | 0.0149       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.427       |
+|    explained_variance   | 0.234        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.01         |
+|    n_updates            | 1160         |
+|    policy_gradient_loss | -0.00156     |
+|    value_loss           | 4.19         |
+------------------------------------------
+Step 240,000 | Mean reward: 0.500 | Resolution: 68.2% | Escalation: 0.0%
+New best model saved: 0.711
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.284       |
+|    escalation_rate           | 0           |
+|    mean_episode_length_100ep | 12.7        |
+|    mean_reward_100ep         | 0.5         |
+|    resolution_rate           | 0.682       |
+|    timeout_rate              | 0.0338      |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | 0.711       |
+|    resolution_rate           | 0.625       |
+| rollout/                     |             |
+|    ep_len_mean               | 11.7        |
+|    ep_rew_mean               | 1.24        |
+| time/                        |             |
+|    fps                       | 1574        |
+|    iterations                | 118         |
+|    time_elapsed              | 153         |
+|    total_timesteps           | 241664      |
+| train/                       |             |
+|    approx_kl                 | 0.006012777 |
+|    clip_fraction             | 0.0293      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -0.487      |
+|    explained_variance        | 0.169       |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.19        |
+|    n_updates                 | 1170        |
+|    policy_gradient_loss      | -0.00364    |
+|    value_loss                | 4.95        |
+----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.6         |
+|    ep_rew_mean          | 0.689        |
+| time/                   |              |
+|    fps                  | 1574         |
+|    iterations           | 119          |
+|    time_elapsed         | 154          |
+|    total_timesteps      | 243712       |
+| train/                  |              |
+|    approx_kl            | 0.0015428741 |
+|    clip_fraction        | 0.0105       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.516       |
+|    explained_variance   | 0.219        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.45         |
+|    n_updates            | 1180         |
+|    policy_gradient_loss | -0.000599    |
+|    value_loss           | 4.8          |
+------------------------------------------
+Step 245,000 | Mean reward: 0.194 | Resolution: 68.0% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.286        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 13           |
+|    mean_reward_100ep         | 0.194        |
+|    resolution_rate           | 0.68         |
+|    timeout_rate              | 0.0341       |
+| rollout/                     |              |
+|    ep_len_mean               | 13.2         |
+|    ep_rew_mean               | 0.321        |
+| time/                        |              |
+|    fps                       | 1575         |
+|    iterations                | 120          |
+|    time_elapsed              | 155          |
+|    total_timesteps           | 245760       |
+| train/                       |              |
+|    approx_kl                 | 0.0037759687 |
+|    clip_fraction             | 0.0379       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.476       |
+|    explained_variance        | 0.266        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.11         |
+|    n_updates                 | 1190         |
+|    policy_gradient_loss      | -0.00453     |
+|    value_loss                | 4.65         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.5         |
+|    ep_rew_mean          | 0.992        |
+| time/                   |              |
+|    fps                  | 1577         |
+|    iterations           | 121          |
+|    time_elapsed         | 157          |
+|    total_timesteps      | 247808       |
+| train/                  |              |
+|    approx_kl            | 0.0027367198 |
+|    clip_fraction        | 0.0254       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.491       |
+|    explained_variance   | 0.141        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.46         |
+|    n_updates            | 1200         |
+|    policy_gradient_loss | -0.0007      |
+|    value_loss           | 5.03         |
+------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.5        |
+|    ep_rew_mean          | 1.01        |
+| time/                   |             |
+|    fps                  | 1579        |
+|    iterations           | 122         |
+|    time_elapsed         | 158         |
+|    total_timesteps      | 249856      |
+| train/                  |             |
+|    approx_kl            | 0.004060516 |
+|    clip_fraction        | 0.0337      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.498      |
+|    explained_variance   | 0.189       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.45        |
+|    n_updates            | 1210        |
+|    policy_gradient_loss | -0.00331    |
+|    value_loss           | 4.98        |
+-----------------------------------------
+Step 250,000 | Mean reward: 0.681 | Resolution: 67.9% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.286        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.4         |
+|    mean_reward_100ep         | 0.681        |
+|    resolution_rate           | 0.679        |
+|    timeout_rate              | 0.0343       |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.669        |
+|    resolution_rate           | 0.615        |
+| rollout/                     |              |
+|    ep_len_mean               | 13           |
+|    ep_rew_mean               | 0.449        |
+| time/                        |              |
+|    fps                       | 1573         |
+|    iterations                | 123          |
+|    time_elapsed              | 160          |
+|    total_timesteps           | 251904       |
+| train/                       |              |
+|    approx_kl                 | 0.0035248417 |
+|    clip_fraction             | 0.0259       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.449       |
+|    explained_variance        | 0.243        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.12         |
+|    n_updates                 | 1220         |
+|    policy_gradient_loss      | -0.00275     |
+|    value_loss                | 4.33         |
+-----------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 12.6         |
+|    ep_rew_mean          | 0.527        |
+| time/                   |              |
+|    fps                  | 1574         |
+|    iterations           | 124          |
+|    time_elapsed         | 161          |
+|    total_timesteps      | 253952       |
+| train/                  |              |
+|    approx_kl            | 0.0022138716 |
+|    clip_fraction        | 0.0125       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.458       |
+|    explained_variance   | 0.242        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 2.34         |
+|    n_updates            | 1230         |
+|    policy_gradient_loss | -0.00163     |
+|    value_loss           | 4.73         |
+------------------------------------------
+Step 255,000 | Mean reward: 1.147 | Resolution: 67.8% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.287        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 12.9         |
+|    mean_reward_100ep         | 1.15         |
+|    resolution_rate           | 0.678        |
+|    timeout_rate              | 0.0352       |
+| rollout/                     |              |
+|    ep_len_mean               | 12           |
+|    ep_rew_mean               | 1.11         |
+| time/                        |              |
+|    fps                       | 1575         |
+|    iterations                | 125          |
+|    time_elapsed              | 162          |
+|    total_timesteps           | 256000       |
+| train/                       |              |
+|    approx_kl                 | 0.0033823163 |
+|    clip_fraction             | 0.0401       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.443       |
+|    explained_variance        | 0.228        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.76         |
+|    n_updates                 | 1240         |
+|    policy_gradient_loss      | -0.00316     |
+|    value_loss                | 4.63         |
+-----------------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 12.9        |
+|    ep_rew_mean          | 1.52        |
+| time/                   |             |
+|    fps                  | 1574        |
+|    iterations           | 126         |
+|    time_elapsed         | 163         |
+|    total_timesteps      | 258048      |
+| train/                  |             |
+|    approx_kl            | 0.002806894 |
+|    clip_fraction        | 0.0306      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.468      |
+|    explained_variance   | 0.18        |
+|    learning_rate        | 0.0003      |
+|    loss                 | 2.22        |
+|    n_updates            | 1250        |
+|    policy_gradient_loss | -0.00283    |
+|    value_loss           | 4.62        |
+-----------------------------------------
+Step 260,000 | Mean reward: 0.815 | Resolution: 67.7% | Escalation: 0.0%
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.287        |
+|    escalation_rate           | 0            |
+|    mean_episode_length_100ep | 13.5         |
+|    mean_reward_100ep         | 0.815        |
+|    resolution_rate           | 0.677        |
+|    timeout_rate              | 0.036        |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | 0.679        |
+|    resolution_rate           | 0.62         |
+| rollout/                     |              |
+|    ep_len_mean               | 13.4         |
+|    ep_rew_mean               | 0.685        |
+| time/                        |              |
+|    fps                       | 1568         |
+|    iterations                | 127          |
+|    time_elapsed              | 165          |
+|    total_timesteps           | 260096       |
+| train/                       |              |
+|    approx_kl                 | 0.0017044921 |
+|    clip_fraction             | 0.0168       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.427       |
+|    explained_variance        | 0.226        |
+|    learning_rate             | 0.0003       |
+|    loss                      | 2.32         |
+|    n_updates                 | 1260         |
+|    policy_gradient_loss      | -0.000882    |
+|    value_loss                | 4.42         |
+-----------------------------------------------
