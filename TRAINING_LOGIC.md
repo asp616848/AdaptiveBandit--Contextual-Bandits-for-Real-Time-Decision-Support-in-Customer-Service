@@ -92,24 +92,36 @@ logit(p_churn) = -3.8 + 3.0*frustration + 0.1*failed_streak + 0.08*turn_count - 
 
 All rewards clipped to `[-5.0, 5.0]`.
 
-### Escalation Reward (Key Fix)
+### Escalation Reward
 
-Escalation is **contextually rewarded** — the cost scales down when escalation is the right call:
+Two-part model that makes escalation **better than timeout when appropriate** and **worse than timeout when unnecessary**:
+
+**1. Reduced churn probability** — human agents salvage frustrated customers better than a bot timing out:
 
 ```
-appropriateness = frustration * 2.0 + min(failed_streak * 0.5, 1.5)
+churn_saved      = min(frustration * 0.6 + failed_streak * 0.1, 0.7)
+p_churn_esc      = p_churn_base * (1.0 - churn_saved)
+```
+
+At high frustration + high streak: saves 70% of churn vs timeout.  
+At low frustration + no failures: saves ~6% (barely helps, but also adds explicit cost — see below).
+
+**2. Context-sensitive cost reduction** — explicit escalation cost eliminated when the bot is clearly failing:
+
+```
+appropriateness = frustration * 3.0 + min(failed_streak * 0.7, 2.5)
 effective_cost  = max(base_cost[tier] - appropriateness, 0.0)
-r_escalation    = -omega * p_churn * V - effective_cost + enterprise_bonus
+r_escalation    = -omega * p_churn_esc * V - effective_cost + enterprise_bonus
 ```
 
-| Tier | base_cost | When escalation becomes net-positive |
-|---|---|---|
-| Free | 4.0 | frustration ≥ 0.85 + streak ≥ 3 |
-| Pro | 2.0 | frustration ≥ 0.7 + streak ≥ 2 |
-| Business | 0.5 | frustration ≥ 0.5 + streak ≥ 1 |
-| Enterprise | 0.0 | always + 1.0 bonus |
+| Tier | base_cost | Escalation vs Timeout (stuck: frust≥0.9, streak≥3) | Escalation vs Timeout (fresh) |
+|---|---|---|---|
+| Free | 4.0 | **-0.03 vs -0.10 → ESC wins** | -3.7 vs -0.005 → don't escalate |
+| Pro | 2.0 | **-0.05 vs -0.13 → ESC wins** | -1.1 vs -0.02 → don't escalate |
+| Business | 0.5 | **-0.09 vs -0.16 → ESC wins** | slight win → escalate moderately |
+| Enterprise | 0.0 | **+0.8 vs -0.44 → ESC wins** | always escalate |
 
-**Design intent**: unnecessary escalation (low frustration, no failures) is still penalized; escalation when the bot is genuinely stuck (high frustration, repeated failures) is rewarded. Resolution (+5.0) is always preferred when achievable.
+**Design intent**: bot pushes hard to resolve (resolution +5.0 always best); escalates when genuinely stuck (escalation beats timeout); never escalates unnecessarily (fresh-state escalation heavily penalized).
 
 ---
 

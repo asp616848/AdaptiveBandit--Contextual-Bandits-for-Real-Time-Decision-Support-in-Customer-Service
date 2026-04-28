@@ -49,24 +49,28 @@ class RewardEngine:
         return float(-self.lambda_turn)
 
     def terminal_reward(self, outcome: str, state: dict[str, Any], tier: str, value_weight: float) -> float:
+        frustration = float(state.get("frustration", 0.0))
+        failed_streak = int(state.get("failed_streak", 0))
+        turn_count = int(state.get("turn_count", 0))
+        tau = float(state.get("tau", 0.5))
+
         if outcome == "success":
             p_churn_terminal = 0.0
         elif outcome == "dropout":
             p_churn_terminal = 1.0
-        elif outcome in {"escalation", "timeout"}:
-            p_churn_terminal = self.compute_p_churn(
-                frustration=float(state["frustration"]),
-                failed_streak=int(state["failed_streak"]),
-                turn_count=int(state["turn_count"]),
-                tau=float(state["tau"]),
-            )
+        elif outcome == "escalation":
+            # Bot escalating to human reduces churn more than bot timing out:
+            # human agents salvage frustrated/stuck customers far better than a bot giving up.
+            # churn_saved scales with how "stuck" the situation is:
+            #   frustration=0.9 + streak=3 → saves 70% of potential churn
+            #   frustration=0.1 + streak=0 → saves ~6% (unnecessary escalation, barely helps)
+            p_churn_base = self.compute_p_churn(frustration, failed_streak, turn_count, tau)
+            churn_saved = min(frustration * 0.6 + failed_streak * 0.1, 0.7)
+            p_churn_terminal = p_churn_base * (1.0 - churn_saved)
+        elif outcome == "timeout":
+            p_churn_terminal = self.compute_p_churn(frustration, failed_streak, turn_count, tau)
         else:
-            p_churn_terminal = self.compute_p_churn(
-                frustration=float(state["frustration"]),
-                failed_streak=int(state["failed_streak"]),
-                turn_count=int(state["turn_count"]),
-                tau=float(state["tau"]),
-            )
+            p_churn_terminal = self.compute_p_churn(frustration, failed_streak, turn_count, tau)
 
         value_at_risk = self.compute_V(tier=tier, value_weight=float(value_weight))
         reward = -self.omega * p_churn_terminal * value_at_risk
@@ -74,13 +78,12 @@ class RewardEngine:
         if outcome == "success":
             reward += self.eta
         elif outcome == "escalation":
+            # Explicit escalation cost, reduced when context warrants it.
+            # appropriateness cancels the cost entirely when bot is clearly failing:
+            #   frustration≥0.9 + streak≥3 (Free): appropriateness≥4.8 > cost=4.0 → cost=0
+            #   frustration≥0.7 + streak≥2 (Pro):  appropriateness≥3.5 > cost=2.0 → cost=0
             base_cost = float(self.escalation_costs.get(tier, 0.0))
-            frustration = float(state.get("frustration", 0.0))
-            failed_streak = int(state.get("failed_streak", 0))
-            # Reduce escalation cost when context warrants it:
-            # high frustration or repeated failures → escalation is the right call.
-            # At frustration≥0.67 + streak≥2: appropriateness≥1.9 cancels most costs.
-            appropriateness = frustration * 2.0 + min(failed_streak * 0.5, 1.5)
+            appropriateness = frustration * 3.0 + min(failed_streak * 0.7, 2.5)
             effective_cost = max(base_cost - appropriateness, 0.0)
             reward -= effective_cost
             if tier == "Enterprise":
