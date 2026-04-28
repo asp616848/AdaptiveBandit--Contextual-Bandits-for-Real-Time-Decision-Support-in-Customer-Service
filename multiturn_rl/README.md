@@ -1,6 +1,6 @@
 # Multi-Turn RL
 
-Main code lives in `Simulation_4/`.
+Main code lives in `Simulation/`.
 
 Entry point for automated evaluation is the repository-root script:
 
