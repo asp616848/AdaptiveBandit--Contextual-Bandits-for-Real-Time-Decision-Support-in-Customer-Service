@@ -381,12 +381,33 @@ def main() -> int:
     parser.add_argument("--skip-training", action="store_true")
     parser.add_argument("--demo-episodes", type=int, default=12)
     parser.add_argument("--nlg-enabled", action="store_true")
+    # LLM backend selection (used when --nlg-enabled)
+    parser.add_argument("--llm-backend", type=str, choices=["ollama", "hf"], default="ollama",
+                        help="LLM backend for NLG: 'ollama' (default) or 'hf' (local HuggingFace model)")
+    parser.add_argument("--ollama-model", type=str, default="",
+                        help="Ollama model name (e.g. llama3, qwen2.5:7b). Falls back to OLLAMA_MODEL env var.")
+    parser.add_argument("--hf-model-path", type=str, default="",
+                        help="Path to local HF model dir. Falls back to HF_MODEL_PATH env var.")
     args = parser.parse_args()
 
     artifacts_root = Path(args.artifacts_root)
     artifacts_root.mkdir(parents=True, exist_ok=True)
     run_root = artifacts_root / args.output_subdir
     run_root.mkdir(parents=True, exist_ok=True)
+
+    # Wire up LLM backend env vars so NLGLayer / backends.py pick them up.
+    if args.nlg_enabled:
+        backend = str(args.llm_backend or "ollama").strip().lower()
+        os.environ["SUPPORT_SIM_LLM_BACKEND"] = backend
+        if backend == "hf":
+            hf_path = str(args.hf_model_path or os.getenv("HF_MODEL_PATH", "")).strip()
+            if hf_path:
+                os.environ["SUPPORT_SIM_HF_MODEL_PATH"] = hf_path
+        else:
+            model = str(args.ollama_model or os.getenv("OLLAMA_MODEL", "llama3")).strip()
+            endpoint = os.getenv("OLLAMA_ENDPOINT", os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1"))
+            os.environ["SUPPORT_SIM_LLM_MODEL"] = model
+            os.environ["SUPPORT_SIM_LLM_ENDPOINT"] = endpoint
 
     start = time.time()
     report: dict[str, Any] = {

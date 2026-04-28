@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m json.tool)",
+      "Bash(SKIP_NLP=1 NUM_TIMESTEPS=150000 EVAL_EPISODES=200 N_ENVS=1 bash run.sh)",
+      "Bash(conda env *)",
+      "Bash(conda run *)",
+      "Bash(python -c \"import stable_baselines3; print\\('sb3 ok'\\)\")",
+      "Bash(\"/b/ProgramFiles/miniconda3/envs/bandit/python.exe\" --version)",
+      "Bash(\"/b/ProgramFiles/miniconda3/envs/bandit/python.exe\" -c \"import stable_baselines3, gymnasium, numpy; print\\('deps OK'\\)\")",
+      "Bash(KMP_DUPLICATE_LIB_OK=TRUE \"/b/ProgramFiles/miniconda3/envs/bandit/python.exe\" -c \"import stable_baselines3, gymnasium, numpy; print\\('deps OK'\\)\")",
+      "Bash(KMP_DUPLICATE_LIB_OK=TRUE PYTHONPATH=\"Multi-Turn RL\" MPLBACKEND=Agg TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 PYTHONUNBUFFERED=1 \"/b/ProgramFiles/miniconda3/envs/bandit/python.exe\" \"Multi-Turn RL/Simulation_4/scripts/phase10_full_pipeline.py\" --artifacts-root \"Multi-Turn RL/Simulation_4/artifacts\" --output-subdir run_numerical --timesteps 150000 --eval-episodes 200 --n-envs 1 --continue-from _none_ --skip-validation)",
+      "Bash(KMP_DUPLICATE_LIB_OK=TRUE PYTHONPATH=\"Multi-Turn RL\" MPLBACKEND=Agg TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 PYTHONUNBUFFERED=1 \"/b/ProgramFiles/miniconda3/envs/bandit/python.exe\" \"Multi-Turn RL/Simulation_4/scripts/phase10_full_pipeline.py\" --artifacts-root \"Multi-Turn RL/Simulation_4/artifacts\" --output-subdir run_numerical --eval-episodes 200 --n-envs 1 --skip-training --skip-validation --demo-episodes 6)",
+      "Bash(KMP_DUPLICATE_LIB_OK=TRUE MPLBACKEND=Agg \"/b/ProgramFiles/miniconda3/envs/bandit/python.exe\" tools/export_multiturn_results.py --artifacts-root \"Multi-Turn RL/Simulation_4/artifacts\" --run-subdir run_numerical --out-dir output/numerical-multi-turn)",
+      "Bash(mkdir -p best_model/numerical)",
+      "Bash(cp \"Multi-Turn RL/Simulation_4/artifacts/run_numerical/models/best_model.zip\" best_model/numerical/)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('output/numerical-multi-turn/leaderboard.json'\\)\\); [print\\(f'  {r[\\\\\"policy\\\\\"]:<20} reward={r[\\\\\"mean_reward\\\\\"]:.3f}'\\) for r in d]\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\('output/numerical-multi-turn/training_summary.json'\\)\\); [print\\(f'{k}: {v}'\\) for k,v in d.items\\(\\)]\")"
+    ]
+  }
+}

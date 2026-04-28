@@ -7,3 +7,12 @@ matplotlib>=3.7
 
 gymnasium>=0.29
 stable-baselines3>=2.2.1
+
+# RAG retriever (pre-built index at Multi-Turn RL/Simulation_4/rag/index/)
+faiss-cpu>=1.7
+
+# NLG layer uses the openai client to talk to ollama's OpenAI-compatible API
+openai>=1.0
+
+# NLGLayer.check_ollama_available() uses requests
+requests>=2.28
