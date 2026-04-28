@@ -59,11 +59,8 @@ class RewardEngine:
         elif outcome == "dropout":
             p_churn_terminal = 1.0
         elif outcome == "escalation":
-            # Bot escalating to human reduces churn more than bot timing out:
-            # human agents salvage frustrated/stuck customers far better than a bot giving up.
-            # churn_saved scales with how "stuck" the situation is:
-            #   frustration=0.9 + streak=3 → saves 70% of potential churn
-            #   frustration=0.1 + streak=0 → saves ~6% (unnecessary escalation, barely helps)
+            # Human agent reduces churn vs bot timing out — more so when bot is stuck.
+            # churn_saved = how much of the churn probability human intervention prevents.
             p_churn_base = self.compute_p_churn(frustration, failed_streak, turn_count, tau)
             churn_saved = min(frustration * 0.6 + failed_streak * 0.1, 0.7)
             p_churn_terminal = p_churn_base * (1.0 - churn_saved)
@@ -77,17 +74,25 @@ class RewardEngine:
 
         if outcome == "success":
             reward += self.eta
+
         elif outcome == "escalation":
-            # Explicit escalation cost, reduced when context warrants it.
-            # appropriateness cancels the cost entirely when bot is clearly failing:
-            #   frustration≥0.9 + streak≥3 (Free): appropriateness≥4.8 > cost=4.0 → cost=0
-            #   frustration≥0.7 + streak≥2 (Pro):  appropriateness≥3.5 > cost=2.0 → cost=0
+            # Human recovery yield: fraction of eta the human agent can recover.
+            # Calibrated so that in a genuinely stuck episode the reward is clearly
+            # positive — otherwise the agent rationally prefers to gamble on resolution
+            # (+5) rather than take a certain small-negative escalation reward.
+            # stuck_score = 0 when bot just started, 0.6 when maximally stuck.
+            stuck_score = min(frustration * 0.5 + failed_streak * 0.15, 0.6)
+            reward += stuck_score * self.eta  # up to +3.0
+
+            # Explicit escalation cost, waived when context warrants it.
             base_cost = float(self.escalation_costs.get(tier, 0.0))
             appropriateness = frustration * 3.0 + min(failed_streak * 0.7, 2.5)
             effective_cost = max(base_cost - appropriateness, 0.0)
             reward -= effective_cost
+
             if tier == "Enterprise":
                 reward += self.escalation_bonus_enterprise
+
         elif outcome == "unresolved_close":
             reward -= 1.0
 
