@@ -14,9 +14,9 @@
 #   EVAL_EPISODES   eval episodes per run       (default: 200)
 #   N_ENVS          parallel training envs      (default: 1)
 #   SKIP_NLP        set 1 to skip NLP run       (default: 0)
-#   OLLAMA_MODEL    ollama model name           (default: llama3)
+#   HF_MODEL_PATH   HF hub repo ID or local path; if set, uses HF backend
+#   OLLAMA_MODEL    ollama model tag            (default: llama3, used if HF_MODEL_PATH empty)
 #   OLLAMA_ENDPOINT ollama base URL             (default: http://localhost:11434/v1)
-#   HF_MODEL_PATH   path to local HF model dir (default: "", uses ollama)
 #   PYTHON_BIN      Python executable           (default: python3)
 #
 # Ubuntu 22.04 quick start:

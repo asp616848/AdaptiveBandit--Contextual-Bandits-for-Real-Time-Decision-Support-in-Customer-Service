@@ -8,7 +8,7 @@ All commands are run from the **repo root**.
 ## Full Pipeline (all three approaches)
 
 ```bash
-# Full run — NLP skipped automatically if ollama is not running
+# Full run — NLP skipped automatically if no LLM available
 bash run.sh
 
 # Full run, skip NLP explicitly
@@ -20,23 +20,23 @@ NUM_TIMESTEPS=1000000 SKIP_NLP=1 bash run.sh
 
 ---
 
-## [1] Numerical Multi-Turn RL  (PPO, state-only, no LLM needed)
+## [1] Numerical Multi-Turn RL  (PPO, state-only, no LLM)
 
 ```bash
 # Default: 1 million steps
 bash scripts/train_numerical.sh
 
-# Quick smoke-test (≈2 min)
+# Quick smoke-test (~2 min)
 NUM_TIMESTEPS=10000 bash scripts/train_numerical.sh
 
 # Custom steps + eval episodes
-NUM_TIMESTEPS=500000 EVAL_EPISODES=100 bash scripts/train_numerical.sh
+NUM_TIMESTEPS=1500000 EVAL_EPISODES=200 bash scripts/train_numerical.sh
 
 # More parallel envs (speeds up training if CPU has cores to spare)
-NUM_TIMESTEPS=1000000 N_ENVS=4 bash scripts/train_numerical.sh
+NUM_TIMESTEPS=1500000 N_ENVS=4 bash scripts/train_numerical.sh
 ```
 
-Output lands in:
+Output:
 - `output/numerical-multi-turn/`  — plots, logs, model zips
 - `best_model/numerical/`         — best_model.zip + final_model.zip
 
@@ -44,39 +44,41 @@ Output lands in:
 
 ## [2] NLP Multi-Turn RL  (PPO + LLM-generated customer utterances)
 
-### With ollama (default)
+### With a HuggingFace model (hub download)
+
+```bash
+# Downloads model on first run (~14 GB for Qwen 7B)
+HF_MODEL_PATH=abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b bash scripts/train_nlp.sh
+
+# With custom step count
+NUM_TIMESTEPS=100000 HF_MODEL_PATH=abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b bash scripts/train_nlp.sh
+
+# Smoke-test (1 step — just verifies model loads and pipeline runs)
+NUM_TIMESTEPS=1 HF_MODEL_PATH=abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b bash scripts/train_nlp.sh
+```
+
+### With a local model directory
+
+```bash
+HF_MODEL_PATH=/path/to/model bash scripts/train_nlp.sh
+```
+
+### With ollama
 
 ```bash
 # Requires: ollama running + model pulled
-# ollama serve  (in a separate terminal)
+# ollama serve  (separate terminal)
 # ollama pull llama3
 
 bash scripts/train_nlp.sh
 
-# Use a different ollama model
 OLLAMA_MODEL=mistral bash scripts/train_nlp.sh
 
-# Custom ollama endpoint (remote server)
+# Remote ollama endpoint
 OLLAMA_ENDPOINT=http://192.168.1.10:11434/v1 OLLAMA_MODEL=llama3 bash scripts/train_nlp.sh
 ```
 
-### With a local HuggingFace model
-
-```bash
-# Point to the merged model directory
-HF_MODEL_PATH="Multi-Turn RL/Qwen2.5-7B-Instruct-merged" bash scripts/train_nlp.sh
-
-# Absolute path variant
-HF_MODEL_PATH="/home/user/models/Qwen2.5-7B" bash scripts/train_nlp.sh
-```
-
-### Quick smoke-test (NLP)
-
-```bash
-NUM_TIMESTEPS=10000 OLLAMA_MODEL=llama3 bash scripts/train_nlp.sh
-```
-
-Output lands in:
+Output:
 - `output/nlp-multi-turn/`  — plots, logs, model zips
 - `best_model/nlp/`         — best_model.zip + final_model.zip
 
@@ -88,25 +90,22 @@ Output lands in:
 bash scripts/train_bandit.sh
 ```
 
-Output lands in:
-- `output/contextual-bandit/`
+Output: `output/contextual-bandit/`
 
 ---
 
-## Export / Plot Only  (re-run after training is done)
-
-Re-generate plots and reports from existing artifact files without retraining:
+## Export / Plot Only  (re-run after training without retraining)
 
 ```bash
 # Numerical
 python tools/export_multiturn_results.py \
-  --artifacts-root "Multi-Turn RL/Simulation_4/artifacts" \
+  --artifacts-root "multiturn_rl/simulation/artifacts" \
   --run-subdir run_numerical \
   --out-dir output/numerical-multi-turn
 
 # NLP
 python tools/export_multiturn_results.py \
-  --artifacts-root "Multi-Turn RL/Simulation_4/artifacts" \
+  --artifacts-root "multiturn_rl/simulation/artifacts" \
   --run-subdir run_nlp \
   --out-dir output/nlp-multi-turn
 ```
@@ -121,7 +120,7 @@ On Windows, `python3` may not exist. Override the Python executable:
 # Using a conda environment
 PYTHON_BIN="C:/ProgramData/miniconda3/envs/bandit/python.exe" bash scripts/train_numerical.sh
 
-# Or activate the conda env first, then run (bash via Git Bash or WSL)
+# Or activate the conda env first (bash via Git Bash or WSL)
 PYTHON_BIN=python bash scripts/train_numerical.sh
 ```
 
@@ -129,13 +128,13 @@ PYTHON_BIN=python bash scripts/train_numerical.sh
 
 ## Environment Variables — Full Reference
 
-| Variable         | Default                          | Description                              |
-|------------------|----------------------------------|------------------------------------------|
-| `NUM_TIMESTEPS`  | `1000000`                        | PPO training steps                       |
-| `EVAL_EPISODES`  | `200`                            | Episodes used for final evaluation       |
-| `N_ENVS`         | `1`                              | Parallel training environments (SubprocVecEnv) |
-| `SKIP_NLP`       | `0`                              | Set `1` to skip NLP run entirely         |
-| `OLLAMA_MODEL`   | `llama3`                         | Ollama model tag to use for NLG          |
-| `OLLAMA_ENDPOINT`| `http://localhost:11434/v1`      | Ollama API base URL                      |
-| `HF_MODEL_PATH`  | _(empty, uses ollama)_           | Local HuggingFace model directory        |
-| `PYTHON_BIN`     | `python3`                        | Python executable path                   |
+| Variable | Default | Description |
+|---|---|---|
+| `NUM_TIMESTEPS` | `1000000` | PPO training steps |
+| `EVAL_EPISODES` | `200` | Episodes used for final evaluation |
+| `N_ENVS` | `1` | Parallel training environments |
+| `SKIP_NLP` | `0` | Set `1` to skip NLP run entirely (used in run.sh) |
+| `HF_MODEL_PATH` | _(empty)_ | HF hub repo ID or local path; if set, uses HF backend |
+| `OLLAMA_MODEL` | `llama3` | Ollama model tag (only used when HF_MODEL_PATH is empty) |
+| `OLLAMA_ENDPOINT` | `http://localhost:11434/v1` | Ollama API base URL |
+| `PYTHON_BIN` | `python3` | Python executable path |

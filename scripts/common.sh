@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 # ─── scripts/common.sh ────────────────────────────────────────────────────────
-# Shared setup sourced by every training script and run.sh.
+# Shared setup sourced by every training script.
 # Source this file AFTER setting ROOT_DIR to the repo root.
-# Usage:
-#   ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-#   source "$ROOT_DIR/scripts/common.sh"
 # ─────────────────────────────────────────────────────────────────────────────
 
 # ── Python / venv ──────────────────────────────────────────────────────────
@@ -34,33 +31,26 @@ python -m pip install -r "$ROOT_DIR/requirements.txt" -q
 # ── Runtime environment ────────────────────────────────────────────────────
 export HF_HUB_DISABLE_TELEMETRY=1
 export TOKENIZERS_PARALLELISM=false
-export TRANSFORMERS_OFFLINE=1
-export HF_HUB_OFFLINE=1
 export PYTHONUNBUFFERED=1
 export MPLBACKEND=Agg
 export KMP_DUPLICATE_LIB_OK=TRUE
-# Simulation_4 lives under "Multi-Turn RL/" — must be on PYTHONPATH
-export PYTHONPATH="$ROOT_DIR/Multi-Turn RL${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$ROOT_DIR/multiturn_rl${PYTHONPATH:+:$PYTHONPATH}"
 
-# ── Configurable defaults (override via env vars before sourcing) ──────────
+# ── Configurable training defaults ────────────────────────────────────────
 NUM_TIMESTEPS="${NUM_TIMESTEPS:-1000000}"
 EVAL_EPISODES="${EVAL_EPISODES:-200}"
 N_ENVS="${N_ENVS:-1}"
-SKIP_NLP="${SKIP_NLP:-0}"
-OLLAMA_MODEL="${OLLAMA_MODEL:-llama3}"
-OLLAMA_ENDPOINT="${OLLAMA_ENDPOINT:-http://localhost:11434/v1}"
-HF_MODEL_PATH="${HF_MODEL_PATH:-}"
 
 # ── Fixed paths (relative to ROOT_DIR) ────────────────────────────────────
-ARTIFACTS_ROOT="$ROOT_DIR/Multi-Turn RL/Simulation_4/artifacts"
-PIPELINE_SCRIPT="$ROOT_DIR/Multi-Turn RL/Simulation_4/scripts/phase10_full_pipeline.py"
+ARTIFACTS_ROOT="$ROOT_DIR/multiturn_rl/simulation/artifacts"
+PIPELINE_SCRIPT="$ROOT_DIR/multiturn_rl/simulation/scripts/phase10_full_pipeline.py"
 EXPORT_SCRIPT="$ROOT_DIR/tools/export_multiturn_results.py"
 
 # ── Helper: copy best/final model zips to best_model/<approach>/ ──────────
 _copy_best_model() {
-  local src_artifacts="$1"   # e.g. .../artifacts
-  local src_subdir="$2"      # e.g. run_numerical
-  local dest_dir="$3"        # e.g. best_model/numerical
+  local src_artifacts="$1"
+  local src_subdir="$2"
+  local dest_dir="$3"
 
   mkdir -p "$dest_dir"
   for f in best_model.zip final_model.zip; do

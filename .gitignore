@@ -10,5 +10,9 @@ __pycache__/
 
 *.csv
 *.parquet
-/Multi-Turn RL/Qwen2.5-7B-Instruct-merged
+/multiturn_rl/Qwen2.5-7B-Instruct-merged
 dataset/abcd_v1.1.json
+
+# Generated training outputs
+output/
+best_model/
