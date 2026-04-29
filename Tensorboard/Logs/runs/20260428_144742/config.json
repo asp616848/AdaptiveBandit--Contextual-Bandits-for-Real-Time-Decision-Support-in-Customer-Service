@@ -1,0 +1,15 @@
+{
+  "run_id": "20260428_144742",
+  "timesteps": 5000000,
+  "n_envs": 1,
+  "output_subdir": "rl_qwen_long",
+  "backend": "local",
+  "model_path": "Qwen2.5-7B-Instruct-merged",
+  "customer_model": "local-qwen",
+  "intent_model": "local-qwen",
+  "agent_model": "local-qwen",
+  "metrics_eval_freq": 500,
+  "heartbeat_freq_steps": 25,
+  "checkpoint": "",
+  "artifact_run_dir": "Simulation_4/artifacts/rl_qwen_long/runs/20260428_144742"
+}

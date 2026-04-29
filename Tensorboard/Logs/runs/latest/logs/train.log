@@ -1,0 +1,1698 @@
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:00<00:06,  1.25it/s]Loading checkpoint shards:  22%|██▏       | 2/9 [00:01<00:05,  1.32it/s]Loading checkpoint shards:  33%|███▎      | 3/9 [00:02<00:04,  1.35it/s]Loading checkpoint shards:  44%|████▍     | 4/9 [00:02<00:03,  1.36it/s]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:03<00:02,  1.41it/s]Loading checkpoint shards:  67%|██████▋   | 6/9 [00:04<00:02,  1.39it/s]Loading checkpoint shards:  78%|███████▊  | 7/9 [00:05<00:01,  1.42it/s]Loading checkpoint shards:  89%|████████▉ | 8/9 [00:05<00:00,  1.61it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:05<00:00,  1.86it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:05<00:00,  1.54it/s]
+Using cuda device
+/data/interns/studentiotlab/venv/lib64/python3.11/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+Logging to Simulation_4/artifacts/rl_qwen_long/tensorboard/PPO_1
+[Progress] 0.00% | 24/5,000,000 steps | 0.2974 steps/s | ETA 4669h 59m 17s
+[Progress] 0.00% | 49/5,000,000 steps | 0.3424 steps/s | ETA 4056h 16m 48s
+[Progress] 0.00% | 74/5,000,000 steps | 0.3441 steps/s | ETA 4035h 50m 38s
+[Progress] 0.00% | 99/5,000,000 steps | 0.3353 steps/s | ETA 4141h 35m 27s
+[Progress] 0.00% | 124/5,000,000 steps | 0.3390 steps/s | ETA 4096h 31m 33s
+[Progress] 0.00% | 149/5,000,000 steps | 0.3479 steps/s | ETA 3992h 26m 24s
+[Progress] 0.00% | 174/5,000,000 steps | 0.3480 steps/s | ETA 3991h 21m 8s
+[Progress] 0.00% | 199/5,000,000 steps | 0.3514 steps/s | ETA 3952h 41m 43s
+[Progress] 0.00% | 224/5,000,000 steps | 0.3510 steps/s | ETA 3956h 34m 30s
+[Progress] 0.01% | 249/5,000,000 steps | 0.3459 steps/s | ETA 4014h 44m 12s
+[Progress] 0.01% | 274/5,000,000 steps | 0.3416 steps/s | ETA 4066h 10m 17s
+[Progress] 0.01% | 299/5,000,000 steps | 0.3432 steps/s | ETA 4046h 44m 30s
+[Progress] 0.01% | 324/5,000,000 steps | 0.3470 steps/s | ETA 4002h 18m 9s
+[Progress] 0.01% | 349/5,000,000 steps | 0.3487 steps/s | ETA 3982h 15m 50s
+[Progress] 0.01% | 374/5,000,000 steps | 0.3484 steps/s | ETA 3985h 57m 16s
+[Progress] 0.01% | 399/5,000,000 steps | 0.3480 steps/s | ETA 3990h 36m 38s
+[Progress] 0.01% | 424/5,000,000 steps | 0.3494 steps/s | ETA 3974h 50m 25s
+[Progress] 0.01% | 449/5,000,000 steps | 0.3503 steps/s | ETA 3964h 17m 46s
+[Progress] 0.01% | 474/5,000,000 steps | 0.3500 steps/s | ETA 3968h 21m 9s
+[Progress] 0.01% | 499/5,000,000 steps | 0.3507 steps/s | ETA 3960h 16m 48s
+Step 500 | Mean reward: -3.871 | Resolution: 2.4% | Escalation: 92.9%
+[Progress] 0.01% | 524/5,000,000 steps | 0.3512 steps/s | ETA 3954h 7m 35s
+[Progress] 0.01% | 549/5,000,000 steps | 0.3522 steps/s | ETA 3943h 21m 13s
+[Progress] 0.01% | 574/5,000,000 steps | 0.3526 steps/s | ETA 3938h 34m 20s
+[Progress] 0.01% | 599/5,000,000 steps | 0.3525 steps/s | ETA 3939h 12m 10s
+[Progress] 0.01% | 624/5,000,000 steps | 0.3520 steps/s | ETA 3945h 45m 44s
+[Progress] 0.01% | 649/5,000,000 steps | 0.3526 steps/s | ETA 3938h 20m 49s
+[Progress] 0.01% | 674/5,000,000 steps | 0.3533 steps/s | ETA 3930h 15m 46s
+[Progress] 0.01% | 699/5,000,000 steps | 0.3537 steps/s | ETA 3925h 48m 22s
+[Progress] 0.01% | 724/5,000,000 steps | 0.3546 steps/s | ETA 3916h 17m 53s
+[Progress] 0.01% | 749/5,000,000 steps | 0.3548 steps/s | ETA 3913h 42m 43s
+[Progress] 0.02% | 774/5,000,000 steps | 0.3559 steps/s | ETA 3901h 19m 34s
+[Progress] 0.02% | 799/5,000,000 steps | 0.3561 steps/s | ETA 3900h 11m 51s
+[Progress] 0.02% | 824/5,000,000 steps | 0.3559 steps/s | ETA 3901h 42m 25s
+[Progress] 0.02% | 849/5,000,000 steps | 0.3559 steps/s | ETA 3901h 50m 38s
+[Progress] 0.02% | 874/5,000,000 steps | 0.3566 steps/s | ETA 3894h 26m 36s
+[Progress] 0.02% | 899/5,000,000 steps | 0.3570 steps/s | ETA 3889h 23m 34s
+[Progress] 0.02% | 924/5,000,000 steps | 0.3570 steps/s | ETA 3889h 49m 14s
+[Progress] 0.02% | 949/5,000,000 steps | 0.3567 steps/s | ETA 3893h 29m 33s
+[Progress] 0.02% | 974/5,000,000 steps | 0.3569 steps/s | ETA 3890h 37m 10s
+[Progress] 0.02% | 999/5,000,000 steps | 0.3558 steps/s | ETA 3902h 41m 8s
+Step 1,000 | Mean reward: -3.049 | Resolution: 8.2% | Escalation: 87.7%
+[Progress] 0.02% | 1,024/5,000,000 steps | 0.3552 steps/s | ETA 3909h 4m 25s
+[Progress] 0.02% | 1,049/5,000,000 steps | 0.3559 steps/s | ETA 3901h 13m 56s
+[Progress] 0.02% | 1,074/5,000,000 steps | 0.3553 steps/s | ETA 3908h 15m 42s
+[Progress] 0.02% | 1,099/5,000,000 steps | 0.3558 steps/s | ETA 3902h 39m 49s
+[Progress] 0.02% | 1,124/5,000,000 steps | 0.3562 steps/s | ETA 3898h 15m 35s
+[Progress] 0.02% | 1,149/5,000,000 steps | 0.3561 steps/s | ETA 3899h 26m 20s
+[Progress] 0.02% | 1,174/5,000,000 steps | 0.3564 steps/s | ETA 3896h 33m 50s
+[Progress] 0.02% | 1,199/5,000,000 steps | 0.3561 steps/s | ETA 3898h 52m 1s
+[Progress] 0.02% | 1,224/5,000,000 steps | 0.3560 steps/s | ETA 3900h 8m 48s
+[Progress] 0.03% | 1,249/5,000,000 steps | 0.3568 steps/s | ETA 3891h 49m 19s
+[Progress] 0.03% | 1,274/5,000,000 steps | 0.3570 steps/s | ETA 3889h 29m 22s
+[Progress] 0.03% | 1,299/5,000,000 steps | 0.3573 steps/s | ETA 3886h 14m 7s
+[Progress] 0.03% | 1,324/5,000,000 steps | 0.3579 steps/s | ETA 3879h 32m 47s
+[Progress] 0.03% | 1,349/5,000,000 steps | 0.3577 steps/s | ETA 3881h 45m 24s
+[Progress] 0.03% | 1,374/5,000,000 steps | 0.3574 steps/s | ETA 3884h 46m 14s
+[Progress] 0.03% | 1,399/5,000,000 steps | 0.3580 steps/s | ETA 3878h 39m 16s
+[Progress] 0.03% | 1,424/5,000,000 steps | 0.3581 steps/s | ETA 3877h 34m 11s
+[Progress] 0.03% | 1,449/5,000,000 steps | 0.3583 steps/s | ETA 3874h 48m 25s
+[Progress] 0.03% | 1,474/5,000,000 steps | 0.3587 steps/s | ETA 3871h 11m 49s
+[Progress] 0.03% | 1,499/5,000,000 steps | 0.3590 steps/s | ETA 3867h 9m 57s
+Step 1,500 | Mean reward: -3.598 | Resolution: 9.5% | Escalation: 85.3%
+[Progress] 0.03% | 1,524/5,000,000 steps | 0.3592 steps/s | ETA 3865h 13m 4s
+[Progress] 0.03% | 1,549/5,000,000 steps | 0.3552 steps/s | ETA 3908h 25m 38s
+[Progress] 0.03% | 1,574/5,000,000 steps | 0.3541 steps/s | ETA 3920h 37m 40s
+[Progress] 0.03% | 1,599/5,000,000 steps | 0.3539 steps/s | ETA 3922h 54m 40s
+[Progress] 0.03% | 1,624/5,000,000 steps | 0.3535 steps/s | ETA 3927h 57m 17s
+[Progress] 0.03% | 1,649/5,000,000 steps | 0.3537 steps/s | ETA 3925h 54m 2s
+[Progress] 0.03% | 1,674/5,000,000 steps | 0.3538 steps/s | ETA 3924h 0m 31s
+[Progress] 0.03% | 1,699/5,000,000 steps | 0.3543 steps/s | ETA 3919h 11m 22s
+[Progress] 0.03% | 1,724/5,000,000 steps | 0.3549 steps/s | ETA 3912h 24m 45s
+[Progress] 0.04% | 1,749/5,000,000 steps | 0.3549 steps/s | ETA 3912h 38m 25s
+[Progress] 0.04% | 1,774/5,000,000 steps | 0.3554 steps/s | ETA 3906h 26m 47s
+[Progress] 0.04% | 1,799/5,000,000 steps | 0.3555 steps/s | ETA 3905h 48m 30s
+[Progress] 0.04% | 1,824/5,000,000 steps | 0.3554 steps/s | ETA 3906h 17m 43s
+[Progress] 0.04% | 1,849/5,000,000 steps | 0.3558 steps/s | ETA 3902h 12m 44s
+[Progress] 0.04% | 1,874/5,000,000 steps | 0.3557 steps/s | ETA 3902h 42m 7s
+[Progress] 0.04% | 1,899/5,000,000 steps | 0.3554 steps/s | ETA 3906h 51m 19s
+[Progress] 0.04% | 1,924/5,000,000 steps | 0.3555 steps/s | ETA 3905h 2m 5s
+[Progress] 0.04% | 1,949/5,000,000 steps | 0.3558 steps/s | ETA 3902h 17m 50s
+[Progress] 0.04% | 1,974/5,000,000 steps | 0.3563 steps/s | ETA 3896h 36m 35s
+[Progress] 0.04% | 1,999/5,000,000 steps | 0.3564 steps/s | ETA 3895h 54m 5s
+Step 2,000 | Mean reward: -3.619 | Resolution: 8.8% | Escalation: 85.0%
+[Progress] 0.04% | 2,024/5,000,000 steps | 0.3561 steps/s | ETA 3898h 49m 10s
+-------------------------------------------
+| custom/                      |          |
+|    dropout_rate              | 0.0625   |
+|    escalation_rate           | 0.85     |
+|    mean_episode_length_100ep | 3.65     |
+|    mean_reward_100ep         | -3.62    |
+|    resolution_rate           | 0.0875   |
+|    timeout_rate              | 0        |
+| progress/                    |          |
+|    percent                   | 0.0405   |
+|    steps_per_second          | 0.356    |
+| rollout/                     |          |
+|    ep_len_mean               | 3.77     |
+|    ep_rew_mean               | -3.58    |
+| time/                        |          |
+|    fps                       | 0        |
+|    iterations                | 1        |
+|    time_elapsed              | 5749     |
+|    total_timesteps           | 2048     |
+-------------------------------------------
+[Progress] 0.04% | 2,049/5,000,000 steps | 0.3562 steps/s | ETA 3897h 28m 40s
+[Progress] 0.04% | 2,074/5,000,000 steps | 0.3563 steps/s | ETA 3896h 56m 56s
+[Progress] 0.04% | 2,099/5,000,000 steps | 0.3568 steps/s | ETA 3890h 54m 34s
+[Progress] 0.04% | 2,124/5,000,000 steps | 0.3574 steps/s | ETA 3884h 31m 58s
+[Progress] 0.04% | 2,149/5,000,000 steps | 0.3574 steps/s | ETA 3884h 23m 1s
+[Progress] 0.04% | 2,174/5,000,000 steps | 0.3576 steps/s | ETA 3882h 26m 0s
+[Progress] 0.04% | 2,199/5,000,000 steps | 0.3577 steps/s | ETA 3880h 37m 54s
+[Progress] 0.04% | 2,224/5,000,000 steps | 0.3573 steps/s | ETA 3884h 54m 33s
+[Progress] 0.04% | 2,249/5,000,000 steps | 0.3577 steps/s | ETA 3880h 51m 56s
+[Progress] 0.05% | 2,274/5,000,000 steps | 0.3580 steps/s | ETA 3877h 50m 41s
+[Progress] 0.05% | 2,299/5,000,000 steps | 0.3582 steps/s | ETA 3876h 9m 4s
+[Progress] 0.05% | 2,324/5,000,000 steps | 0.3583 steps/s | ETA 3874h 45m 25s
+[Progress] 0.05% | 2,349/5,000,000 steps | 0.3585 steps/s | ETA 3872h 38m 43s
+[Progress] 0.05% | 2,374/5,000,000 steps | 0.3588 steps/s | ETA 3869h 11m 16s
+[Progress] 0.05% | 2,399/5,000,000 steps | 0.3587 steps/s | ETA 3869h 52m 50s
+[Progress] 0.05% | 2,424/5,000,000 steps | 0.3588 steps/s | ETA 3869h 7m 55s
+[Progress] 0.05% | 2,449/5,000,000 steps | 0.3590 steps/s | ETA 3867h 11m 55s
+[Progress] 0.05% | 2,474/5,000,000 steps | 0.3587 steps/s | ETA 3869h 48m 16s
+[Progress] 0.05% | 2,499/5,000,000 steps | 0.3583 steps/s | ETA 3874h 38m 51s
+Step 2,500 | Mean reward: -2.608 | Resolution: 12.7% | Escalation: 81.0%
+[Progress] 0.05% | 2,524/5,000,000 steps | 0.3584 steps/s | ETA 3873h 0m 27s
+[Progress] 0.05% | 2,549/5,000,000 steps | 0.3583 steps/s | ETA 3874h 27m 2s
+[Progress] 0.05% | 2,574/5,000,000 steps | 0.3585 steps/s | ETA 3871h 54m 12s
+[Progress] 0.05% | 2,599/5,000,000 steps | 0.3585 steps/s | ETA 3871h 55m 48s
+[Progress] 0.05% | 2,624/5,000,000 steps | 0.3587 steps/s | ETA 3870h 20m 27s
+[Progress] 0.05% | 2,649/5,000,000 steps | 0.3580 steps/s | ETA 3877h 14m 7s
+[Progress] 0.05% | 2,674/5,000,000 steps | 0.3569 steps/s | ETA 3888h 56m 4s
+[Progress] 0.05% | 2,699/5,000,000 steps | 0.3571 steps/s | ETA 3887h 16m 8s
+[Progress] 0.05% | 2,724/5,000,000 steps | 0.3574 steps/s | ETA 3884h 15m 57s
+[Progress] 0.06% | 2,749/5,000,000 steps | 0.3575 steps/s | ETA 3882h 53m 24s
+[Progress] 0.06% | 2,774/5,000,000 steps | 0.3575 steps/s | ETA 3882h 28m 26s
+[Progress] 0.06% | 2,799/5,000,000 steps | 0.3573 steps/s | ETA 3884h 30m 50s
+[Progress] 0.06% | 2,824/5,000,000 steps | 0.3566 steps/s | ETA 3892h 58m 15s
+[Progress] 0.06% | 2,849/5,000,000 steps | 0.3561 steps/s | ETA 3897h 49m 34s
+[Progress] 0.06% | 2,874/5,000,000 steps | 0.3565 steps/s | ETA 3893h 34m 31s
+[Progress] 0.06% | 2,899/5,000,000 steps | 0.3564 steps/s | ETA 3894h 15m 4s
+[Progress] 0.06% | 2,924/5,000,000 steps | 0.3565 steps/s | ETA 3894h 0m 1s
+[Progress] 0.06% | 2,949/5,000,000 steps | 0.3567 steps/s | ETA 3891h 50m 0s
+[Progress] 0.06% | 2,974/5,000,000 steps | 0.3569 steps/s | ETA 3889h 14m 47s
+[Progress] 0.06% | 2,999/5,000,000 steps | 0.3573 steps/s | ETA 3885h 13m 5s
+Step 3,000 | Mean reward: -3.262 | Resolution: 14.5% | Escalation: 79.2%
+[Progress] 0.06% | 3,024/5,000,000 steps | 0.3573 steps/s | ETA 3884h 49m 26s
+[Progress] 0.06% | 3,049/5,000,000 steps | 0.3575 steps/s | ETA 3882h 7m 1s
+[Progress] 0.06% | 3,074/5,000,000 steps | 0.3578 steps/s | ETA 3879h 48m 18s
+[Progress] 0.06% | 3,099/5,000,000 steps | 0.3579 steps/s | ETA 3878h 10m 45s
+[Progress] 0.06% | 3,124/5,000,000 steps | 0.3575 steps/s | ETA 3882h 25m 2s
+[Progress] 0.06% | 3,149/5,000,000 steps | 0.3575 steps/s | ETA 3882h 19m 23s
+[Progress] 0.06% | 3,174/5,000,000 steps | 0.3575 steps/s | ETA 3882h 19m 24s
+[Progress] 0.06% | 3,199/5,000,000 steps | 0.3576 steps/s | ETA 3880h 57m 30s
+[Progress] 0.06% | 3,224/5,000,000 steps | 0.3575 steps/s | ETA 3882h 43m 11s
+[Progress] 0.07% | 3,249/5,000,000 steps | 0.3577 steps/s | ETA 3880h 29m 49s
+[Progress] 0.07% | 3,274/5,000,000 steps | 0.3575 steps/s | ETA 3882h 7m 28s
+[Progress] 0.07% | 3,299/5,000,000 steps | 0.3570 steps/s | ETA 3888h 7m 6s
+[Progress] 0.07% | 3,324/5,000,000 steps | 0.3570 steps/s | ETA 3887h 34m 36s
+[Progress] 0.07% | 3,349/5,000,000 steps | 0.3572 steps/s | ETA 3885h 33m 18s
+[Progress] 0.07% | 3,374/5,000,000 steps | 0.3570 steps/s | ETA 3887h 44m 31s
+[Progress] 0.07% | 3,399/5,000,000 steps | 0.3571 steps/s | ETA 3886h 51m 57s
+[Progress] 0.07% | 3,424/5,000,000 steps | 0.3571 steps/s | ETA 3886h 25m 13s
+[Progress] 0.07% | 3,449/5,000,000 steps | 0.3574 steps/s | ETA 3883h 30m 6s
+[Progress] 0.07% | 3,474/5,000,000 steps | 0.3572 steps/s | ETA 3885h 15m 0s
+[Progress] 0.07% | 3,499/5,000,000 steps | 0.3569 steps/s | ETA 3888h 50m 44s
+Step 3,500 | Mean reward: -3.576 | Resolution: 13.1% | Escalation: 79.8%
+[Progress] 0.07% | 3,524/5,000,000 steps | 0.3569 steps/s | ETA 3888h 55m 12s
+[Progress] 0.07% | 3,549/5,000,000 steps | 0.3571 steps/s | ETA 3887h 0m 49s
+[Progress] 0.07% | 3,574/5,000,000 steps | 0.3572 steps/s | ETA 3885h 52m 25s
+[Progress] 0.07% | 3,599/5,000,000 steps | 0.3572 steps/s | ETA 3885h 13m 6s
+[Progress] 0.07% | 3,624/5,000,000 steps | 0.3573 steps/s | ETA 3884h 27m 33s
+[Progress] 0.07% | 3,649/5,000,000 steps | 0.3572 steps/s | ETA 3885h 45m 39s
+[Progress] 0.07% | 3,674/5,000,000 steps | 0.3571 steps/s | ETA 3886h 6m 8s
+[Progress] 0.07% | 3,699/5,000,000 steps | 0.3573 steps/s | ETA 3884h 37m 42s
+[Progress] 0.07% | 3,724/5,000,000 steps | 0.3569 steps/s | ETA 3888h 20m 23s
+[Progress] 0.07% | 3,749/5,000,000 steps | 0.3571 steps/s | ETA 3886h 31m 7s
+[Progress] 0.08% | 3,774/5,000,000 steps | 0.3570 steps/s | ETA 3887h 13m 6s
+[Progress] 0.08% | 3,799/5,000,000 steps | 0.3571 steps/s | ETA 3886h 21m 7s
+[Progress] 0.08% | 3,824/5,000,000 steps | 0.3572 steps/s | ETA 3885h 13m 54s
+[Progress] 0.08% | 3,849/5,000,000 steps | 0.3570 steps/s | ETA 3887h 48m 36s
+[Progress] 0.08% | 3,874/5,000,000 steps | 0.3572 steps/s | ETA 3884h 55m 1s
+[Progress] 0.08% | 3,899/5,000,000 steps | 0.3573 steps/s | ETA 3883h 44m 10s
+[Progress] 0.08% | 3,924/5,000,000 steps | 0.3574 steps/s | ETA 3882h 57m 56s
+[Progress] 0.08% | 3,949/5,000,000 steps | 0.3571 steps/s | ETA 3886h 0m 24s
+[Progress] 0.08% | 3,974/5,000,000 steps | 0.3572 steps/s | ETA 3885h 15m 44s
+[Progress] 0.08% | 3,999/5,000,000 steps | 0.3572 steps/s | ETA 3884h 48m 38s
+Step 4,000 | Mean reward: -3.259 | Resolution: 13.3% | Escalation: 78.3%
+[Progress] 0.08% | 4,024/5,000,000 steps | 0.3574 steps/s | ETA 3882h 25m 51s
+[Progress] 0.08% | 4,049/5,000,000 steps | 0.3576 steps/s | ETA 3880h 33m 12s
+[Progress] 0.08% | 4,074/5,000,000 steps | 0.3576 steps/s | ETA 3880h 36m 52s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.0839      |
+|    escalation_rate           | 0.783       |
+|    mean_episode_length_100ep | 3.52        |
+|    mean_reward_100ep         | -3.26       |
+|    resolution_rate           | 0.133       |
+|    timeout_rate              | 0           |
+| progress/                    |             |
+|    percent                   | 0.0815      |
+|    steps_per_second          | 0.358       |
+| rollout/                     |             |
+|    ep_len_mean               | 3.32        |
+|    ep_rew_mean               | -2.87       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 2           |
+|    time_elapsed              | 11448       |
+|    total_timesteps           | 4096        |
+| train/                       |             |
+|    approx_kl                 | 0.016339397 |
+|    clip_fraction             | 0.206       |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.6        |
+|    explained_variance        | -0.00146    |
+|    learning_rate             | 0.0003      |
+|    loss                      | 4.28        |
+|    n_updates                 | 10          |
+|    policy_gradient_loss      | -0.019      |
+|    value_loss                | 8.58        |
+----------------------------------------------
+[Progress] 0.08% | 4,099/5,000,000 steps | 0.3578 steps/s | ETA 3878h 35m 18s
+[Progress] 0.08% | 4,124/5,000,000 steps | 0.3578 steps/s | ETA 3879h 4m 30s
+[Progress] 0.08% | 4,149/5,000,000 steps | 0.3577 steps/s | ETA 3879h 17m 9s
+[Progress] 0.08% | 4,174/5,000,000 steps | 0.3578 steps/s | ETA 3878h 14m 13s
+[Progress] 0.08% | 4,199/5,000,000 steps | 0.3580 steps/s | ETA 3876h 1m 44s
+[Progress] 0.08% | 4,224/5,000,000 steps | 0.3581 steps/s | ETA 3875h 0m 56s
+[Progress] 0.09% | 4,249/5,000,000 steps | 0.3583 steps/s | ETA 3873h 14m 21s
+[Progress] 0.09% | 4,274/5,000,000 steps | 0.3585 steps/s | ETA 3871h 0m 46s
+[Progress] 0.09% | 4,299/5,000,000 steps | 0.3586 steps/s | ETA 3869h 56m 59s
+[Progress] 0.09% | 4,324/5,000,000 steps | 0.3587 steps/s | ETA 3868h 46m 28s
+[Progress] 0.09% | 4,349/5,000,000 steps | 0.3588 steps/s | ETA 3867h 40m 57s
+[Progress] 0.09% | 4,374/5,000,000 steps | 0.3590 steps/s | ETA 3865h 51m 39s
+[Progress] 0.09% | 4,399/5,000,000 steps | 0.3589 steps/s | ETA 3866h 7m 58s
+[Progress] 0.09% | 4,424/5,000,000 steps | 0.3590 steps/s | ETA 3865h 51m 7s
+[Progress] 0.09% | 4,449/5,000,000 steps | 0.3589 steps/s | ETA 3866h 35m 21s
+[Progress] 0.09% | 4,474/5,000,000 steps | 0.3589 steps/s | ETA 3866h 29m 13s
+[Progress] 0.09% | 4,499/5,000,000 steps | 0.3590 steps/s | ETA 3864h 45m 14s
+Step 4,500 | Mean reward: -2.976 | Resolution: 14.5% | Escalation: 77.4%
+[Progress] 0.09% | 4,524/5,000,000 steps | 0.3592 steps/s | ETA 3863h 33m 41s
+[Progress] 0.09% | 4,549/5,000,000 steps | 0.3594 steps/s | ETA 3860h 55m 14s
+[Progress] 0.09% | 4,574/5,000,000 steps | 0.3594 steps/s | ETA 3861h 9m 55s
+[Progress] 0.09% | 4,599/5,000,000 steps | 0.3595 steps/s | ETA 3860h 13m 57s
+[Progress] 0.09% | 4,624/5,000,000 steps | 0.3595 steps/s | ETA 3859h 17m 16s
+[Progress] 0.09% | 4,649/5,000,000 steps | 0.3595 steps/s | ETA 3860h 14m 15s
+[Progress] 0.09% | 4,674/5,000,000 steps | 0.3593 steps/s | ETA 3861h 23m 31s
+[Progress] 0.09% | 4,699/5,000,000 steps | 0.3596 steps/s | ETA 3859h 6m 45s
+[Progress] 0.09% | 4,724/5,000,000 steps | 0.3596 steps/s | ETA 3858h 35m 46s
+[Progress] 0.10% | 4,749/5,000,000 steps | 0.3598 steps/s | ETA 3856h 23m 43s
+[Progress] 0.10% | 4,774/5,000,000 steps | 0.3599 steps/s | ETA 3855h 27m 58s
+[Progress] 0.10% | 4,799/5,000,000 steps | 0.3599 steps/s | ETA 3855h 53m 52s
+[Progress] 0.10% | 4,824/5,000,000 steps | 0.3599 steps/s | ETA 3855h 3m 3s
+[Progress] 0.10% | 4,849/5,000,000 steps | 0.3599 steps/s | ETA 3855h 50m 56s
+[Progress] 0.10% | 4,874/5,000,000 steps | 0.3594 steps/s | ETA 3860h 12m 35s
+[Progress] 0.10% | 4,899/5,000,000 steps | 0.3594 steps/s | ETA 3860h 57m 19s
+[Progress] 0.10% | 4,924/5,000,000 steps | 0.3593 steps/s | ETA 3861h 53m 47s
+[Progress] 0.10% | 4,949/5,000,000 steps | 0.3594 steps/s | ETA 3860h 26m 6s
+[Progress] 0.10% | 4,974/5,000,000 steps | 0.3595 steps/s | ETA 3859h 33m 24s
+[Progress] 0.10% | 4,999/5,000,000 steps | 0.3596 steps/s | ETA 3858h 33m 24s
+Step 5,000 | Mean reward: -3.184 | Resolution: 15.3% | Escalation: 77.0%
+[Progress] 0.10% | 5,024/5,000,000 steps | 0.3597 steps/s | ETA 3857h 39m 3s
+[Progress] 0.10% | 5,049/5,000,000 steps | 0.3597 steps/s | ETA 3857h 8m 42s
+[Progress] 0.10% | 5,074/5,000,000 steps | 0.3597 steps/s | ETA 3857h 32m 40s
+[Progress] 0.10% | 5,099/5,000,000 steps | 0.3597 steps/s | ETA 3857h 47m 31s
+[Progress] 0.10% | 5,124/5,000,000 steps | 0.3597 steps/s | ETA 3857h 30m 5s
+[Progress] 0.10% | 5,149/5,000,000 steps | 0.3600 steps/s | ETA 3854h 28m 30s
+[Progress] 0.10% | 5,174/5,000,000 steps | 0.3600 steps/s | ETA 3853h 48m 38s
+[Progress] 0.10% | 5,199/5,000,000 steps | 0.3600 steps/s | ETA 3853h 52m 13s
+[Progress] 0.10% | 5,224/5,000,000 steps | 0.3600 steps/s | ETA 3853h 45m 16s
+[Progress] 0.10% | 5,249/5,000,000 steps | 0.3600 steps/s | ETA 3853h 37m 44s
+[Progress] 0.11% | 5,274/5,000,000 steps | 0.3600 steps/s | ETA 3854h 1m 20s
+[Progress] 0.11% | 5,299/5,000,000 steps | 0.3598 steps/s | ETA 3856h 32m 38s
+[Progress] 0.11% | 5,324/5,000,000 steps | 0.3596 steps/s | ETA 3858h 29m 2s
+[Progress] 0.11% | 5,349/5,000,000 steps | 0.3595 steps/s | ETA 3859h 0m 18s
+[Progress] 0.11% | 5,374/5,000,000 steps | 0.3595 steps/s | ETA 3859h 4m 55s
+[Progress] 0.11% | 5,399/5,000,000 steps | 0.3595 steps/s | ETA 3858h 42m 23s
+[Progress] 0.11% | 5,424/5,000,000 steps | 0.3597 steps/s | ETA 3857h 26m 9s
+[Progress] 0.11% | 5,449/5,000,000 steps | 0.3598 steps/s | ETA 3855h 59m 28s
+[Progress] 0.11% | 5,474/5,000,000 steps | 0.3599 steps/s | ETA 3855h 11m 17s
+[Progress] 0.11% | 5,499/5,000,000 steps | 0.3600 steps/s | ETA 3853h 46m 40s
+Step 5,500 | Mean reward: -3.098 | Resolution: 15.9% | Escalation: 76.5%
+[Progress] 0.11% | 5,524/5,000,000 steps | 0.3600 steps/s | ETA 3853h 34m 7s
+[Progress] 0.11% | 5,549/5,000,000 steps | 0.3600 steps/s | ETA 3854h 10m 59s
+[Progress] 0.11% | 5,574/5,000,000 steps | 0.3600 steps/s | ETA 3853h 15m 51s
+[Progress] 0.11% | 5,599/5,000,000 steps | 0.3601 steps/s | ETA 3852h 33m 52s
+[Progress] 0.11% | 5,624/5,000,000 steps | 0.3599 steps/s | ETA 3854h 50m 16s
+[Progress] 0.11% | 5,649/5,000,000 steps | 0.3600 steps/s | ETA 3853h 18m 22s
+[Progress] 0.11% | 5,674/5,000,000 steps | 0.3601 steps/s | ETA 3852h 4m 19s
+[Progress] 0.11% | 5,699/5,000,000 steps | 0.3599 steps/s | ETA 3854h 13m 4s
+[Progress] 0.11% | 5,724/5,000,000 steps | 0.3601 steps/s | ETA 3852h 59m 51s
+[Progress] 0.12% | 5,749/5,000,000 steps | 0.3602 steps/s | ETA 3851h 53m 59s
+[Progress] 0.12% | 5,774/5,000,000 steps | 0.3603 steps/s | ETA 3850h 37m 36s
+[Progress] 0.12% | 5,799/5,000,000 steps | 0.3605 steps/s | ETA 3848h 2m 33s
+[Progress] 0.12% | 5,824/5,000,000 steps | 0.3605 steps/s | ETA 3848h 22m 37s
+[Progress] 0.12% | 5,849/5,000,000 steps | 0.3605 steps/s | ETA 3848h 39m 36s
+[Progress] 0.12% | 5,874/5,000,000 steps | 0.3604 steps/s | ETA 3849h 7m 18s
+[Progress] 0.12% | 5,899/5,000,000 steps | 0.3602 steps/s | ETA 3851h 5m 59s
+[Progress] 0.12% | 5,924/5,000,000 steps | 0.3600 steps/s | ETA 3853h 15m 28s
+[Progress] 0.12% | 5,949/5,000,000 steps | 0.3601 steps/s | ETA 3852h 52m 5s
+[Progress] 0.12% | 5,974/5,000,000 steps | 0.3600 steps/s | ETA 3853h 49m 16s
+[Progress] 0.12% | 5,999/5,000,000 steps | 0.3598 steps/s | ETA 3855h 28m 4s
+Step 6,000 | Mean reward: -3.316 | Resolution: 16.3% | Escalation: 76.1%
+[Progress] 0.12% | 6,024/5,000,000 steps | 0.3599 steps/s | ETA 3854h 10m 13s
+[Progress] 0.12% | 6,049/5,000,000 steps | 0.3601 steps/s | ETA 3852h 46m 7s
+[Progress] 0.12% | 6,074/5,000,000 steps | 0.3601 steps/s | ETA 3851h 44m 46s
+[Progress] 0.12% | 6,099/5,000,000 steps | 0.3602 steps/s | ETA 3851h 35m 26s
+[Progress] 0.12% | 6,124/5,000,000 steps | 0.3597 steps/s | ETA 3855h 59m 3s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.0761      |
+|    escalation_rate           | 0.761       |
+|    mean_episode_length_100ep | 3.11        |
+|    mean_reward_100ep         | -3.32       |
+|    resolution_rate           | 0.163       |
+|    timeout_rate              | 0           |
+| progress/                    |             |
+|    percent                   | 0.122       |
+|    steps_per_second          | 0.36        |
+| rollout/                     |             |
+|    ep_len_mean               | 3.13        |
+|    ep_rew_mean               | -3.02       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 3           |
+|    time_elapsed              | 17077       |
+|    total_timesteps           | 6144        |
+| train/                       |             |
+|    approx_kl                 | 0.013281276 |
+|    clip_fraction             | 0.192       |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.56       |
+|    explained_variance        | -0.00802    |
+|    learning_rate             | 0.0003      |
+|    loss                      | 3.95        |
+|    n_updates                 | 20          |
+|    policy_gradient_loss      | -0.0141     |
+|    value_loss                | 8.68        |
+----------------------------------------------
+[Progress] 0.12% | 6,149/5,000,000 steps | 0.3598 steps/s | ETA 3855h 54m 31s
+[Progress] 0.12% | 6,174/5,000,000 steps | 0.3596 steps/s | ETA 3857h 15m 47s
+[Progress] 0.12% | 6,199/5,000,000 steps | 0.3595 steps/s | ETA 3858h 16m 6s
+[Progress] 0.12% | 6,224/5,000,000 steps | 0.3596 steps/s | ETA 3857h 0m 58s
+[Progress] 0.12% | 6,249/5,000,000 steps | 0.3597 steps/s | ETA 3855h 56m 46s
+[Progress] 0.13% | 6,274/5,000,000 steps | 0.3598 steps/s | ETA 3854h 57m 9s
+[Progress] 0.13% | 6,299/5,000,000 steps | 0.3599 steps/s | ETA 3854h 32m 23s
+[Progress] 0.13% | 6,324/5,000,000 steps | 0.3598 steps/s | ETA 3855h 11m 9s
+[Progress] 0.13% | 6,349/5,000,000 steps | 0.3599 steps/s | ETA 3854h 8m 14s
+[Progress] 0.13% | 6,374/5,000,000 steps | 0.3598 steps/s | ETA 3855h 10m 21s
+[Progress] 0.13% | 6,399/5,000,000 steps | 0.3598 steps/s | ETA 3855h 32m 28s
+[Progress] 0.13% | 6,424/5,000,000 steps | 0.3597 steps/s | ETA 3856h 2m 4s
+[Progress] 0.13% | 6,449/5,000,000 steps | 0.3597 steps/s | ETA 3856h 16m 27s
+[Progress] 0.13% | 6,474/5,000,000 steps | 0.3595 steps/s | ETA 3858h 33m 54s
+[Progress] 0.13% | 6,499/5,000,000 steps | 0.3595 steps/s | ETA 3858h 13m 46s
+Step 6,500 | Mean reward: -3.364 | Resolution: 16.5% | Escalation: 75.4%
+[Progress] 0.13% | 6,524/5,000,000 steps | 0.3597 steps/s | ETA 3855h 58m 1s
+[Progress] 0.13% | 6,549/5,000,000 steps | 0.3598 steps/s | ETA 3855h 28m 47s
+[Progress] 0.13% | 6,574/5,000,000 steps | 0.3598 steps/s | ETA 3854h 51m 29s
+[Progress] 0.13% | 6,599/5,000,000 steps | 0.3598 steps/s | ETA 3854h 36m 0s
+[Progress] 0.13% | 6,624/5,000,000 steps | 0.3599 steps/s | ETA 3854h 1m 7s
+[Progress] 0.13% | 6,649/5,000,000 steps | 0.3600 steps/s | ETA 3853h 1m 12s
+[Progress] 0.13% | 6,674/5,000,000 steps | 0.3601 steps/s | ETA 3852h 19m 48s
+[Progress] 0.13% | 6,699/5,000,000 steps | 0.3602 steps/s | ETA 3850h 39m 17s
+[Progress] 0.13% | 6,724/5,000,000 steps | 0.3602 steps/s | ETA 3851h 10m 34s
+[Progress] 0.14% | 6,749/5,000,000 steps | 0.3595 steps/s | ETA 3857h 56m 46s
+[Progress] 0.14% | 6,774/5,000,000 steps | 0.3596 steps/s | ETA 3856h 53m 52s
+[Progress] 0.14% | 6,799/5,000,000 steps | 0.3596 steps/s | ETA 3856h 40m 6s
+[Progress] 0.14% | 6,824/5,000,000 steps | 0.3597 steps/s | ETA 3856h 25m 32s
+[Progress] 0.14% | 6,849/5,000,000 steps | 0.3596 steps/s | ETA 3857h 2m 21s
+[Progress] 0.14% | 6,874/5,000,000 steps | 0.3596 steps/s | ETA 3857h 5m 44s
+[Progress] 0.14% | 6,899/5,000,000 steps | 0.3597 steps/s | ETA 3855h 58m 48s
+[Progress] 0.14% | 6,924/5,000,000 steps | 0.3595 steps/s | ETA 3857h 42m 43s
+[Progress] 0.14% | 6,949/5,000,000 steps | 0.3595 steps/s | ETA 3857h 36m 56s
+[Progress] 0.14% | 6,974/5,000,000 steps | 0.3595 steps/s | ETA 3857h 28m 50s
+[Progress] 0.14% | 6,999/5,000,000 steps | 0.3596 steps/s | ETA 3857h 3m 5s
+Step 7,000 | Mean reward: -2.941 | Resolution: 17.4% | Escalation: 73.8%
+[Progress] 0.14% | 7,024/5,000,000 steps | 0.3597 steps/s | ETA 3855h 57m 37s
+[Progress] 0.14% | 7,049/5,000,000 steps | 0.3597 steps/s | ETA 3855h 19m 44s
+[Progress] 0.14% | 7,074/5,000,000 steps | 0.3597 steps/s | ETA 3855h 44m 57s
+[Progress] 0.14% | 7,099/5,000,000 steps | 0.3597 steps/s | ETA 3856h 2m 22s
+[Progress] 0.14% | 7,124/5,000,000 steps | 0.3596 steps/s | ETA 3856h 33m 25s
+[Progress] 0.14% | 7,149/5,000,000 steps | 0.3596 steps/s | ETA 3857h 8m 49s
+[Progress] 0.14% | 7,174/5,000,000 steps | 0.3597 steps/s | ETA 3855h 57m 45s
+[Progress] 0.14% | 7,199/5,000,000 steps | 0.3596 steps/s | ETA 3857h 8m 23s
+[Progress] 0.14% | 7,224/5,000,000 steps | 0.3596 steps/s | ETA 3856h 14m 30s
+[Progress] 0.14% | 7,249/5,000,000 steps | 0.3597 steps/s | ETA 3856h 1m 44s
+[Progress] 0.15% | 7,274/5,000,000 steps | 0.3597 steps/s | ETA 3855h 11m 43s
+[Progress] 0.15% | 7,299/5,000,000 steps | 0.3598 steps/s | ETA 3854h 34m 49s
+[Progress] 0.15% | 7,324/5,000,000 steps | 0.3598 steps/s | ETA 3854h 23m 36s
+[Progress] 0.15% | 7,349/5,000,000 steps | 0.3599 steps/s | ETA 3853h 25m 29s
+[Progress] 0.15% | 7,374/5,000,000 steps | 0.3599 steps/s | ETA 3853h 22m 14s
+[Progress] 0.15% | 7,399/5,000,000 steps | 0.3600 steps/s | ETA 3852h 25m 8s
+[Progress] 0.15% | 7,424/5,000,000 steps | 0.3600 steps/s | ETA 3852h 24m 55s
+[Progress] 0.15% | 7,449/5,000,000 steps | 0.3600 steps/s | ETA 3851h 51m 42s
+[Progress] 0.15% | 7,474/5,000,000 steps | 0.3601 steps/s | ETA 3851h 35m 4s
+[Progress] 0.15% | 7,499/5,000,000 steps | 0.3601 steps/s | ETA 3851h 5m 15s
+Step 7,500 | Mean reward: -2.512 | Resolution: 19.2% | Escalation: 71.5%
+[Progress] 0.15% | 7,524/5,000,000 steps | 0.3600 steps/s | ETA 3852h 12m 41s
+[Progress] 0.15% | 7,549/5,000,000 steps | 0.3599 steps/s | ETA 3853h 15m 10s
+[Progress] 0.15% | 7,574/5,000,000 steps | 0.3600 steps/s | ETA 3852h 29m 8s
+[Progress] 0.15% | 7,599/5,000,000 steps | 0.3601 steps/s | ETA 3851h 26m 27s
+[Progress] 0.15% | 7,624/5,000,000 steps | 0.3601 steps/s | ETA 3851h 0m 49s
+[Progress] 0.15% | 7,649/5,000,000 steps | 0.3601 steps/s | ETA 3851h 14m 51s
+[Progress] 0.15% | 7,674/5,000,000 steps | 0.3599 steps/s | ETA 3852h 49m 31s
+[Progress] 0.15% | 7,699/5,000,000 steps | 0.3600 steps/s | ETA 3852h 16m 46s
+[Progress] 0.15% | 7,724/5,000,000 steps | 0.3600 steps/s | ETA 3851h 50m 39s
+[Progress] 0.15% | 7,749/5,000,000 steps | 0.3601 steps/s | ETA 3850h 43m 38s
+[Progress] 0.16% | 7,774/5,000,000 steps | 0.3602 steps/s | ETA 3849h 56m 43s
+[Progress] 0.16% | 7,799/5,000,000 steps | 0.3601 steps/s | ETA 3850h 53m 26s
+[Progress] 0.16% | 7,824/5,000,000 steps | 0.3601 steps/s | ETA 3851h 22m 35s
+[Progress] 0.16% | 7,849/5,000,000 steps | 0.3602 steps/s | ETA 3849h 55m 11s
+[Progress] 0.16% | 7,874/5,000,000 steps | 0.3603 steps/s | ETA 3848h 44m 53s
+[Progress] 0.16% | 7,899/5,000,000 steps | 0.3604 steps/s | ETA 3847h 38m 59s
+[Progress] 0.16% | 7,924/5,000,000 steps | 0.3605 steps/s | ETA 3846h 45m 28s
+[Progress] 0.16% | 7,949/5,000,000 steps | 0.3606 steps/s | ETA 3845h 33m 18s
+[Progress] 0.16% | 7,974/5,000,000 steps | 0.3606 steps/s | ETA 3845h 51m 7s
+[Progress] 0.16% | 7,999/5,000,000 steps | 0.3607 steps/s | ETA 3844h 39m 3s
+Step 8,000 | Mean reward: -2.821 | Resolution: 20.7% | Escalation: 69.9%
+[Progress] 0.16% | 8,024/5,000,000 steps | 0.3608 steps/s | ETA 3843h 31m 19s
+[Progress] 0.16% | 8,049/5,000,000 steps | 0.3608 steps/s | ETA 3842h 52m 28s
+[Progress] 0.16% | 8,074/5,000,000 steps | 0.3608 steps/s | ETA 3842h 52m 8s
+[Progress] 0.16% | 8,099/5,000,000 steps | 0.3609 steps/s | ETA 3842h 4m 18s
+[Progress] 0.16% | 8,124/5,000,000 steps | 0.3610 steps/s | ETA 3841h 24m 50s
+[Progress] 0.16% | 8,149/5,000,000 steps | 0.3610 steps/s | ETA 3841h 5m 32s
+[Progress] 0.16% | 8,174/5,000,000 steps | 0.3609 steps/s | ETA 3841h 37m 32s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.0943      |
+|    escalation_rate           | 0.699       |
+|    mean_episode_length_100ep | 3.34        |
+|    mean_reward_100ep         | -2.82       |
+|    resolution_rate           | 0.207       |
+|    timeout_rate              | 0           |
+| progress/                    |             |
+|    percent                   | 0.164       |
+|    steps_per_second          | 0.361       |
+| rollout/                     |             |
+|    ep_len_mean               | 3.41        |
+|    ep_rew_mean               | -3.18       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 4           |
+|    time_elapsed              | 22691       |
+|    total_timesteps           | 8192        |
+| train/                       |             |
+|    approx_kl                 | 0.012796423 |
+|    clip_fraction             | 0.0827      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.53       |
+|    explained_variance        | 0.00421     |
+|    learning_rate             | 0.0003      |
+|    loss                      | 2.78        |
+|    n_updates                 | 30          |
+|    policy_gradient_loss      | -0.0103     |
+|    value_loss                | 7.51        |
+----------------------------------------------
+[Progress] 0.16% | 8,199/5,000,000 steps | 0.3610 steps/s | ETA 3840h 57m 32s
+[Progress] 0.16% | 8,224/5,000,000 steps | 0.3610 steps/s | ETA 3840h 51m 33s
+[Progress] 0.17% | 8,249/5,000,000 steps | 0.3611 steps/s | ETA 3840h 7m 51s
+[Progress] 0.17% | 8,274/5,000,000 steps | 0.3612 steps/s | ETA 3839h 15m 12s
+[Progress] 0.17% | 8,299/5,000,000 steps | 0.3612 steps/s | ETA 3839h 11m 6s
+[Progress] 0.17% | 8,324/5,000,000 steps | 0.3612 steps/s | ETA 3838h 54m 21s
+[Progress] 0.17% | 8,349/5,000,000 steps | 0.3612 steps/s | ETA 3838h 27m 35s
+[Progress] 0.17% | 8,374/5,000,000 steps | 0.3612 steps/s | ETA 3838h 20m 34s
+[Progress] 0.17% | 8,399/5,000,000 steps | 0.3612 steps/s | ETA 3838h 41m 20s
+[Progress] 0.17% | 8,424/5,000,000 steps | 0.3612 steps/s | ETA 3838h 34m 7s
+[Progress] 0.17% | 8,449/5,000,000 steps | 0.3612 steps/s | ETA 3838h 30m 33s
+[Progress] 0.17% | 8,474/5,000,000 steps | 0.3613 steps/s | ETA 3837h 45m 12s
+[Progress] 0.17% | 8,499/5,000,000 steps | 0.3613 steps/s | ETA 3837h 10m 5s
+Step 8,500 | Mean reward: -2.997 | Resolution: 20.8% | Escalation: 69.3%
+[Progress] 0.17% | 8,524/5,000,000 steps | 0.3614 steps/s | ETA 3836h 46m 35s
+[Progress] 0.17% | 8,549/5,000,000 steps | 0.3614 steps/s | ETA 3836h 32m 8s
+[Progress] 0.17% | 8,574/5,000,000 steps | 0.3613 steps/s | ETA 3837h 43m 19s
+[Progress] 0.17% | 8,599/5,000,000 steps | 0.3612 steps/s | ETA 3838h 32m 8s
+[Progress] 0.17% | 8,624/5,000,000 steps | 0.3613 steps/s | ETA 3837h 56m 16s
+[Progress] 0.17% | 8,649/5,000,000 steps | 0.3613 steps/s | ETA 3837h 8m 25s
+[Progress] 0.17% | 8,674/5,000,000 steps | 0.3613 steps/s | ETA 3837h 28m 4s
+[Progress] 0.17% | 8,699/5,000,000 steps | 0.3613 steps/s | ETA 3837h 22m 30s
+[Progress] 0.17% | 8,724/5,000,000 steps | 0.3613 steps/s | ETA 3836h 59m 42s
+[Progress] 0.17% | 8,749/5,000,000 steps | 0.3613 steps/s | ETA 3837h 42m 50s
+[Progress] 0.18% | 8,774/5,000,000 steps | 0.3613 steps/s | ETA 3837h 8m 22s
+[Progress] 0.18% | 8,799/5,000,000 steps | 0.3614 steps/s | ETA 3835h 57m 43s
+[Progress] 0.18% | 8,824/5,000,000 steps | 0.3614 steps/s | ETA 3835h 56m 8s
+[Progress] 0.18% | 8,849/5,000,000 steps | 0.3615 steps/s | ETA 3835h 23m 32s
+[Progress] 0.18% | 8,874/5,000,000 steps | 0.3616 steps/s | ETA 3834h 24m 1s
+[Progress] 0.18% | 8,899/5,000,000 steps | 0.3616 steps/s | ETA 3834h 30m 55s
+[Progress] 0.18% | 8,924/5,000,000 steps | 0.3616 steps/s | ETA 3833h 34m 37s
+[Progress] 0.18% | 8,949/5,000,000 steps | 0.3618 steps/s | ETA 3832h 16m 10s
+[Progress] 0.18% | 8,974/5,000,000 steps | 0.3616 steps/s | ETA 3834h 20m 45s
+[Progress] 0.18% | 8,999/5,000,000 steps | 0.3614 steps/s | ETA 3836h 23m 42s
+Step 9,000 | Mean reward: -3.200 | Resolution: 21.1% | Escalation: 69.0%
+[Progress] 0.18% | 9,024/5,000,000 steps | 0.3615 steps/s | ETA 3835h 4m 19s
+[Progress] 0.18% | 9,049/5,000,000 steps | 0.3613 steps/s | ETA 3837h 3m 18s
+[Progress] 0.18% | 9,074/5,000,000 steps | 0.3613 steps/s | ETA 3837h 34m 2s
+[Progress] 0.18% | 9,099/5,000,000 steps | 0.3612 steps/s | ETA 3838h 20m 11s
+[Progress] 0.18% | 9,124/5,000,000 steps | 0.3611 steps/s | ETA 3839h 21m 2s
+[Progress] 0.18% | 9,149/5,000,000 steps | 0.3611 steps/s | ETA 3839h 5m 40s
+[Progress] 0.18% | 9,174/5,000,000 steps | 0.3609 steps/s | ETA 3841h 7m 25s
+[Progress] 0.18% | 9,199/5,000,000 steps | 0.3610 steps/s | ETA 3840h 41m 39s
+[Progress] 0.18% | 9,224/5,000,000 steps | 0.3610 steps/s | ETA 3840h 9m 54s
+[Progress] 0.18% | 9,249/5,000,000 steps | 0.3611 steps/s | ETA 3839h 33m 54s
+[Progress] 0.19% | 9,274/5,000,000 steps | 0.3611 steps/s | ETA 3838h 58m 40s
+[Progress] 0.19% | 9,299/5,000,000 steps | 0.3612 steps/s | ETA 3838h 12m 54s
+[Progress] 0.19% | 9,324/5,000,000 steps | 0.3612 steps/s | ETA 3838h 7m 32s
+[Progress] 0.19% | 9,349/5,000,000 steps | 0.3611 steps/s | ETA 3838h 50m 36s
+[Progress] 0.19% | 9,374/5,000,000 steps | 0.3610 steps/s | ETA 3839h 59m 57s
+[Progress] 0.19% | 9,399/5,000,000 steps | 0.3610 steps/s | ETA 3839h 43m 26s
+[Progress] 0.19% | 9,424/5,000,000 steps | 0.3611 steps/s | ETA 3838h 49m 59s
+[Progress] 0.19% | 9,449/5,000,000 steps | 0.3611 steps/s | ETA 3839h 6m 40s
+[Progress] 0.19% | 9,474/5,000,000 steps | 0.3611 steps/s | ETA 3839h 5m 14s
+[Progress] 0.19% | 9,499/5,000,000 steps | 0.3610 steps/s | ETA 3839h 39m 0s
+Step 9,500 | Mean reward: -2.904 | Resolution: 21.6% | Escalation: 68.0%
+[Progress] 0.19% | 9,524/5,000,000 steps | 0.3610 steps/s | ETA 3840h 18m 50s
+[Progress] 0.19% | 9,549/5,000,000 steps | 0.3610 steps/s | ETA 3840h 18m 18s
+[Progress] 0.19% | 9,574/5,000,000 steps | 0.3610 steps/s | ETA 3840h 8m 52s
+[Progress] 0.19% | 9,599/5,000,000 steps | 0.3610 steps/s | ETA 3840h 15m 19s
+[Progress] 0.19% | 9,624/5,000,000 steps | 0.3609 steps/s | ETA 3841h 19m 4s
+[Progress] 0.19% | 9,649/5,000,000 steps | 0.3607 steps/s | ETA 3843h 17m 23s
+[Progress] 0.19% | 9,674/5,000,000 steps | 0.3607 steps/s | ETA 3842h 56m 37s
+[Progress] 0.19% | 9,699/5,000,000 steps | 0.3607 steps/s | ETA 3843h 21m 49s
+[Progress] 0.19% | 9,724/5,000,000 steps | 0.3607 steps/s | ETA 3842h 37m 57s
+[Progress] 0.20% | 9,749/5,000,000 steps | 0.3607 steps/s | ETA 3843h 14m 6s
+[Progress] 0.20% | 9,774/5,000,000 steps | 0.3608 steps/s | ETA 3841h 57m 22s
+[Progress] 0.20% | 9,799/5,000,000 steps | 0.3608 steps/s | ETA 3842h 16m 6s
+[Progress] 0.20% | 9,824/5,000,000 steps | 0.3608 steps/s | ETA 3841h 29m 32s
+[Progress] 0.20% | 9,849/5,000,000 steps | 0.3609 steps/s | ETA 3841h 2m 10s
+[Progress] 0.20% | 9,874/5,000,000 steps | 0.3610 steps/s | ETA 3840h 8m 11s
+[Progress] 0.20% | 9,899/5,000,000 steps | 0.3610 steps/s | ETA 3839h 27m 33s
+[Progress] 0.20% | 9,924/5,000,000 steps | 0.3610 steps/s | ETA 3839h 34m 52s
+[Progress] 0.20% | 9,949/5,000,000 steps | 0.3608 steps/s | ETA 3841h 54m 2s
+[Progress] 0.20% | 9,974/5,000,000 steps | 0.3609 steps/s | ETA 3841h 11m 53s
+[Progress] 0.20% | 9,999/5,000,000 steps | 0.3609 steps/s | ETA 3840h 15m 26s
+Step 10,000 | Mean reward: -2.626 | Resolution: 22.4% | Escalation: 67.3%
+New best model saved: -3.999
+[Progress] 0.20% | 10,024/5,000,000 steps | 0.2645 steps/s | ETA 5241h 22m 52s
+[Progress] 0.20% | 10,049/5,000,000 steps | 0.2646 steps/s | ETA 5238h 56m 20s
+[Progress] 0.20% | 10,074/5,000,000 steps | 0.2647 steps/s | ETA 5235h 38m 3s
+[Progress] 0.20% | 10,099/5,000,000 steps | 0.2649 steps/s | ETA 5232h 31m 55s
+[Progress] 0.20% | 10,124/5,000,000 steps | 0.2650 steps/s | ETA 5229h 46m 50s
+[Progress] 0.20% | 10,149/5,000,000 steps | 0.2652 steps/s | ETA 5226h 51m 30s
+[Progress] 0.20% | 10,174/5,000,000 steps | 0.2653 steps/s | ETA 5224h 8m 56s
+[Progress] 0.20% | 10,199/5,000,000 steps | 0.2654 steps/s | ETA 5221h 36m 5s
+[Progress] 0.20% | 10,224/5,000,000 steps | 0.2656 steps/s | ETA 5218h 22m 37s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.103       |
+|    escalation_rate           | 0.673       |
+|    mean_episode_length_100ep | 4.01        |
+|    mean_reward_100ep         | -2.63       |
+|    resolution_rate           | 0.224       |
+|    timeout_rate              | 0           |
+| eval/                        |             |
+|    escalation_rate           | 0           |
+|    mean_reward               | -4          |
+|    resolution_rate           | 0           |
+| progress/                    |             |
+|    percent                   | 0.204       |
+|    steps_per_second          | 0.266       |
+| rollout/                     |             |
+|    ep_len_mean               | 4.16        |
+|    ep_rew_mean               | -2.72       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 5           |
+|    time_elapsed              | 38536       |
+|    total_timesteps           | 10240       |
+| train/                       |             |
+|    approx_kl                 | 0.013907172 |
+|    clip_fraction             | 0.0823      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.49       |
+|    explained_variance        | 0.0136      |
+|    learning_rate             | 0.0003      |
+|    loss                      | 4.67        |
+|    n_updates                 | 40          |
+|    policy_gradient_loss      | -0.00836    |
+|    value_loss                | 11.2        |
+----------------------------------------------
+[Progress] 0.20% | 10,249/5,000,000 steps | 0.2658 steps/s | ETA 5214h 30m 14s
+[Progress] 0.21% | 10,274/5,000,000 steps | 0.2659 steps/s | ETA 5211h 45m 18s
+[Progress] 0.21% | 10,299/5,000,000 steps | 0.2661 steps/s | ETA 5208h 28m 9s
+[Progress] 0.21% | 10,324/5,000,000 steps | 0.2663 steps/s | ETA 5204h 31m 7s
+[Progress] 0.21% | 10,349/5,000,000 steps | 0.2665 steps/s | ETA 5200h 30m 42s
+[Progress] 0.21% | 10,374/5,000,000 steps | 0.2666 steps/s | ETA 5197h 58m 58s
+[Progress] 0.21% | 10,399/5,000,000 steps | 0.2668 steps/s | ETA 5195h 14m 38s
+[Progress] 0.21% | 10,424/5,000,000 steps | 0.2670 steps/s | ETA 5191h 11m 56s
+[Progress] 0.21% | 10,449/5,000,000 steps | 0.2671 steps/s | ETA 5189h 49m 50s
+[Progress] 0.21% | 10,474/5,000,000 steps | 0.2672 steps/s | ETA 5186h 47m 40s
+[Progress] 0.21% | 10,499/5,000,000 steps | 0.2674 steps/s | ETA 5183h 43m 19s
+Step 10,500 | Mean reward: -2.388 | Resolution: 23.3% | Escalation: 65.8%
+[Progress] 0.21% | 10,524/5,000,000 steps | 0.2676 steps/s | ETA 5180h 3m 59s
+[Progress] 0.21% | 10,549/5,000,000 steps | 0.2677 steps/s | ETA 5177h 54m 28s
+[Progress] 0.21% | 10,574/5,000,000 steps | 0.2678 steps/s | ETA 5174h 28m 31s
+[Progress] 0.21% | 10,599/5,000,000 steps | 0.2680 steps/s | ETA 5171h 11m 32s
+[Progress] 0.21% | 10,624/5,000,000 steps | 0.2681 steps/s | ETA 5169h 35m 9s
+[Progress] 0.21% | 10,649/5,000,000 steps | 0.2682 steps/s | ETA 5167h 28m 38s
+[Progress] 0.21% | 10,674/5,000,000 steps | 0.2684 steps/s | ETA 5163h 49m 57s
+[Progress] 0.21% | 10,699/5,000,000 steps | 0.2685 steps/s | ETA 5161h 28m 22s
+[Progress] 0.21% | 10,724/5,000,000 steps | 0.2686 steps/s | ETA 5159h 37m 0s
+[Progress] 0.21% | 10,749/5,000,000 steps | 0.2687 steps/s | ETA 5158h 37m 38s
+[Progress] 0.22% | 10,774/5,000,000 steps | 0.2688 steps/s | ETA 5155h 13m 15s
+[Progress] 0.22% | 10,799/5,000,000 steps | 0.2690 steps/s | ETA 5151h 57m 24s
+[Progress] 0.22% | 10,824/5,000,000 steps | 0.2692 steps/s | ETA 5149h 3m 13s
+[Progress] 0.22% | 10,849/5,000,000 steps | 0.2693 steps/s | ETA 5145h 26m 37s
+[Progress] 0.22% | 10,874/5,000,000 steps | 0.2695 steps/s | ETA 5142h 35m 37s
+[Progress] 0.22% | 10,899/5,000,000 steps | 0.2696 steps/s | ETA 5139h 32m 43s
+[Progress] 0.22% | 10,924/5,000,000 steps | 0.2698 steps/s | ETA 5136h 34m 44s
+[Progress] 0.22% | 10,949/5,000,000 steps | 0.2699 steps/s | ETA 5134h 59m 27s
+[Progress] 0.22% | 10,974/5,000,000 steps | 0.2700 steps/s | ETA 5133h 10m 41s
+[Progress] 0.22% | 10,999/5,000,000 steps | 0.2701 steps/s | ETA 5130h 17m 32s
+Step 11,000 | Mean reward: -2.492 | Resolution: 24.0% | Escalation: 64.2%
+[Progress] 0.22% | 11,024/5,000,000 steps | 0.2703 steps/s | ETA 5126h 41m 18s
+[Progress] 0.22% | 11,049/5,000,000 steps | 0.2705 steps/s | ETA 5123h 48m 15s
+[Progress] 0.22% | 11,074/5,000,000 steps | 0.2707 steps/s | ETA 5120h 10m 20s
+[Progress] 0.22% | 11,099/5,000,000 steps | 0.2708 steps/s | ETA 5117h 12m 32s
+[Progress] 0.22% | 11,124/5,000,000 steps | 0.2710 steps/s | ETA 5114h 18m 5s
+[Progress] 0.22% | 11,149/5,000,000 steps | 0.2711 steps/s | ETA 5112h 22m 32s
+[Progress] 0.22% | 11,174/5,000,000 steps | 0.2712 steps/s | ETA 5109h 15m 49s
+[Progress] 0.22% | 11,199/5,000,000 steps | 0.2714 steps/s | ETA 5106h 35m 2s
+[Progress] 0.22% | 11,224/5,000,000 steps | 0.2715 steps/s | ETA 5103h 36m 58s
+[Progress] 0.23% | 11,249/5,000,000 steps | 0.2717 steps/s | ETA 5101h 1m 28s
+[Progress] 0.23% | 11,274/5,000,000 steps | 0.2717 steps/s | ETA 5099h 33m 16s
+[Progress] 0.23% | 11,299/5,000,000 steps | 0.2719 steps/s | ETA 5097h 2m 11s
+[Progress] 0.23% | 11,324/5,000,000 steps | 0.2720 steps/s | ETA 5095h 24m 31s
+[Progress] 0.23% | 11,349/5,000,000 steps | 0.2721 steps/s | ETA 5092h 27m 35s
+[Progress] 0.23% | 11,374/5,000,000 steps | 0.2722 steps/s | ETA 5091h 22m 40s
+[Progress] 0.23% | 11,399/5,000,000 steps | 0.2723 steps/s | ETA 5089h 47m 55s
+[Progress] 0.23% | 11,424/5,000,000 steps | 0.2724 steps/s | ETA 5087h 10m 43s
+[Progress] 0.23% | 11,449/5,000,000 steps | 0.2725 steps/s | ETA 5085h 46m 47s
+[Progress] 0.23% | 11,474/5,000,000 steps | 0.2727 steps/s | ETA 5082h 6m 55s
+[Progress] 0.23% | 11,499/5,000,000 steps | 0.2728 steps/s | ETA 5079h 51m 32s
+Step 11,500 | Mean reward: -2.643 | Resolution: 24.6% | Escalation: 63.3%
+[Progress] 0.23% | 11,524/5,000,000 steps | 0.2729 steps/s | ETA 5078h 1m 56s
+[Progress] 0.23% | 11,549/5,000,000 steps | 0.2730 steps/s | ETA 5075h 25m 23s
+[Progress] 0.23% | 11,574/5,000,000 steps | 0.2731 steps/s | ETA 5074h 6m 57s
+[Progress] 0.23% | 11,599/5,000,000 steps | 0.2732 steps/s | ETA 5072h 21m 30s
+[Progress] 0.23% | 11,624/5,000,000 steps | 0.2734 steps/s | ETA 5069h 8m 30s
+[Progress] 0.23% | 11,649/5,000,000 steps | 0.2735 steps/s | ETA 5066h 31m 17s
+[Progress] 0.23% | 11,674/5,000,000 steps | 0.2736 steps/s | ETA 5064h 10m 23s
+[Progress] 0.23% | 11,699/5,000,000 steps | 0.2738 steps/s | ETA 5061h 18m 50s
+[Progress] 0.23% | 11,724/5,000,000 steps | 0.2738 steps/s | ETA 5061h 3m 23s
+[Progress] 0.23% | 11,749/5,000,000 steps | 0.2739 steps/s | ETA 5058h 42m 20s
+[Progress] 0.24% | 11,774/5,000,000 steps | 0.2741 steps/s | ETA 5055h 48m 29s
+[Progress] 0.24% | 11,799/5,000,000 steps | 0.2741 steps/s | ETA 5055h 43m 51s
+[Progress] 0.24% | 11,824/5,000,000 steps | 0.2742 steps/s | ETA 5053h 15m 17s
+[Progress] 0.24% | 11,849/5,000,000 steps | 0.2743 steps/s | ETA 5051h 25m 42s
+[Progress] 0.24% | 11,874/5,000,000 steps | 0.2744 steps/s | ETA 5048h 39m 13s
+[Progress] 0.24% | 11,899/5,000,000 steps | 0.2745 steps/s | ETA 5047h 3m 23s
+[Progress] 0.24% | 11,924/5,000,000 steps | 0.2747 steps/s | ETA 5044h 9m 38s
+[Progress] 0.24% | 11,949/5,000,000 steps | 0.2748 steps/s | ETA 5041h 46m 7s
+[Progress] 0.24% | 11,974/5,000,000 steps | 0.2749 steps/s | ETA 5040h 15m 19s
+[Progress] 0.24% | 11,999/5,000,000 steps | 0.2750 steps/s | ETA 5037h 59m 54s
+Step 12,000 | Mean reward: -2.590 | Resolution: 25.2% | Escalation: 62.7%
+[Progress] 0.24% | 12,024/5,000,000 steps | 0.2752 steps/s | ETA 5035h 36m 19s
+[Progress] 0.24% | 12,049/5,000,000 steps | 0.2752 steps/s | ETA 5033h 49m 46s
+[Progress] 0.24% | 12,074/5,000,000 steps | 0.2754 steps/s | ETA 5031h 30m 2s
+[Progress] 0.24% | 12,099/5,000,000 steps | 0.2752 steps/s | ETA 5034h 44m 12s
+[Progress] 0.24% | 12,124/5,000,000 steps | 0.2753 steps/s | ETA 5032h 6m 23s
+[Progress] 0.24% | 12,149/5,000,000 steps | 0.2755 steps/s | ETA 5029h 49m 59s
+[Progress] 0.24% | 12,174/5,000,000 steps | 0.2756 steps/s | ETA 5027h 19m 11s
+[Progress] 0.24% | 12,199/5,000,000 steps | 0.2757 steps/s | ETA 5025h 37m 15s
+[Progress] 0.24% | 12,224/5,000,000 steps | 0.2758 steps/s | ETA 5022h 43m 51s
+[Progress] 0.24% | 12,249/5,000,000 steps | 0.2760 steps/s | ETA 5020h 10m 46s
+[Progress] 0.25% | 12,274/5,000,000 steps | 0.2761 steps/s | ETA 5017h 20m 22s
+---------------------------------------------
+| custom/                      |            |
+|    dropout_rate              | 0.121      |
+|    escalation_rate           | 0.627      |
+|    mean_episode_length_100ep | 4.73       |
+|    mean_reward_100ep         | -2.59      |
+|    resolution_rate           | 0.252      |
+|    timeout_rate              | 0          |
+| progress/                    |            |
+|    percent                   | 0.245      |
+|    steps_per_second          | 0.276      |
+| rollout/                     |            |
+|    ep_len_mean               | 4.88       |
+|    ep_rew_mean               | -2.51      |
+| time/                        |            |
+|    fps                       | 0          |
+|    iterations                | 6          |
+|    time_elapsed              | 44487      |
+|    total_timesteps           | 12288      |
+| train/                       |            |
+|    approx_kl                 | 0.00772509 |
+|    clip_fraction             | 0.144      |
+|    clip_range                | 0.2        |
+|    entropy_loss              | -1.42      |
+|    explained_variance        | 0.0338     |
+|    learning_rate             | 0.0003     |
+|    loss                      | 5.93       |
+|    n_updates                 | 50         |
+|    policy_gradient_loss      | -0.0123    |
+|    value_loss                | 11.7       |
+---------------------------------------------
+[Progress] 0.25% | 12,299/5,000,000 steps | 0.2763 steps/s | ETA 5015h 9m 56s
+[Progress] 0.25% | 12,324/5,000,000 steps | 0.2764 steps/s | ETA 5012h 53m 56s
+[Progress] 0.25% | 12,349/5,000,000 steps | 0.2765 steps/s | ETA 5010h 11m 44s
+[Progress] 0.25% | 12,374/5,000,000 steps | 0.2766 steps/s | ETA 5008h 18m 31s
+[Progress] 0.25% | 12,399/5,000,000 steps | 0.2768 steps/s | ETA 5005h 45m 9s
+[Progress] 0.25% | 12,424/5,000,000 steps | 0.2769 steps/s | ETA 5003h 44m 30s
+[Progress] 0.25% | 12,449/5,000,000 steps | 0.2769 steps/s | ETA 5002h 50m 43s
+[Progress] 0.25% | 12,474/5,000,000 steps | 0.2769 steps/s | ETA 5003h 37m 36s
+[Progress] 0.25% | 12,499/5,000,000 steps | 0.2770 steps/s | ETA 5000h 57m 35s
+Step 12,500 | Mean reward: -2.131 | Resolution: 26.1% | Escalation: 61.2%
+[Progress] 0.25% | 12,524/5,000,000 steps | 0.2771 steps/s | ETA 5000h 1m 4s
+[Progress] 0.25% | 12,549/5,000,000 steps | 0.2772 steps/s | ETA 4998h 6m 59s
+[Progress] 0.25% | 12,574/5,000,000 steps | 0.2773 steps/s | ETA 4995h 8m 46s
+[Progress] 0.25% | 12,599/5,000,000 steps | 0.2775 steps/s | ETA 4992h 18m 15s
+[Progress] 0.25% | 12,624/5,000,000 steps | 0.2776 steps/s | ETA 4990h 8m 39s
+[Progress] 0.25% | 12,649/5,000,000 steps | 0.2778 steps/s | ETA 4987h 49m 9s
+[Progress] 0.25% | 12,674/5,000,000 steps | 0.2778 steps/s | ETA 4986h 18m 47s
+[Progress] 0.25% | 12,699/5,000,000 steps | 0.2779 steps/s | ETA 4984h 59m 15s
+[Progress] 0.25% | 12,724/5,000,000 steps | 0.2780 steps/s | ETA 4982h 27m 59s
+[Progress] 0.26% | 12,749/5,000,000 steps | 0.2782 steps/s | ETA 4980h 4m 14s
+[Progress] 0.26% | 12,774/5,000,000 steps | 0.2783 steps/s | ETA 4977h 11m 3s
+[Progress] 0.26% | 12,799/5,000,000 steps | 0.2784 steps/s | ETA 4975h 15m 49s
+[Progress] 0.26% | 12,824/5,000,000 steps | 0.2785 steps/s | ETA 4974h 22m 41s
+[Progress] 0.26% | 12,849/5,000,000 steps | 0.2786 steps/s | ETA 4971h 45m 41s
+[Progress] 0.26% | 12,874/5,000,000 steps | 0.2788 steps/s | ETA 4968h 54m 33s
+[Progress] 0.26% | 12,899/5,000,000 steps | 0.2789 steps/s | ETA 4966h 25m 25s
+[Progress] 0.26% | 12,924/5,000,000 steps | 0.2790 steps/s | ETA 4964h 34m 57s
+[Progress] 0.26% | 12,949/5,000,000 steps | 0.2792 steps/s | ETA 4962h 10m 48s
+[Progress] 0.26% | 12,974/5,000,000 steps | 0.2793 steps/s | ETA 4959h 52m 22s
+[Progress] 0.26% | 12,999/5,000,000 steps | 0.2794 steps/s | ETA 4957h 54m 24s
+Step 13,000 | Mean reward: -1.803 | Resolution: 27.1% | Escalation: 59.8%
+[Progress] 0.26% | 13,024/5,000,000 steps | 0.2795 steps/s | ETA 4955h 51m 46s
+[Progress] 0.26% | 13,049/5,000,000 steps | 0.2796 steps/s | ETA 4953h 38m 25s
+[Progress] 0.26% | 13,074/5,000,000 steps | 0.2797 steps/s | ETA 4951h 55m 51s
+[Progress] 0.26% | 13,099/5,000,000 steps | 0.2799 steps/s | ETA 4949h 43m 47s
+[Progress] 0.26% | 13,124/5,000,000 steps | 0.2800 steps/s | ETA 4947h 32m 24s
+[Progress] 0.26% | 13,149/5,000,000 steps | 0.2801 steps/s | ETA 4945h 49m 29s
+[Progress] 0.26% | 13,174/5,000,000 steps | 0.2802 steps/s | ETA 4943h 22m 51s
+[Progress] 0.26% | 13,199/5,000,000 steps | 0.2803 steps/s | ETA 4941h 20m 20s
+[Progress] 0.26% | 13,224/5,000,000 steps | 0.2805 steps/s | ETA 4938h 51m 6s
+[Progress] 0.27% | 13,249/5,000,000 steps | 0.2806 steps/s | ETA 4937h 28m 21s
+[Progress] 0.27% | 13,274/5,000,000 steps | 0.2807 steps/s | ETA 4935h 39m 45s
+[Progress] 0.27% | 13,299/5,000,000 steps | 0.2807 steps/s | ETA 4934h 1m 54s
+[Progress] 0.27% | 13,324/5,000,000 steps | 0.2809 steps/s | ETA 4931h 59m 25s
+[Progress] 0.27% | 13,349/5,000,000 steps | 0.2810 steps/s | ETA 4930h 7m 6s
+[Progress] 0.27% | 13,374/5,000,000 steps | 0.2810 steps/s | ETA 4929h 4m 33s
+[Progress] 0.27% | 13,399/5,000,000 steps | 0.2810 steps/s | ETA 4929h 6m 10s
+[Progress] 0.27% | 13,424/5,000,000 steps | 0.2811 steps/s | ETA 4927h 23m 55s
+[Progress] 0.27% | 13,449/5,000,000 steps | 0.2812 steps/s | ETA 4925h 15m 6s
+[Progress] 0.27% | 13,474/5,000,000 steps | 0.2813 steps/s | ETA 4923h 22m 15s
+[Progress] 0.27% | 13,499/5,000,000 steps | 0.2814 steps/s | ETA 4921h 44m 5s
+Step 13,500 | Mean reward: -2.282 | Resolution: 27.6% | Escalation: 59.0%
+[Progress] 0.27% | 13,524/5,000,000 steps | 0.2815 steps/s | ETA 4919h 53m 23s
+[Progress] 0.27% | 13,549/5,000,000 steps | 0.2816 steps/s | ETA 4918h 19m 24s
+[Progress] 0.27% | 13,574/5,000,000 steps | 0.2817 steps/s | ETA 4917h 0m 30s
+[Progress] 0.27% | 13,599/5,000,000 steps | 0.2818 steps/s | ETA 4916h 1m 48s
+[Progress] 0.27% | 13,624/5,000,000 steps | 0.2818 steps/s | ETA 4915h 7m 0s
+[Progress] 0.27% | 13,649/5,000,000 steps | 0.2819 steps/s | ETA 4912h 59m 40s
+[Progress] 0.27% | 13,674/5,000,000 steps | 0.2820 steps/s | ETA 4910h 49m 26s
+[Progress] 0.27% | 13,699/5,000,000 steps | 0.2822 steps/s | ETA 4908h 50m 30s
+[Progress] 0.27% | 13,724/5,000,000 steps | 0.2823 steps/s | ETA 4907h 10m 36s
+[Progress] 0.28% | 13,749/5,000,000 steps | 0.2824 steps/s | ETA 4905h 14m 26s
+[Progress] 0.28% | 13,774/5,000,000 steps | 0.2825 steps/s | ETA 4903h 31m 46s
+[Progress] 0.28% | 13,799/5,000,000 steps | 0.2826 steps/s | ETA 4901h 57m 50s
+[Progress] 0.28% | 13,824/5,000,000 steps | 0.2827 steps/s | ETA 4899h 58m 24s
+[Progress] 0.28% | 13,849/5,000,000 steps | 0.2827 steps/s | ETA 4898h 58m 14s
+[Progress] 0.28% | 13,874/5,000,000 steps | 0.2828 steps/s | ETA 4897h 47m 42s
+[Progress] 0.28% | 13,899/5,000,000 steps | 0.2829 steps/s | ETA 4896h 2m 31s
+[Progress] 0.28% | 13,924/5,000,000 steps | 0.2830 steps/s | ETA 4894h 20m 11s
+[Progress] 0.28% | 13,949/5,000,000 steps | 0.2831 steps/s | ETA 4892h 28m 38s
+[Progress] 0.28% | 13,974/5,000,000 steps | 0.2832 steps/s | ETA 4890h 16m 46s
+[Progress] 0.28% | 13,999/5,000,000 steps | 0.2834 steps/s | ETA 4887h 51m 55s
+Step 14,000 | Mean reward: -2.501 | Resolution: 28.0% | Escalation: 57.9%
+[Progress] 0.28% | 14,024/5,000,000 steps | 0.2835 steps/s | ETA 4885h 34m 50s
+[Progress] 0.28% | 14,049/5,000,000 steps | 0.2835 steps/s | ETA 4885h 15m 36s
+[Progress] 0.28% | 14,074/5,000,000 steps | 0.2836 steps/s | ETA 4884h 22m 18s
+[Progress] 0.28% | 14,099/5,000,000 steps | 0.2836 steps/s | ETA 4883h 16m 43s
+[Progress] 0.28% | 14,124/5,000,000 steps | 0.2837 steps/s | ETA 4881h 16m 53s
+[Progress] 0.28% | 14,149/5,000,000 steps | 0.2838 steps/s | ETA 4879h 22m 49s
+[Progress] 0.28% | 14,174/5,000,000 steps | 0.2839 steps/s | ETA 4878h 12m 17s
+[Progress] 0.28% | 14,199/5,000,000 steps | 0.2840 steps/s | ETA 4875h 53m 53s
+[Progress] 0.28% | 14,224/5,000,000 steps | 0.2841 steps/s | ETA 4874h 39m 19s
+[Progress] 0.28% | 14,249/5,000,000 steps | 0.2842 steps/s | ETA 4872h 32m 7s
+[Progress] 0.29% | 14,274/5,000,000 steps | 0.2844 steps/s | ETA 4870h 29m 19s
+[Progress] 0.29% | 14,299/5,000,000 steps | 0.2845 steps/s | ETA 4868h 40m 38s
+[Progress] 0.29% | 14,324/5,000,000 steps | 0.2845 steps/s | ETA 4867h 3m 15s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.14        |
+|    escalation_rate           | 0.579       |
+|    mean_episode_length_100ep | 5.41        |
+|    mean_reward_100ep         | -2.5        |
+|    resolution_rate           | 0.28        |
+|    timeout_rate              | 0           |
+| progress/                    |             |
+|    percent                   | 0.286       |
+|    steps_per_second          | 0.285       |
+| rollout/                     |             |
+|    ep_len_mean               | 5.15        |
+|    ep_rew_mean               | -2.98       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 7           |
+|    time_elapsed              | 50376       |
+|    total_timesteps           | 14336       |
+| train/                       |             |
+|    approx_kl                 | 0.009426137 |
+|    clip_fraction             | 0.111       |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.36       |
+|    explained_variance        | 0.0267      |
+|    learning_rate             | 0.0003      |
+|    loss                      | 9.28        |
+|    n_updates                 | 60          |
+|    policy_gradient_loss      | -0.0112     |
+|    value_loss                | 16.1        |
+----------------------------------------------
+[Progress] 0.29% | 14,349/5,000,000 steps | 0.2846 steps/s | ETA 4866h 11m 35s
+[Progress] 0.29% | 14,374/5,000,000 steps | 0.2847 steps/s | ETA 4864h 31m 10s
+[Progress] 0.29% | 14,399/5,000,000 steps | 0.2847 steps/s | ETA 4863h 52m 33s
+[Progress] 0.29% | 14,424/5,000,000 steps | 0.2849 steps/s | ETA 4861h 34m 6s
+[Progress] 0.29% | 14,449/5,000,000 steps | 0.2849 steps/s | ETA 4860h 5m 30s
+[Progress] 0.29% | 14,474/5,000,000 steps | 0.2850 steps/s | ETA 4858h 49m 45s
+[Progress] 0.29% | 14,499/5,000,000 steps | 0.2851 steps/s | ETA 4857h 34m 5s
+Step 14,500 | Mean reward: -3.039 | Resolution: 28.0% | Escalation: 56.7%
+[Progress] 0.29% | 14,524/5,000,000 steps | 0.2852 steps/s | ETA 4855h 57m 58s
+[Progress] 0.29% | 14,549/5,000,000 steps | 0.2853 steps/s | ETA 4853h 43m 11s
+[Progress] 0.29% | 14,574/5,000,000 steps | 0.2854 steps/s | ETA 4851h 51m 49s
+[Progress] 0.29% | 14,599/5,000,000 steps | 0.2854 steps/s | ETA 4851h 38m 9s
+[Progress] 0.29% | 14,624/5,000,000 steps | 0.2856 steps/s | ETA 4849h 38m 50s
+[Progress] 0.29% | 14,649/5,000,000 steps | 0.2856 steps/s | ETA 4848h 44m 35s
+[Progress] 0.29% | 14,674/5,000,000 steps | 0.2857 steps/s | ETA 4847h 18m 40s
+[Progress] 0.29% | 14,699/5,000,000 steps | 0.2857 steps/s | ETA 4846h 31m 56s
+[Progress] 0.29% | 14,724/5,000,000 steps | 0.2858 steps/s | ETA 4844h 50m 47s
+[Progress] 0.29% | 14,749/5,000,000 steps | 0.2859 steps/s | ETA 4843h 26m 40s
+[Progress] 0.30% | 14,774/5,000,000 steps | 0.2860 steps/s | ETA 4842h 22m 58s
+[Progress] 0.30% | 14,799/5,000,000 steps | 0.2861 steps/s | ETA 4841h 2m 0s
+[Progress] 0.30% | 14,824/5,000,000 steps | 0.2861 steps/s | ETA 4839h 21m 24s
+[Progress] 0.30% | 14,849/5,000,000 steps | 0.2862 steps/s | ETA 4837h 38m 49s
+[Progress] 0.30% | 14,874/5,000,000 steps | 0.2863 steps/s | ETA 4835h 53m 44s
+[Progress] 0.30% | 14,899/5,000,000 steps | 0.2865 steps/s | ETA 4834h 10m 0s
+[Progress] 0.30% | 14,924/5,000,000 steps | 0.2865 steps/s | ETA 4833h 12m 2s
+[Progress] 0.30% | 14,949/5,000,000 steps | 0.2865 steps/s | ETA 4832h 28m 51s
+[Progress] 0.30% | 14,974/5,000,000 steps | 0.2867 steps/s | ETA 4830h 34m 54s
+[Progress] 0.30% | 14,999/5,000,000 steps | 0.2868 steps/s | ETA 4828h 50m 45s
+Step 15,000 | Mean reward: -1.998 | Resolution: 28.8% | Escalation: 54.8%
+[Progress] 0.30% | 15,024/5,000,000 steps | 0.2869 steps/s | ETA 4826h 39m 35s
+[Progress] 0.30% | 15,049/5,000,000 steps | 0.2870 steps/s | ETA 4825h 22m 32s
+[Progress] 0.30% | 15,074/5,000,000 steps | 0.2871 steps/s | ETA 4823h 37m 49s
+[Progress] 0.30% | 15,099/5,000,000 steps | 0.2872 steps/s | ETA 4821h 53m 16s
+[Progress] 0.30% | 15,124/5,000,000 steps | 0.2873 steps/s | ETA 4820h 19m 49s
+[Progress] 0.30% | 15,149/5,000,000 steps | 0.2873 steps/s | ETA 4819h 13m 39s
+[Progress] 0.30% | 15,174/5,000,000 steps | 0.2874 steps/s | ETA 4818h 29m 32s
+[Progress] 0.30% | 15,199/5,000,000 steps | 0.2874 steps/s | ETA 4817h 40m 15s
+[Progress] 0.30% | 15,224/5,000,000 steps | 0.2875 steps/s | ETA 4816h 5m 22s
+[Progress] 0.30% | 15,249/5,000,000 steps | 0.2875 steps/s | ETA 4815h 43m 39s
+[Progress] 0.31% | 15,274/5,000,000 steps | 0.2876 steps/s | ETA 4814h 5m 49s
+[Progress] 0.31% | 15,299/5,000,000 steps | 0.2877 steps/s | ETA 4812h 18m 57s
+[Progress] 0.31% | 15,324/5,000,000 steps | 0.2878 steps/s | ETA 4811h 25m 16s
+[Progress] 0.31% | 15,349/5,000,000 steps | 0.2876 steps/s | ETA 4814h 29m 0s
+[Progress] 0.31% | 15,374/5,000,000 steps | 0.2877 steps/s | ETA 4813h 13m 3s
+[Progress] 0.31% | 15,399/5,000,000 steps | 0.2878 steps/s | ETA 4811h 30m 2s
+[Progress] 0.31% | 15,424/5,000,000 steps | 0.2878 steps/s | ETA 4810h 19m 47s
+[Progress] 0.31% | 15,449/5,000,000 steps | 0.2879 steps/s | ETA 4808h 58m 38s
+[Progress] 0.31% | 15,474/5,000,000 steps | 0.2880 steps/s | ETA 4807h 7m 26s
+[Progress] 0.31% | 15,499/5,000,000 steps | 0.2881 steps/s | ETA 4805h 24m 40s
+Step 15,500 | Mean reward: -1.512 | Resolution: 29.8% | Escalation: 53.3%
+[Progress] 0.31% | 15,524/5,000,000 steps | 0.2882 steps/s | ETA 4804h 12m 38s
+[Progress] 0.31% | 15,549/5,000,000 steps | 0.2883 steps/s | ETA 4802h 20m 28s
+[Progress] 0.31% | 15,574/5,000,000 steps | 0.2884 steps/s | ETA 4800h 39m 19s
+[Progress] 0.31% | 15,599/5,000,000 steps | 0.2885 steps/s | ETA 4798h 41m 50s
+[Progress] 0.31% | 15,624/5,000,000 steps | 0.2886 steps/s | ETA 4796h 58m 49s
+[Progress] 0.31% | 15,649/5,000,000 steps | 0.2887 steps/s | ETA 4796h 32m 50s
+[Progress] 0.31% | 15,674/5,000,000 steps | 0.2887 steps/s | ETA 4795h 51m 24s
+[Progress] 0.31% | 15,699/5,000,000 steps | 0.2886 steps/s | ETA 4796h 34m 59s
+[Progress] 0.31% | 15,724/5,000,000 steps | 0.2887 steps/s | ETA 4795h 42m 46s
+[Progress] 0.32% | 15,749/5,000,000 steps | 0.2888 steps/s | ETA 4794h 36m 42s
+[Progress] 0.32% | 15,774/5,000,000 steps | 0.2888 steps/s | ETA 4793h 15m 51s
+[Progress] 0.32% | 15,799/5,000,000 steps | 0.2889 steps/s | ETA 4792h 13m 9s
+[Progress] 0.32% | 15,824/5,000,000 steps | 0.2890 steps/s | ETA 4790h 59m 14s
+[Progress] 0.32% | 15,849/5,000,000 steps | 0.2891 steps/s | ETA 4789h 10m 13s
+[Progress] 0.32% | 15,874/5,000,000 steps | 0.2892 steps/s | ETA 4787h 23m 30s
+[Progress] 0.32% | 15,899/5,000,000 steps | 0.2893 steps/s | ETA 4786h 16m 58s
+[Progress] 0.32% | 15,924/5,000,000 steps | 0.2894 steps/s | ETA 4784h 36m 29s
+[Progress] 0.32% | 15,949/5,000,000 steps | 0.2894 steps/s | ETA 4783h 10m 40s
+[Progress] 0.32% | 15,974/5,000,000 steps | 0.2896 steps/s | ETA 4781h 21m 43s
+[Progress] 0.32% | 15,999/5,000,000 steps | 0.2896 steps/s | ETA 4779h 47m 45s
+Step 16,000 | Mean reward: -2.283 | Resolution: 30.0% | Escalation: 51.8%
+[Progress] 0.32% | 16,024/5,000,000 steps | 0.2897 steps/s | ETA 4778h 14m 34s
+[Progress] 0.32% | 16,049/5,000,000 steps | 0.2898 steps/s | ETA 4776h 51m 48s
+[Progress] 0.32% | 16,074/5,000,000 steps | 0.2899 steps/s | ETA 4775h 25m 13s
+[Progress] 0.32% | 16,099/5,000,000 steps | 0.2900 steps/s | ETA 4773h 35m 8s
+[Progress] 0.32% | 16,124/5,000,000 steps | 0.2901 steps/s | ETA 4772h 48m 22s
+[Progress] 0.32% | 16,149/5,000,000 steps | 0.2901 steps/s | ETA 4771h 22m 38s
+[Progress] 0.32% | 16,174/5,000,000 steps | 0.2902 steps/s | ETA 4769h 58m 38s
+[Progress] 0.32% | 16,199/5,000,000 steps | 0.2902 steps/s | ETA 4770h 0m 25s
+[Progress] 0.32% | 16,224/5,000,000 steps | 0.2902 steps/s | ETA 4770h 22m 49s
+[Progress] 0.33% | 16,249/5,000,000 steps | 0.2903 steps/s | ETA 4769h 18m 19s
+[Progress] 0.33% | 16,274/5,000,000 steps | 0.2903 steps/s | ETA 4768h 48m 38s
+[Progress] 0.33% | 16,299/5,000,000 steps | 0.2901 steps/s | ETA 4771h 20m 46s
+[Progress] 0.33% | 16,324/5,000,000 steps | 0.2902 steps/s | ETA 4769h 32m 22s
+[Progress] 0.33% | 16,349/5,000,000 steps | 0.2903 steps/s | ETA 4768h 1m 46s
+[Progress] 0.33% | 16,374/5,000,000 steps | 0.2904 steps/s | ETA 4766h 19m 17s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.181       |
+|    escalation_rate           | 0.518       |
+|    mean_episode_length_100ep | 5.83        |
+|    mean_reward_100ep         | -2.28       |
+|    resolution_rate           | 0.3         |
+|    timeout_rate              | 0           |
+| progress/                    |             |
+|    percent                   | 0.328       |
+|    steps_per_second          | 0.29        |
+| rollout/                     |             |
+|    ep_len_mean               | 6.09        |
+|    ep_rew_mean               | -2.17       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 8           |
+|    time_elapsed              | 56401       |
+|    total_timesteps           | 16384       |
+| train/                       |             |
+|    approx_kl                 | 0.008296565 |
+|    clip_fraction             | 0.0944      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.28       |
+|    explained_variance        | 0.0292      |
+|    learning_rate             | 0.0003      |
+|    loss                      | 8.36        |
+|    n_updates                 | 70          |
+|    policy_gradient_loss      | -0.00979    |
+|    value_loss                | 18.9        |
+----------------------------------------------
+[Progress] 0.33% | 16,399/5,000,000 steps | 0.2905 steps/s | ETA 4764h 39m 35s
+[Progress] 0.33% | 16,424/5,000,000 steps | 0.2906 steps/s | ETA 4763h 49m 22s
+[Progress] 0.33% | 16,449/5,000,000 steps | 0.2906 steps/s | ETA 4763h 26m 29s
+[Progress] 0.33% | 16,474/5,000,000 steps | 0.2907 steps/s | ETA 4762h 13m 0s
+[Progress] 0.33% | 16,499/5,000,000 steps | 0.2908 steps/s | ETA 4761h 8m 9s
+Step 16,500 | Mean reward: -1.983 | Resolution: 30.5% | Escalation: 50.6%
+[Progress] 0.33% | 16,524/5,000,000 steps | 0.2908 steps/s | ETA 4759h 47m 13s
+[Progress] 0.33% | 16,549/5,000,000 steps | 0.2909 steps/s | ETA 4758h 41m 2s
+[Progress] 0.33% | 16,574/5,000,000 steps | 0.2910 steps/s | ETA 4756h 56m 1s
+[Progress] 0.33% | 16,599/5,000,000 steps | 0.2910 steps/s | ETA 4756h 25m 36s
+[Progress] 0.33% | 16,624/5,000,000 steps | 0.2911 steps/s | ETA 4755h 5m 40s
+[Progress] 0.33% | 16,649/5,000,000 steps | 0.2912 steps/s | ETA 4753h 13m 13s
+[Progress] 0.33% | 16,674/5,000,000 steps | 0.2913 steps/s | ETA 4752h 1m 34s
+[Progress] 0.33% | 16,699/5,000,000 steps | 0.2914 steps/s | ETA 4750h 16m 14s
+[Progress] 0.33% | 16,724/5,000,000 steps | 0.2914 steps/s | ETA 4749h 32m 32s
+[Progress] 0.34% | 16,749/5,000,000 steps | 0.2915 steps/s | ETA 4748h 4m 55s
+[Progress] 0.34% | 16,774/5,000,000 steps | 0.2916 steps/s | ETA 4746h 51m 43s
+[Progress] 0.34% | 16,799/5,000,000 steps | 0.2917 steps/s | ETA 4745h 30m 46s
+[Progress] 0.34% | 16,824/5,000,000 steps | 0.2918 steps/s | ETA 4744h 11m 37s
+[Progress] 0.34% | 16,849/5,000,000 steps | 0.2919 steps/s | ETA 4742h 44m 22s
+[Progress] 0.34% | 16,874/5,000,000 steps | 0.2919 steps/s | ETA 4741h 47m 18s
+[Progress] 0.34% | 16,899/5,000,000 steps | 0.2920 steps/s | ETA 4740h 40m 55s
+[Progress] 0.34% | 16,924/5,000,000 steps | 0.2921 steps/s | ETA 4739h 19m 52s
+[Progress] 0.34% | 16,949/5,000,000 steps | 0.2921 steps/s | ETA 4738h 3m 49s
+[Progress] 0.34% | 16,974/5,000,000 steps | 0.2922 steps/s | ETA 4736h 58m 36s
+[Progress] 0.34% | 16,999/5,000,000 steps | 0.2923 steps/s | ETA 4735h 28m 58s
+Step 17,000 | Mean reward: -1.799 | Resolution: 30.9% | Escalation: 49.4%
+[Progress] 0.34% | 17,024/5,000,000 steps | 0.2923 steps/s | ETA 4734h 50m 19s
+[Progress] 0.34% | 17,049/5,000,000 steps | 0.2924 steps/s | ETA 4733h 26m 45s
+[Progress] 0.34% | 17,074/5,000,000 steps | 0.2925 steps/s | ETA 4731h 59m 41s
+[Progress] 0.34% | 17,099/5,000,000 steps | 0.2926 steps/s | ETA 4730h 51m 27s
+[Progress] 0.34% | 17,124/5,000,000 steps | 0.2926 steps/s | ETA 4730h 8m 55s
+[Progress] 0.34% | 17,149/5,000,000 steps | 0.2927 steps/s | ETA 4729h 10m 54s
+[Progress] 0.34% | 17,174/5,000,000 steps | 0.2928 steps/s | ETA 4727h 28m 6s
+[Progress] 0.34% | 17,199/5,000,000 steps | 0.2929 steps/s | ETA 4726h 8m 55s
+[Progress] 0.34% | 17,224/5,000,000 steps | 0.2929 steps/s | ETA 4725h 8m 45s
+[Progress] 0.34% | 17,249/5,000,000 steps | 0.2930 steps/s | ETA 4724h 9m 5s
+[Progress] 0.35% | 17,274/5,000,000 steps | 0.2930 steps/s | ETA 4723h 15m 49s
+[Progress] 0.35% | 17,299/5,000,000 steps | 0.2931 steps/s | ETA 4721h 56m 34s
+[Progress] 0.35% | 17,324/5,000,000 steps | 0.2932 steps/s | ETA 4720h 56m 54s
+[Progress] 0.35% | 17,349/5,000,000 steps | 0.2932 steps/s | ETA 4720h 25m 7s
+[Progress] 0.35% | 17,374/5,000,000 steps | 0.2932 steps/s | ETA 4720h 2m 31s
+[Progress] 0.35% | 17,399/5,000,000 steps | 0.2933 steps/s | ETA 4718h 41m 33s
+[Progress] 0.35% | 17,424/5,000,000 steps | 0.2934 steps/s | ETA 4717h 42m 58s
+[Progress] 0.35% | 17,449/5,000,000 steps | 0.2934 steps/s | ETA 4716h 49m 31s
+[Progress] 0.35% | 17,474/5,000,000 steps | 0.2935 steps/s | ETA 4715h 38m 18s
+[Progress] 0.35% | 17,499/5,000,000 steps | 0.2936 steps/s | ETA 4714h 25m 16s
+Step 17,500 | Mean reward: -0.966 | Resolution: 31.5% | Escalation: 48.5%
+[Progress] 0.35% | 17,524/5,000,000 steps | 0.2936 steps/s | ETA 4713h 33m 4s
+[Progress] 0.35% | 17,549/5,000,000 steps | 0.2937 steps/s | ETA 4711h 41m 37s
+[Progress] 0.35% | 17,574/5,000,000 steps | 0.2938 steps/s | ETA 4711h 26m 25s
+[Progress] 0.35% | 17,599/5,000,000 steps | 0.2938 steps/s | ETA 4710h 14m 1s
+[Progress] 0.35% | 17,624/5,000,000 steps | 0.2939 steps/s | ETA 4708h 54m 9s
+[Progress] 0.35% | 17,649/5,000,000 steps | 0.2940 steps/s | ETA 4707h 30m 40s
+[Progress] 0.35% | 17,674/5,000,000 steps | 0.2941 steps/s | ETA 4706h 3m 34s
+[Progress] 0.35% | 17,699/5,000,000 steps | 0.2941 steps/s | ETA 4705h 19m 41s
+[Progress] 0.35% | 17,724/5,000,000 steps | 0.2942 steps/s | ETA 4704h 22m 5s
+[Progress] 0.35% | 17,749/5,000,000 steps | 0.2943 steps/s | ETA 4702h 43m 45s
+[Progress] 0.36% | 17,774/5,000,000 steps | 0.2944 steps/s | ETA 4701h 8m 37s
+[Progress] 0.36% | 17,799/5,000,000 steps | 0.2944 steps/s | ETA 4701h 12m 57s
+[Progress] 0.36% | 17,824/5,000,000 steps | 0.2945 steps/s | ETA 4699h 50m 3s
+[Progress] 0.36% | 17,849/5,000,000 steps | 0.2945 steps/s | ETA 4699h 47m 1s
+[Progress] 0.36% | 17,874/5,000,000 steps | 0.2945 steps/s | ETA 4698h 40m 1s
+[Progress] 0.36% | 17,899/5,000,000 steps | 0.2946 steps/s | ETA 4697h 15m 25s
+[Progress] 0.36% | 17,924/5,000,000 steps | 0.2947 steps/s | ETA 4695h 38m 2s
+[Progress] 0.36% | 17,949/5,000,000 steps | 0.2948 steps/s | ETA 4694h 23m 46s
+[Progress] 0.36% | 17,974/5,000,000 steps | 0.2949 steps/s | ETA 4693h 20m 3s
+[Progress] 0.36% | 17,999/5,000,000 steps | 0.2949 steps/s | ETA 4693h 8m 45s
+Step 18,000 | Mean reward: -1.958 | Resolution: 31.8% | Escalation: 47.3%
+[Progress] 0.36% | 18,024/5,000,000 steps | 0.2950 steps/s | ETA 4691h 52m 10s
+[Progress] 0.36% | 18,049/5,000,000 steps | 0.2950 steps/s | ETA 4690h 31m 29s
+[Progress] 0.36% | 18,074/5,000,000 steps | 0.2951 steps/s | ETA 4688h 54m 41s
+[Progress] 0.36% | 18,099/5,000,000 steps | 0.2952 steps/s | ETA 4687h 42m 45s
+[Progress] 0.36% | 18,124/5,000,000 steps | 0.2953 steps/s | ETA 4686h 31m 9s
+[Progress] 0.36% | 18,149/5,000,000 steps | 0.2954 steps/s | ETA 4685h 22m 15s
+[Progress] 0.36% | 18,174/5,000,000 steps | 0.2954 steps/s | ETA 4684h 33m 23s
+[Progress] 0.36% | 18,199/5,000,000 steps | 0.2954 steps/s | ETA 4683h 53m 14s
+[Progress] 0.36% | 18,224/5,000,000 steps | 0.2956 steps/s | ETA 4682h 11m 4s
+[Progress] 0.36% | 18,249/5,000,000 steps | 0.2956 steps/s | ETA 4681h 3m 40s
+[Progress] 0.37% | 18,274/5,000,000 steps | 0.2957 steps/s | ETA 4680h 0m 37s
+[Progress] 0.37% | 18,299/5,000,000 steps | 0.2958 steps/s | ETA 4678h 37m 34s
+[Progress] 0.37% | 18,324/5,000,000 steps | 0.2959 steps/s | ETA 4677h 7m 11s
+[Progress] 0.37% | 18,349/5,000,000 steps | 0.2959 steps/s | ETA 4676h 3m 19s
+[Progress] 0.37% | 18,374/5,000,000 steps | 0.2960 steps/s | ETA 4674h 49m 28s
+[Progress] 0.37% | 18,399/5,000,000 steps | 0.2961 steps/s | ETA 4673h 43m 57s
+[Progress] 0.37% | 18,424/5,000,000 steps | 0.2962 steps/s | ETA 4672h 16m 46s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.208       |
+|    escalation_rate           | 0.473       |
+|    mean_episode_length_100ep | 6.98        |
+|    mean_reward_100ep         | -1.96       |
+|    resolution_rate           | 0.318       |
+|    timeout_rate              | 0.000859    |
+| progress/                    |             |
+|    percent                   | 0.368       |
+|    steps_per_second          | 0.296       |
+| rollout/                     |             |
+|    ep_len_mean               | 6.79        |
+|    ep_rew_mean               | -1.84       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 9           |
+|    time_elapsed              | 62231       |
+|    total_timesteps           | 18432       |
+| train/                       |             |
+|    approx_kl                 | 0.012613618 |
+|    clip_fraction             | 0.0578      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.22       |
+|    explained_variance        | -0.00206    |
+|    learning_rate             | 0.0003      |
+|    loss                      | 12.4        |
+|    n_updates                 | 80          |
+|    policy_gradient_loss      | -0.00665    |
+|    value_loss                | 23.7        |
+----------------------------------------------
+[Progress] 0.37% | 18,449/5,000,000 steps | 0.2962 steps/s | ETA 4671h 3m 35s
+[Progress] 0.37% | 18,474/5,000,000 steps | 0.2963 steps/s | ETA 4669h 54m 10s
+[Progress] 0.37% | 18,499/5,000,000 steps | 0.2964 steps/s | ETA 4668h 15m 5s
+Step 18,500 | Mean reward: -1.769 | Resolution: 32.5% | Escalation: 46.2%
+[Progress] 0.37% | 18,524/5,000,000 steps | 0.2965 steps/s | ETA 4667h 20m 57s
+[Progress] 0.37% | 18,549/5,000,000 steps | 0.2966 steps/s | ETA 4665h 51m 35s
+[Progress] 0.37% | 18,574/5,000,000 steps | 0.2966 steps/s | ETA 4665h 26m 22s
+[Progress] 0.37% | 18,599/5,000,000 steps | 0.2967 steps/s | ETA 4664h 25m 17s
+[Progress] 0.37% | 18,624/5,000,000 steps | 0.2967 steps/s | ETA 4663h 10m 11s
+[Progress] 0.37% | 18,649/5,000,000 steps | 0.2968 steps/s | ETA 4662h 15m 9s
+[Progress] 0.37% | 18,674/5,000,000 steps | 0.2969 steps/s | ETA 4661h 7m 37s
+[Progress] 0.37% | 18,699/5,000,000 steps | 0.2970 steps/s | ETA 4659h 35m 6s
+[Progress] 0.37% | 18,724/5,000,000 steps | 0.2970 steps/s | ETA 4658h 26m 43s
+[Progress] 0.38% | 18,749/5,000,000 steps | 0.2971 steps/s | ETA 4657h 11m 7s
+[Progress] 0.38% | 18,774/5,000,000 steps | 0.2972 steps/s | ETA 4655h 39m 14s
+[Progress] 0.38% | 18,799/5,000,000 steps | 0.2973 steps/s | ETA 4654h 12m 37s
+[Progress] 0.38% | 18,824/5,000,000 steps | 0.2974 steps/s | ETA 4652h 59m 21s
+[Progress] 0.38% | 18,849/5,000,000 steps | 0.2974 steps/s | ETA 4651h 55m 36s
+[Progress] 0.38% | 18,874/5,000,000 steps | 0.2975 steps/s | ETA 4650h 46m 2s
+[Progress] 0.38% | 18,899/5,000,000 steps | 0.2976 steps/s | ETA 4649h 23m 11s
+[Progress] 0.38% | 18,924/5,000,000 steps | 0.2977 steps/s | ETA 4648h 24m 46s
+[Progress] 0.38% | 18,949/5,000,000 steps | 0.2977 steps/s | ETA 4647h 19m 52s
+[Progress] 0.38% | 18,974/5,000,000 steps | 0.2978 steps/s | ETA 4645h 59m 53s
+[Progress] 0.38% | 18,999/5,000,000 steps | 0.2977 steps/s | ETA 4647h 22m 18s
+Step 19,000 | Mean reward: -1.506 | Resolution: 32.8% | Escalation: 45.0%
+[Progress] 0.38% | 19,024/5,000,000 steps | 0.2978 steps/s | ETA 4645h 28m 11s
+[Progress] 0.38% | 19,049/5,000,000 steps | 0.2979 steps/s | ETA 4644h 52m 43s
+[Progress] 0.38% | 19,074/5,000,000 steps | 0.2980 steps/s | ETA 4643h 32m 9s
+[Progress] 0.38% | 19,099/5,000,000 steps | 0.2980 steps/s | ETA 4642h 45m 44s
+[Progress] 0.38% | 19,124/5,000,000 steps | 0.2981 steps/s | ETA 4641h 38m 51s
+[Progress] 0.38% | 19,149/5,000,000 steps | 0.2982 steps/s | ETA 4640h 30m 29s
+[Progress] 0.38% | 19,174/5,000,000 steps | 0.2982 steps/s | ETA 4639h 24m 6s
+[Progress] 0.38% | 19,199/5,000,000 steps | 0.2983 steps/s | ETA 4638h 13m 28s
+[Progress] 0.38% | 19,224/5,000,000 steps | 0.2983 steps/s | ETA 4637h 24m 22s
+[Progress] 0.39% | 19,249/5,000,000 steps | 0.2984 steps/s | ETA 4636h 7m 16s
+[Progress] 0.39% | 19,274/5,000,000 steps | 0.2985 steps/s | ETA 4634h 49m 10s
+[Progress] 0.39% | 19,299/5,000,000 steps | 0.2986 steps/s | ETA 4633h 34m 29s
+[Progress] 0.39% | 19,324/5,000,000 steps | 0.2986 steps/s | ETA 4632h 56m 12s
+[Progress] 0.39% | 19,349/5,000,000 steps | 0.2987 steps/s | ETA 4631h 43m 52s
+[Progress] 0.39% | 19,374/5,000,000 steps | 0.2988 steps/s | ETA 4630h 35m 54s
+[Progress] 0.39% | 19,399/5,000,000 steps | 0.2988 steps/s | ETA 4629h 29m 19s
+[Progress] 0.39% | 19,424/5,000,000 steps | 0.2989 steps/s | ETA 4628h 36m 50s
+[Progress] 0.39% | 19,449/5,000,000 steps | 0.2990 steps/s | ETA 4627h 6m 33s
+[Progress] 0.39% | 19,474/5,000,000 steps | 0.2991 steps/s | ETA 4625h 53m 49s
+[Progress] 0.39% | 19,499/5,000,000 steps | 0.2991 steps/s | ETA 4624h 55m 27s
+Step 19,500 | Mean reward: -1.890 | Resolution: 33.4% | Escalation: 43.6%
+[Progress] 0.39% | 19,524/5,000,000 steps | 0.2992 steps/s | ETA 4623h 48m 36s
+[Progress] 0.39% | 19,549/5,000,000 steps | 0.2993 steps/s | ETA 4622h 28m 12s
+[Progress] 0.39% | 19,574/5,000,000 steps | 0.2994 steps/s | ETA 4620h 55m 11s
+[Progress] 0.39% | 19,599/5,000,000 steps | 0.2995 steps/s | ETA 4619h 24m 48s
+[Progress] 0.39% | 19,624/5,000,000 steps | 0.2996 steps/s | ETA 4618h 21m 24s
+[Progress] 0.39% | 19,649/5,000,000 steps | 0.2996 steps/s | ETA 4617h 4m 41s
+[Progress] 0.39% | 19,674/5,000,000 steps | 0.2997 steps/s | ETA 4615h 46m 5s
+[Progress] 0.39% | 19,699/5,000,000 steps | 0.2998 steps/s | ETA 4614h 15m 44s
+[Progress] 0.39% | 19,724/5,000,000 steps | 0.2999 steps/s | ETA 4613h 24m 3s
+[Progress] 0.40% | 19,749/5,000,000 steps | 0.2999 steps/s | ETA 4612h 25m 18s
+[Progress] 0.40% | 19,774/5,000,000 steps | 0.3000 steps/s | ETA 4611h 33m 33s
+[Progress] 0.40% | 19,799/5,000,000 steps | 0.3000 steps/s | ETA 4610h 44m 52s
+[Progress] 0.40% | 19,824/5,000,000 steps | 0.3001 steps/s | ETA 4609h 46m 56s
+[Progress] 0.40% | 19,849/5,000,000 steps | 0.3002 steps/s | ETA 4608h 34m 13s
+[Progress] 0.40% | 19,874/5,000,000 steps | 0.3002 steps/s | ETA 4607h 52m 32s
+[Progress] 0.40% | 19,899/5,000,000 steps | 0.3003 steps/s | ETA 4606h 17m 37s
+[Progress] 0.40% | 19,924/5,000,000 steps | 0.3004 steps/s | ETA 4604h 56m 19s
+[Progress] 0.40% | 19,949/5,000,000 steps | 0.3005 steps/s | ETA 4603h 43m 0s
+[Progress] 0.40% | 19,974/5,000,000 steps | 0.3006 steps/s | ETA 4602h 35m 30s
+[Progress] 0.40% | 19,999/5,000,000 steps | 0.3007 steps/s | ETA 4601h 8m 34s
+Step 20,000 | Mean reward: -1.550 | Resolution: 33.8% | Escalation: 42.6%
+New best model saved: -2.852
+[Progress] 0.40% | 20,024/5,000,000 steps | 0.2776 steps/s | ETA 4983h 50m 4s
+[Progress] 0.40% | 20,049/5,000,000 steps | 0.2777 steps/s | ETA 4982h 14m 22s
+[Progress] 0.40% | 20,074/5,000,000 steps | 0.2777 steps/s | ETA 4980h 59m 43s
+[Progress] 0.40% | 20,099/5,000,000 steps | 0.2778 steps/s | ETA 4978h 55m 33s
+[Progress] 0.40% | 20,124/5,000,000 steps | 0.2779 steps/s | ETA 4977h 27m 27s
+[Progress] 0.40% | 20,149/5,000,000 steps | 0.2780 steps/s | ETA 4975h 36m 15s
+[Progress] 0.40% | 20,174/5,000,000 steps | 0.2781 steps/s | ETA 4974h 34m 9s
+[Progress] 0.40% | 20,199/5,000,000 steps | 0.2781 steps/s | ETA 4973h 34m 12s
+[Progress] 0.40% | 20,224/5,000,000 steps | 0.2782 steps/s | ETA 4972h 11m 47s
+[Progress] 0.41% | 20,249/5,000,000 steps | 0.2783 steps/s | ETA 4970h 31m 55s
+[Progress] 0.41% | 20,274/5,000,000 steps | 0.2784 steps/s | ETA 4969h 2m 3s
+[Progress] 0.41% | 20,299/5,000,000 steps | 0.2785 steps/s | ETA 4967h 17m 16s
+[Progress] 0.41% | 20,324/5,000,000 steps | 0.2786 steps/s | ETA 4965h 45m 58s
+[Progress] 0.41% | 20,349/5,000,000 steps | 0.2786 steps/s | ETA 4964h 27m 8s
+[Progress] 0.41% | 20,374/5,000,000 steps | 0.2787 steps/s | ETA 4963h 8m 54s
+[Progress] 0.41% | 20,399/5,000,000 steps | 0.2788 steps/s | ETA 4961h 25m 17s
+[Progress] 0.41% | 20,424/5,000,000 steps | 0.2789 steps/s | ETA 4959h 50m 48s
+[Progress] 0.41% | 20,449/5,000,000 steps | 0.2790 steps/s | ETA 4958h 13m 10s
+[Progress] 0.41% | 20,474/5,000,000 steps | 0.2791 steps/s | ETA 4956h 40m 41s
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.234        |
+|    escalation_rate           | 0.426        |
+|    mean_episode_length_100ep | 7.7          |
+|    mean_reward_100ep         | -1.55        |
+|    resolution_rate           | 0.338        |
+|    timeout_rate              | 0.00152      |
+| eval/                        |              |
+|    escalation_rate           | 0            |
+|    mean_reward               | -2.85        |
+|    resolution_rate           | 0.325        |
+| progress/                    |              |
+|    percent                   | 0.409        |
+|    steps_per_second          | 0.279        |
+| rollout/                     |              |
+|    ep_len_mean               | 7.27         |
+|    ep_rew_mean               | -0.632       |
+| time/                        |              |
+|    fps                       | 0            |
+|    iterations                | 10           |
+|    time_elapsed              | 73383        |
+|    total_timesteps           | 20480        |
+| train/                       |              |
+|    approx_kl                 | 0.0060225455 |
+|    clip_fraction             | 0.0486       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -1.16        |
+|    explained_variance        | 0.0323       |
+|    learning_rate             | 0.0003       |
+|    loss                      | 12.1         |
+|    n_updates                 | 90           |
+|    policy_gradient_loss      | -0.00743     |
+|    value_loss                | 24           |
+-----------------------------------------------
+[Progress] 0.41% | 20,499/5,000,000 steps | 0.2791 steps/s | ETA 4955h 7m 46s
+Step 20,500 | Mean reward: -0.450 | Resolution: 34.8% | Escalation: 41.7%
+[Progress] 0.41% | 20,524/5,000,000 steps | 0.2792 steps/s | ETA 4954h 4m 22s
+[Progress] 0.41% | 20,549/5,000,000 steps | 0.2793 steps/s | ETA 4953h 0m 0s
+[Progress] 0.41% | 20,574/5,000,000 steps | 0.2793 steps/s | ETA 4951h 41m 39s
+[Progress] 0.41% | 20,599/5,000,000 steps | 0.2794 steps/s | ETA 4950h 16m 13s
+[Progress] 0.41% | 20,624/5,000,000 steps | 0.2795 steps/s | ETA 4948h 36m 30s
+[Progress] 0.41% | 20,649/5,000,000 steps | 0.2796 steps/s | ETA 4947h 30m 51s
+[Progress] 0.41% | 20,674/5,000,000 steps | 0.2796 steps/s | ETA 4946h 14m 20s
+[Progress] 0.41% | 20,699/5,000,000 steps | 0.2797 steps/s | ETA 4945h 8m 9s
+[Progress] 0.41% | 20,724/5,000,000 steps | 0.2797 steps/s | ETA 4944h 22m 23s
+[Progress] 0.41% | 20,749/5,000,000 steps | 0.2798 steps/s | ETA 4942h 53m 40s
+[Progress] 0.42% | 20,774/5,000,000 steps | 0.2799 steps/s | ETA 4941h 35m 28s
+[Progress] 0.42% | 20,799/5,000,000 steps | 0.2800 steps/s | ETA 4940h 25m 35s
+[Progress] 0.42% | 20,824/5,000,000 steps | 0.2801 steps/s | ETA 4938h 44m 14s
+[Progress] 0.42% | 20,849/5,000,000 steps | 0.2801 steps/s | ETA 4937h 23m 57s
+[Progress] 0.42% | 20,874/5,000,000 steps | 0.2802 steps/s | ETA 4936h 26m 0s
+[Progress] 0.42% | 20,899/5,000,000 steps | 0.2803 steps/s | ETA 4934h 54m 51s
+[Progress] 0.42% | 20,924/5,000,000 steps | 0.2803 steps/s | ETA 4933h 34m 30s
+[Progress] 0.42% | 20,949/5,000,000 steps | 0.2804 steps/s | ETA 4932h 3m 45s
+[Progress] 0.42% | 20,974/5,000,000 steps | 0.2805 steps/s | ETA 4931h 31m 41s
+[Progress] 0.42% | 20,999/5,000,000 steps | 0.2805 steps/s | ETA 4930h 54m 28s
+Step 21,000 | Mean reward: 0.286 | Resolution: 35.4% | Escalation: 40.5%
+[Progress] 0.42% | 21,024/5,000,000 steps | 0.2806 steps/s | ETA 4929h 12m 41s
+[Progress] 0.42% | 21,049/5,000,000 steps | 0.2807 steps/s | ETA 4927h 38m 56s
+[Progress] 0.42% | 21,074/5,000,000 steps | 0.2807 steps/s | ETA 4926h 33m 53s
+[Progress] 0.42% | 21,099/5,000,000 steps | 0.2808 steps/s | ETA 4925h 8m 12s
+[Progress] 0.42% | 21,124/5,000,000 steps | 0.2809 steps/s | ETA 4923h 40m 25s
+[Progress] 0.42% | 21,149/5,000,000 steps | 0.2810 steps/s | ETA 4922h 16m 30s
+[Progress] 0.42% | 21,174/5,000,000 steps | 0.2810 steps/s | ETA 4921h 35m 17s
+[Progress] 0.42% | 21,199/5,000,000 steps | 0.2811 steps/s | ETA 4920h 37m 36s
+[Progress] 0.42% | 21,224/5,000,000 steps | 0.2812 steps/s | ETA 4918h 54m 25s
+[Progress] 0.42% | 21,249/5,000,000 steps | 0.2812 steps/s | ETA 4917h 46m 44s
+[Progress] 0.43% | 21,274/5,000,000 steps | 0.2813 steps/s | ETA 4916h 27m 5s
+[Progress] 0.43% | 21,299/5,000,000 steps | 0.2814 steps/s | ETA 4915h 25m 34s
+[Progress] 0.43% | 21,324/5,000,000 steps | 0.2814 steps/s | ETA 4914h 58m 40s
+[Progress] 0.43% | 21,349/5,000,000 steps | 0.2814 steps/s | ETA 4913h 46m 15s
+[Progress] 0.43% | 21,374/5,000,000 steps | 0.2815 steps/s | ETA 4912h 10m 8s
+[Progress] 0.43% | 21,399/5,000,000 steps | 0.2816 steps/s | ETA 4910h 58m 16s
+[Progress] 0.43% | 21,424/5,000,000 steps | 0.2817 steps/s | ETA 4909h 35m 12s
+[Progress] 0.43% | 21,449/5,000,000 steps | 0.2817 steps/s | ETA 4908h 44m 41s
+[Progress] 0.43% | 21,474/5,000,000 steps | 0.2818 steps/s | ETA 4907h 17m 43s
+[Progress] 0.43% | 21,499/5,000,000 steps | 0.2819 steps/s | ETA 4906h 0m 53s
+Step 21,500 | Mean reward: -1.773 | Resolution: 35.5% | Escalation: 39.8%
+[Progress] 0.43% | 21,524/5,000,000 steps | 0.2819 steps/s | ETA 4905h 6m 7s
+[Progress] 0.43% | 21,549/5,000,000 steps | 0.2820 steps/s | ETA 4903h 52m 7s
+[Progress] 0.43% | 21,574/5,000,000 steps | 0.2821 steps/s | ETA 4902h 16m 38s
+[Progress] 0.43% | 21,599/5,000,000 steps | 0.2822 steps/s | ETA 4901h 3m 34s
+[Progress] 0.43% | 21,624/5,000,000 steps | 0.2822 steps/s | ETA 4900h 1m 3s
+[Progress] 0.43% | 21,649/5,000,000 steps | 0.2823 steps/s | ETA 4898h 29m 59s
+[Progress] 0.43% | 21,674/5,000,000 steps | 0.2824 steps/s | ETA 4896h 55m 40s
+[Progress] 0.43% | 21,699/5,000,000 steps | 0.2825 steps/s | ETA 4895h 34m 5s
+[Progress] 0.43% | 21,724/5,000,000 steps | 0.2825 steps/s | ETA 4894h 17m 50s
+[Progress] 0.43% | 21,749/5,000,000 steps | 0.2826 steps/s | ETA 4892h 49m 37s
+[Progress] 0.44% | 21,774/5,000,000 steps | 0.2827 steps/s | ETA 4891h 19m 51s
+[Progress] 0.44% | 21,799/5,000,000 steps | 0.2828 steps/s | ETA 4890h 2m 35s
+[Progress] 0.44% | 21,824/5,000,000 steps | 0.2829 steps/s | ETA 4888h 29m 10s
+[Progress] 0.44% | 21,849/5,000,000 steps | 0.2829 steps/s | ETA 4887h 21m 10s
+[Progress] 0.44% | 21,874/5,000,000 steps | 0.2830 steps/s | ETA 4885h 52m 29s
+[Progress] 0.44% | 21,899/5,000,000 steps | 0.2831 steps/s | ETA 4884h 25m 2s
+[Progress] 0.44% | 21,924/5,000,000 steps | 0.2832 steps/s | ETA 4882h 59m 6s
+[Progress] 0.44% | 21,949/5,000,000 steps | 0.2833 steps/s | ETA 4881h 28m 7s
+[Progress] 0.44% | 21,974/5,000,000 steps | 0.2833 steps/s | ETA 4880h 25m 11s
+[Progress] 0.44% | 21,999/5,000,000 steps | 0.2834 steps/s | ETA 4879h 14m 5s
+Step 22,000 | Mean reward: -1.163 | Resolution: 36.1% | Escalation: 39.0%
+[Progress] 0.44% | 22,024/5,000,000 steps | 0.2835 steps/s | ETA 4877h 57m 22s
+[Progress] 0.44% | 22,049/5,000,000 steps | 0.2835 steps/s | ETA 4876h 45m 13s
+[Progress] 0.44% | 22,074/5,000,000 steps | 0.2836 steps/s | ETA 4875h 40m 3s
+[Progress] 0.44% | 22,099/5,000,000 steps | 0.2837 steps/s | ETA 4874h 14m 39s
+[Progress] 0.44% | 22,124/5,000,000 steps | 0.2838 steps/s | ETA 4872h 40m 20s
+[Progress] 0.44% | 22,149/5,000,000 steps | 0.2838 steps/s | ETA 4871h 34m 52s
+[Progress] 0.44% | 22,174/5,000,000 steps | 0.2839 steps/s | ETA 4870h 27m 36s
+[Progress] 0.44% | 22,199/5,000,000 steps | 0.2840 steps/s | ETA 4869h 23m 19s
+[Progress] 0.44% | 22,224/5,000,000 steps | 0.2840 steps/s | ETA 4868h 32m 29s
+[Progress] 0.45% | 22,249/5,000,000 steps | 0.2841 steps/s | ETA 4867h 13m 51s
+[Progress] 0.45% | 22,274/5,000,000 steps | 0.2842 steps/s | ETA 4865h 41m 12s
+[Progress] 0.45% | 22,299/5,000,000 steps | 0.2843 steps/s | ETA 4864h 19m 59s
+[Progress] 0.45% | 22,324/5,000,000 steps | 0.2843 steps/s | ETA 4862h 58m 20s
+[Progress] 0.45% | 22,349/5,000,000 steps | 0.2844 steps/s | ETA 4861h 52m 31s
+[Progress] 0.45% | 22,374/5,000,000 steps | 0.2845 steps/s | ETA 4860h 6m 43s
+[Progress] 0.45% | 22,399/5,000,000 steps | 0.2845 steps/s | ETA 4859h 48m 17s
+[Progress] 0.45% | 22,424/5,000,000 steps | 0.2846 steps/s | ETA 4858h 13m 51s
+[Progress] 0.45% | 22,449/5,000,000 steps | 0.2847 steps/s | ETA 4856h 54m 6s
+[Progress] 0.45% | 22,474/5,000,000 steps | 0.2848 steps/s | ETA 4855h 31m 58s
+[Progress] 0.45% | 22,499/5,000,000 steps | 0.2848 steps/s | ETA 4854h 16m 19s
+Step 22,500 | Mean reward: 0.226 | Resolution: 36.8% | Escalation: 38.1%
+[Progress] 0.45% | 22,524/5,000,000 steps | 0.2849 steps/s | ETA 4853h 2m 16s
+----------------------------------------------
+| custom/                      |             |
+|    dropout_rate              | 0.248       |
+|    escalation_rate           | 0.381       |
+|    mean_episode_length_100ep | 7.43        |
+|    mean_reward_100ep         | 0.226       |
+|    resolution_rate           | 0.368       |
+|    timeout_rate              | 0.00261     |
+| progress/                    |             |
+|    percent                   | 0.451       |
+|    steps_per_second          | 0.285       |
+| rollout/                     |             |
+|    ep_len_mean               | 7.54        |
+|    ep_rew_mean               | 0.248       |
+| time/                        |             |
+|    fps                       | 0           |
+|    iterations                | 11          |
+|    time_elapsed              | 79070       |
+|    total_timesteps           | 22528       |
+| train/                       |             |
+|    approx_kl                 | 0.008967241 |
+|    clip_fraction             | 0.0565      |
+|    clip_range                | 0.2         |
+|    entropy_loss              | -1.13       |
+|    explained_variance        | 0.0195      |
+|    learning_rate             | 0.0003      |
+|    loss                      | 12.7        |
+|    n_updates                 | 100         |
+|    policy_gradient_loss      | -0.00818    |
+|    value_loss                | 26.7        |
+----------------------------------------------
+[Progress] 0.45% | 22,549/5,000,000 steps | 0.2850 steps/s | ETA 4851h 47m 11s
+[Progress] 0.45% | 22,574/5,000,000 steps | 0.2850 steps/s | ETA 4850h 37m 37s
+[Progress] 0.45% | 22,599/5,000,000 steps | 0.2851 steps/s | ETA 4849h 7m 9s
+[Progress] 0.45% | 22,624/5,000,000 steps | 0.2851 steps/s | ETA 4848h 49m 10s
+[Progress] 0.45% | 22,649/5,000,000 steps | 0.2852 steps/s | ETA 4847h 15m 11s
+[Progress] 0.45% | 22,674/5,000,000 steps | 0.2853 steps/s | ETA 4845h 49m 49s
+[Progress] 0.45% | 22,699/5,000,000 steps | 0.2854 steps/s | ETA 4844h 32m 33s
+[Progress] 0.45% | 22,724/5,000,000 steps | 0.2854 steps/s | ETA 4843h 38m 12s
+[Progress] 0.46% | 22,749/5,000,000 steps | 0.2855 steps/s | ETA 4842h 32m 34s
+[Progress] 0.46% | 22,774/5,000,000 steps | 0.2856 steps/s | ETA 4841h 26m 0s
+[Progress] 0.46% | 22,799/5,000,000 steps | 0.2857 steps/s | ETA 4839h 56m 10s
+[Progress] 0.46% | 22,824/5,000,000 steps | 0.2857 steps/s | ETA 4838h 50m 4s
+[Progress] 0.46% | 22,849/5,000,000 steps | 0.2858 steps/s | ETA 4837h 40m 55s
+[Progress] 0.46% | 22,874/5,000,000 steps | 0.2858 steps/s | ETA 4836h 55m 26s
+[Progress] 0.46% | 22,899/5,000,000 steps | 0.2859 steps/s | ETA 4835h 47m 22s
+[Progress] 0.46% | 22,924/5,000,000 steps | 0.2859 steps/s | ETA 4834h 51m 51s
+[Progress] 0.46% | 22,949/5,000,000 steps | 0.2860 steps/s | ETA 4833h 28m 8s
+[Progress] 0.46% | 22,974/5,000,000 steps | 0.2861 steps/s | ETA 4832h 29m 8s
+[Progress] 0.46% | 22,999/5,000,000 steps | 0.2862 steps/s | ETA 4831h 3m 46s
+Step 23,000 | Mean reward: -0.854 | Resolution: 37.0% | Escalation: 37.4%
+[Progress] 0.46% | 23,024/5,000,000 steps | 0.2862 steps/s | ETA 4829h 42m 1s
+[Progress] 0.46% | 23,049/5,000,000 steps | 0.2863 steps/s | ETA 4828h 48m 24s
+[Progress] 0.46% | 23,074/5,000,000 steps | 0.2864 steps/s | ETA 4827h 36m 14s
+[Progress] 0.46% | 23,099/5,000,000 steps | 0.2865 steps/s | ETA 4826h 13m 2s
+[Progress] 0.46% | 23,124/5,000,000 steps | 0.2865 steps/s | ETA 4824h 42m 54s
+[Progress] 0.46% | 23,149/5,000,000 steps | 0.2866 steps/s | ETA 4823h 42m 8s
+[Progress] 0.46% | 23,174/5,000,000 steps | 0.2867 steps/s | ETA 4822h 30m 35s
+[Progress] 0.46% | 23,199/5,000,000 steps | 0.2867 steps/s | ETA 4821h 35m 6s
+[Progress] 0.46% | 23,224/5,000,000 steps | 0.2868 steps/s | ETA 4820h 32m 16s
+[Progress] 0.47% | 23,249/5,000,000 steps | 0.2868 steps/s | ETA 4819h 31m 42s
+[Progress] 0.47% | 23,274/5,000,000 steps | 0.2869 steps/s | ETA 4818h 32m 16s
+[Progress] 0.47% | 23,299/5,000,000 steps | 0.2869 steps/s | ETA 4817h 52m 3s
+[Progress] 0.47% | 23,324/5,000,000 steps | 0.2870 steps/s | ETA 4817h 13m 26s
+[Progress] 0.47% | 23,349/5,000,000 steps | 0.2871 steps/s | ETA 4815h 46m 38s
+[Progress] 0.47% | 23,374/5,000,000 steps | 0.2871 steps/s | ETA 4815h 14m 10s
+[Progress] 0.47% | 23,399/5,000,000 steps | 0.2871 steps/s | ETA 4814h 12m 46s
+[Progress] 0.47% | 23,424/5,000,000 steps | 0.2872 steps/s | ETA 4812h 56m 32s
+[Progress] 0.47% | 23,449/5,000,000 steps | 0.2872 steps/s | ETA 4812h 45m 25s
+[Progress] 0.47% | 23,474/5,000,000 steps | 0.2873 steps/s | ETA 4812h 22m 23s
+[Progress] 0.47% | 23,499/5,000,000 steps | 0.2873 steps/s | ETA 4811h 18m 57s
+Step 23,500 | Mean reward: -0.673 | Resolution: 37.6% | Escalation: 36.8%
+[Progress] 0.47% | 23,524/5,000,000 steps | 0.2873 steps/s | ETA 4810h 44m 31s
+[Progress] 0.47% | 23,549/5,000,000 steps | 0.2874 steps/s | ETA 4809h 53m 37s
+[Progress] 0.47% | 23,574/5,000,000 steps | 0.2874 steps/s | ETA 4809h 9m 22s
+[Progress] 0.47% | 23,599/5,000,000 steps | 0.2875 steps/s | ETA 4807h 48m 37s
+[Progress] 0.47% | 23,624/5,000,000 steps | 0.2876 steps/s | ETA 4806h 32m 23s
+[Progress] 0.47% | 23,649/5,000,000 steps | 0.2877 steps/s | ETA 4805h 13m 6s
+[Progress] 0.47% | 23,674/5,000,000 steps | 0.2877 steps/s | ETA 4804h 15m 26s
+[Progress] 0.47% | 23,699/5,000,000 steps | 0.2878 steps/s | ETA 4803h 5m 30s
+[Progress] 0.47% | 23,724/5,000,000 steps | 0.2878 steps/s | ETA 4802h 16m 59s
+[Progress] 0.47% | 23,749/5,000,000 steps | 0.2879 steps/s | ETA 4800h 47m 20s
+[Progress] 0.48% | 23,774/5,000,000 steps | 0.2880 steps/s | ETA 4799h 38m 46s
+[Progress] 0.48% | 23,799/5,000,000 steps | 0.2881 steps/s | ETA 4798h 10m 20s
+[Progress] 0.48% | 23,824/5,000,000 steps | 0.2881 steps/s | ETA 4797h 10m 42s
+[Progress] 0.48% | 23,849/5,000,000 steps | 0.2882 steps/s | ETA 4795h 37m 59s
+[Progress] 0.48% | 23,874/5,000,000 steps | 0.2883 steps/s | ETA 4794h 32m 13s
+[Progress] 0.48% | 23,899/5,000,000 steps | 0.2884 steps/s | ETA 4793h 5m 58s
+[Progress] 0.48% | 23,924/5,000,000 steps | 0.2885 steps/s | ETA 4791h 40m 49s
+[Progress] 0.48% | 23,949/5,000,000 steps | 0.2885 steps/s | ETA 4790h 43m 58s
+[Progress] 0.48% | 23,974/5,000,000 steps | 0.2886 steps/s | ETA 4789h 37m 35s
+[Progress] 0.48% | 23,999/5,000,000 steps | 0.2886 steps/s | ETA 4788h 51m 30s
+Step 24,000 | Mean reward: -0.251 | Resolution: 38.1% | Escalation: 36.0%
+[Progress] 0.48% | 24,024/5,000,000 steps | 0.2887 steps/s | ETA 4787h 38m 15s
+[Progress] 0.48% | 24,049/5,000,000 steps | 0.2888 steps/s | ETA 4786h 27m 10s
+[Progress] 0.48% | 24,074/5,000,000 steps | 0.2888 steps/s | ETA 4785h 18m 40s
+[Progress] 0.48% | 24,099/5,000,000 steps | 0.2889 steps/s | ETA 4783h 58m 52s
+[Progress] 0.48% | 24,124/5,000,000 steps | 0.2890 steps/s | ETA 4782h 36m 56s
+[Progress] 0.48% | 24,149/5,000,000 steps | 0.2890 steps/s | ETA 4782h 9m 41s
+[Progress] 0.48% | 24,174/5,000,000 steps | 0.2891 steps/s | ETA 4781h 13m 33s
+[Progress] 0.48% | 24,199/5,000,000 steps | 0.2891 steps/s | ETA 4780h 21m 56s
+[Progress] 0.48% | 24,224/5,000,000 steps | 0.2892 steps/s | ETA 4779h 9m 59s
+[Progress] 0.48% | 24,249/5,000,000 steps | 0.2893 steps/s | ETA 4777h 57m 6s
+[Progress] 0.49% | 24,274/5,000,000 steps | 0.2894 steps/s | ETA 4776h 32m 41s
+[Progress] 0.49% | 24,299/5,000,000 steps | 0.2894 steps/s | ETA 4775h 30m 7s
+[Progress] 0.49% | 24,324/5,000,000 steps | 0.2895 steps/s | ETA 4774h 42m 39s
+[Progress] 0.49% | 24,349/5,000,000 steps | 0.2895 steps/s | ETA 4773h 44m 21s
+[Progress] 0.49% | 24,374/5,000,000 steps | 0.2896 steps/s | ETA 4772h 23m 53s
+[Progress] 0.49% | 24,399/5,000,000 steps | 0.2897 steps/s | ETA 4771h 9m 48s
+[Progress] 0.49% | 24,424/5,000,000 steps | 0.2897 steps/s | ETA 4770h 23m 33s
+[Progress] 0.49% | 24,449/5,000,000 steps | 0.2898 steps/s | ETA 4769h 36m 1s
+[Progress] 0.49% | 24,474/5,000,000 steps | 0.2899 steps/s | ETA 4768h 11m 52s
+[Progress] 0.49% | 24,499/5,000,000 steps | 0.2899 steps/s | ETA 4767h 24m 37s
+Step 24,500 | Mean reward: -0.764 | Resolution: 38.4% | Escalation: 35.3%
+[Progress] 0.49% | 24,524/5,000,000 steps | 0.2900 steps/s | ETA 4766h 24m 6s
+[Progress] 0.49% | 24,549/5,000,000 steps | 0.2900 steps/s | ETA 4765h 23m 24s
+[Progress] 0.49% | 24,574/5,000,000 steps | 0.2901 steps/s | ETA 4764h 50m 33s
+---------------------------------------------
+| custom/                      |            |
+|    dropout_rate              | 0.261      |
+|    escalation_rate           | 0.353      |
+|    mean_episode_length_100ep | 8.47       |
+|    mean_reward_100ep         | -0.764     |
+|    resolution_rate           | 0.384      |
+|    timeout_rate              | 0.00235    |
+| progress/                    |            |
+|    percent                   | 0.491      |
+|    steps_per_second          | 0.29       |
+| rollout/                     |            |
+|    ep_len_mean               | 8.16       |
+|    ep_rew_mean               | -1.04      |
+| time/                        |            |
+|    fps                       | 0          |
+|    iterations                | 12         |
+|    time_elapsed              | 84727      |
+|    total_timesteps           | 24576      |
+| train/                       |            |
+|    approx_kl                 | 0.01030693 |
+|    clip_fraction             | 0.0712     |
+|    clip_range                | 0.2        |
+|    entropy_loss              | -1.07      |
+|    explained_variance        | 0.0262     |
+|    learning_rate             | 0.0003     |
+|    loss                      | 13.5       |
+|    n_updates                 | 110        |
+|    policy_gradient_loss      | -0.00952   |
+|    value_loss                | 27.5       |
+---------------------------------------------
+[Progress] 0.49% | 24,599/5,000,000 steps | 0.2901 steps/s | ETA 4763h 36m 27s
+[Progress] 0.49% | 24,624/5,000,000 steps | 0.2902 steps/s | ETA 4762h 13m 14s
+[Progress] 0.49% | 24,649/5,000,000 steps | 0.2903 steps/s | ETA 4761h 8m 4s
+[Progress] 0.49% | 24,674/5,000,000 steps | 0.2903 steps/s | ETA 4760h 19m 13s
+[Progress] 0.49% | 24,699/5,000,000 steps | 0.2904 steps/s | ETA 4758h 53m 57s
+[Progress] 0.49% | 24,724/5,000,000 steps | 0.2905 steps/s | ETA 4757h 50m 1s
+[Progress] 0.49% | 24,749/5,000,000 steps | 0.2905 steps/s | ETA 4756h 54m 49s
+[Progress] 0.50% | 24,774/5,000,000 steps | 0.2906 steps/s | ETA 4755h 39m 36s
+[Progress] 0.50% | 24,799/5,000,000 steps | 0.2906 steps/s | ETA 4754h 52m 50s
+[Progress] 0.50% | 24,824/5,000,000 steps | 0.2907 steps/s | ETA 4753h 43m 39s
+[Progress] 0.50% | 24,849/5,000,000 steps | 0.2908 steps/s | ETA 4752h 24m 51s
+[Progress] 0.50% | 24,874/5,000,000 steps | 0.2909 steps/s | ETA 4751h 0m 38s
+[Progress] 0.50% | 24,899/5,000,000 steps | 0.2910 steps/s | ETA 4749h 45m 56s
+[Progress] 0.50% | 24,924/5,000,000 steps | 0.2910 steps/s | ETA 4748h 36m 48s
+[Progress] 0.50% | 24,949/5,000,000 steps | 0.2911 steps/s | ETA 4747h 34m 39s
+[Progress] 0.50% | 24,974/5,000,000 steps | 0.2911 steps/s | ETA 4747h 0m 14s
+[Progress] 0.50% | 24,999/5,000,000 steps | 0.2912 steps/s | ETA 4745h 51m 41s
+Step 25,000 | Mean reward: 0.510 | Resolution: 39.2% | Escalation: 34.6%
+[Progress] 0.50% | 25,024/5,000,000 steps | 0.2913 steps/s | ETA 4744h 33m 22s
+[Progress] 0.50% | 25,049/5,000,000 steps | 0.2913 steps/s | ETA 4743h 27m 6s
+[Progress] 0.50% | 25,074/5,000,000 steps | 0.2914 steps/s | ETA 4742h 17m 10s
+[Progress] 0.50% | 25,099/5,000,000 steps | 0.2915 steps/s | ETA 4741h 17m 4s
+[Progress] 0.50% | 25,124/5,000,000 steps | 0.2915 steps/s | ETA 4740h 18m 45s
+[Progress] 0.50% | 25,149/5,000,000 steps | 0.2916 steps/s | ETA 4739h 37m 28s
+[Progress] 0.50% | 25,174/5,000,000 steps | 0.2916 steps/s | ETA 4738h 51m 50s
+[Progress] 0.50% | 25,199/5,000,000 steps | 0.2916 steps/s | ETA 4738h 24m 5s
+[Progress] 0.50% | 25,224/5,000,000 steps | 0.2917 steps/s | ETA 4737h 28m 58s
+[Progress] 0.51% | 25,249/5,000,000 steps | 0.2918 steps/s | ETA 4736h 29m 2s
+[Progress] 0.51% | 25,274/5,000,000 steps | 0.2918 steps/s | ETA 4735h 14m 50s
+[Progress] 0.51% | 25,299/5,000,000 steps | 0.2919 steps/s | ETA 4734h 21m 25s
+[Progress] 0.51% | 25,324/5,000,000 steps | 0.2919 steps/s | ETA 4733h 23m 24s
+[Progress] 0.51% | 25,349/5,000,000 steps | 0.2920 steps/s | ETA 4732h 28m 17s
+[Progress] 0.51% | 25,374/5,000,000 steps | 0.2920 steps/s | ETA 4731h 51m 32s
+[Progress] 0.51% | 25,399/5,000,000 steps | 0.2920 steps/s | ETA 4731h 53m 10s
+[Progress] 0.51% | 25,424/5,000,000 steps | 0.2921 steps/s | ETA 4730h 46m 1s
+[Progress] 0.51% | 25,449/5,000,000 steps | 0.2922 steps/s | ETA 4729h 47m 49s
+[Progress] 0.51% | 25,474/5,000,000 steps | 0.2922 steps/s | ETA 4728h 50m 31s
+[Progress] 0.51% | 25,499/5,000,000 steps | 0.2923 steps/s | ETA 4728h 7m 14s
+Step 25,500 | Mean reward: 1.868 | Resolution: 39.9% | Escalation: 33.9%
+[Progress] 0.51% | 25,524/5,000,000 steps | 0.2923 steps/s | ETA 4727h 32m 34s
+[Progress] 0.51% | 25,549/5,000,000 steps | 0.2923 steps/s | ETA 4726h 31m 18s
+[Progress] 0.51% | 25,574/5,000,000 steps | 0.2924 steps/s | ETA 4725h 6m 43s
+[Progress] 0.51% | 25,599/5,000,000 steps | 0.2925 steps/s | ETA 4724h 4m 42s
+[Progress] 0.51% | 25,624/5,000,000 steps | 0.2926 steps/s | ETA 4723h 3m 51s
+[Progress] 0.51% | 25,649/5,000,000 steps | 0.2926 steps/s | ETA 4722h 10m 23s
+[Progress] 0.51% | 25,674/5,000,000 steps | 0.2927 steps/s | ETA 4720h 54m 30s
+[Progress] 0.51% | 25,699/5,000,000 steps | 0.2927 steps/s | ETA 4719h 57m 0s
+[Progress] 0.51% | 25,724/5,000,000 steps | 0.2928 steps/s | ETA 4719h 8m 20s
+[Progress] 0.52% | 25,749/5,000,000 steps | 0.2928 steps/s | ETA 4718h 15m 42s
+[Progress] 0.52% | 25,774/5,000,000 steps | 0.2929 steps/s | ETA 4717h 29m 48s
+[Progress] 0.52% | 25,799/5,000,000 steps | 0.2929 steps/s | ETA 4716h 46m 42s
+[Progress] 0.52% | 25,824/5,000,000 steps | 0.2930 steps/s | ETA 4716h 5m 49s
+[Progress] 0.52% | 25,849/5,000,000 steps | 0.2930 steps/s | ETA 4715h 28m 35s
+[Progress] 0.52% | 25,874/5,000,000 steps | 0.2931 steps/s | ETA 4714h 28m 1s
+[Progress] 0.52% | 25,899/5,000,000 steps | 0.2931 steps/s | ETA 4713h 33m 9s
+[Progress] 0.52% | 25,924/5,000,000 steps | 0.2932 steps/s | ETA 4712h 31m 33s
+[Progress] 0.52% | 25,949/5,000,000 steps | 0.2932 steps/s | ETA 4711h 42m 36s
+[Progress] 0.52% | 25,974/5,000,000 steps | 0.2933 steps/s | ETA 4710h 56m 52s
+[Progress] 0.52% | 25,999/5,000,000 steps | 0.2934 steps/s | ETA 4709h 57m 22s
+Step 26,000 | Mean reward: 0.425 | Resolution: 40.2% | Escalation: 33.2%
+[Progress] 0.52% | 26,024/5,000,000 steps | 0.2934 steps/s | ETA 4708h 57m 44s
+[Progress] 0.52% | 26,049/5,000,000 steps | 0.2935 steps/s | ETA 4708h 6m 4s
+[Progress] 0.52% | 26,074/5,000,000 steps | 0.2935 steps/s | ETA 4706h 53m 17s
+[Progress] 0.52% | 26,099/5,000,000 steps | 0.2936 steps/s | ETA 4706h 30m 41s
+[Progress] 0.52% | 26,124/5,000,000 steps | 0.2936 steps/s | ETA 4705h 23m 19s
+[Progress] 0.52% | 26,149/5,000,000 steps | 0.2937 steps/s | ETA 4704h 37m 0s
+[Progress] 0.52% | 26,174/5,000,000 steps | 0.2937 steps/s | ETA 4703h 50m 8s
+[Progress] 0.52% | 26,199/5,000,000 steps | 0.2938 steps/s | ETA 4702h 29m 47s
+[Progress] 0.52% | 26,224/5,000,000 steps | 0.2939 steps/s | ETA 4701h 39m 9s
+[Progress] 0.53% | 26,249/5,000,000 steps | 0.2939 steps/s | ETA 4701h 14m 19s
+[Progress] 0.53% | 26,274/5,000,000 steps | 0.2939 steps/s | ETA 4700h 32m 54s
+[Progress] 0.53% | 26,299/5,000,000 steps | 0.2940 steps/s | ETA 4699h 48m 34s
+[Progress] 0.53% | 26,324/5,000,000 steps | 0.2940 steps/s | ETA 4698h 53m 34s
+[Progress] 0.53% | 26,349/5,000,000 steps | 0.2941 steps/s | ETA 4698h 19m 15s
+[Progress] 0.53% | 26,374/5,000,000 steps | 0.2941 steps/s | ETA 4697h 54m 0s
+[Progress] 0.53% | 26,399/5,000,000 steps | 0.2941 steps/s | ETA 4697h 8m 58s
+[Progress] 0.53% | 26,424/5,000,000 steps | 0.2942 steps/s | ETA 4696h 7m 39s
+[Progress] 0.53% | 26,449/5,000,000 steps | 0.2942 steps/s | ETA 4695h 14m 35s
+[Progress] 0.53% | 26,474/5,000,000 steps | 0.2943 steps/s | ETA 4694h 41m 54s
+[Progress] 0.53% | 26,499/5,000,000 steps | 0.2943 steps/s | ETA 4693h 29m 34s
+Step 26,500 | Mean reward: -0.122 | Resolution: 40.4% | Escalation: 32.6%
+[Progress] 0.53% | 26,524/5,000,000 steps | 0.2944 steps/s | ETA 4692h 27m 54s
+[Progress] 0.53% | 26,549/5,000,000 steps | 0.2945 steps/s | ETA 4691h 30m 13s
+[Progress] 0.53% | 26,574/5,000,000 steps | 0.2945 steps/s | ETA 4690h 35m 52s
+[Progress] 0.53% | 26,599/5,000,000 steps | 0.2946 steps/s | ETA 4689h 36m 34s
+[Progress] 0.53% | 26,624/5,000,000 steps | 0.2947 steps/s | ETA 4688h 28m 47s
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.265        |
+|    escalation_rate           | 0.326        |
+|    mean_episode_length_100ep | 9.53         |
+|    mean_reward_100ep         | -0.122       |
+|    resolution_rate           | 0.404        |
+|    timeout_rate              | 0.00426      |
+| progress/                    |              |
+|    percent                   | 0.532        |
+|    steps_per_second          | 0.295        |
+| rollout/                     |              |
+|    ep_len_mean               | 9.4          |
+|    ep_rew_mean               | -0.508       |
+| time/                        |              |
+|    fps                       | 0            |
+|    iterations                | 13           |
+|    time_elapsed              | 90355        |
+|    total_timesteps           | 26624        |
+| train/                       |              |
+|    approx_kl                 | 0.0075479867 |
+|    clip_fraction             | 0.0497       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -1.04        |
+|    explained_variance        | 0.0292       |
+|    learning_rate             | 0.0003       |
+|    loss                      | 13.6         |
+|    n_updates                 | 120          |
+|    policy_gradient_loss      | -0.00624     |
+|    value_loss                | 28.8         |
+-----------------------------------------------
+[Progress] 0.53% | 26,649/5,000,000 steps | 0.2947 steps/s | ETA 4687h 15m 19s
+[Progress] 0.53% | 26,674/5,000,000 steps | 0.2948 steps/s | ETA 4686h 23m 51s
+[Progress] 0.53% | 26,699/5,000,000 steps | 0.2949 steps/s | ETA 4685h 12m 50s
+[Progress] 0.53% | 26,724/5,000,000 steps | 0.2949 steps/s | ETA 4684h 3m 42s
+[Progress] 0.54% | 26,749/5,000,000 steps | 0.2950 steps/s | ETA 4683h 2m 9s
+[Progress] 0.54% | 26,774/5,000,000 steps | 0.2950 steps/s | ETA 4682h 43m 33s
+[Progress] 0.54% | 26,799/5,000,000 steps | 0.2950 steps/s | ETA 4682h 6m 2s
+[Progress] 0.54% | 26,824/5,000,000 steps | 0.2951 steps/s | ETA 4681h 21m 59s
+[Progress] 0.54% | 26,849/5,000,000 steps | 0.2951 steps/s | ETA 4680h 35m 37s
+[Progress] 0.54% | 26,874/5,000,000 steps | 0.2952 steps/s | ETA 4679h 49m 11s
+[Progress] 0.54% | 26,899/5,000,000 steps | 0.2952 steps/s | ETA 4679h 14m 4s
+[Progress] 0.54% | 26,924/5,000,000 steps | 0.2953 steps/s | ETA 4678h 29m 14s
+[Progress] 0.54% | 26,949/5,000,000 steps | 0.2953 steps/s | ETA 4678h 6m 20s
+[Progress] 0.54% | 26,974/5,000,000 steps | 0.2953 steps/s | ETA 4678h 26m 31s
+[Progress] 0.54% | 26,999/5,000,000 steps | 0.2953 steps/s | ETA 4677h 25m 57s
+Step 27,000 | Mean reward: 1.127 | Resolution: 41.1% | Escalation: 31.9%
+[Progress] 0.54% | 27,024/5,000,000 steps | 0.2954 steps/s | ETA 4676h 17m 55s
+[Progress] 0.54% | 27,049/5,000,000 steps | 0.2954 steps/s | ETA 4675h 33m 47s
+[Progress] 0.54% | 27,074/5,000,000 steps | 0.2955 steps/s | ETA 4674h 43m 14s
+[Progress] 0.54% | 27,099/5,000,000 steps | 0.2955 steps/s | ETA 4673h 58m 39s
+[Progress] 0.54% | 27,124/5,000,000 steps | 0.2956 steps/s | ETA 4672h 46m 58s
+[Progress] 0.54% | 27,149/5,000,000 steps | 0.2957 steps/s | ETA 4671h 51m 13s
+[Progress] 0.54% | 27,174/5,000,000 steps | 0.2957 steps/s | ETA 4671h 10m 29s
+[Progress] 0.54% | 27,199/5,000,000 steps | 0.2958 steps/s | ETA 4670h 13m 42s
+[Progress] 0.54% | 27,224/5,000,000 steps | 0.2958 steps/s | ETA 4669h 31m 12s
+[Progress] 0.55% | 27,249/5,000,000 steps | 0.2959 steps/s | ETA 4668h 41m 14s
+[Progress] 0.55% | 27,274/5,000,000 steps | 0.2959 steps/s | ETA 4667h 47m 5s
+[Progress] 0.55% | 27,299/5,000,000 steps | 0.2960 steps/s | ETA 4666h 43m 5s
+[Progress] 0.55% | 27,324/5,000,000 steps | 0.2960 steps/s | ETA 4665h 46m 46s
+[Progress] 0.55% | 27,349/5,000,000 steps | 0.2961 steps/s | ETA 4665h 22m 41s
+[Progress] 0.55% | 27,374/5,000,000 steps | 0.2961 steps/s | ETA 4664h 41m 21s
+[Progress] 0.55% | 27,399/5,000,000 steps | 0.2962 steps/s | ETA 4663h 33m 50s
+[Progress] 0.55% | 27,424/5,000,000 steps | 0.2963 steps/s | ETA 4662h 21m 15s
+[Progress] 0.55% | 27,449/5,000,000 steps | 0.2963 steps/s | ETA 4661h 35m 51s
+[Progress] 0.55% | 27,474/5,000,000 steps | 0.2964 steps/s | ETA 4660h 32m 35s
+[Progress] 0.55% | 27,499/5,000,000 steps | 0.2964 steps/s | ETA 4660h 3m 26s
+Step 27,500 | Mean reward: 1.317 | Resolution: 41.5% | Escalation: 31.3%
+[Progress] 0.55% | 27,524/5,000,000 steps | 0.2964 steps/s | ETA 4659h 19m 20s
+[Progress] 0.55% | 27,549/5,000,000 steps | 0.2965 steps/s | ETA 4658h 30m 40s
+[Progress] 0.55% | 27,574/5,000,000 steps | 0.2965 steps/s | ETA 4657h 43m 5s
+[Progress] 0.55% | 27,599/5,000,000 steps | 0.2966 steps/s | ETA 4656h 42m 25s
+[Progress] 0.55% | 27,624/5,000,000 steps | 0.2966 steps/s | ETA 4656h 37m 29s
+[Progress] 0.55% | 27,649/5,000,000 steps | 0.2967 steps/s | ETA 4655h 59m 59s
+[Progress] 0.55% | 27,674/5,000,000 steps | 0.2967 steps/s | ETA 4654h 59m 41s
+[Progress] 0.55% | 27,699/5,000,000 steps | 0.2968 steps/s | ETA 4654h 13m 17s
+[Progress] 0.55% | 27,724/5,000,000 steps | 0.2968 steps/s | ETA 4653h 38m 2s
+[Progress] 0.56% | 27,749/5,000,000 steps | 0.2969 steps/s | ETA 4652h 41m 55s
+[Progress] 0.56% | 27,774/5,000,000 steps | 0.2969 steps/s | ETA 4652h 20m 14s
+[Progress] 0.56% | 27,799/5,000,000 steps | 0.2969 steps/s | ETA 4651h 17m 50s
+[Progress] 0.56% | 27,824/5,000,000 steps | 0.2970 steps/s | ETA 4650h 23m 54s
+[Progress] 0.56% | 27,849/5,000,000 steps | 0.2970 steps/s | ETA 4649h 42m 35s
+[Progress] 0.56% | 27,874/5,000,000 steps | 0.2971 steps/s | ETA 4648h 47m 50s
+[Progress] 0.56% | 27,899/5,000,000 steps | 0.2972 steps/s | ETA 4647h 56m 34s
+[Progress] 0.56% | 27,924/5,000,000 steps | 0.2972 steps/s | ETA 4647h 1m 13s
+[Progress] 0.56% | 27,949/5,000,000 steps | 0.2972 steps/s | ETA 4646h 29m 29s
+[Progress] 0.56% | 27,974/5,000,000 steps | 0.2973 steps/s | ETA 4645h 40m 19s
+[Progress] 0.56% | 27,999/5,000,000 steps | 0.2974 steps/s | ETA 4644h 43m 42s
+Step 28,000 | Mean reward: -0.479 | Resolution: 41.6% | Escalation: 30.6%
+[Progress] 0.56% | 28,024/5,000,000 steps | 0.2974 steps/s | ETA 4643h 55m 33s
+[Progress] 0.56% | 28,049/5,000,000 steps | 0.2974 steps/s | ETA 4643h 17m 28s
+[Progress] 0.56% | 28,074/5,000,000 steps | 0.2975 steps/s | ETA 4642h 22m 21s
+[Progress] 0.56% | 28,099/5,000,000 steps | 0.2976 steps/s | ETA 4641h 27m 14s
+[Progress] 0.56% | 28,124/5,000,000 steps | 0.2976 steps/s | ETA 4640h 34m 32s
+[Progress] 0.56% | 28,149/5,000,000 steps | 0.2977 steps/s | ETA 4639h 48m 23s
+[Progress] 0.56% | 28,174/5,000,000 steps | 0.2977 steps/s | ETA 4639h 0m 59s
+[Progress] 0.56% | 28,199/5,000,000 steps | 0.2978 steps/s | ETA 4637h 58m 57s
+[Progress] 0.56% | 28,224/5,000,000 steps | 0.2978 steps/s | ETA 4636h 58m 40s
+[Progress] 0.56% | 28,249/5,000,000 steps | 0.2979 steps/s | ETA 4636h 17m 59s
+[Progress] 0.57% | 28,274/5,000,000 steps | 0.2979 steps/s | ETA 4635h 12m 37s
+[Progress] 0.57% | 28,299/5,000,000 steps | 0.2980 steps/s | ETA 4634h 11m 30s
+[Progress] 0.57% | 28,324/5,000,000 steps | 0.2981 steps/s | ETA 4633h 23m 13s
+[Progress] 0.57% | 28,349/5,000,000 steps | 0.2981 steps/s | ETA 4632h 34m 16s
+[Progress] 0.57% | 28,374/5,000,000 steps | 0.2982 steps/s | ETA 4631h 43m 34s
+[Progress] 0.57% | 28,399/5,000,000 steps | 0.2982 steps/s | ETA 4630h 58m 29s
+[Progress] 0.57% | 28,424/5,000,000 steps | 0.2983 steps/s | ETA 4630h 5m 9s
+[Progress] 0.57% | 28,449/5,000,000 steps | 0.2983 steps/s | ETA 4629h 9m 34s
+[Progress] 0.57% | 28,474/5,000,000 steps | 0.2984 steps/s | ETA 4628h 12m 57s
+[Progress] 0.57% | 28,499/5,000,000 steps | 0.2984 steps/s | ETA 4627h 41m 20s
+Step 28,500 | Mean reward: -0.303 | Resolution: 42.0% | Escalation: 30.2%
+[Progress] 0.57% | 28,524/5,000,000 steps | 0.2985 steps/s | ETA 4627h 5m 1s
+[Progress] 0.57% | 28,549/5,000,000 steps | 0.2985 steps/s | ETA 4626h 9m 58s
+[Progress] 0.57% | 28,574/5,000,000 steps | 0.2986 steps/s | ETA 4625h 18m 57s
+[Progress] 0.57% | 28,599/5,000,000 steps | 0.2986 steps/s | ETA 4624h 51m 3s
+[Progress] 0.57% | 28,624/5,000,000 steps | 0.2986 steps/s | ETA 4624h 2m 32s
+[Progress] 0.57% | 28,649/5,000,000 steps | 0.2987 steps/s | ETA 4623h 26m 20s
+-----------------------------------------------
+| custom/                      |              |
+|    dropout_rate              | 0.273        |
+|    escalation_rate           | 0.302        |
+|    mean_episode_length_100ep | 8.82         |
+|    mean_reward_100ep         | -0.303       |
+|    resolution_rate           | 0.42         |
+|    timeout_rate              | 0.00583      |
+| progress/                    |              |
+|    percent                   | 0.573        |
+|    steps_per_second          | 0.299        |
+| rollout/                     |              |
+|    ep_len_mean               | 9.02         |
+|    ep_rew_mean               | 0.629        |
+| time/                        |              |
+|    fps                       | 0            |
+|    iterations                | 14           |
+|    time_elapsed              | 95979        |
+|    total_timesteps           | 28672        |
+| train/                       |              |
+|    approx_kl                 | 0.0053747096 |
+|    clip_fraction             | 0.0455       |
+|    clip_range                | 0.2          |
+|    entropy_loss              | -0.997       |
+|    explained_variance        | 0.0126       |
+|    learning_rate             | 0.0003       |
+|    loss                      | 14.1         |
+|    n_updates                 | 130          |
+|    policy_gradient_loss      | -0.00573     |
+|    value_loss                | 28.9         |
+-----------------------------------------------
+[Progress] 0.57% | 28,674/5,000,000 steps | 0.2987 steps/s | ETA 4622h 31m 51s
+[Progress] 0.57% | 28,699/5,000,000 steps | 0.2988 steps/s | ETA 4621h 45m 18s
+[Progress] 0.57% | 28,724/5,000,000 steps | 0.2988 steps/s | ETA 4620h 54m 1s
+[Progress] 0.57% | 28,749/5,000,000 steps | 0.2989 steps/s | ETA 4620h 6m 58s
+[Progress] 0.58% | 28,774/5,000,000 steps | 0.2989 steps/s | ETA 4619h 42m 44s
+[Progress] 0.58% | 28,799/5,000,000 steps | 0.2990 steps/s | ETA 4618h 45m 43s
+[Progress] 0.58% | 28,824/5,000,000 steps | 0.2990 steps/s | ETA 4617h 35m 1s
+[Progress] 0.58% | 28,849/5,000,000 steps | 0.2991 steps/s | ETA 4617h 7m 10s
+[Progress] 0.58% | 28,874/5,000,000 steps | 0.2991 steps/s | ETA 4616h 22m 38s
+[Progress] 0.58% | 28,899/5,000,000 steps | 0.2992 steps/s | ETA 4615h 22m 41s
+[Progress] 0.58% | 28,924/5,000,000 steps | 0.2992 steps/s | ETA 4614h 32m 11s
+[Progress] 0.58% | 28,949/5,000,000 steps | 0.2993 steps/s | ETA 4613h 28m 31s
+[Progress] 0.58% | 28,974/5,000,000 steps | 0.2994 steps/s | ETA 4612h 44m 20s
+[Progress] 0.58% | 28,999/5,000,000 steps | 0.2994 steps/s | ETA 4611h 56m 14s
+Step 29,000 | Mean reward: 1.088 | Resolution: 42.3% | Escalation: 29.6%
+[Progress] 0.58% | 29,024/5,000,000 steps | 0.2994 steps/s | ETA 4611h 19m 27s
+[Progress] 0.58% | 29,049/5,000,000 steps | 0.2995 steps/s | ETA 4610h 51m 1s
+[Progress] 0.58% | 29,074/5,000,000 steps | 0.2995 steps/s | ETA 4610h 14m 58s
+[Progress] 0.58% | 29,099/5,000,000 steps | 0.2996 steps/s | ETA 4609h 23m 41s
+[Progress] 0.58% | 29,124/5,000,000 steps | 0.2996 steps/s | ETA 4608h 50m 43s
+[Progress] 0.58% | 29,149/5,000,000 steps | 0.2996 steps/s | ETA 4608h 4m 1s
+[Progress] 0.58% | 29,174/5,000,000 steps | 0.2996 steps/s | ETA 4609h 12m 49s
+[Progress] 0.58% | 29,199/5,000,000 steps | 0.2995 steps/s | ETA 4610h 55m 16s
+[Progress] 0.58% | 29,224/5,000,000 steps | 0.2995 steps/s | ETA 4610h 32m 49s
+[Progress] 0.58% | 29,249/5,000,000 steps | 0.2995 steps/s | ETA 4609h 48m 18s
+[Progress] 0.59% | 29,274/5,000,000 steps | 0.2996 steps/s | ETA 4609h 14m 19s
+[Progress] 0.59% | 29,299/5,000,000 steps | 0.2996 steps/s | ETA 4608h 20m 35s
+[Progress] 0.59% | 29,324/5,000,000 steps | 0.2997 steps/s | ETA 4607h 40m 41s
+[Progress] 0.59% | 29,349/5,000,000 steps | 0.2997 steps/s | ETA 4606h 48m 40s
+[Progress] 0.59% | 29,374/5,000,000 steps | 0.2998 steps/s | ETA 4606h 15m 11s
+[Progress] 0.59% | 29,399/5,000,000 steps | 0.2998 steps/s | ETA 4605h 16m 7s
+[Progress] 0.59% | 29,424/5,000,000 steps | 0.2999 steps/s | ETA 4604h 25m 27s
+[Progress] 0.59% | 29,449/5,000,000 steps | 0.2999 steps/s | ETA 4603h 33m 44s
+[Progress] 0.59% | 29,474/5,000,000 steps | 0.3000 steps/s | ETA 4602h 41m 58s
+[Progress] 0.59% | 29,499/5,000,000 steps | 0.3000 steps/s | ETA 4601h 39m 39s
+Step 29,500 | Mean reward: 0.233 | Resolution: 42.5% | Escalation: 29.2%
+[Progress] 0.59% | 29,524/5,000,000 steps | 0.3001 steps/s | ETA 4600h 39m 33s
+[Progress] 0.59% | 29,549/5,000,000 steps | 0.3001 steps/s | ETA 4600h 0m 35s
+[Progress] 0.59% | 29,574/5,000,000 steps | 0.3002 steps/s | ETA 4599h 11m 1s
+[Progress] 0.59% | 29,599/5,000,000 steps | 0.3002 steps/s | ETA 4598h 29m 28s
+[Progress] 0.59% | 29,624/5,000,000 steps | 0.3003 steps/s | ETA 4597h 49m 24s
+[Progress] 0.59% | 29,649/5,000,000 steps | 0.3003 steps/s | ETA 4596h 54m 8s
+[Progress] 0.59% | 29,674/5,000,000 steps | 0.3004 steps/s | ETA 4596h 17m 31s
+[Progress] 0.59% | 29,699/5,000,000 steps | 0.3004 steps/s | ETA 4595h 23m 58s
+[Progress] 0.59% | 29,724/5,000,000 steps | 0.3005 steps/s | ETA 4594h 38m 52s
+[Progress] 0.59% | 29,749/5,000,000 steps | 0.3005 steps/s | ETA 4594h 6m 45s
+[Progress] 0.60% | 29,774/5,000,000 steps | 0.3006 steps/s | ETA 4593h 20m 1s
+[Progress] 0.60% | 29,799/5,000,000 steps | 0.3006 steps/s | ETA 4592h 34m 56s
+[Progress] 0.60% | 29,824/5,000,000 steps | 0.3007 steps/s | ETA 4591h 50m 6s
+[Progress] 0.60% | 29,849/5,000,000 steps | 0.3007 steps/s | ETA 4590h 51m 50s
+[Progress] 0.60% | 29,874/5,000,000 steps | 0.3008 steps/s | ETA 4590h 20m 7s
+[Progress] 0.60% | 29,899/5,000,000 steps | 0.3008 steps/s | ETA 4589h 35m 34s
+[Progress] 0.60% | 29,924/5,000,000 steps | 0.3008 steps/s | ETA 4589h 23m 5s
+[Progress] 0.60% | 29,949/5,000,000 steps | 0.3009 steps/s | ETA 4588h 33m 0s
+[Progress] 0.60% | 29,974/5,000,000 steps | 0.3009 steps/s | ETA 4587h 54m 19s
+[Progress] 0.60% | 29,999/5,000,000 steps | 0.3010 steps/s | ETA 4587h 3m 56s
+Step 30,000 | Mean reward: -0.155 | Resolution: 42.7% | Escalation: 28.7%
