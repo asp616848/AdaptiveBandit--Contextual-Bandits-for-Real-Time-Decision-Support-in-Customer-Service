@@ -73,6 +73,10 @@ class RewardShapedWrapper(gym.Wrapper):
         super().__init__(env)
         self.shaper = shaper
 
+    @property
+    def state(self) -> dict[str, Any]:
+        return getattr(self.env, "state", {})
+
     def set_subflow_filter(self, subflow_filter: list[str] | None) -> None:
         if hasattr(self.env, "set_subflow_filter"):
             self.env.set_subflow_filter(subflow_filter)

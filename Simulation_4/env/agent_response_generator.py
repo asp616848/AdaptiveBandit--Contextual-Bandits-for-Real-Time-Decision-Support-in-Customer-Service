@@ -3,7 +3,7 @@ from __future__ import annotations
 """
 Agent Response Generator — Stage 3.
 
-Generates natural-language agent responses for each RL action using Ollama.
+Generates natural-language agent responses for each RL action.
 This is the agent-side counterpart to NLGLayer (which generates customer
 utterances).  Together they build a realistic two-sided conversation that is
 fed back into the intent classifier and the customer NLG as context.
@@ -12,18 +12,18 @@ The generator is called inside NLPObservationWrapper.step() BEFORE env.step(),
 so the generated agent text is passed to SupportEnv as agent_text and stored
 in conversation_history.
 
-Model selection:
-  - Uses the same Ollama endpoint as NLGLayer.
-  - Defaults to the same model (SUPPORT_SIM_LLM_MODEL, typically llama3).
-  - A separate env var SUPPORT_SIM_AGENT_MODEL can override for the agent side
-    if you want a different model for agent vs. customer (e.g., phi3 for agent,
-    llama3 for customer).
+Model selection supports either a local Qwen backend or the older API backend.
 """
 
 import os
 from typing import Any
 
-from openai import OpenAI
+from .local_qwen_client import get_local_qwen_client
+
+try:
+    from openai import OpenAI
+except Exception:
+    OpenAI = None
 
 
 _SYSTEM_PROMPT = """\
@@ -41,7 +41,7 @@ Rules:
 
 
 class AgentResponseGenerator:
-    """Generate natural-language agent responses via Ollama."""
+    """Generate natural-language agent responses via local model, API, or templates."""
 
     # Canonical fallback phrases for when Ollama is unavailable.
     FALLBACK_TEXTS = {
@@ -59,13 +59,25 @@ class AgentResponseGenerator:
             or os.getenv("SUPPORT_SIM_LLM_MODEL", "llama3")
         )
         self.endpoint = endpoint or os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1")
-        try:
-            self.client = OpenAI(base_url=self.endpoint, api_key="ollama")
-        except Exception:
+        self.backend = os.getenv("SUPPORT_SIM_LLM_BACKEND", "api").strip().lower()
+        self.local_model_path = os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "")
+        self.local_client = None
+        if self.backend == "local":
+            try:
+                self.local_client = get_local_qwen_client(self.local_model_path or None)
+            except Exception:
+                self.local_client = None
+
+        if self.backend == "local" or OpenAI is None:
             self.client = None
+        else:
+            try:
+                self.client = OpenAI(base_url=self.endpoint, api_key=os.getenv("SUPPORT_SIM_LLM_API_KEY", "local"))
+            except Exception:
+                self.client = None
 
     def is_available(self) -> bool:
-        return self.client is not None
+        return self.local_client is not None or self.client is not None
 
     def generate(
         self,
@@ -87,7 +99,7 @@ class AgentResponseGenerator:
         classification : dict
             Latest intent classification from IntentClassifier (optional).
         """
-        if not self.client:
+        if self.local_client is None and self.client is None:
             return self.FALLBACK_TEXTS.get(action_name, f"Agent action: {action_name}")
 
         action_instruction = self._action_instruction(action_name, classification)
@@ -108,13 +120,16 @@ class AgentResponseGenerator:
         })
 
         try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=messages,
-                max_tokens=100,
-                temperature=0.6,
-            )
-            text = (response.choices[0].message.content or "").strip()
+            if self.local_client is not None:
+                text = self.local_client.chat(messages, max_tokens=100, temperature=0.6)
+            else:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    max_tokens=100,
+                    temperature=0.6,
+                )
+                text = (response.choices[0].message.content or "").strip()
             return text if text else self.FALLBACK_TEXTS.get(action_name, f"Agent: {action_name}")
         except Exception:
             return self.FALLBACK_TEXTS.get(action_name, f"Agent: {action_name}")

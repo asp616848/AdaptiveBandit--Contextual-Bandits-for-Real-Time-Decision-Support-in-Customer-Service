@@ -15,9 +15,11 @@ class RewardEngine:
 
     def __init__(self, reward_params: dict[str, Any], tier_config: dict[str, Any]):
         params = reward_params.get("parameters", {})
-        self.eta = float(params.get("eta_success", 5.0))
-        self.lambda_turn = float(params.get("lambda_turn", 0.15))
+        self.eta = float(params.get("eta_success", 8.0))
+        self.lambda_turn = float(params.get("lambda_turn", 0.05))
         self.omega = float(params.get("omega", 0.16666666666666666))
+        self.reward_min = float(params.get("reward_min", -10.0))
+        self.reward_max = float(params.get("reward_max", 10.0))
 
         self.tier_config = tier_config
         self.kappa = float(tier_config.get("kappa", 0.5))
@@ -28,8 +30,11 @@ class RewardEngine:
             escalation_costs = tier_config.get("escalation_cost_by_tier", {})
         self.escalation_costs = {k: float(v) for k, v in escalation_costs.items()}
         self.escalation_bonus_enterprise = float(
-            reward_params.get("parameters", {}).get("escalation_bonus_enterprise", 1.0)
+            reward_params.get("parameters", {}).get("escalation_bonus_enterprise", 0.0)
         )
+        self.escalation_penalty = float(params.get("escalation_penalty", 4.0))
+        self.dropout_penalty = float(params.get("dropout_penalty", 6.0))
+        self.unresolved_close_penalty = float(params.get("unresolved_close_penalty", 3.0))
 
         churn_coeffs = reward_params.get("churn_model", {}).get("coefficients")
         if not churn_coeffs:
@@ -74,10 +79,13 @@ class RewardEngine:
         if outcome == "success":
             reward += self.eta
         elif outcome == "escalation":
+            reward -= self.escalation_penalty
             reward -= float(self.escalation_costs.get(tier, 0.0))
             if tier == "Enterprise":
                 reward += self.escalation_bonus_enterprise
+        elif outcome == "dropout":
+            reward -= self.dropout_penalty
         elif outcome == "unresolved_close":
-            reward -= 1.0
+            reward -= self.unresolved_close_penalty
 
-        return float(np.clip(reward, -5.0, 5.0))
+        return float(np.clip(reward, self.reward_min, self.reward_max))

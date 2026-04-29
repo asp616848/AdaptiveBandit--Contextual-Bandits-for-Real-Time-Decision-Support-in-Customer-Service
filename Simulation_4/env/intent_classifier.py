@@ -3,9 +3,9 @@ from __future__ import annotations
 """
 LLM-based intent classifier for Stage 3 NLP observations.
 
-Uses Ollama (same endpoint as NLGLayer) to classify customer intent from the
-current conversation history and RAG policy context.  Returns a compact dict
-of features that the NLPObservationWrapper converts into a 9D obs vector.
+Uses a local Qwen backend or the older API backend to classify customer intent
+from the current conversation history and RAG policy context. Returns a compact
+dict of features that the NLPObservationWrapper converts into a 9D obs vector.
 
 The classifier uses a small, deterministic (temperature=0) prompt so that
 the same conversation always maps to the same intent features.  A simple
@@ -19,11 +19,16 @@ Supported models (set via env var SUPPORT_SIM_INTENT_MODEL):
 
 import hashlib
 import json
-import os
 import re
+import os
 from typing import Any
 
-from openai import OpenAI
+from .local_qwen_client import get_local_qwen_client
+
+try:
+    from openai import OpenAI
+except Exception:
+    OpenAI = None
 
 
 # Ordered list of canonical intents derived from the 55 ABCD subflows.
@@ -82,14 +87,26 @@ class IntentClassifier:
     def __init__(self, model: str | None = None, endpoint: str | None = None):
         self.model = model or os.getenv("SUPPORT_SIM_INTENT_MODEL", "phi3")
         self.endpoint = endpoint or os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1")
+        self.backend = os.getenv("SUPPORT_SIM_LLM_BACKEND", "api").strip().lower()
+        self.local_model_path = os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "")
         self._cache: dict[str, dict[str, Any]] = {}
-        try:
-            self.client = OpenAI(base_url=self.endpoint, api_key="ollama")
-        except Exception:
+        self.local_client = None
+        if self.backend == "local":
+            try:
+                self.local_client = get_local_qwen_client(self.local_model_path or None)
+            except Exception:
+                self.local_client = None
+
+        if self.backend == "local" or OpenAI is None:
             self.client = None
+        else:
+            try:
+                self.client = OpenAI(base_url=self.endpoint, api_key=os.getenv("SUPPORT_SIM_LLM_API_KEY", "local"))
+            except Exception:
+                self.client = None
 
     def is_available(self) -> bool:
-        return self.client is not None
+        return self.local_client is not None or self.client is not None
 
     def _fallback(self) -> dict[str, Any]:
         """Return a neutral, low-confidence classification when LLM is unavailable."""
@@ -161,7 +178,7 @@ class IntentClassifier:
             intent, confidence, sentiment, suggested_action,
             escalation_needed, info_completeness
         """
-        if not self.client:
+        if self.local_client is None and not self.client:
             return self._fallback()
 
         cache_key = _conversation_key(conversation_history, policy_context)
@@ -190,13 +207,16 @@ class IntentClassifier:
         ]
 
         try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=messages,
-                max_tokens=200,
-                temperature=0.0,  # deterministic for RL stability
-            )
-            raw = (response.choices[0].message.content or "").strip()
+            if self.local_client is not None:
+                raw = self.local_client.chat(messages, max_tokens=200, temperature=0.0)
+            else:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    max_tokens=200,
+                    temperature=0.0,  # deterministic for RL stability
+                )
+                raw = (response.choices[0].message.content or "").strip()
             parsed = self._parse_response(raw)
             result = self._validate(parsed) if parsed else self._fallback()
         except Exception:

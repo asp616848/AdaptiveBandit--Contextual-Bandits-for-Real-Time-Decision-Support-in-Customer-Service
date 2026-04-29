@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -10,10 +11,17 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.env_util import make_vec_env
 from stable_baselines3.common.monitor import Monitor
 
+from Simulation_4.env.agent_response_generator import AgentResponseGenerator
 from Simulation_4.env.support_env import SupportEnv
 from Simulation_4.training.action_masking import ActionMaskedEnv
-from Simulation_4.training.callbacks import BestModelCallback, CurriculumCallback, TrainingMetricsCallback
+from Simulation_4.training.callbacks import (
+    BestModelCallback,
+    CurriculumCallback,
+    ProgressHeartbeatCallback,
+    TrainingMetricsCallback,
+)
 from Simulation_4.training.curriculum import CurriculumScheduler
+from Simulation_4.training.nlp_observation import NLPObservationWrapper
 from Simulation_4.training.reward_shaping import RewardShapedWrapper, RewardShaper
 from Simulation_4.training.text_observation import TextOnlyObservationWrapper
 
@@ -41,21 +49,42 @@ PPO_CONFIG: dict[str, Any] = {
 }
 
 
+def _resolve_observation_mode(
+    observation_mode: str | None,
+    nlp_observation: bool,
+    text_only_observation: bool,
+) -> str:
+    mode = (observation_mode or ("nlp" if nlp_observation else "text" if text_only_observation else "state")).lower()
+    if mode not in {"state", "text", "nlp"}:
+        raise ValueError("observation_mode must be one of: state, text, nlp")
+    return mode
+
+
 def make_env(
     artifacts_root: str,
     reward_shaper: RewardShaper,
     subflow_filter: list[str] | None = None,
     nlg_enabled: bool = False,
     text_only_observation: bool = False,
+    nlp_observation: bool = False,
     text_observation_dim: int = 512,
+    intent_model: str | None = None,
+    agent_model: str | None = None,
 ):
     def _init():
+        use_nlp = bool(nlp_observation)
         env = SupportEnv(
             artifacts_root=artifacts_root,
-            nlg_enabled=bool(nlg_enabled),
+            nlg_enabled=bool(nlg_enabled or use_nlp or text_only_observation),
             subflow_filter=subflow_filter,
         )
-        if text_only_observation:
+        if use_nlp:
+            env = NLPObservationWrapper(
+                env,
+                intent_model=intent_model,
+                agent_response_generator=AgentResponseGenerator(model=agent_model),
+            )
+        elif text_only_observation:
             env = TextOnlyObservationWrapper(env, n_features=int(text_observation_dim))
         env = RewardShapedWrapper(env, reward_shaper)
         env = ActionMaskedEnv(env)
@@ -75,14 +104,28 @@ def train_ppo(
     seed: int = 42,
     nlg_enabled: bool = False,
     text_only_observation: bool = False,
+    nlp_observation: bool = False,
+    observation_mode: str | None = None,
     text_observation_dim: int = 512,
+    intent_model: str | None = None,
+    agent_model: str | None = None,
+    run_id: str | None = None,
+    metrics_eval_freq: int = 500,
+    heartbeat_freq_steps: int = 25,
 ) -> dict[str, Any]:
     artifacts_root_path = Path(artifacts_root)
     phase10_root = artifacts_root_path / output_subdir
+    run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S")
+    run_dir = phase10_root / "runs" / run_id
     save_dir = phase10_root / "models"
     log_dir = phase10_root / "tensorboard"
     save_dir.mkdir(parents=True, exist_ok=True)
     log_dir.mkdir(parents=True, exist_ok=True)
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    mode = _resolve_observation_mode(observation_mode, nlp_observation, text_only_observation)
+    use_nlp_observation = mode == "nlp"
+    use_text_observation = mode == "text"
 
     reward_shaper = RewardShaper(enabled=bool(use_reward_shaping), strict_potential=True)
     curriculum = CurriculumScheduler(str(artifacts_root_path)) if use_curriculum else None
@@ -94,8 +137,11 @@ def train_ppo(
             reward_shaper,
             initial_filter,
             nlg_enabled=bool(nlg_enabled),
-            text_only_observation=bool(text_only_observation),
+            text_only_observation=bool(use_text_observation),
+            nlp_observation=bool(use_nlp_observation),
             text_observation_dim=int(text_observation_dim),
+            intent_model=intent_model,
+            agent_model=agent_model,
         ),
         n_envs=n_envs,
         seed=seed,
@@ -107,8 +153,11 @@ def train_ppo(
         eval_shaper,
         subflow_filter=None,
         nlg_enabled=bool(nlg_enabled),
-        text_only_observation=bool(text_only_observation),
+        text_only_observation=bool(use_text_observation),
+        nlp_observation=bool(use_nlp_observation),
         text_observation_dim=int(text_observation_dim),
+        intent_model=intent_model,
+        agent_model=agent_model,
     )()
 
     model = PPO(
@@ -130,7 +179,13 @@ def train_ppo(
         seed=seed,
     )
 
-    metrics_callback = TrainingMetricsCallback(eval_freq=5000, verbose=1)
+    metrics_callback = TrainingMetricsCallback(eval_freq=int(metrics_eval_freq), verbose=1, run_dir=run_dir)
+    heartbeat_callback = ProgressHeartbeatCallback(
+        total_timesteps=int(timesteps),
+        run_dir=run_dir,
+        log_freq_steps=int(heartbeat_freq_steps),
+        verbose=1,
+    )
     best_model_callback = BestModelCallback(
         save_path=str(save_dir),
         eval_env=eval_env,
@@ -139,7 +194,7 @@ def train_ppo(
         baseline_reward=0.99,
         verbose=1,
     )
-    callbacks = [metrics_callback, best_model_callback]
+    callbacks = [heartbeat_callback, metrics_callback, best_model_callback]
 
     if curriculum is not None:
         callbacks.append(CurriculumCallback(curriculum, train_env, verbose=1))
@@ -162,9 +217,13 @@ def train_ppo(
         "training_time_seconds": elapsed,
         "curriculum_enabled": bool(use_curriculum),
         "reward_shaping_enabled": bool(use_reward_shaping),
-        "nlg_enabled": bool(nlg_enabled),
-        "text_only_observation": bool(text_only_observation),
+        "nlg_enabled": bool(nlg_enabled or use_nlp_observation or use_text_observation),
+        "observation_mode": mode,
+        "text_only_observation": bool(use_text_observation),
+        "nlp_observation": bool(use_nlp_observation),
         "text_observation_dim": int(text_observation_dim),
+        "intent_model": intent_model,
+        "agent_model": agent_model,
         "best_eval_reward": float(best_model_callback.best_mean_reward),
         "baseline_beaten": bool(best_model_callback.baseline_beaten),
         "baseline_beaten_step": best_model_callback.baseline_beaten_step,
@@ -173,10 +232,15 @@ def train_ppo(
         ),
         "n_envs": int(n_envs),
         "seed": int(seed),
+        "run_id": run_id,
+        "run_dir": str(run_dir),
+        "metrics_eval_freq": int(metrics_eval_freq),
+        "heartbeat_freq_steps": int(heartbeat_freq_steps),
     }
 
     summary_path = phase10_root / "training_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    metrics_callback.save_outputs(summary)
 
     train_env.close()
     eval_env.close()
@@ -195,14 +259,28 @@ def continue_ppo_from_checkpoint(
     tb_log_name: str = "ppo_v3_continued",
     nlg_enabled: bool = False,
     text_only_observation: bool = False,
+    nlp_observation: bool = False,
+    observation_mode: str | None = None,
     text_observation_dim: int = 512,
+    intent_model: str | None = None,
+    agent_model: str | None = None,
+    run_id: str | None = None,
+    metrics_eval_freq: int = 500,
+    heartbeat_freq_steps: int = 25,
 ) -> dict[str, Any]:
     artifacts_root_path = Path(artifacts_root)
     phase_root = artifacts_root_path / output_subdir
+    run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S")
+    run_dir = phase_root / "runs" / run_id
     save_dir = phase_root / "models"
     log_dir = phase_root / "tensorboard"
     save_dir.mkdir(parents=True, exist_ok=True)
     log_dir.mkdir(parents=True, exist_ok=True)
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    mode = _resolve_observation_mode(observation_mode, nlp_observation, text_only_observation)
+    use_nlp_observation = mode == "nlp"
+    use_text_observation = mode == "text"
 
     reward_shaper = RewardShaper(enabled=bool(use_reward_shaping), strict_potential=True)
 
@@ -213,8 +291,11 @@ def continue_ppo_from_checkpoint(
             reward_shaper,
             subflow_filter=None,
             nlg_enabled=bool(nlg_enabled),
-            text_only_observation=bool(text_only_observation),
+            text_only_observation=bool(use_text_observation),
+            nlp_observation=bool(use_nlp_observation),
             text_observation_dim=int(text_observation_dim),
+            intent_model=intent_model,
+            agent_model=agent_model,
         ),
         n_envs=n_envs,
         seed=seed,
@@ -234,11 +315,20 @@ def continue_ppo_from_checkpoint(
         eval_shaper,
         subflow_filter=None,
         nlg_enabled=bool(nlg_enabled),
-        text_only_observation=bool(text_only_observation),
+        text_only_observation=bool(use_text_observation),
+        nlp_observation=bool(use_nlp_observation),
         text_observation_dim=int(text_observation_dim),
+        intent_model=intent_model,
+        agent_model=agent_model,
     )()
 
-    metrics_callback = TrainingMetricsCallback(eval_freq=5000, verbose=1)
+    metrics_callback = TrainingMetricsCallback(eval_freq=int(metrics_eval_freq), verbose=1, run_dir=run_dir)
+    heartbeat_callback = ProgressHeartbeatCallback(
+        total_timesteps=int(additional_timesteps),
+        run_dir=run_dir,
+        log_freq_steps=int(heartbeat_freq_steps),
+        verbose=1,
+    )
     best_model_callback = BestModelCallback(
         save_path=str(save_dir),
         eval_env=eval_env,
@@ -247,7 +337,7 @@ def continue_ppo_from_checkpoint(
         baseline_reward=0.99,
         verbose=1,
     )
-    callbacks = [metrics_callback, best_model_callback]
+    callbacks = [heartbeat_callback, metrics_callback, best_model_callback]
 
     if curriculum is not None:
         callbacks.append(CurriculumCallback(curriculum, train_env, verbose=1))
@@ -279,9 +369,13 @@ def continue_ppo_from_checkpoint(
         "training_time_seconds": elapsed,
         "curriculum_enabled": bool(use_curriculum),
         "reward_shaping_enabled": bool(use_reward_shaping),
-        "nlg_enabled": bool(nlg_enabled),
-        "text_only_observation": bool(text_only_observation),
+        "nlg_enabled": bool(nlg_enabled or use_nlp_observation or use_text_observation),
+        "observation_mode": mode,
+        "text_only_observation": bool(use_text_observation),
+        "nlp_observation": bool(use_nlp_observation),
         "text_observation_dim": int(text_observation_dim),
+        "intent_model": intent_model,
+        "agent_model": agent_model,
         "best_eval_reward": float(best_model_callback.best_mean_reward),
         "baseline_beaten": bool(best_model_callback.baseline_beaten),
         "baseline_beaten_step": best_model_callback.baseline_beaten_step,
@@ -291,10 +385,15 @@ def continue_ppo_from_checkpoint(
         "n_envs": int(n_envs),
         "seed": int(seed),
         "checkpoint_path": str(checkpoint_path),
+        "run_id": run_id,
+        "run_dir": str(run_dir),
+        "metrics_eval_freq": int(metrics_eval_freq),
+        "heartbeat_freq_steps": int(heartbeat_freq_steps),
     }
 
     summary_path = phase_root / "training_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    metrics_callback.save_outputs(summary)
 
     train_env.close()
     eval_env.close()

@@ -3,21 +3,35 @@ from __future__ import annotations
 import os
 from typing import Any
 
-from openai import OpenAI
+from .local_qwen_client import get_local_qwen_client
+
+try:
+    from openai import OpenAI
+except Exception:
+    OpenAI = None
 
 
 class NLGLayer:
-    """Optional Ollama-powered customer utterance generation."""
+    """Optional customer utterance generation via local Qwen or API backend."""
 
     def __init__(self, enabled: bool = True, model: str | None = None, endpoint: str | None = None):
         self.enabled = bool(enabled)
         self.model = model or os.getenv("SUPPORT_SIM_LLM_MODEL", "llama3")
         self.endpoint = endpoint or os.getenv("SUPPORT_SIM_LLM_ENDPOINT", "http://localhost:11434/v1")
-        if self.enabled:
+        self.backend = os.getenv("SUPPORT_SIM_LLM_BACKEND", "api").strip().lower()
+        self.local_model_path = os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "")
+        self.local_client = None
+        if self.enabled and self.backend == "local":
+            try:
+                self.local_client = get_local_qwen_client(self.local_model_path or None)
+            except Exception:
+                self.local_client = None
+
+        if self.enabled and self.backend != "local" and OpenAI is not None:
             try:
                 self.client = OpenAI(
                     base_url=self.endpoint,
-                    api_key="ollama",
+                    api_key=os.getenv("SUPPORT_SIM_LLM_API_KEY", "local"),
                 )
             except Exception:
                 self.client = None
@@ -25,20 +39,10 @@ class NLGLayer:
             self.client = None
 
     def is_available(self) -> bool:
-        return bool(self.enabled and self.client is not None)
+        return bool(self.enabled and (self.local_client is not None or self.client is not None))
 
     def check_ollama_available(self) -> bool:
-        tags_url = self.endpoint.rstrip("/")
-        if tags_url.endswith("/v1"):
-            tags_url = tags_url[:-3]
-        tags_url = tags_url + "/api/tags"
-        try:
-            import requests
-
-            r = requests.get(tags_url, timeout=3)
-            return r.status_code == 200
-        except Exception:
-            return False
+        return self.is_available()
 
     def build_system_prompt(
         self,
@@ -315,8 +319,17 @@ Respond as the customer now:"""
     ) -> str:
         if not self.enabled:
             return "[NLG disabled]"
+        if self.local_client is not None:
+            messages = [{"role": "system", "content": system_prompt}]
+            messages += conversation_history
+            messages += [{"role": "user", "content": turn_prompt}]
+            try:
+                return self.local_client.chat(messages, max_tokens=150, temperature=0.7)
+            except Exception as e:
+                return f"[NLG error: local model unavailable: {str(e)}]"
+
         if self.client is None:
-            return "[NLG error: Ollama client unavailable]"
+            return "[NLG error: LLM client unavailable]"
 
         messages = [{"role": "system", "content": system_prompt}]
         messages += conversation_history

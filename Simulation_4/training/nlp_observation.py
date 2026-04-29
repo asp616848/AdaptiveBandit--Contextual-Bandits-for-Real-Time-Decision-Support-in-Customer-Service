@@ -66,6 +66,10 @@ class NLPObservationWrapper(gym.Wrapper):
         self._conversation_history: list[dict[str, str]] = []
 
     @property
+    def state(self) -> dict[str, Any]:
+        return getattr(self.env, "state", {})
+
+    @property
     def ACTION_NAMES(self) -> dict[int, str]:
         return getattr(self.env, "ACTION_NAMES", {})
 

@@ -13,7 +13,10 @@ from .nlg_layer import NLGLayer
 from .reward_engine import RewardEngine
 from .slot_tracker import SlotTracker
 from .state_engine import StateEngine
-from Simulation_4.rag.lumo_rag import LumoRAG
+try:
+    from Simulation_4.rag.lumo_rag import LumoRAG
+except Exception:
+    LumoRAG = None
 
 
 class SupportEnv(gym.Env):
@@ -84,11 +87,14 @@ class SupportEnv(gym.Env):
         self.nlg_enabled = bool(nlg_enabled)
         self.nlg_layer = NLGLayer(enabled=self.nlg_enabled)
         rag_dir = self.artifacts_root.parent / "rag"
-        self.lumo_rag = LumoRAG(
-            rag_dir=str(rag_dir),
-            index_path=str(rag_dir / "index"),
-            enabled=True,
-        )
+        if LumoRAG is not None:
+            self.lumo_rag = LumoRAG(
+                rag_dir=str(rag_dir),
+                index_path=str(rag_dir / "index"),
+                enabled=True,
+            )
+        else:
+            self.lumo_rag = None
 
         self.subflow_weights = self._build_subflow_weights(self.subflow_stats, subflow_filter)
         self.subflow_list = list(self.subflow_weights.keys())
@@ -186,7 +192,14 @@ class SupportEnv(gym.Env):
         payload = dict(reward_model)
         payload.setdefault("parameters", {})
         payload["parameters"]["escalation_costs"] = tier_config.get("escalation_cost_by_tier", {})
-        payload["parameters"]["lambda_turn"] = 0.15
+        payload["parameters"]["lambda_turn"] = 0.05
+        payload["parameters"]["eta_success"] = 8.0
+        payload["parameters"]["escalation_penalty"] = 4.0
+        payload["parameters"]["dropout_penalty"] = 6.0
+        payload["parameters"]["unresolved_close_penalty"] = 3.0
+        payload["parameters"]["escalation_bonus_enterprise"] = 0.0
+        payload["parameters"]["reward_min"] = -10.0
+        payload["parameters"]["reward_max"] = 10.0
 
         # Phase 6 churn coefficients were calibrated to this selected set.
         payload["churn_model"] = {
@@ -386,7 +399,7 @@ class SupportEnv(gym.Env):
         self.rag_context = {}
         self.system_prompt = None
 
-        if self.lumo_rag.enabled:
+        if self.lumo_rag is not None and self.lumo_rag.enabled:
             rag_context = self.lumo_rag.get_episode_context(
                 abcd_subflow=subflow,
                 tier=tier,
@@ -502,8 +515,6 @@ class SupportEnv(gym.Env):
             )
             reward += terminal_reward
 
-        reward = float(np.clip(reward, -5.0, 5.0))
-
         self.last_transition_outcome = dict(transition_outcome)
         self.last_transition_outcome["per_turn_reward"] = self.reward_engine.per_turn_reward()
         self.last_transition_outcome["terminal_reward"] = terminal_reward
@@ -554,3 +565,4 @@ class SupportEnv(gym.Env):
                 self.subflow_mean_values.get(str(self.state["subflow"]), 1.0)
             )
         return info
+
