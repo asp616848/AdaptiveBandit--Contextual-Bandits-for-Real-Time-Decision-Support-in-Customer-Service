@@ -15,7 +15,7 @@ class RewardEngine:
 
     def __init__(self, reward_params: dict[str, Any], tier_config: dict[str, Any]):
         params = reward_params.get("parameters", {})
-        self.eta = float(params.get("eta_success", 8.0))
+        self.eta = float(params.get("eta_success", 12.0))
         self.lambda_turn = float(params.get("lambda_turn", 0.05))
         self.omega = float(params.get("omega", 0.16666666666666666))
         self.reward_min = float(params.get("reward_min", -10.0))
@@ -32,9 +32,10 @@ class RewardEngine:
         self.escalation_bonus_enterprise = float(
             reward_params.get("parameters", {}).get("escalation_bonus_enterprise", 0.0)
         )
-        self.escalation_penalty = float(params.get("escalation_penalty", 4.0))
-        self.dropout_penalty = float(params.get("dropout_penalty", 6.0))
-        self.unresolved_close_penalty = float(params.get("unresolved_close_penalty", 3.0))
+        self.escalation_penalty = float(params.get("escalation_penalty", 6.0))
+        self.dropout_penalty = float(params.get("dropout_penalty", 10.0))
+        self.unresolved_close_penalty = float(params.get("unresolved_close_penalty", 8.0))
+        self.frustration_penalty = float(params.get("frustration_penalty", 1.0))
 
         churn_coeffs = reward_params.get("churn_model", {}).get("coefficients")
         if not churn_coeffs:
@@ -50,8 +51,11 @@ class RewardEngine:
         z = c["c0"] + c["cf"] * frustration + c["cs"] * failed_streak + c["ct"] * turn_count + c["ctau"] * tau
         return sigmoid(z)
 
-    def per_turn_reward(self) -> float:
-        return float(-self.lambda_turn)
+    def per_turn_reward(self, state: dict[str, Any] | None = None) -> float:
+        penalty = self.lambda_turn
+        if state is not None:
+            penalty += float(state.get('frustration', 0.0)) * self.frustration_penalty
+        return float(-penalty)
 
     def terminal_reward(self, outcome: str, state: dict[str, Any], tier: str, value_weight: float) -> float:
         if outcome == "success":

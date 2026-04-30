@@ -193,13 +193,14 @@ class SupportEnv(gym.Env):
         payload.setdefault("parameters", {})
         payload["parameters"]["escalation_costs"] = tier_config.get("escalation_cost_by_tier", {})
         payload["parameters"]["lambda_turn"] = 0.05
-        payload["parameters"]["eta_success"] = 8.0
-        payload["parameters"]["escalation_penalty"] = 4.0
-        payload["parameters"]["dropout_penalty"] = 6.0
-        payload["parameters"]["unresolved_close_penalty"] = 3.0
+        payload["parameters"]["eta_success"] = 15.0
+        payload["parameters"]["escalation_penalty"] = 8.0
+        payload["parameters"]["dropout_penalty"] = 30.0
+        payload["parameters"]["unresolved_close_penalty"] = 30.0
+        payload["parameters"]["frustration_penalty"] = 1.0
         payload["parameters"]["escalation_bonus_enterprise"] = 0.0
-        payload["parameters"]["reward_min"] = -10.0
-        payload["parameters"]["reward_max"] = 10.0
+        payload["parameters"]["reward_min"] = -50.0
+        payload["parameters"]["reward_max"] = 50.0
 
         # Phase 6 churn coefficients were calibrated to this selected set.
         payload["churn_model"] = {
@@ -469,7 +470,7 @@ class SupportEnv(gym.Env):
         assert action in range(5), f"Invalid action {action}"
         action_name = self.ACTION_NAMES[action]
 
-        reward = self.reward_engine.per_turn_reward()
+        reward = self.reward_engine.per_turn_reward(self.state)
         transition_outcome = self._dispatch_transition(action_name)
         if action_name == "Close" and not bool(transition_outcome.get("resolved", False)):
             transition_outcome["terminal_type"] = "unresolved_close"
@@ -516,7 +517,7 @@ class SupportEnv(gym.Env):
             reward += terminal_reward
 
         self.last_transition_outcome = dict(transition_outcome)
-        self.last_transition_outcome["per_turn_reward"] = self.reward_engine.per_turn_reward()
+        self.last_transition_outcome["per_turn_reward"] = self.reward_engine.per_turn_reward(self.state)
         self.last_transition_outcome["terminal_reward"] = terminal_reward
 
         return self._get_obs(), reward, bool(self.state["done"]), False, self._get_info()

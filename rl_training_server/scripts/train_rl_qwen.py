@@ -16,7 +16,7 @@ from Simulation_4.training.train_ppo import continue_ppo_from_checkpoint, train_
 def main() -> None:
     parser = argparse.ArgumentParser(description="Train PPO with Simulation_4 and fine-tuned Qwen customer model.")
     parser.add_argument("--artifacts-root", default="Simulation_4/artifacts")
-    parser.add_argument("--timesteps", type=int, default=5_000_000)
+    parser.add_argument("--timesteps", type=int, default=1_000_000)
     parser.add_argument("--output-subdir", default="rl_qwen_long")
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--n-envs", type=int, default=1)

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="${ROOT_DIR:-$(pwd)}"
-TIMESTEPS="${TIMESTEPS:-5000000}"
+TIMESTEPS="${TIMESTEPS:-500000}"
 N_ENVS="${N_ENVS:-1}"
 OUTPUT_SUBDIR="${OUTPUT_SUBDIR:-rl_qwen_long}"
 RUN_ID="${RUN_ID:-$(date +%Y%m%d_%H%M%S)}"

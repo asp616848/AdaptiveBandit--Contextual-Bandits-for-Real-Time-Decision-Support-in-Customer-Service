@@ -166,15 +166,15 @@ Use this context to keep details realistic and consistent with the support domai
         conversation_history: list[dict[str, str]] | None = None,
     ) -> str:
         if frustration < 0.2:
-            tone = "You are calm and cooperative."
+            tone = "You are calm, polite, and cooperative."
         elif frustration < 0.4:
-            tone = "You are slightly impatient but still polite."
+            tone = "You are slightly annoyed but still polite."
         elif frustration < 0.6:
-            tone = "You are noticeably frustrated. Your tone reflects this."
+            tone = "You are visibly frustrated. Express irritation in your words."
         elif frustration < 0.8:
-            tone = "You are quite frustrated and your patience is running thin."
+            tone = "You are extremely angry. Use exasperated language, demand answers, and show you are running out of patience."
         else:
-            tone = "You are very frustrated and close to giving up or demanding escalation."
+            tone = "You are furious. Use aggressive or highly impatient language. Threaten to cancel or demand an immediate manager escalation."
 
         if action_type == "AskInfo":
             slots_revealed = transition_outcome.get("slots_revealed", [])
