@@ -36,6 +36,8 @@ class RewardEngine:
         self.dropout_penalty = float(params.get("dropout_penalty", 10.0))
         self.unresolved_close_penalty = float(params.get("unresolved_close_penalty", 8.0))
         self.frustration_penalty = float(params.get("frustration_penalty", 1.0))
+        self.engagement_bonus = float(params.get("engagement_bonus", 0.5))
+        self.sentiment_improvement_bonus = float(params.get("sentiment_improvement_bonus", 2.0))
 
         churn_coeffs = reward_params.get("churn_model", {}).get("coefficients")
         if not churn_coeffs:

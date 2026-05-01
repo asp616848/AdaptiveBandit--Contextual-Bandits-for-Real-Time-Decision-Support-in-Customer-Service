@@ -130,6 +130,12 @@ class SupportEnv(gym.Env):
         self.system_prompt: str | None = None
         self.conversation_history: list[dict[str, str]] = []
         self.last_transition_outcome: dict[str, Any] = {}
+        self.training_step = 0
+        self.user_patience_multiplier = 1.0
+        self.dropout_threshold = 1.0
+
+    def set_training_step(self, step: int):
+        self.training_step = step
 
     def _resolve_artifact(self, candidates: list[str]) -> Path:
         for rel in candidates:
@@ -193,11 +199,13 @@ class SupportEnv(gym.Env):
         payload.setdefault("parameters", {})
         payload["parameters"]["escalation_costs"] = tier_config.get("escalation_cost_by_tier", {})
         payload["parameters"]["lambda_turn"] = 0.05
-        payload["parameters"]["eta_success"] = 15.0
-        payload["parameters"]["escalation_penalty"] = 8.0
-        payload["parameters"]["dropout_penalty"] = 30.0
-        payload["parameters"]["unresolved_close_penalty"] = 30.0
+        payload["parameters"]["eta_success"] = 30.0
+        payload["parameters"]["escalation_penalty"] = 25.0
+        payload["parameters"]["dropout_penalty"] = 20.0
+        payload["parameters"]["unresolved_close_penalty"] = 20.0
         payload["parameters"]["frustration_penalty"] = 1.0
+        payload["parameters"]["engagement_bonus"] = 0.5
+        payload["parameters"]["sentiment_improvement_bonus"] = 2.0
         payload["parameters"]["escalation_bonus_enterprise"] = 0.0
         payload["parameters"]["reward_min"] = -50.0
         payload["parameters"]["reward_max"] = 50.0
@@ -400,6 +408,16 @@ class SupportEnv(gym.Env):
         self.rag_context = {}
         self.system_prompt = None
 
+        if self.training_step < 50_000:
+            self.user_patience_multiplier = 2.0
+            self.dropout_threshold = 0.3
+        elif self.training_step < 150_000:
+            self.user_patience_multiplier = 1.5
+            self.dropout_threshold = 0.5
+        else:
+            self.user_patience_multiplier = 1.0
+            self.dropout_threshold = 1.0
+
         if self.lumo_rag is not None and self.lumo_rag.enabled:
             rag_context = self.lumo_rag.get_episode_context(
                 abcd_subflow=subflow,
@@ -471,10 +489,24 @@ class SupportEnv(gym.Env):
         action_name = self.ACTION_NAMES[action]
 
         reward = self.reward_engine.per_turn_reward(self.state)
+        
+        prev_frustration = float(self.state.get("frustration", 0.0))
+        
         transition_outcome = self._dispatch_transition(action_name)
         if action_name == "Close" and not bool(transition_outcome.get("resolved", False)):
             transition_outcome["terminal_type"] = "unresolved_close"
             transition_outcome["outcome"] = "unresolved_close"
+
+        if action_name != "Escalate":
+            reward += getattr(self.reward_engine, "engagement_bonus", 0.5)
+            
+        new_frustration = float(self.state.get("frustration", 0.0))
+        if new_frustration < prev_frustration:
+            reward += getattr(self.reward_engine, "sentiment_improvement_bonus", 2.0)
+            
+        if self.state.get("last_action") == action_name:
+            reward -= 2.0
+        self.state["last_action"] = action_name
 
         if self.nlg_enabled:
             agent_message = (agent_text or "").strip() or f"Agent action: {action_name}"
@@ -497,12 +529,13 @@ class SupportEnv(gym.Env):
             transition_outcome["customer_utterance"] = utterance
 
         if not bool(self.state["done"]):
-            p_dropout = self.state_engine.compute_p_dropout(self.state)
+            p_dropout = self.state_engine.compute_p_dropout(self.state) * self.dropout_threshold
             if self.rng.random() < p_dropout:
                 self.state, drop_outcome = self.state_engine.transition_autonomous_dropout(self.state)
                 transition_outcome.update(drop_outcome)
 
-        self.state, timeout_outcome = self.state_engine.advance_turn_and_apply_timeout(self.state, self.T_max)
+        t_max_adjusted = int(self.T_max * self.user_patience_multiplier)
+        self.state, timeout_outcome = self.state_engine.advance_turn_and_apply_timeout(self.state, t_max_adjusted)
         transition_outcome.update(timeout_outcome)
 
         terminal_reward = 0.0

@@ -109,7 +109,7 @@ def make_nlp_env(
 
 def train_nlp_ppo(
     artifacts_root: str,
-    timesteps: int = 500_000,
+    timesteps: int = 150_000,
     use_curriculum: bool = True,
     use_reward_shaping: bool = True,
     output_subdir: str = "phase13",
@@ -176,8 +176,8 @@ def train_nlp_ppo(
     best_model_callback = BestModelCallback(
         save_path=str(save_dir),
         eval_env=eval_env,
-        eval_freq=10000,
-        n_eval_episodes=100,    # fewer eval episodes: LLM calls are expensive
+        eval_freq=25000,
+        n_eval_episodes=20,    # fewer eval episodes: LLM calls are expensive
         baseline_reward=0.5,   # lower bar initially — NLP obs is harder
         verbose=1,
     )
@@ -271,7 +271,7 @@ def train(args: argparse.Namespace) -> dict:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Phase 13 PPO training — full NLP agent")
-    parser.add_argument("--timesteps", type=int, default=500_000)
+    parser.add_argument("--timesteps", type=int, default=150_000)
     parser.add_argument("--no-curriculum", action="store_true")
     parser.add_argument("--no-shaping", action="store_true")
     parser.add_argument(

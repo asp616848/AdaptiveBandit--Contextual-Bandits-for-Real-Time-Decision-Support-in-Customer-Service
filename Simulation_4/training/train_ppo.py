@@ -42,7 +42,7 @@ PPO_CONFIG: dict[str, Any] = {
     "vf_coef": 0.5,
     "max_grad_norm": 0.5,
     "learning_rate": 3e-4,
-    "total_timesteps": 500_000,
+    "total_timesteps": 150_000,
     "n_envs": 4,
     "tensorboard_log": "Simulation_4/artifacts/phase10/tensorboard/",
     "verbose": 1,
@@ -96,7 +96,7 @@ def make_env(
 
 def train_ppo(
     artifacts_root: str,
-    timesteps: int = 500_000,
+    timesteps: int = 150_000,
     use_curriculum: bool = True,
     use_reward_shaping: bool = True,
     output_subdir: str = "phase10",
@@ -189,8 +189,8 @@ def train_ppo(
     best_model_callback = BestModelCallback(
         save_path=str(save_dir),
         eval_env=eval_env,
-        eval_freq=10000,
-        n_eval_episodes=200,
+        eval_freq=25000,
+        n_eval_episodes=20,
         baseline_reward=0.99,
         verbose=1,
     )
@@ -250,7 +250,7 @@ def train_ppo(
 def continue_ppo_from_checkpoint(
     artifacts_root: str,
     checkpoint_path: str,
-    additional_timesteps: int = 500_000,
+    additional_timesteps: int = 150_000,
     use_curriculum: bool = True,
     use_reward_shaping: bool = False,
     output_subdir: str = "phase10_v3_continued",
@@ -332,8 +332,8 @@ def continue_ppo_from_checkpoint(
     best_model_callback = BestModelCallback(
         save_path=str(save_dir),
         eval_env=eval_env,
-        eval_freq=10000,
-        n_eval_episodes=200,
+        eval_freq=25000,
+        n_eval_episodes=20,
         baseline_reward=0.99,
         verbose=1,
     )

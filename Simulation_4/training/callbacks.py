@@ -19,6 +19,7 @@ class CurriculumCallback(BaseCallback):
         self._last_stage_name = curriculum.get_current_stage_name()
 
     def _on_step(self) -> bool:
+        self.train_env.env_method("set_training_step", self.num_timesteps)
         current_filter = self.curriculum.get_subflow_filter(self.num_timesteps)
         current_stage_name = self.curriculum.get_current_stage_name()
         if current_stage_name != self._last_stage_name:
