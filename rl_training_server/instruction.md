@@ -114,6 +114,9 @@ Good signs:
 Recommended launcher:
 
 ```bash
+export CHECKPOINT=""
+```
+```bash
 bash rl_training_server/scripts/start_rl_training.sh
 ```
 

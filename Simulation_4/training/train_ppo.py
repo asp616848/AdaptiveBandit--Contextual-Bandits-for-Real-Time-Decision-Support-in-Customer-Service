@@ -34,12 +34,12 @@ PPO_CONFIG: dict[str, Any] = {
     },
     "n_steps": 128,
     "batch_size": 32,
-    "n_epochs": 10,
+    "n_epochs": 5,
     "gamma": 0.99,
     "gae_lambda": 0.95,
     "clip_range": 0.2,
     "ent_coef": 0.01,
-    "vf_coef": 0.5,
+    "vf_coef": 0.25,
     "max_grad_norm": 0.5,
     "learning_rate": 3e-4,
     "total_timesteps": 150_000,
@@ -189,7 +189,7 @@ def train_ppo(
     best_model_callback = BestModelCallback(
         save_path=str(save_dir),
         eval_env=eval_env,
-        eval_freq=25000,
+        eval_freq=5000,
         n_eval_episodes=20,
         baseline_reward=0.99,
         verbose=1,
@@ -301,7 +301,14 @@ def continue_ppo_from_checkpoint(
         seed=seed,
     )
 
-    model = PPO.load(checkpoint_path, env=train_env)
+    custom_objects = {
+        "n_epochs": PPO_CONFIG["n_epochs"],
+        "ent_coef": PPO_CONFIG["ent_coef"],
+        "vf_coef": PPO_CONFIG["vf_coef"],
+        "learning_rate": PPO_CONFIG["learning_rate"],
+        "clip_range": PPO_CONFIG["clip_range"],
+    }
+    model = PPO.load(checkpoint_path, env=train_env, custom_objects=custom_objects)
     initial_num_timesteps = int(getattr(model, "num_timesteps", 0))
 
     curriculum = CurriculumScheduler(str(artifacts_root_path)) if use_curriculum else None

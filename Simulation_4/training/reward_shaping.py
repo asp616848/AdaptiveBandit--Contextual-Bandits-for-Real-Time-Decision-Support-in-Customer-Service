@@ -8,27 +8,14 @@ import gymnasium as gym
 
 @dataclass
 class RewardShaper:
-    info_gain_bonus: float = 0.05
-    frustration_decrease_bonus: float = 0.03
-    frustration_increase_penalty: float = -0.02
-    progress_increase_bonus: float = 0.10
+    frustration_penalty: float = -0.15
+    info_gain_bonus: float = 0.05  # Kept for signature compatibility
+    frustration_decrease_bonus: float = 0.03 # Kept for signature compatibility
+    frustration_increase_penalty: float = -0.02 # Kept for signature compatibility
+    progress_increase_bonus: float = 0.10 # Kept for signature compatibility
     enabled: bool = True
     gamma: float = 0.99
-    strict_potential: bool = True
-
-    def _potential(self, state: dict[str, Any]) -> float:
-        information = float(state.get("information", 0.0))
-        progress = float(state.get("progress", 0.0))
-        frustration = float(state.get("frustration", 0.0))
-
-        # Potential uses only state terms, preserving policy invariance when
-        # shaping is applied as gamma * Phi(s') - Phi(s).
-        frustration_weight = max(self.frustration_decrease_bonus, abs(self.frustration_increase_penalty))
-        return (
-            self.info_gain_bonus * information
-            + self.progress_increase_bonus * progress
-            - frustration_weight * frustration
-        )
+    strict_potential: bool = True # Kept for signature compatibility, but unused
 
     def shape(
         self,
@@ -42,26 +29,12 @@ class RewardShaper:
         if not self.enabled:
             return float(base_reward)
 
-        if self.strict_potential:
-            shaping = self.gamma * self._potential(post_state) - self._potential(pre_state)
-            return float(base_reward + shaping)
-
-        # Optional heuristic mode (kept for ablation; disabled by default).
         shaping = 0.0
-
-        delta_i = float(transition_outcome.get("delta_i", 0.0))
-        if action == 0 and delta_i > 0.01:
-            shaping += self.info_gain_bonus * delta_i
-
-        delta_progress = float(post_state.get("progress", 0.0)) - float(pre_state.get("progress", 0.0))
-        if delta_progress > 0.01:
-            shaping += self.progress_increase_bonus * delta_progress
-
         delta_frustration = float(post_state.get("frustration", 0.0)) - float(pre_state.get("frustration", 0.0))
-        if delta_frustration < -0.01:
-            shaping += self.frustration_decrease_bonus * abs(delta_frustration)
-        elif delta_frustration > 0.05:
-            shaping += self.frustration_increase_penalty * delta_frustration
+        
+        # Apply the single, clear signal when frustration increases
+        if delta_frustration > 0.0:
+            shaping += self.frustration_penalty
 
         return float(base_reward + shaping)
 

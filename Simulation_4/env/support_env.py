@@ -508,6 +508,10 @@ class SupportEnv(gym.Env):
             reward -= 2.0
         self.state["last_action"] = action_name
 
+        current_turn = int(self.state.get("turn_count", 0)) + 1
+        if current_turn > 10:
+            reward -= 0.3 * (current_turn - 10)
+
         if self.nlg_enabled:
             agent_message = (agent_text or "").strip() or f"Agent action: {action_name}"
             self.conversation_history.append({"role": "user", "content": agent_message})
