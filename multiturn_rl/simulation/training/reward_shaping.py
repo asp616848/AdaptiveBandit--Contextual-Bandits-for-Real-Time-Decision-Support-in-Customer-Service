@@ -8,10 +8,10 @@ import gymnasium as gym
 
 @dataclass
 class RewardShaper:
-    info_gain_bonus: float = 0.05
-    frustration_decrease_bonus: float = 0.03
-    frustration_increase_penalty: float = -0.02
-    progress_increase_bonus: float = 0.10
+    info_gain_bonus: float = 0.15
+    frustration_decrease_bonus: float = 0.05
+    frustration_increase_penalty: float = -0.04
+    progress_increase_bonus: float = 0.25
     enabled: bool = True
     gamma: float = 0.99
     strict_potential: bool = True

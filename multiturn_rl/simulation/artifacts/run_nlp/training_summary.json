@@ -1,6 +1,6 @@
 {
-  "total_timesteps": 1,
-  "training_time_seconds": 7.869788408279419,
+  "total_timesteps": 100,
+  "training_time_seconds": 6.890869379043579,
   "curriculum_enabled": true,
   "reward_shaping_enabled": false,
   "nlg_enabled": true,

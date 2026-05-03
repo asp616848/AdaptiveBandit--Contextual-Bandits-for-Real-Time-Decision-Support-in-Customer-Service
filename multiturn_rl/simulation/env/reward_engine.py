@@ -80,22 +80,18 @@ class RewardEngine:
             # Calibrated so that in a genuinely stuck episode the reward is clearly
             # positive — otherwise the agent rationally prefers to gamble on resolution
             # (+5) rather than take a certain small-negative escalation reward.
-            # stuck_score = 0 when bot just started, 0.6 when maximally stuck.
-            stuck_score = min(frustration * 0.5 + failed_streak * 0.15, 0.6)
-            reward += stuck_score * self.eta  # up to +3.0
+            # stuck_score = 0 when bot just started, 0.2 when maximally stuck.
+            # Agent needs failed_streak>=3 + elevated frustration before escalation pays.
+            stuck_score = min(max(frustration * 0.5 + failed_streak * 0.15 - 0.4, 0.0), 0.2)
+            reward += stuck_score * self.eta  # up to +1.0
 
             # Explicit escalation cost, waived when context warrants it.
             base_cost = float(self.escalation_costs.get(tier, 0.0))
             appropriateness = frustration * 3.0 + min(failed_streak * 0.7, 2.5)
             effective_cost = max(base_cost - appropriateness, 0.0)
             # Cap penalty so worst-case unnecessary escalation is -1.5, not -4.
-            # Without this cap, bimodal reward variance (-4 to +4) collapses policy
-            # to 0% escalation — strong negative gradient dominates the rare positives.
             effective_cost = min(effective_cost, 1.5)
             reward -= effective_cost
-
-            if tier == "Enterprise":
-                reward += self.escalation_bonus_enterprise
 
         elif outcome == "unresolved_close":
             reward -= 1.0

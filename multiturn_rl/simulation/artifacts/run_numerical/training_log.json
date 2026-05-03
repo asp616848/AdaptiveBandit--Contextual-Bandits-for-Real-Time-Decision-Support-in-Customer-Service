@@ -2,395 +2,2605 @@
   "metrics_history": [
     {
       "timesteps": 5000,
-      "mean_reward_100ep": -0.69717861,
-      "mean_episode_length_100ep": 6.21,
-      "resolution_rate": 0.6485148514851485,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.32673267326732675,
-      "timeout_rate": 0.024752475247524754,
-      "episodes_seen": 952
+      "mean_reward_100ep": -0.64006156,
+      "mean_episode_length_100ep": 2.5,
+      "resolution_rate": 0.02288135593220339,
+      "escalation_rate": 0.9508474576271186,
+      "dropout_rate": 0.026271186440677965,
+      "timeout_rate": 0.0,
+      "episodes_seen": 2022
     },
     {
       "timesteps": 10000,
-      "mean_reward_100ep": -0.2874487999999999,
-      "mean_episode_length_100ep": 7.76,
-      "resolution_rate": 0.6694214876033058,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.3037190082644628,
-      "timeout_rate": 0.026859504132231406,
-      "episodes_seen": 1686
+      "mean_reward_100ep": -0.50082439,
+      "mean_episode_length_100ep": 2.49,
+      "resolution_rate": 0.026468455402465556,
+      "escalation_rate": 0.9496011602610588,
+      "dropout_rate": 0.023930384336475707,
+      "timeout_rate": 0.0,
+      "episodes_seen": 4047
     },
     {
       "timesteps": 15000,
-      "mean_reward_100ep": 1.06677763,
-      "mean_episode_length_100ep": 9.26,
-      "resolution_rate": 0.6884661117717004,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2901307966706302,
-      "timeout_rate": 0.02140309155766944,
-      "episodes_seen": 2270
+      "mean_reward_100ep": 0.34583753999999994,
+      "mean_episode_length_100ep": 3.52,
+      "resolution_rate": 0.038340208687211844,
+      "escalation_rate": 0.9349672409609319,
+      "dropout_rate": 0.026692550351856345,
+      "timeout_rate": 0.0,
+      "episodes_seen": 5609
     },
     {
       "timesteps": 20000,
-      "mean_reward_100ep": 1.36331857,
-      "mean_episode_length_100ep": 9.61,
-      "resolution_rate": 0.6984884645982498,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.27923627684964203,
-      "timeout_rate": 0.022275258552108195,
-      "episodes_seen": 2792
+      "mean_reward_100ep": 0.9439414,
+      "mean_episode_length_100ep": 4.27,
+      "resolution_rate": 0.05367981790591806,
+      "escalation_rate": 0.91350531107739,
+      "dropout_rate": 0.032814871016691956,
+      "timeout_rate": 0.0,
+      "episodes_seen": 6840
     },
     {
       "timesteps": 25000,
-      "mean_reward_100ep": 1.5343659499999998,
-      "mean_episode_length_100ep": 9.66,
-      "resolution_rate": 0.7102966841186736,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2699243746364165,
-      "timeout_rate": 0.01977894124490983,
-      "episodes_seen": 3301
+      "mean_reward_100ep": 1.24404369,
+      "mean_episode_length_100ep": 5.06,
+      "resolution_rate": 0.06921241050119331,
+      "escalation_rate": 0.8935560859188544,
+      "dropout_rate": 0.037231503579952266,
+      "timeout_rate": 0.0,
+      "episodes_seen": 7901
     },
     {
       "timesteps": 30000,
-      "mean_reward_100ep": 1.96932985,
-      "mean_episode_length_100ep": 10.52,
-      "resolution_rate": 0.727314390467461,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2529789184234647,
-      "timeout_rate": 0.019706691109074245,
-      "episodes_seen": 3786
+      "mean_reward_100ep": 1.4395699299999998,
+      "mean_episode_length_100ep": 5.34,
+      "resolution_rate": 0.08467797545166184,
+      "escalation_rate": 0.8760171010895049,
+      "dropout_rate": 0.03930492345883326,
+      "timeout_rate": 0.0,
+      "episodes_seen": 8883
     },
     {
       "timesteps": 35000,
-      "mean_reward_100ep": 2.2611018300000003,
-      "mean_episode_length_100ep": 9.54,
-      "resolution_rate": 0.7377727614747931,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.24228743416102333,
-      "timeout_rate": 0.0199398043641836,
-      "episodes_seen": 4269
+      "mean_reward_100ep": 1.30313469,
+      "mean_episode_length_100ep": 6.33,
+      "resolution_rate": 0.10275502606105734,
+      "escalation_rate": 0.8550508811119385,
+      "dropout_rate": 0.042069992553983616,
+      "timeout_rate": 0.00012410027302060066,
+      "episodes_seen": 9701
     },
     {
       "timesteps": 40000,
-      "mean_reward_100ep": 1.68606134,
-      "mean_episode_length_100ep": 10.55,
-      "resolution_rate": 0.7411426747526333,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.24002553463134377,
-      "timeout_rate": 0.01883179061602298,
-      "episodes_seen": 4752
+      "mean_reward_100ep": 1.6506492099999996,
+      "mean_episode_length_100ep": 6.27,
+      "resolution_rate": 0.1191016333938294,
+      "escalation_rate": 0.8358666061705989,
+      "dropout_rate": 0.0448049001814882,
+      "timeout_rate": 0.00022686025408348456,
+      "episodes_seen": 10463
     },
     {
       "timesteps": 45000,
-      "mean_reward_100ep": 2.50871282,
-      "mean_episode_length_100ep": 9.66,
-      "resolution_rate": 0.7528893780957623,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.22894881673087508,
-      "timeout_rate": 0.018161805173362685,
-      "episodes_seen": 5258
+      "mean_reward_100ep": 1.89168611,
+      "mean_episode_length_100ep": 7.02,
+      "resolution_rate": 0.13662637940094588,
+      "escalation_rate": 0.8154492905937992,
+      "dropout_rate": 0.04760903836048345,
+      "timeout_rate": 0.00031529164477141355,
+      "episodes_seen": 11163
     },
     {
       "timesteps": 50000,
-      "mean_reward_100ep": 2.00620916,
-      "mean_episode_length_100ep": 10.38,
-      "resolution_rate": 0.7581937363437727,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.22456907016266084,
-      "timeout_rate": 0.0172371934935664,
-      "episodes_seen": 5747
+      "mean_reward_100ep": 2.00127191,
+      "mean_episode_length_100ep": 8.04,
+      "resolution_rate": 0.1529642332190103,
+      "escalation_rate": 0.7975502204801568,
+      "dropout_rate": 0.04919157275845174,
+      "timeout_rate": 0.0002939735423811857,
+      "episodes_seen": 11856
     },
     {
       "timesteps": 55000,
-      "mean_reward_100ep": 2.1763648,
-      "mean_episode_length_100ep": 10.37,
-      "resolution_rate": 0.7600347146886527,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.22195704057279236,
-      "timeout_rate": 0.018008244738555,
-      "episodes_seen": 6240
+      "mean_reward_100ep": 1.64748218,
+      "mean_episode_length_100ep": 7.32,
+      "resolution_rate": 0.16663596168017686,
+      "escalation_rate": 0.7798452468680914,
+      "dropout_rate": 0.05296610169491525,
+      "timeout_rate": 0.000552689756816507,
+      "episodes_seen": 12512
     },
     {
       "timesteps": 60000,
-      "mean_reward_100ep": 2.18106725,
-      "mean_episode_length_100ep": 10.09,
-      "resolution_rate": 0.7650637880274779,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.21766437684003925,
-      "timeout_rate": 0.017271835132482826,
-      "episodes_seen": 6727
+      "mean_reward_100ep": 1.5537552100000003,
+      "mean_episode_length_100ep": 8.09,
+      "resolution_rate": 0.18055434877052742,
+      "escalation_rate": 0.7634025545225476,
+      "dropout_rate": 0.05534798853071509,
+      "timeout_rate": 0.0006951081762099227,
+      "episodes_seen": 13166
     },
     {
       "timesteps": 65000,
-      "mean_reward_100ep": 2.957897289999999,
-      "mean_episode_length_100ep": 9.43,
-      "resolution_rate": 0.7703835860838537,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2128456735057984,
-      "timeout_rate": 0.016770740410347904,
-      "episodes_seen": 7238
+      "mean_reward_100ep": 1.8969850800000003,
+      "mean_episode_length_100ep": 9.04,
+      "resolution_rate": 0.1969621925045402,
+      "escalation_rate": 0.7456661713719663,
+      "dropout_rate": 0.05671124318969787,
+      "timeout_rate": 0.0006603929337956084,
+      "episodes_seen": 13773
     },
     {
       "timesteps": 70000,
-      "mean_reward_100ep": 2.1947951700000004,
-      "mean_episode_length_100ep": 10.25,
-      "resolution_rate": 0.7714520098441345,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.21115668580803937,
-      "timeout_rate": 0.017391304347826087,
-      "episodes_seen": 7730
+      "mean_reward_100ep": 2.1587409,
+      "mean_episode_length_100ep": 8.42,
+      "resolution_rate": 0.21038143924498623,
+      "escalation_rate": 0.7301612268973653,
+      "dropout_rate": 0.05882815572158868,
+      "timeout_rate": 0.0006291781360597719,
+      "episodes_seen": 14377
     },
     {
       "timesteps": 75000,
-      "mean_reward_100ep": 2.46224454,
-      "mean_episode_length_100ep": 9.65,
-      "resolution_rate": 0.7729138166894665,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2096063231494148,
-      "timeout_rate": 0.017479860161118712,
-      "episodes_seen": 8216
+      "mean_reward_100ep": 2.2763247900000003,
+      "mean_episode_length_100ep": 8.5,
+      "resolution_rate": 0.22425973245152564,
+      "escalation_rate": 0.7144897038929806,
+      "dropout_rate": 0.06057417706297911,
+      "timeout_rate": 0.000676386592514655,
+      "episodes_seen": 14968
     },
     {
       "timesteps": 80000,
-      "mean_reward_100ep": 2.3435550499999995,
-      "mean_episode_length_100ep": 10.89,
-      "resolution_rate": 0.7748475825889692,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.20714589536367503,
-      "timeout_rate": 0.018006522047355734,
-      "episodes_seen": 8690
+      "mean_reward_100ep": 2.20714479,
+      "mean_episode_length_100ep": 9.2,
+      "resolution_rate": 0.2367908887767606,
+      "escalation_rate": 0.7009298637641462,
+      "dropout_rate": 0.06163050529806098,
+      "timeout_rate": 0.0006487421610322209,
+      "episodes_seen": 15537
     },
     {
       "timesteps": 85000,
-      "mean_reward_100ep": 2.27486806,
-      "mean_episode_length_100ep": 10.18,
-      "resolution_rate": 0.7755968169761274,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.20623342175066314,
-      "timeout_rate": 0.01816976127320955,
-      "episodes_seen": 9177
+      "mean_reward_100ep": 2.37984039,
+      "mean_episode_length_100ep": 9.31,
+      "resolution_rate": 0.2488910451899085,
+      "escalation_rate": 0.687066814527308,
+      "dropout_rate": 0.0633490435264763,
+      "timeout_rate": 0.0006930967563071804,
+      "episodes_seen": 16093
     },
     {
       "timesteps": 90000,
-      "mean_reward_100ep": 2.34092631,
-      "mean_episode_length_100ep": 10.83,
-      "resolution_rate": 0.778927680798005,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.20286783042394016,
-      "timeout_rate": 0.01820448877805486,
-      "episodes_seen": 9658
+      "mean_reward_100ep": 2.38639515,
+      "mean_episode_length_100ep": 9.77,
+      "resolution_rate": 0.26159405741818914,
+      "escalation_rate": 0.6729572375025096,
+      "dropout_rate": 0.06457873251689754,
+      "timeout_rate": 0.0008699725624038012,
+      "episodes_seen": 16613
     },
     {
       "timesteps": 95000,
-      "mean_reward_100ep": 2.01485036,
-      "mean_episode_length_100ep": 10.7,
-      "resolution_rate": 0.779581274994119,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2026581980710421,
-      "timeout_rate": 0.01776052693483886,
-      "episodes_seen": 10141
+      "mean_reward_100ep": 2.08217075,
+      "mean_episode_length_100ep": 9.45,
+      "resolution_rate": 0.27400801344190256,
+      "escalation_rate": 0.6591055964844255,
+      "dropout_rate": 0.06578777303864547,
+      "timeout_rate": 0.0010986170350264961,
+      "episodes_seen": 17144
     },
     {
       "timesteps": 100000,
-      "mean_reward_100ep": 1.9842349600000002,
-      "mean_episode_length_100ep": 10.68,
-      "resolution_rate": 0.780905752753978,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.20117948147323914,
-      "timeout_rate": 0.01791476577278291,
-      "episodes_seen": 10627
+      "mean_reward_100ep": 3.03273866,
+      "mean_episode_length_100ep": 9.39,
+      "resolution_rate": 0.2858479386265827,
+      "escalation_rate": 0.6469157362938939,
+      "dropout_rate": 0.06611364061622903,
+      "timeout_rate": 0.0011226844632944552,
+      "episodes_seen": 17703
     },
     {
       "timesteps": 105000,
-      "mean_reward_100ep": 0.36882778999999993,
-      "mean_episode_length_100ep": 11.91,
-      "resolution_rate": 0.7710638297872341,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2103191489361702,
-      "timeout_rate": 0.018617021276595744,
-      "episodes_seen": 11040
+      "mean_reward_100ep": 0.8454525800000002,
+      "mean_episode_length_100ep": 9.68,
+      "resolution_rate": 0.28676737160120847,
+      "escalation_rate": 0.6432628398791541,
+      "dropout_rate": 0.06870090634441088,
+      "timeout_rate": 0.001268882175226586,
+      "episodes_seen": 18220
     },
     {
       "timesteps": 110000,
-      "mean_reward_100ep": 0.5254963599999999,
-      "mean_episode_length_100ep": 11.73,
-      "resolution_rate": 0.7617545288011398,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2189090168939548,
-      "timeout_rate": 0.019336454304905354,
-      "episodes_seen": 11466
+      "mean_reward_100ep": 1.39357181,
+      "mean_episode_length_100ep": 8.9,
+      "resolution_rate": 0.28734288219818765,
+      "escalation_rate": 0.6411575562700965,
+      "dropout_rate": 0.07009646302250803,
+      "timeout_rate": 0.0014030985092078339,
+      "episodes_seen": 18775
     },
     {
       "timesteps": 115000,
-      "mean_reward_100ep": 0.7716098300000002,
-      "mean_episode_length_100ep": 12.2,
-      "resolution_rate": 0.7539272124109669,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.22616840667382185,
-      "timeout_rate": 0.01990438091521124,
-      "episodes_seen": 11890
+      "mean_reward_100ep": 1.4738438199999997,
+      "mean_episode_length_100ep": 8.22,
+      "resolution_rate": 0.28827710707435406,
+      "escalation_rate": 0.6388356087103689,
+      "dropout_rate": 0.07153334085524089,
+      "timeout_rate": 0.0013539433600361051,
+      "episodes_seen": 19398
     },
     {
       "timesteps": 120000,
-      "mean_reward_100ep": 0.5274829,
-      "mean_episode_length_100ep": 12.25,
-      "resolution_rate": 0.7467404558671794,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.23299878060219492,
-      "timeout_rate": 0.020260763530625645,
-      "episodes_seen": 12302
+      "mean_reward_100ep": 1.45217732,
+      "mean_episode_length_100ep": 7.99,
+      "resolution_rate": 0.28829467939972714,
+      "escalation_rate": 0.6366166439290587,
+      "dropout_rate": 0.07372442019099591,
+      "timeout_rate": 0.001364256480218281,
+      "episodes_seen": 20000
     },
     {
       "timesteps": 125000,
-      "mean_reward_100ep": 0.7277176899999998,
-      "mean_episode_length_100ep": 12.03,
-      "resolution_rate": 0.7407307171853856,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.2386107352277853,
-      "timeout_rate": 0.02065854758682905,
-      "episodes_seen": 12727
+      "mean_reward_100ep": 1.11591854,
+      "mean_episode_length_100ep": 8.0,
+      "resolution_rate": 0.28735814198997095,
+      "escalation_rate": 0.6371074162048034,
+      "dropout_rate": 0.074162048033782,
+      "timeout_rate": 0.0013723937714436526,
+      "episodes_seen": 20621
     },
     {
       "timesteps": 130000,
-      "mean_reward_100ep": 1.08352351,
-      "mean_episode_length_100ep": 12.16,
-      "resolution_rate": 0.7357521969894718,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.24284346993822326,
-      "timeout_rate": 0.021404333072304882,
-      "episodes_seen": 13136
+      "mean_reward_100ep": 1.2685276300000001,
+      "mean_episode_length_100ep": 6.55,
+      "resolution_rate": 0.2843765903307888,
+      "escalation_rate": 0.6390330788804072,
+      "dropout_rate": 0.07521628498727735,
+      "timeout_rate": 0.0013740458015267176,
+      "episodes_seen": 21328
     },
     {
       "timesteps": 135000,
-      "mean_reward_100ep": 1.17983785,
-      "mean_episode_length_100ep": 11.73,
-      "resolution_rate": 0.7310084033613445,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.24739495798319328,
-      "timeout_rate": 0.021596638655462186,
-      "episodes_seen": 13544
+      "mean_reward_100ep": 1.11506485,
+      "mean_episode_length_100ep": 7.31,
+      "resolution_rate": 0.27962526976652935,
+      "escalation_rate": 0.6439081812831077,
+      "dropout_rate": 0.07514224053364724,
+      "timeout_rate": 0.001324308416715715,
+      "episodes_seen": 22068
     },
     {
       "timesteps": 140000,
-      "mean_reward_100ep": 0.8360189400000002,
-      "mean_episode_length_100ep": 11.97,
-      "resolution_rate": 0.7276195114032952,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.25071016962908854,
-      "timeout_rate": 0.021670318967616266,
-      "episodes_seen": 13966
+      "mean_reward_100ep": 1.1084114,
+      "mean_episode_length_100ep": 7.04,
+      "resolution_rate": 0.27545957185388215,
+      "escalation_rate": 0.6476064458201408,
+      "dropout_rate": 0.07565805018666415,
+      "timeout_rate": 0.001275932139312887,
+      "episodes_seen": 22841
     },
     {
       "timesteps": 145000,
-      "mean_reward_100ep": 0.49345709,
-      "mean_episode_length_100ep": 11.73,
-      "resolution_rate": 0.7232255025125628,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.25494660804020103,
-      "timeout_rate": 0.021827889447236182,
-      "episodes_seen": 14381
+      "mean_reward_100ep": 1.3459585600000004,
+      "mean_episode_length_100ep": 6.14,
+      "resolution_rate": 0.27301369863013697,
+      "escalation_rate": 0.6501826484018265,
+      "dropout_rate": 0.07557077625570777,
+      "timeout_rate": 0.001232876712328767,
+      "episodes_seen": 23582
     },
     {
       "timesteps": 150000,
-      "mean_reward_100ep": 0.9185969999999999,
-      "mean_episode_length_100ep": 11.62,
-      "resolution_rate": 0.7192702394526795,
-      "escalation_rate": 0.0,
-      "dropout_rate": 0.25860889395667047,
-      "timeout_rate": 0.02212086659064994,
-      "episodes_seen": 14801
+      "mean_reward_100ep": 1.022193,
+      "mean_episode_length_100ep": 6.0,
+      "resolution_rate": 0.26940719830628085,
+      "escalation_rate": 0.6539343683839096,
+      "dropout_rate": 0.07546753705010585,
+      "timeout_rate": 0.0011908962597035992,
+      "episodes_seen": 24354
+    },
+    {
+      "timesteps": 155000,
+      "mean_reward_100ep": 1.14390596,
+      "mean_episode_length_100ep": 7.74,
+      "resolution_rate": 0.26713735558408214,
+      "escalation_rate": 0.6556268720581943,
+      "dropout_rate": 0.07599486521181001,
+      "timeout_rate": 0.0012409071459135643,
+      "episodes_seen": 25052
+    },
+    {
+      "timesteps": 160000,
+      "mean_reward_100ep": 1.3097667199999998,
+      "mean_episode_length_100ep": 8.35,
+      "resolution_rate": 0.26602791085190586,
+      "escalation_rate": 0.6558633617996251,
+      "dropout_rate": 0.07681732972297438,
+      "timeout_rate": 0.0012913976254946887,
+      "episodes_seen": 25687
+    },
+    {
+      "timesteps": 165000,
+      "mean_reward_100ep": 1.3243739100000003,
+      "mean_episode_length_100ep": 7.84,
+      "resolution_rate": 0.26567696925448203,
+      "escalation_rate": 0.6555528514642655,
+      "dropout_rate": 0.077472215461994,
+      "timeout_rate": 0.0012979638192585382,
+      "episodes_seen": 26338
+    },
+    {
+      "timesteps": 170000,
+      "mean_reward_100ep": 1.7043837099999999,
+      "mean_episode_length_100ep": 7.41,
+      "resolution_rate": 0.26572762522750654,
+      "escalation_rate": 0.65502097016697,
+      "dropout_rate": 0.07786658225844742,
+      "timeout_rate": 0.0013848223470760465,
+      "episodes_seen": 26958
+    },
+    {
+      "timesteps": 175000,
+      "mean_reward_100ep": 1.4170359,
+      "mean_episode_length_100ep": 7.7,
+      "resolution_rate": 0.26553628674056623,
+      "escalation_rate": 0.6548993858869877,
+      "dropout_rate": 0.07813525935653316,
+      "timeout_rate": 0.0014290680159128656,
+      "episodes_seen": 27575
+    },
+    {
+      "timesteps": 180000,
+      "mean_reward_100ep": 1.1700648000000002,
+      "mean_episode_length_100ep": 7.41,
+      "resolution_rate": 0.26498077937740255,
+      "escalation_rate": 0.6553478555815181,
+      "dropout_rate": 0.07816386522951685,
+      "timeout_rate": 0.0015074998115625236,
+      "episodes_seen": 28218
+    },
+    {
+      "timesteps": 185000,
+      "mean_reward_100ep": 1.21985293,
+      "mean_episode_length_100ep": 7.84,
+      "resolution_rate": 0.2643919316843345,
+      "escalation_rate": 0.655513839811543,
+      "dropout_rate": 0.07843786808009423,
+      "timeout_rate": 0.0016563604240282686,
+      "episodes_seen": 28852
+    },
+    {
+      "timesteps": 190000,
+      "mean_reward_100ep": 1.1074294500000001,
+      "mean_episode_length_100ep": 7.36,
+      "resolution_rate": 0.26195605342524775,
+      "escalation_rate": 0.657726554645986,
+      "dropout_rate": 0.07870170903346259,
+      "timeout_rate": 0.0016156828953037485,
+      "episodes_seen": 29538
+    },
+    {
+      "timesteps": 195000,
+      "mean_reward_100ep": 1.20207266,
+      "mean_episode_length_100ep": 8.04,
+      "resolution_rate": 0.26076588581848786,
+      "escalation_rate": 0.6588581848786647,
+      "dropout_rate": 0.0787277317996914,
+      "timeout_rate": 0.0016481975031561228,
+      "episodes_seen": 30202
+    },
+    {
+      "timesteps": 200000,
+      "mean_reward_100ep": 0.9176873000000001,
+      "mean_episode_length_100ep": 8.04,
+      "resolution_rate": 0.2594611271081859,
+      "escalation_rate": 0.6599478952420129,
+      "dropout_rate": 0.07877416700946113,
+      "timeout_rate": 0.0018168106403400521,
+      "episodes_seen": 30858
+    },
+    {
+      "timesteps": 205000,
+      "mean_reward_100ep": 1.4187057299999999,
+      "mean_episode_length_100ep": 6.82,
+      "resolution_rate": 0.2576533172739135,
+      "escalation_rate": 0.6618153835859346,
+      "dropout_rate": 0.0787580715313326,
+      "timeout_rate": 0.001773227608819298,
+      "episodes_seen": 31576
+    },
+    {
+      "timesteps": 210000,
+      "mean_reward_100ep": 1.0595058899999998,
+      "mean_episode_length_100ep": 6.62,
+      "resolution_rate": 0.2555214323052797,
+      "escalation_rate": 0.6635520125457397,
+      "dropout_rate": 0.07916231050705698,
+      "timeout_rate": 0.0017642446419236801,
+      "episodes_seen": 32295
+    },
+    {
+      "timesteps": 215000,
+      "mean_reward_100ep": 1.13647999,
+      "mean_episode_length_100ep": 6.96,
+      "resolution_rate": 0.25329377611892684,
+      "escalation_rate": 0.6655182314097042,
+      "dropout_rate": 0.07943343860656522,
+      "timeout_rate": 0.0017545538648036495,
+      "episodes_seen": 33034
+    },
+    {
+      "timesteps": 220000,
+      "mean_reward_100ep": 1.2349984799999998,
+      "mean_episode_length_100ep": 6.47,
+      "resolution_rate": 0.2497668055469187,
+      "escalation_rate": 0.6690815247807972,
+      "dropout_rate": 0.07944157701635471,
+      "timeout_rate": 0.0017100926559293576,
+      "episodes_seen": 33850
+    },
+    {
+      "timesteps": 225000,
+      "mean_reward_100ep": 1.3898132300000001,
+      "mean_episode_length_100ep": 6.24,
+      "resolution_rate": 0.24809473204797328,
+      "escalation_rate": 0.6705935934416275,
+      "dropout_rate": 0.07964171853651131,
+      "timeout_rate": 0.001669955973887961,
+      "episodes_seen": 34623
+    },
+    {
+      "timesteps": 230000,
+      "mean_reward_100ep": 1.1125632800000003,
+      "mean_episode_length_100ep": 6.63,
+      "resolution_rate": 0.24607392014249665,
+      "escalation_rate": 0.6721686210479442,
+      "dropout_rate": 0.08009499777348969,
+      "timeout_rate": 0.0016624610360694671,
+      "episodes_seen": 35373
+    },
+    {
+      "timesteps": 235000,
+      "mean_reward_100ep": 1.4271042300000003,
+      "mean_episode_length_100ep": 5.74,
+      "resolution_rate": 0.2431993974332976,
+      "escalation_rate": 0.6752223413192734,
+      "dropout_rate": 0.07995596627944031,
+      "timeout_rate": 0.001622294967988644,
+      "episodes_seen": 36208
+    },
+    {
+      "timesteps": 240000,
+      "mean_reward_100ep": 1.4247959200000002,
+      "mean_episode_length_100ep": 5.74,
+      "resolution_rate": 0.24039330922242313,
+      "escalation_rate": 0.6781193490054249,
+      "dropout_rate": 0.07990506329113924,
+      "timeout_rate": 0.0015822784810126582,
+      "episodes_seen": 37081
+    },
+    {
+      "timesteps": 245000,
+      "mean_reward_100ep": 1.5400465999999997,
+      "mean_episode_length_100ep": 5.91,
+      "resolution_rate": 0.23776551724137931,
+      "escalation_rate": 0.6811862068965517,
+      "dropout_rate": 0.07950344827586207,
+      "timeout_rate": 0.0015448275862068965,
+      "episodes_seen": 37941
+    },
+    {
+      "timesteps": 250000,
+      "mean_reward_100ep": 1.3106737000000002,
+      "mean_episode_length_100ep": 6.68,
+      "resolution_rate": 0.23647554259799158,
+      "escalation_rate": 0.6825936723895908,
+      "dropout_rate": 0.07941906921498758,
+      "timeout_rate": 0.0015117157974300832,
+      "episodes_seen": 38735
+    },
+    {
+      "timesteps": 255000,
+      "mean_reward_100ep": 1.32061389,
+      "mean_episode_length_100ep": 7.37,
+      "resolution_rate": 0.23572563559322035,
+      "escalation_rate": 0.6832362288135593,
+      "dropout_rate": 0.07947563559322034,
+      "timeout_rate": 0.0015625,
+      "episodes_seen": 39452
+    },
+    {
+      "timesteps": 260000,
+      "mean_reward_100ep": 1.3606796700000001,
+      "mean_episode_length_100ep": 7.39,
+      "resolution_rate": 0.23489793264855025,
+      "escalation_rate": 0.6838902613444285,
+      "dropout_rate": 0.07965154076192953,
+      "timeout_rate": 0.0015602652450916656,
+      "episodes_seen": 40148
+    },
+    {
+      "timesteps": 265000,
+      "mean_reward_100ep": 1.18603571,
+      "mean_episode_length_100ep": 7.37,
+      "resolution_rate": 0.23432553865005618,
+      "escalation_rate": 0.6843919125906259,
+      "dropout_rate": 0.07969978556111508,
+      "timeout_rate": 0.001582763198202798,
+      "episodes_seen": 40867
+    },
+    {
+      "timesteps": 270000,
+      "mean_reward_100ep": 1.46872094,
+      "mean_episode_length_100ep": 5.77,
+      "resolution_rate": 0.23260526908353973,
+      "escalation_rate": 0.6860817133278291,
+      "dropout_rate": 0.07971177662688583,
+      "timeout_rate": 0.0016012409617453527,
+      "episodes_seen": 41664
+    },
+    {
+      "timesteps": 275000,
+      "mean_reward_100ep": 1.2331803700000001,
+      "mean_episode_length_100ep": 6.35,
+      "resolution_rate": 0.23128266790998994,
+      "escalation_rate": 0.6875414100267478,
+      "dropout_rate": 0.07950725135579495,
+      "timeout_rate": 0.0016686707074673015,
+      "episodes_seen": 42447
+    },
+    {
+      "timesteps": 280000,
+      "mean_reward_100ep": 1.3029071,
+      "mean_episode_length_100ep": 5.6,
+      "resolution_rate": 0.2294754571703561,
+      "escalation_rate": 0.6893888354186718,
+      "dropout_rate": 0.07947545717035612,
+      "timeout_rate": 0.0016602502406159768,
+      "episodes_seen": 43257
+    },
+    {
+      "timesteps": 285000,
+      "mean_reward_100ep": 1.3851813200000003,
+      "mean_episode_length_100ep": 5.68,
+      "resolution_rate": 0.22756636959494506,
+      "escalation_rate": 0.6913047578629697,
+      "dropout_rate": 0.07947847408874428,
+      "timeout_rate": 0.001650398453340878,
+      "episodes_seen": 44111
+    },
+    {
+      "timesteps": 290000,
+      "mean_reward_100ep": 1.07745159,
+      "mean_episode_length_100ep": 6.59,
+      "resolution_rate": 0.2260632144014068,
+      "escalation_rate": 0.6926512101439215,
+      "dropout_rate": 0.07966587995742515,
+      "timeout_rate": 0.0016196954972465176,
+      "episodes_seen": 44915
+    },
+    {
+      "timesteps": 295000,
+      "mean_reward_100ep": 1.42608724,
+      "mean_episode_length_100ep": 6.27,
+      "resolution_rate": 0.224775542675304,
+      "escalation_rate": 0.6940106830321627,
+      "dropout_rate": 0.07957722468462325,
+      "timeout_rate": 0.0016365496079099899,
+      "episodes_seen": 45694
+    },
+    {
+      "timesteps": 300000,
+      "mean_reward_100ep": 1.1734246599999998,
+      "mean_episode_length_100ep": 7.68,
+      "resolution_rate": 0.22402771569065713,
+      "escalation_rate": 0.6945015645954403,
+      "dropout_rate": 0.07979436745641484,
+      "timeout_rate": 0.0016763522574877068,
+      "episodes_seen": 46439
+    },
+    {
+      "timesteps": 305000,
+      "mean_reward_100ep": 1.45530599,
+      "mean_episode_length_100ep": 6.77,
+      "resolution_rate": 0.2235074216602529,
+      "escalation_rate": 0.6948433205057724,
+      "dropout_rate": 0.079978009895547,
+      "timeout_rate": 0.0016712479384277076,
+      "episodes_seen": 47175
+    },
+    {
+      "timesteps": 310000,
+      "mean_reward_100ep": 1.2251314999999996,
+      "mean_episode_length_100ep": 6.4,
+      "resolution_rate": 0.22251303238086997,
+      "escalation_rate": 0.6953991910190133,
+      "dropout_rate": 0.08037896649434362,
+      "timeout_rate": 0.0017088101057731826,
+      "episodes_seen": 47932
+    },
+    {
+      "timesteps": 315000,
+      "mean_reward_100ep": 1.40158075,
+      "mean_episode_length_100ep": 6.51,
+      "resolution_rate": 0.2212487240558013,
+      "escalation_rate": 0.6967718611772712,
+      "dropout_rate": 0.08025689009867301,
+      "timeout_rate": 0.0017225246682545084,
+      "episodes_seen": 48725
+    },
+    {
+      "timesteps": 320000,
+      "mean_reward_100ep": 1.24904727,
+      "mean_episode_length_100ep": 5.45,
+      "resolution_rate": 0.21954381049946686,
+      "escalation_rate": 0.6982919027409002,
+      "dropout_rate": 0.08042901047437855,
+      "timeout_rate": 0.001735276285254333,
+      "episodes_seen": 49532
+    },
+    {
+      "timesteps": 325000,
+      "mean_reward_100ep": 1.1553012999999999,
+      "mean_episode_length_100ep": 5.28,
+      "resolution_rate": 0.21767157315596067,
+      "escalation_rate": 0.7002319804561598,
+      "dropout_rate": 0.080371989899612,
+      "timeout_rate": 0.0017244564882675372,
+      "episodes_seen": 50412
+    },
+    {
+      "timesteps": 330000,
+      "mean_reward_100ep": 1.37400349,
+      "mean_episode_length_100ep": 5.99,
+      "resolution_rate": 0.21611588588952105,
+      "escalation_rate": 0.7016704999394746,
+      "dropout_rate": 0.08045837872735342,
+      "timeout_rate": 0.0017552354436508896,
+      "episodes_seen": 51267
+    },
+    {
+      "timesteps": 335000,
+      "mean_reward_100ep": 1.1647817200000001,
+      "mean_episode_length_100ep": 6.28,
+      "resolution_rate": 0.2149345497818326,
+      "escalation_rate": 0.7028163427211424,
+      "dropout_rate": 0.08052360174533915,
+      "timeout_rate": 0.001725505751685839,
+      "episodes_seen": 52122
+    },
+    {
+      "timesteps": 340000,
+      "mean_reward_100ep": 1.34955473,
+      "mean_episode_length_100ep": 6.14,
+      "resolution_rate": 0.21383144752243466,
+      "escalation_rate": 0.7037651190011706,
+      "dropout_rate": 0.08070620366757705,
+      "timeout_rate": 0.0016972298088177916,
+      "episodes_seen": 52962
+    },
+    {
+      "timesteps": 345000,
+      "mean_reward_100ep": 1.01057649,
+      "mean_episode_length_100ep": 6.0,
+      "resolution_rate": 0.21251920122887866,
+      "escalation_rate": 0.7048195084485407,
+      "dropout_rate": 0.0809715821812596,
+      "timeout_rate": 0.0016897081413210445,
+      "episodes_seen": 53783
+    },
+    {
+      "timesteps": 350000,
+      "mean_reward_100ep": 1.20126372,
+      "mean_episode_length_100ep": 6.21,
+      "resolution_rate": 0.21131019883571484,
+      "escalation_rate": 0.7061881000982838,
+      "dropout_rate": 0.08083843653133742,
+      "timeout_rate": 0.0016632645346639449,
+      "episodes_seen": 54611
+    },
+    {
+      "timesteps": 355000,
+      "mean_reward_100ep": 1.4190106,
+      "mean_episode_length_100ep": 5.86,
+      "resolution_rate": 0.21008200226854348,
+      "escalation_rate": 0.7075252421949088,
+      "dropout_rate": 0.08075642908942152,
+      "timeout_rate": 0.0016363264471262017,
+      "episodes_seen": 55482
+    },
+    {
+      "timesteps": 360000,
+      "mean_reward_100ep": 1.05495308,
+      "mean_episode_length_100ep": 6.43,
+      "resolution_rate": 0.20838743895970885,
+      "escalation_rate": 0.7089635495729466,
+      "dropout_rate": 0.08102127036962525,
+      "timeout_rate": 0.0016277410977193335,
+      "episodes_seen": 56380
+    },
+    {
+      "timesteps": 365000,
+      "mean_reward_100ep": 1.18558859,
+      "mean_episode_length_100ep": 6.53,
+      "resolution_rate": 0.20745735819119396,
+      "escalation_rate": 0.7100176697558689,
+      "dropout_rate": 0.08088420900796942,
+      "timeout_rate": 0.0016407630449677257,
+      "episodes_seen": 57165
+    },
+    {
+      "timesteps": 370000,
+      "mean_reward_100ep": 1.5556746000000001,
+      "mean_episode_length_100ep": 7.31,
+      "resolution_rate": 0.20751290724586077,
+      "escalation_rate": 0.7096492789745416,
+      "dropout_rate": 0.08116432259213104,
+      "timeout_rate": 0.001673491187466619,
+      "episodes_seen": 57873
+    },
+    {
+      "timesteps": 375000,
+      "mean_reward_100ep": 1.1978561399999998,
+      "mean_episode_length_100ep": 6.84,
+      "resolution_rate": 0.20687111392138266,
+      "escalation_rate": 0.7103312607580707,
+      "dropout_rate": 0.08111146239505392,
+      "timeout_rate": 0.0016861629254926757,
+      "episodes_seen": 58637
+    },
+    {
+      "timesteps": 380000,
+      "mean_reward_100ep": 1.5086978599999998,
+      "mean_episode_length_100ep": 6.43,
+      "resolution_rate": 0.20592310356771734,
+      "escalation_rate": 0.7111534464842397,
+      "dropout_rate": 0.08124350536889505,
+      "timeout_rate": 0.0016799445791479044,
+      "episodes_seen": 59443
+    },
+    {
+      "timesteps": 385000,
+      "mean_reward_100ep": 1.13747993,
+      "mean_episode_length_100ep": 6.34,
+      "resolution_rate": 0.20502921179404832,
+      "escalation_rate": 0.7121015408794288,
+      "dropout_rate": 0.08119512111790632,
+      "timeout_rate": 0.001674126208616625,
+      "episodes_seen": 60242
+    },
+    {
+      "timesteps": 390000,
+      "mean_reward_100ep": 1.21155988,
+      "mean_episode_length_100ep": 5.91,
+      "resolution_rate": 0.20426536289302874,
+      "escalation_rate": 0.7123998988451488,
+      "dropout_rate": 0.08163196493298491,
+      "timeout_rate": 0.001702773328837562,
+      "episodes_seen": 61019
+    },
+    {
+      "timesteps": 395000,
+      "mean_reward_100ep": 1.2926380100000001,
+      "mean_episode_length_100ep": 6.76,
+      "resolution_rate": 0.20354129570151935,
+      "escalation_rate": 0.7132182856001731,
+      "dropout_rate": 0.08154299312709058,
+      "timeout_rate": 0.0016974255712169876,
+      "episodes_seen": 61795
+    },
+    {
+      "timesteps": 400000,
+      "mean_reward_100ep": 1.4687955799999997,
+      "mean_episode_length_100ep": 6.55,
+      "resolution_rate": 0.20299738714607332,
+      "escalation_rate": 0.7137199480715823,
+      "dropout_rate": 0.0815900612952525,
+      "timeout_rate": 0.0016926034870918443,
+      "episodes_seen": 62559
+    },
+    {
+      "timesteps": 405000,
+      "mean_reward_100ep": 1.3142634500000003,
+      "mean_episode_length_100ep": 6.4,
+      "resolution_rate": 0.20258278038255,
+      "escalation_rate": 0.7140771264945894,
+      "dropout_rate": 0.08163662616200781,
+      "timeout_rate": 0.001703466960852707,
+      "episodes_seen": 63345
+    },
+    {
+      "timesteps": 410000,
+      "mean_reward_100ep": 1.49592061,
+      "mean_episode_length_100ep": 6.67,
+      "resolution_rate": 0.202032507293303,
+      "escalation_rate": 0.7145353124098356,
+      "dropout_rate": 0.08170102266534159,
+      "timeout_rate": 0.0017311576315198922,
+      "episodes_seen": 64097
+    },
+    {
+      "timesteps": 415000,
+      "mean_reward_100ep": 1.5190637999999999,
+      "mean_episode_length_100ep": 5.87,
+      "resolution_rate": 0.2011645201101231,
+      "escalation_rate": 0.7155786209297175,
+      "dropout_rate": 0.08153222999272175,
+      "timeout_rate": 0.0017246289674377393,
+      "episodes_seen": 64916
+    },
+    {
+      "timesteps": 420000,
+      "mean_reward_100ep": 1.40479759,
+      "mean_episode_length_100ep": 6.04,
+      "resolution_rate": 0.19983772059856134,
+      "escalation_rate": 0.7168380482781219,
+      "dropout_rate": 0.08162341816593069,
+      "timeout_rate": 0.0017008129573860534,
+      "episodes_seen": 65804
+    },
+    {
+      "timesteps": 425000,
+      "mean_reward_100ep": 1.04003062,
+      "mean_episode_length_100ep": 5.56,
+      "resolution_rate": 0.19874370698812988,
+      "escalation_rate": 0.7180422767231691,
+      "dropout_rate": 0.08152048404230751,
+      "timeout_rate": 0.0016935322463935462,
+      "episodes_seen": 66671
+    },
+    {
+      "timesteps": 430000,
+      "mean_reward_100ep": 1.4986396,
+      "mean_episode_length_100ep": 5.3,
+      "resolution_rate": 0.19757886902501634,
+      "escalation_rate": 0.7191700715403193,
+      "dropout_rate": 0.08158026641554142,
+      "timeout_rate": 0.0016707930191229856,
+      "episodes_seen": 67555
+    },
+    {
+      "timesteps": 435000,
+      "mean_reward_100ep": 1.27518547,
+      "mean_episode_length_100ep": 5.67,
+      "resolution_rate": 0.19658888239437675,
+      "escalation_rate": 0.7203812778202419,
+      "dropout_rate": 0.08138123285823479,
+      "timeout_rate": 0.001648606927146561,
+      "episodes_seen": 68442
+    },
+    {
+      "timesteps": 440000,
+      "mean_reward_100ep": 1.4454030500000001,
+      "mean_episode_length_100ep": 5.52,
+      "resolution_rate": 0.19550807835710482,
+      "escalation_rate": 0.7214446351423329,
+      "dropout_rate": 0.08141977865893354,
+      "timeout_rate": 0.0016275078416286915,
+      "episodes_seen": 69307
+    },
+    {
+      "timesteps": 445000,
+      "mean_reward_100ep": 1.15384469,
+      "mean_episode_length_100ep": 5.89,
+      "resolution_rate": 0.1947046188465304,
+      "escalation_rate": 0.7221970571474495,
+      "dropout_rate": 0.08147639434808657,
+      "timeout_rate": 0.001621929657933574,
+      "episodes_seen": 70157
+    },
+    {
+      "timesteps": 450000,
+      "mean_reward_100ep": 1.39531994,
+      "mean_episode_length_100ep": 5.91,
+      "resolution_rate": 0.19412936184951077,
+      "escalation_rate": 0.7228908707824632,
+      "dropout_rate": 0.08137789707622593,
+      "timeout_rate": 0.001601870291800156,
+      "episodes_seen": 71014
+    },
+    {
+      "timesteps": 455000,
+      "mean_reward_100ep": 1.20366756,
+      "mean_episode_length_100ep": 6.41,
+      "resolution_rate": 0.19333257253716013,
+      "escalation_rate": 0.7238167242018773,
+      "dropout_rate": 0.08125303129725257,
+      "timeout_rate": 0.0015976719637100225,
+      "episodes_seen": 71822
+    },
+    {
+      "timesteps": 460000,
+      "mean_reward_100ep": 1.27814581,
+      "mean_episode_length_100ep": 5.59,
+      "resolution_rate": 0.19264490302210194,
+      "escalation_rate": 0.7246560667568787,
+      "dropout_rate": 0.0811203202525936,
+      "timeout_rate": 0.0015787099684258007,
+      "episodes_seen": 72664
+    },
+    {
+      "timesteps": 465000,
+      "mean_reward_100ep": 1.2689400599999998,
+      "mean_episode_length_100ep": 5.87,
+      "resolution_rate": 0.19203544755322707,
+      "escalation_rate": 0.725309330063538,
+      "dropout_rate": 0.08109463827889868,
+      "timeout_rate": 0.0015605841043361945,
+      "episodes_seen": 73488
+    },
+    {
+      "timesteps": 470000,
+      "mean_reward_100ep": 1.5563758,
+      "mean_episode_length_100ep": 6.38,
+      "resolution_rate": 0.19133176379882422,
+      "escalation_rate": 0.7259647818484711,
+      "dropout_rate": 0.0811614555367395,
+      "timeout_rate": 0.0015419988159651949,
+      "episodes_seen": 74353
+    },
+    {
+      "timesteps": 475000,
+      "mean_reward_100ep": 1.5262069299999996,
+      "mean_episode_length_100ep": 6.66,
+      "resolution_rate": 0.19077057149470988,
+      "escalation_rate": 0.7264532469124035,
+      "dropout_rate": 0.08123748961723334,
+      "timeout_rate": 0.0015386919756532633,
+      "episodes_seen": 75159
+    },
+    {
+      "timesteps": 480000,
+      "mean_reward_100ep": 1.3021289800000002,
+      "mean_episode_length_100ep": 6.66,
+      "resolution_rate": 0.19039150701910382,
+      "escalation_rate": 0.7265917602996255,
+      "dropout_rate": 0.08149435507773556,
+      "timeout_rate": 0.0015223776035351495,
+      "episodes_seen": 75946
+    },
+    {
+      "timesteps": 485000,
+      "mean_reward_100ep": 1.1912093000000001,
+      "mean_episode_length_100ep": 5.81,
+      "resolution_rate": 0.18969514469967488,
+      "escalation_rate": 0.7273623620956137,
+      "dropout_rate": 0.08143687043649736,
+      "timeout_rate": 0.0015056227682140383,
+      "episodes_seen": 76772
+    },
+    {
+      "timesteps": 490000,
+      "mean_reward_100ep": 1.39432874,
+      "mean_episode_length_100ep": 5.74,
+      "resolution_rate": 0.18875724065297525,
+      "escalation_rate": 0.7283965244865719,
+      "dropout_rate": 0.08135860979462875,
+      "timeout_rate": 0.0014876250658241179,
+      "episodes_seen": 77680
+    },
+    {
+      "timesteps": 495000,
+      "mean_reward_100ep": 1.4891746099999998,
+      "mean_episode_length_100ep": 6.4,
+      "resolution_rate": 0.18806109969033802,
+      "escalation_rate": 0.7291888938041583,
+      "dropout_rate": 0.08127976267922662,
+      "timeout_rate": 0.0014702438262770303,
+      "episodes_seen": 78578
+    },
+    {
+      "timesteps": 500000,
+      "mean_reward_100ep": 1.22302603,
+      "mean_episode_length_100ep": 6.17,
+      "resolution_rate": 0.18731339441984968,
+      "escalation_rate": 0.7298079892927005,
+      "dropout_rate": 0.08142437969731288,
+      "timeout_rate": 0.0014542365901369298,
+      "episodes_seen": 79424
+    },
+    {
+      "timesteps": 505000,
+      "mean_reward_100ep": 1.17493701,
+      "mean_episode_length_100ep": 6.15,
+      "resolution_rate": 0.18686540543983693,
+      "escalation_rate": 0.7301229377667368,
+      "dropout_rate": 0.08157207465443658,
+      "timeout_rate": 0.0014395821389897446,
+      "episodes_seen": 80217
+    },
+    {
+      "timesteps": 510000,
+      "mean_reward_100ep": 1.3669562800000004,
+      "mean_episode_length_100ep": 5.94,
+      "resolution_rate": 0.18625263184437132,
+      "escalation_rate": 0.7307260738555417,
+      "dropout_rate": 0.08158402360149779,
+      "timeout_rate": 0.0014372706985892054,
+      "episodes_seen": 81039
+    },
+    {
+      "timesteps": 515000,
+      "mean_reward_100ep": 1.4005990000000006,
+      "mean_episode_length_100ep": 6.24,
+      "resolution_rate": 0.186121134181514,
+      "escalation_rate": 0.7310002122532556,
+      "dropout_rate": 0.08144282271858964,
+      "timeout_rate": 0.0014358308466407802,
+      "episodes_seen": 81815
+    },
+    {
+      "timesteps": 520000,
+      "mean_reward_100ep": 1.16396117,
+      "mean_episode_length_100ep": 5.97,
+      "resolution_rate": 0.185546875,
+      "escalation_rate": 0.7315936511075949,
+      "dropout_rate": 0.08143789556962025,
+      "timeout_rate": 0.0014215783227848101,
+      "episodes_seen": 82618
+    },
+    {
+      "timesteps": 525000,
+      "mean_reward_100ep": 1.3936244399999997,
+      "mean_episode_length_100ep": 6.11,
+      "resolution_rate": 0.1854118222983723,
+      "escalation_rate": 0.7317586586709093,
+      "dropout_rate": 0.08142210255782646,
+      "timeout_rate": 0.001407416472891935,
+      "episodes_seen": 83432
+    },
+    {
+      "timesteps": 530000,
+      "mean_reward_100ep": 1.47282084,
+      "mean_episode_length_100ep": 6.0,
+      "resolution_rate": 0.18501908975213624,
+      "escalation_rate": 0.7321495666929277,
+      "dropout_rate": 0.08141324768195866,
+      "timeout_rate": 0.0014180958729773953,
+      "episodes_seen": 84227
+    },
+    {
+      "timesteps": 535000,
+      "mean_reward_100ep": 1.3847710699999995,
+      "mean_episode_length_100ep": 6.24,
+      "resolution_rate": 0.18489483288513253,
+      "escalation_rate": 0.7322320399538993,
+      "dropout_rate": 0.0814684978870534,
+      "timeout_rate": 0.0014046292739147137,
+      "episodes_seen": 85018
+    },
+    {
+      "timesteps": 540000,
+      "mean_reward_100ep": 1.0075026299999998,
+      "mean_episode_length_100ep": 7.0,
+      "resolution_rate": 0.18467359103401507,
+      "escalation_rate": 0.732174513093241,
+      "dropout_rate": 0.08174798634162592,
+      "timeout_rate": 0.0014039095311180116,
+      "episodes_seen": 85773
+    },
+    {
+      "timesteps": 545000,
+      "mean_reward_100ep": 1.2375172700000001,
+      "mean_episode_length_100ep": 6.79,
+      "resolution_rate": 0.18462917320188213,
+      "escalation_rate": 0.7323136431713386,
+      "dropout_rate": 0.0816538320931165,
+      "timeout_rate": 0.0014033515336627474,
+      "episodes_seen": 86519
+    },
+    {
+      "timesteps": 550000,
+      "mean_reward_100ep": 1.61290066,
+      "mean_episode_length_100ep": 6.51,
+      "resolution_rate": 0.18447997755803353,
+      "escalation_rate": 0.7325198120485308,
+      "dropout_rate": 0.08160927601281062,
+      "timeout_rate": 0.0013909343806251023,
+      "episodes_seen": 87276
+    },
+    {
+      "timesteps": 555000,
+      "mean_reward_100ep": 1.31214111,
+      "mean_episode_length_100ep": 6.41,
+      "resolution_rate": 0.18422790412085685,
+      "escalation_rate": 0.7327293580638808,
+      "dropout_rate": 0.08166409861325115,
+      "timeout_rate": 0.0013786392020111913,
+      "episodes_seen": 88040
+    },
+    {
+      "timesteps": 560000,
+      "mean_reward_100ep": 1.0591259099999997,
+      "mean_episode_length_100ep": 6.52,
+      "resolution_rate": 0.184212037345399,
+      "escalation_rate": 0.732507263519333,
+      "dropout_rate": 0.0819141239564074,
+      "timeout_rate": 0.0013665751788605749,
+      "episodes_seen": 88803
+    },
+    {
+      "timesteps": 565000,
+      "mean_reward_100ep": 1.32418923,
+      "mean_episode_length_100ep": 6.45,
+      "resolution_rate": 0.18397805150155963,
+      "escalation_rate": 0.7325880558275085,
+      "dropout_rate": 0.08207918763233989,
+      "timeout_rate": 0.0013547050385920175,
+      "episodes_seen": 89567
+    },
+    {
+      "timesteps": 570000,
+      "mean_reward_100ep": 1.3693027800000002,
+      "mean_episode_length_100ep": 5.83,
+      "resolution_rate": 0.1836656398451869,
+      "escalation_rate": 0.7328233077192151,
+      "dropout_rate": 0.08215700213262923,
+      "timeout_rate": 0.0013540503029687552,
+      "episodes_seen": 90350
+    },
+    {
+      "timesteps": 575000,
+      "mean_reward_100ep": 1.3927444499999995,
+      "mean_episode_length_100ep": 5.75,
+      "resolution_rate": 0.18319509959535893,
+      "escalation_rate": 0.7333504728264515,
+      "dropout_rate": 0.082101898012564,
+      "timeout_rate": 0.0013525295656256287,
+      "episodes_seen": 91192
+    },
+    {
+      "timesteps": 580000,
+      "mean_reward_100ep": 1.0838277399999998,
+      "mean_episode_length_100ep": 6.32,
+      "resolution_rate": 0.18305911029859842,
+      "escalation_rate": 0.7334884493933854,
+      "dropout_rate": 0.08211179436042325,
+      "timeout_rate": 0.001340645947592931,
+      "episodes_seen": 91990
+    },
+    {
+      "timesteps": 585000,
+      "mean_reward_100ep": 1.3788201999999998,
+      "mean_episode_length_100ep": 6.75,
+      "resolution_rate": 0.1827100544911232,
+      "escalation_rate": 0.7337735102830023,
+      "dropout_rate": 0.08218711548602567,
+      "timeout_rate": 0.001329319739848831,
+      "episodes_seen": 92763
+    },
+    {
+      "timesteps": 590000,
+      "mean_reward_100ep": 1.47527424,
+      "mean_episode_length_100ep": 5.15,
+      "resolution_rate": 0.18222894845720009,
+      "escalation_rate": 0.7341963721882281,
+      "dropout_rate": 0.082246368921891,
+      "timeout_rate": 0.0013283104326807917,
+      "episodes_seen": 93586
+    },
+    {
+      "timesteps": 595000,
+      "mean_reward_100ep": 1.16660517,
+      "mean_episode_length_100ep": 6.39,
+      "resolution_rate": 0.18177698656740574,
+      "escalation_rate": 0.7347035658412904,
+      "dropout_rate": 0.08218158278038518,
+      "timeout_rate": 0.001337864810918703,
+      "episodes_seen": 94427
+    },
+    {
+      "timesteps": 600000,
+      "mean_reward_100ep": 1.01691548,
+      "mean_episode_length_100ep": 6.36,
+      "resolution_rate": 0.18144177686480933,
+      "escalation_rate": 0.7350002139769761,
+      "dropout_rate": 0.08220995420892711,
+      "timeout_rate": 0.0013480549492874566,
+      "episodes_seen": 95212
+    },
+    {
+      "timesteps": 605000,
+      "mean_reward_100ep": 1.52447035,
+      "mean_episode_length_100ep": 6.15,
+      "resolution_rate": 0.1809728789838631,
+      "escalation_rate": 0.7355223817298925,
+      "dropout_rate": 0.08214762823639178,
+      "timeout_rate": 0.0013571110498526262,
+      "episodes_seen": 96066
+    },
+    {
+      "timesteps": 610000,
+      "mean_reward_100ep": 1.45233036,
+      "mean_episode_length_100ep": 6.13,
+      "resolution_rate": 0.18053687042798286,
+      "escalation_rate": 0.7359791473976288,
+      "dropout_rate": 0.08213865298915328,
+      "timeout_rate": 0.0013453291852350122,
+      "episodes_seen": 96892
+    },
+    {
+      "timesteps": 615000,
+      "mean_reward_100ep": 1.3045071799999999,
+      "mean_episode_length_100ep": 5.37,
+      "resolution_rate": 0.17979575052832114,
+      "escalation_rate": 0.7368284075411986,
+      "dropout_rate": 0.08203291726959473,
+      "timeout_rate": 0.0013429246608854975,
+      "episodes_seen": 97809
+    },
+    {
+      "timesteps": 620000,
+      "mean_reward_100ep": 1.2893748200000001,
+      "mean_episode_length_100ep": 4.85,
+      "resolution_rate": 0.1788739360715537,
+      "escalation_rate": 0.7377017084681491,
+      "dropout_rate": 0.08208478453516889,
+      "timeout_rate": 0.0013395709251282897,
+      "episodes_seen": 98798
+    },
+    {
+      "timesteps": 625000,
+      "mean_reward_100ep": 1.3119268199999998,
+      "mean_episode_length_100ep": 5.19,
+      "resolution_rate": 0.1779315129994694,
+      "escalation_rate": 0.7386943390065711,
+      "dropout_rate": 0.08203746785845475,
+      "timeout_rate": 0.0013366801355046733,
+      "episodes_seen": 99758
+    },
+    {
+      "timesteps": 630000,
+      "mean_reward_100ep": 1.1732215199999998,
+      "mean_episode_length_100ep": 5.45,
+      "resolution_rate": 0.1770863858209634,
+      "escalation_rate": 0.7397512201529864,
+      "dropout_rate": 0.0818083526166345,
+      "timeout_rate": 0.0013540414094156401,
+      "episodes_seen": 100719
+    },
+    {
+      "timesteps": 635000,
+      "mean_reward_100ep": 1.4684810499999998,
+      "mean_episode_length_100ep": 5.27,
+      "resolution_rate": 0.17640994845618777,
+      "escalation_rate": 0.74054946704699,
+      "dropout_rate": 0.08168943602061753,
+      "timeout_rate": 0.0013511484762047741,
+      "episodes_seen": 101671
+    },
+    {
+      "timesteps": 640000,
+      "mean_reward_100ep": 1.5243485,
+      "mean_episode_length_100ep": 5.63,
+      "resolution_rate": 0.17586046188781024,
+      "escalation_rate": 0.7412515989568356,
+      "dropout_rate": 0.08154927761857071,
+      "timeout_rate": 0.0013386615367834442,
+      "episodes_seen": 102603
+    },
+    {
+      "timesteps": 645000,
+      "mean_reward_100ep": 1.32314235,
+      "mean_episode_length_100ep": 5.94,
+      "resolution_rate": 0.1752685741244926,
+      "escalation_rate": 0.7419526051444354,
+      "dropout_rate": 0.08144209315811718,
+      "timeout_rate": 0.0013367275729548559,
+      "episodes_seen": 103498
+    },
+    {
+      "timesteps": 650000,
+      "mean_reward_100ep": 1.60819037,
+      "mean_episode_length_100ep": 6.07,
+      "resolution_rate": 0.1749485732112739,
+      "escalation_rate": 0.7423103545767404,
+      "dropout_rate": 0.08137619061546411,
+      "timeout_rate": 0.0013648815965215018,
+      "episodes_seen": 104330
+    },
+    {
+      "timesteps": 655000,
+      "mean_reward_100ep": 1.6115832300000001,
+      "mean_episode_length_100ep": 5.42,
+      "resolution_rate": 0.17467025103469616,
+      "escalation_rate": 0.7425733957374386,
+      "dropout_rate": 0.08136386492863497,
+      "timeout_rate": 0.0013924882992302635,
+      "episodes_seen": 105170
+    },
+    {
+      "timesteps": 660000,
+      "mean_reward_100ep": 1.31340377,
+      "mean_episode_length_100ep": 6.37,
+      "resolution_rate": 0.17424874591162393,
+      "escalation_rate": 0.7430054000134281,
+      "dropout_rate": 0.08136467834911135,
+      "timeout_rate": 0.0013811757258366184,
+      "episodes_seen": 106020
+    },
+    {
+      "timesteps": 665000,
+      "mean_reward_100ep": 1.36849575,
+      "mean_episode_length_100ep": 6.09,
+      "resolution_rate": 0.1740906105118856,
+      "escalation_rate": 0.7431908837333283,
+      "dropout_rate": 0.0813381186752092,
+      "timeout_rate": 0.0013803870795769352,
+      "episodes_seen": 106804
+    },
+    {
+      "timesteps": 670000,
+      "mean_reward_100ep": 1.2058423,
+      "mean_episode_length_100ep": 6.14,
+      "resolution_rate": 0.17369698916401358,
+      "escalation_rate": 0.7435735137126716,
+      "dropout_rate": 0.08134075256728798,
+      "timeout_rate": 0.001388744556026868,
+      "episodes_seen": 107613
+    },
+    {
+      "timesteps": 675000,
+      "mean_reward_100ep": 1.5253275099999999,
+      "mean_episode_length_100ep": 6.5,
+      "resolution_rate": 0.17351195777513195,
+      "escalation_rate": 0.743753925768982,
+      "dropout_rate": 0.08134662079181003,
+      "timeout_rate": 0.0013874956640760497,
+      "episodes_seen": 108429
+    },
+    {
+      "timesteps": 680000,
+      "mean_reward_100ep": 1.4188228699999998,
+      "mean_episode_length_100ep": 6.01,
+      "resolution_rate": 0.17342788806060436,
+      "escalation_rate": 0.7439390978213325,
+      "dropout_rate": 0.08124633553898987,
+      "timeout_rate": 0.001386678579073252,
+      "episodes_seen": 109215
+    },
+    {
+      "timesteps": 685000,
+      "mean_reward_100ep": 1.2017043000000003,
+      "mean_episode_length_100ep": 5.64,
+      "resolution_rate": 0.17326435401173265,
+      "escalation_rate": 0.7440713196914407,
+      "dropout_rate": 0.08126934269481269,
+      "timeout_rate": 0.0013949836020139498,
+      "episodes_seen": 110009
+    },
+    {
+      "timesteps": 690000,
+      "mean_reward_100ep": 1.3031669199999998,
+      "mean_episode_length_100ep": 5.3,
+      "resolution_rate": 0.17292054382603433,
+      "escalation_rate": 0.7444237662611501,
+      "dropout_rate": 0.08126220445731992,
+      "timeout_rate": 0.0013934854554955582,
+      "episodes_seen": 110844
+    },
+    {
+      "timesteps": 695000,
+      "mean_reward_100ep": 1.1252799299999998,
+      "mean_episode_length_100ep": 5.26,
+      "resolution_rate": 0.1723357040216818,
+      "escalation_rate": 0.7450570238463358,
+      "dropout_rate": 0.08122487585717664,
+      "timeout_rate": 0.001382396274805828,
+      "episodes_seen": 111721
+    },
+    {
+      "timesteps": 700000,
+      "mean_reward_100ep": 1.40758574,
+      "mean_episode_length_100ep": 5.43,
+      "resolution_rate": 0.1718241262683202,
+      "escalation_rate": 0.7455783540022548,
+      "dropout_rate": 0.08122660653889516,
+      "timeout_rate": 0.001370913190529876,
+      "episodes_seen": 112643
+    },
+    {
+      "timesteps": 705000,
+      "mean_reward_100ep": 1.21065844,
+      "mean_episode_length_100ep": 5.58,
+      "resolution_rate": 0.1714313836022155,
+      "escalation_rate": 0.7460696677672491,
+      "dropout_rate": 0.08112993137018047,
+      "timeout_rate": 0.0013690172603548708,
+      "episodes_seen": 113528
+    },
+    {
+      "timesteps": 710000,
+      "mean_reward_100ep": 1.0214672999999999,
+      "mean_episode_length_100ep": 5.74,
+      "resolution_rate": 0.1708737691672512,
+      "escalation_rate": 0.7466859634013159,
+      "dropout_rate": 0.0810729221234695,
+      "timeout_rate": 0.0013673453079634545,
+      "episodes_seen": 114396
+    },
+    {
+      "timesteps": 715000,
+      "mean_reward_100ep": 1.34345726,
+      "mean_episode_length_100ep": 5.34,
+      "resolution_rate": 0.170340222351428,
+      "escalation_rate": 0.7472206071497789,
+      "dropout_rate": 0.08107370016033265,
+      "timeout_rate": 0.0013654703384604542,
+      "episodes_seen": 115284
+    },
+    {
+      "timesteps": 720000,
+      "mean_reward_100ep": 1.4309715000000003,
+      "mean_episode_length_100ep": 5.2,
+      "resolution_rate": 0.16967218843922555,
+      "escalation_rate": 0.7480429160550779,
+      "dropout_rate": 0.08093066331166562,
+      "timeout_rate": 0.001354232194030894,
+      "episodes_seen": 116226
+    },
+    {
+      "timesteps": 725000,
+      "mean_reward_100ep": 1.4444045500000005,
+      "mean_episode_length_100ep": 4.92,
+      "resolution_rate": 0.16903385703267848,
+      "escalation_rate": 0.7486849744794059,
+      "dropout_rate": 0.08092931358700833,
+      "timeout_rate": 0.0013518549009073025,
+      "episodes_seen": 117168
+    },
+    {
+      "timesteps": 730000,
+      "mean_reward_100ep": 1.1665897500000002,
+      "mean_episode_length_100ep": 5.49,
+      "resolution_rate": 0.1683987037657839,
+      "escalation_rate": 0.7494348315669134,
+      "dropout_rate": 0.08081693700198561,
+      "timeout_rate": 0.001349527665317139,
+      "episodes_seen": 118109
+    },
+    {
+      "timesteps": 735000,
+      "mean_reward_100ep": 1.19582807,
+      "mean_episode_length_100ep": 5.55,
+      "resolution_rate": 0.167739405461164,
+      "escalation_rate": 0.7500703318812286,
+      "dropout_rate": 0.0808433005686226,
+      "timeout_rate": 0.0013469620889847485,
+      "episodes_seen": 119077
+    },
+    {
+      "timesteps": 740000,
+      "mean_reward_100ep": 1.16801079,
+      "mean_episode_length_100ep": 5.1,
+      "resolution_rate": 0.16717970401691332,
+      "escalation_rate": 0.7506892177589852,
+      "dropout_rate": 0.08078646934460888,
+      "timeout_rate": 0.0013446088794926004,
+      "episodes_seen": 120026
+    },
+    {
+      "timesteps": 745000,
+      "mean_reward_100ep": 1.4404823,
+      "mean_episode_length_100ep": 5.17,
+      "resolution_rate": 0.16652265463117538,
+      "escalation_rate": 0.7514324303918526,
+      "dropout_rate": 0.08070266687918928,
+      "timeout_rate": 0.001342248097782774,
+      "episodes_seen": 120979
+    },
+    {
+      "timesteps": 750000,
+      "mean_reward_100ep": 1.3721437999999997,
+      "mean_episode_length_100ep": 5.16,
+      "resolution_rate": 0.16590801288185805,
+      "escalation_rate": 0.7520658406078107,
+      "dropout_rate": 0.08068636670023051,
+      "timeout_rate": 0.0013397798101007748,
+      "episodes_seen": 121945
+    },
+    {
+      "timesteps": 755000,
+      "mean_reward_100ep": 1.1692566300000002,
+      "mean_episode_length_100ep": 5.19,
+      "resolution_rate": 0.16537422887297773,
+      "escalation_rate": 0.7525786817960344,
+      "dropout_rate": 0.0807092304007796,
+      "timeout_rate": 0.001337858930208359,
+      "episodes_seen": 122865
+    },
+    {
+      "timesteps": 760000,
+      "mean_reward_100ep": 1.29789424,
+      "mean_episode_length_100ep": 5.29,
+      "resolution_rate": 0.16468640915124796,
+      "escalation_rate": 0.7533145413723594,
+      "dropout_rate": 0.08067159409364297,
+      "timeout_rate": 0.0013274553827496353,
+      "episodes_seen": 123814
+    },
+    {
+      "timesteps": 765000,
+      "mean_reward_100ep": 1.42218085,
+      "mean_episode_length_100ep": 4.95,
+      "resolution_rate": 0.1642521503016113,
+      "escalation_rate": 0.7538006276116612,
+      "dropout_rate": 0.08063021316033364,
+      "timeout_rate": 0.0013170089263938344,
+      "episodes_seen": 124785
+    },
+    {
+      "timesteps": 770000,
+      "mean_reward_100ep": 1.03253847,
+      "mean_episode_length_100ep": 5.21,
+      "resolution_rate": 0.16371499342429058,
+      "escalation_rate": 0.7544880225268474,
+      "dropout_rate": 0.08048991052194189,
+      "timeout_rate": 0.0013070735269200668,
+      "episodes_seen": 125722
+    },
+    {
+      "timesteps": 775000,
+      "mean_reward_100ep": 1.3534602199999997,
+      "mean_episode_length_100ep": 5.84,
+      "resolution_rate": 0.1633653453371673,
+      "escalation_rate": 0.7549599916699373,
+      "dropout_rate": 0.0803690858557137,
+      "timeout_rate": 0.0013055771371817155,
+      "episodes_seen": 126633
+    },
+    {
+      "timesteps": 780000,
+      "mean_reward_100ep": 1.40480895,
+      "mean_episode_length_100ep": 6.39,
+      "resolution_rate": 0.1629292109992525,
+      "escalation_rate": 0.7553556944510711,
+      "dropout_rate": 0.08041891311608378,
+      "timeout_rate": 0.0012961814335925696,
+      "episodes_seen": 127541
+    },
+    {
+      "timesteps": 785000,
+      "mean_reward_100ep": 1.17723762,
+      "mean_episode_length_100ep": 5.8,
+      "resolution_rate": 0.16263828241592507,
+      "escalation_rate": 0.7556359214484811,
+      "dropout_rate": 0.08043871354911049,
+      "timeout_rate": 0.001287082586483264,
+      "episodes_seen": 128431
+    },
+    {
+      "timesteps": 790000,
+      "mean_reward_100ep": 1.4325411100000003,
+      "mean_episode_length_100ep": 5.73,
+      "resolution_rate": 0.1623864581208917,
+      "escalation_rate": 0.7559182969110334,
+      "dropout_rate": 0.08041667320333214,
+      "timeout_rate": 0.0012785717647427952,
+      "episodes_seen": 129274
+    },
+    {
+      "timesteps": 795000,
+      "mean_reward_100ep": 1.50002292,
+      "mean_episode_length_100ep": 5.96,
+      "resolution_rate": 0.1622369446609509,
+      "escalation_rate": 0.7559859703819174,
+      "dropout_rate": 0.0805066250974279,
+      "timeout_rate": 0.0012704598597038192,
+      "episodes_seen": 130089
+    },
+    {
+      "timesteps": 800000,
+      "mean_reward_100ep": 1.15291835,
+      "mean_episode_length_100ep": 6.15,
+      "resolution_rate": 0.16190955552113984,
+      "escalation_rate": 0.7564271333436581,
+      "dropout_rate": 0.08039337153476847,
+      "timeout_rate": 0.001269939600433638,
+      "episodes_seen": 130929
+    },
+    {
+      "timesteps": 805000,
+      "mean_reward_100ep": 1.4850495600000002,
+      "mean_episode_length_100ep": 6.68,
+      "resolution_rate": 0.16208539561090884,
+      "escalation_rate": 0.7562291687513951,
+      "dropout_rate": 0.08041535489135036,
+      "timeout_rate": 0.0012700807463456314,
+      "episodes_seen": 131705
+    },
+    {
+      "timesteps": 810000,
+      "mean_reward_100ep": 1.4752859800000002,
+      "mean_episode_length_100ep": 6.24,
+      "resolution_rate": 0.16221055692444253,
+      "escalation_rate": 0.7560566872254787,
+      "dropout_rate": 0.08047014891109716,
+      "timeout_rate": 0.0012626069389816501,
+      "episodes_seen": 132474
+    },
+    {
+      "timesteps": 815000,
+      "mean_reward_100ep": 1.1823477,
+      "mean_episode_length_100ep": 6.19,
+      "resolution_rate": 0.16212762072847883,
+      "escalation_rate": 0.7560021909137936,
+      "dropout_rate": 0.0806073699905669,
+      "timeout_rate": 0.0012628183671606365,
+      "episodes_seen": 133250
+    },
+    {
+      "timesteps": 820000,
+      "mean_reward_100ep": 1.28222617,
+      "mean_episode_length_100ep": 5.84,
+      "resolution_rate": 0.16174981486239365,
+      "escalation_rate": 0.7564269197636284,
+      "dropout_rate": 0.08056130699593453,
+      "timeout_rate": 0.0012619583780434356,
+      "episodes_seen": 134135
+    },
+    {
+      "timesteps": 825000,
+      "mean_reward_100ep": 1.20225291,
+      "mean_episode_length_100ep": 5.15,
+      "resolution_rate": 0.16146368924751361,
+      "escalation_rate": 0.756742353161944,
+      "dropout_rate": 0.08053293300806906,
+      "timeout_rate": 0.0012610245824732594,
+      "episodes_seen": 135031
+    },
+    {
+      "timesteps": 830000,
+      "mean_reward_100ep": 1.31780472,
+      "mean_episode_length_100ep": 5.75,
+      "resolution_rate": 0.16127155992035971,
+      "escalation_rate": 0.7570747857989755,
+      "dropout_rate": 0.08040088588622178,
+      "timeout_rate": 0.0012527683944430774,
+      "episodes_seen": 135912
+    },
+    {
+      "timesteps": 835000,
+      "mean_reward_100ep": 1.5723251999999996,
+      "mean_episode_length_100ep": 4.94,
+      "resolution_rate": 0.16101092126906036,
+      "escalation_rate": 0.7573018389816695,
+      "dropout_rate": 0.08043507253678704,
+      "timeout_rate": 0.001252167212483144,
+      "episodes_seen": 136775
+    },
+    {
+      "timesteps": 840000,
+      "mean_reward_100ep": 1.4972627500000002,
+      "mean_episode_length_100ep": 5.89,
+      "resolution_rate": 0.16084152876744598,
+      "escalation_rate": 0.7574863082268417,
+      "dropout_rate": 0.08041340321535834,
+      "timeout_rate": 0.001258759790353925,
+      "episodes_seen": 137657
+    },
+    {
+      "timesteps": 845000,
+      "mean_reward_100ep": 1.39437865,
+      "mean_episode_length_100ep": 5.58,
+      "resolution_rate": 0.16058613096500918,
+      "escalation_rate": 0.7577930106150278,
+      "dropout_rate": 0.08036987994996087,
+      "timeout_rate": 0.0012509784700021215,
+      "episodes_seen": 138505
+    },
+    {
+      "timesteps": 850000,
+      "mean_reward_100ep": 1.2141072199999998,
+      "mean_episode_length_100ep": 5.89,
+      "resolution_rate": 0.16042166484914577,
+      "escalation_rate": 0.7579934569247546,
+      "dropout_rate": 0.08033442384587423,
+      "timeout_rate": 0.0012504543802253727,
+      "episodes_seen": 139364
+    },
+    {
+      "timesteps": 855000,
+      "mean_reward_100ep": 1.60889952,
+      "mean_episode_length_100ep": 5.76,
+      "resolution_rate": 0.16032520325203253,
+      "escalation_rate": 0.758070460704607,
+      "dropout_rate": 0.08031797651309847,
+      "timeout_rate": 0.0012863595302619693,
+      "episodes_seen": 140189
+    },
+    {
+      "timesteps": 860000,
+      "mean_reward_100ep": 1.3545102800000002,
+      "mean_episode_length_100ep": 5.74,
+      "resolution_rate": 0.16010630656514868,
+      "escalation_rate": 0.7583536848154001,
+      "dropout_rate": 0.08024709093521046,
+      "timeout_rate": 0.00129291768424077,
+      "episodes_seen": 141036
+    },
+    {
+      "timesteps": 865000,
+      "mean_reward_100ep": 1.35603294,
+      "mean_episode_length_100ep": 5.78,
+      "resolution_rate": 0.15990005354274495,
+      "escalation_rate": 0.7587363912189898,
+      "dropout_rate": 0.08006425129394967,
+      "timeout_rate": 0.0012993039443155452,
+      "episodes_seen": 141891
+    },
+    {
+      "timesteps": 870000,
+      "mean_reward_100ep": 1.3635880999999999,
+      "mean_episode_length_100ep": 5.23,
+      "resolution_rate": 0.15950315317552086,
+      "escalation_rate": 0.7591740027949407,
+      "dropout_rate": 0.0800104987621392,
+      "timeout_rate": 0.0013123452673992155,
+      "episodes_seen": 142787
+    },
+    {
+      "timesteps": 875000,
+      "mean_reward_100ep": 1.39043355,
+      "mean_episode_length_100ep": 6.11,
+      "resolution_rate": 0.15916140311301602,
+      "escalation_rate": 0.7595871870065418,
+      "dropout_rate": 0.07994727047146402,
+      "timeout_rate": 0.0013041394089781187,
+      "episodes_seen": 143676
+    },
+    {
+      "timesteps": 880000,
+      "mean_reward_100ep": 1.3108689600000003,
+      "mean_episode_length_100ep": 6.68,
+      "resolution_rate": 0.15903739418063575,
+      "escalation_rate": 0.7597269720244436,
+      "dropout_rate": 0.07991814767057241,
+      "timeout_rate": 0.0013174861243482648,
+      "episodes_seen": 144516
+    },
+    {
+      "timesteps": 885000,
+      "mean_reward_100ep": 1.15964399,
+      "mean_episode_length_100ep": 6.25,
+      "resolution_rate": 0.15903863043872246,
+      "escalation_rate": 0.759650639193654,
+      "dropout_rate": 0.07995845589772901,
+      "timeout_rate": 0.0013522744698944668,
+      "episodes_seen": 145285
+    },
+    {
+      "timesteps": 890000,
+      "mean_reward_100ep": 1.3127947100000004,
+      "mean_episode_length_100ep": 5.92,
+      "resolution_rate": 0.1587174015464346,
+      "escalation_rate": 0.7599839259485076,
+      "dropout_rate": 0.07995454923371116,
+      "timeout_rate": 0.0013441232713466175,
+      "episodes_seen": 146156
+    },
+    {
+      "timesteps": 895000,
+      "mean_reward_100ep": 1.03275233,
+      "mean_episode_length_100ep": 5.66,
+      "resolution_rate": 0.15850987630513239,
+      "escalation_rate": 0.7601380203311386,
+      "dropout_rate": 0.0800022039174633,
+      "timeout_rate": 0.0013498994462657374,
+      "episodes_seen": 147021
+    },
+    {
+      "timesteps": 900000,
+      "mean_reward_100ep": 1.2616941199999996,
+      "mean_episode_length_100ep": 5.85,
+      "resolution_rate": 0.15833515941711407,
+      "escalation_rate": 0.7602854168949271,
+      "dropout_rate": 0.08003725210912677,
+      "timeout_rate": 0.0013421715788320368,
+      "episodes_seen": 147858
+    },
+    {
+      "timesteps": 905000,
+      "mean_reward_100ep": 1.39934528,
+      "mean_episode_length_100ep": 6.09,
+      "resolution_rate": 0.15813516512693432,
+      "escalation_rate": 0.7605165875809295,
+      "dropout_rate": 0.08001388822700443,
+      "timeout_rate": 0.0013343590651317,
+      "episodes_seen": 148714
+    },
+    {
+      "timesteps": 910000,
+      "mean_reward_100ep": 1.2767734,
+      "mean_episode_length_100ep": 6.09,
+      "resolution_rate": 0.1579257313820786,
+      "escalation_rate": 0.760752433427647,
+      "dropout_rate": 0.07998835745326059,
+      "timeout_rate": 0.0013334777370138222,
+      "episodes_seen": 149561
+    },
+    {
+      "timesteps": 915000,
+      "mean_reward_100ep": 1.27785193,
+      "mean_episode_length_100ep": 6.21,
+      "resolution_rate": 0.15777290284376136,
+      "escalation_rate": 0.7609114033080764,
+      "dropout_rate": 0.07999004077897258,
+      "timeout_rate": 0.0013256530691896694,
+      "episodes_seen": 150435
+    },
+    {
+      "timesteps": 920000,
+      "mean_reward_100ep": 1.3329870300000002,
+      "mean_episode_length_100ep": 5.47,
+      "resolution_rate": 0.1574915363102327,
+      "escalation_rate": 0.7611031566552033,
+      "dropout_rate": 0.08007386492887825,
+      "timeout_rate": 0.0013314421056857262,
+      "episodes_seen": 151292
+    },
+    {
+      "timesteps": 925000,
+      "mean_reward_100ep": 1.13200835,
+      "mean_episode_length_100ep": 5.53,
+      "resolution_rate": 0.15724052619677845,
+      "escalation_rate": 0.7614224338596188,
+      "dropout_rate": 0.08001356725768478,
+      "timeout_rate": 0.0013234726859179845,
+      "episodes_seen": 152192
+    },
+    {
+      "timesteps": 930000,
+      "mean_reward_100ep": 1.1945028700000002,
+      "mean_episode_length_100ep": 5.48,
+      "resolution_rate": 0.15698965964086425,
+      "escalation_rate": 0.7616626557004205,
+      "dropout_rate": 0.08002538809404174,
+      "timeout_rate": 0.0013222965646735249,
+      "episodes_seen": 153082
+    },
+    {
+      "timesteps": 935000,
+      "mean_reward_100ep": 1.19004544,
+      "mean_episode_length_100ep": 5.02,
+      "resolution_rate": 0.15662516016690212,
+      "escalation_rate": 0.7620199099779873,
+      "dropout_rate": 0.08004073988895095,
+      "timeout_rate": 0.0013141899661596084,
+      "episodes_seen": 154015
+    },
+    {
+      "timesteps": 940000,
+      "mean_reward_100ep": 1.3360431099999999,
+      "mean_episode_length_100ep": 5.48,
+      "resolution_rate": 0.1562055232747927,
+      "escalation_rate": 0.762531827381341,
+      "dropout_rate": 0.07995038192857609,
+      "timeout_rate": 0.0013122674152902004,
+      "episodes_seen": 155002
+    },
+    {
+      "timesteps": 945000,
+      "mean_reward_100ep": 1.31334939,
+      "mean_episode_length_100ep": 5.7,
+      "resolution_rate": 0.15599265397768938,
+      "escalation_rate": 0.7628831190743492,
+      "dropout_rate": 0.07981985372849569,
+      "timeout_rate": 0.0013043732194656613,
+      "episodes_seen": 155930
+    },
+    {
+      "timesteps": 950000,
+      "mean_reward_100ep": 1.2015324299999999,
+      "mean_episode_length_100ep": 5.67,
+      "resolution_rate": 0.15577134008645718,
+      "escalation_rate": 0.7632169817407575,
+      "dropout_rate": 0.07970836828182463,
+      "timeout_rate": 0.0013033098909607072,
+      "episodes_seen": 156825
+    },
+    {
+      "timesteps": 955000,
+      "mean_reward_100ep": 1.50323929,
+      "mean_episode_length_100ep": 6.14,
+      "resolution_rate": 0.15580098442503545,
+      "escalation_rate": 0.7632566885071265,
+      "dropout_rate": 0.07964601769911504,
+      "timeout_rate": 0.0012963093687230068,
+      "episodes_seen": 157664
+    },
+    {
+      "timesteps": 960000,
+      "mean_reward_100ep": 1.53797391,
+      "mean_episode_length_100ep": 6.82,
+      "resolution_rate": 0.1559185445814522,
+      "escalation_rate": 0.7631368892918947,
+      "dropout_rate": 0.07965466376332207,
+      "timeout_rate": 0.0012899023633310132,
+      "episodes_seen": 158439
+    },
+    {
+      "timesteps": 965000,
+      "mean_reward_100ep": 1.25546169,
+      "mean_episode_length_100ep": 6.84,
+      "resolution_rate": 0.15600015253009292,
+      "escalation_rate": 0.7630762777572992,
+      "dropout_rate": 0.07963977476389612,
+      "timeout_rate": 0.0012837949487117563,
+      "episodes_seen": 159184
+    },
+    {
+      "timesteps": 970000,
+      "mean_reward_100ep": 1.3492139300000003,
+      "mean_episode_length_100ep": 6.3,
+      "resolution_rate": 0.15613594529802077,
+      "escalation_rate": 0.7628421245722454,
+      "dropout_rate": 0.07972522502577596,
+      "timeout_rate": 0.001296705103957797,
+      "episodes_seen": 159932
+    },
+    {
+      "timesteps": 975000,
+      "mean_reward_100ep": 1.46159485,
+      "mean_episode_length_100ep": 7.35,
+      "resolution_rate": 0.15617819800197663,
+      "escalation_rate": 0.7627929521519354,
+      "dropout_rate": 0.07973208609000548,
+      "timeout_rate": 0.0012967637560825146,
+      "episodes_seen": 160698
+    },
+    {
+      "timesteps": 980000,
+      "mean_reward_100ep": 1.4472247999999996,
+      "mean_episode_length_100ep": 6.62,
+      "resolution_rate": 0.15630324746917912,
+      "escalation_rate": 0.7626854264809061,
+      "dropout_rate": 0.07970206474892252,
+      "timeout_rate": 0.0013092613009922822,
+      "episodes_seen": 161476
+    },
+    {
+      "timesteps": 985000,
+      "mean_reward_100ep": 1.5547762300000003,
+      "mean_episode_length_100ep": 7.25,
+      "resolution_rate": 0.1565339403199152,
+      "escalation_rate": 0.7624395871659755,
+      "dropout_rate": 0.079723114340058,
+      "timeout_rate": 0.0013033581740513236,
+      "episodes_seen": 162200
+    },
+    {
+      "timesteps": 990000,
+      "mean_reward_100ep": 1.1724765400000001,
+      "mean_episode_length_100ep": 6.05,
+      "resolution_rate": 0.15653237017178037,
+      "escalation_rate": 0.7623994638069705,
+      "dropout_rate": 0.07975871313672922,
+      "timeout_rate": 0.0013094528845199087,
+      "episodes_seen": 162982
+    },
+    {
+      "timesteps": 995000,
+      "mean_reward_100ep": 1.27165822,
+      "mean_episode_length_100ep": 6.39,
+      "resolution_rate": 0.1564954794723581,
+      "escalation_rate": 0.7623758707573737,
+      "dropout_rate": 0.07981942591769181,
+      "timeout_rate": 0.0013092238525764536,
+      "episodes_seen": 163774
+    },
+    {
+      "timesteps": 1000000,
+      "mean_reward_100ep": 1.2929558500000005,
+      "mean_episode_length_100ep": 6.3,
+      "resolution_rate": 0.15630856194894166,
+      "escalation_rate": 0.7624466222235876,
+      "dropout_rate": 0.07992381186445885,
+      "timeout_rate": 0.001321003963011889,
+      "episodes_seen": 164601
     }
   ],
   "eval_history": [
     {
       "timesteps": 10000,
-      "mean_reward": -0.7294303827103533,
-      "resolution_rate": 0.355,
-      "escalation_rate": 0.0
+      "mean_reward": 0.5737652640375309,
+      "resolution_rate": 0.015,
+      "escalation_rate": 0.975
     },
     {
       "timesteps": 20000,
-      "mean_reward": -0.33336810473510803,
-      "resolution_rate": 0.43,
-      "escalation_rate": 0.0
+      "mean_reward": 1.411667231675466,
+      "resolution_rate": 0.04,
+      "escalation_rate": 0.935
     },
     {
       "timesteps": 30000,
-      "mean_reward": 0.19455921582254043,
-      "resolution_rate": 0.515,
-      "escalation_rate": 0.0
+      "mean_reward": 1.450751095347016,
+      "resolution_rate": 0.04,
+      "escalation_rate": 0.935
     },
     {
       "timesteps": 40000,
-      "mean_reward": 0.13719987400928177,
-      "resolution_rate": 0.505,
-      "escalation_rate": 0.0
+      "mean_reward": 1.4648639862958117,
+      "resolution_rate": 0.04,
+      "escalation_rate": 0.935
     },
     {
       "timesteps": 50000,
-      "mean_reward": 0.13908434028618552,
-      "resolution_rate": 0.505,
-      "escalation_rate": 0.0
+      "mean_reward": -3.133815221913643,
+      "resolution_rate": 0.0,
+      "escalation_rate": 0.05
     },
     {
       "timesteps": 60000,
-      "mean_reward": 0.23032209067095277,
+      "mean_reward": 1.2506634697428551,
       "resolution_rate": 0.52,
-      "escalation_rate": 0.0
+      "escalation_rate": 0.31
     },
     {
       "timesteps": 70000,
-      "mean_reward": 0.21121458277820832,
-      "resolution_rate": 0.515,
-      "escalation_rate": 0.0
+      "mean_reward": 1.1974829697174616,
+      "resolution_rate": 0.34,
+      "escalation_rate": 0.54
     },
     {
       "timesteps": 80000,
-      "mean_reward": 0.23485857256195153,
-      "resolution_rate": 0.52,
-      "escalation_rate": 0.0
+      "mean_reward": 1.3347578013730708,
+      "resolution_rate": 0.365,
+      "escalation_rate": 0.53
     },
     {
       "timesteps": 90000,
-      "mean_reward": 0.2844636140709744,
-      "resolution_rate": 0.53,
-      "escalation_rate": 0.0
+      "mean_reward": 1.382752847767251,
+      "resolution_rate": 0.425,
+      "escalation_rate": 0.46
     },
     {
       "timesteps": 100000,
-      "mean_reward": 0.3466452417634085,
-      "resolution_rate": 0.55,
-      "escalation_rate": 0.0
+      "mean_reward": 1.2976693772250725,
+      "resolution_rate": 0.4,
+      "escalation_rate": 0.475
     },
     {
       "timesteps": 110000,
-      "mean_reward": 0.2652327081319893,
-      "resolution_rate": 0.535,
-      "escalation_rate": 0.0
+      "mean_reward": 1.374858132268647,
+      "resolution_rate": 0.46,
+      "escalation_rate": 0.405
     },
     {
       "timesteps": 120000,
-      "mean_reward": 0.4379340611893464,
-      "resolution_rate": 0.565,
-      "escalation_rate": 0.0
+      "mean_reward": 1.2024202367687016,
+      "resolution_rate": 0.435,
+      "escalation_rate": 0.405
     },
     {
       "timesteps": 130000,
-      "mean_reward": 0.5043681046103444,
-      "resolution_rate": 0.58,
-      "escalation_rate": 0.0
+      "mean_reward": 1.3858480671244582,
+      "resolution_rate": 0.3,
+      "escalation_rate": 0.61
     },
     {
       "timesteps": 140000,
-      "mean_reward": 0.479578745996981,
-      "resolution_rate": 0.575,
-      "escalation_rate": 0.0
+      "mean_reward": 1.359152893431753,
+      "resolution_rate": 0.41,
+      "escalation_rate": 0.48
     },
     {
       "timesteps": 150000,
-      "mean_reward": 0.4650560516769333,
-      "resolution_rate": 0.575,
-      "escalation_rate": 0.0
+      "mean_reward": 1.432704444619009,
+      "resolution_rate": 0.305,
+      "escalation_rate": 0.625
+    },
+    {
+      "timesteps": 160000,
+      "mean_reward": 1.3363653174102483,
+      "resolution_rate": 0.39,
+      "escalation_rate": 0.495
+    },
+    {
+      "timesteps": 170000,
+      "mean_reward": 1.2720656458190063,
+      "resolution_rate": 0.32,
+      "escalation_rate": 0.595
+    },
+    {
+      "timesteps": 180000,
+      "mean_reward": 1.3198924674812487,
+      "resolution_rate": 0.33,
+      "escalation_rate": 0.57
+    },
+    {
+      "timesteps": 190000,
+      "mean_reward": 1.3127126831433038,
+      "resolution_rate": 0.25,
+      "escalation_rate": 0.675
+    },
+    {
+      "timesteps": 200000,
+      "mean_reward": 1.244096852640741,
+      "resolution_rate": 0.28,
+      "escalation_rate": 0.615
+    },
+    {
+      "timesteps": 210000,
+      "mean_reward": 1.2950464493460356,
+      "resolution_rate": 0.285,
+      "escalation_rate": 0.625
+    },
+    {
+      "timesteps": 220000,
+      "mean_reward": 1.5216215492178589,
+      "resolution_rate": 0.22,
+      "escalation_rate": 0.735
+    },
+    {
+      "timesteps": 230000,
+      "mean_reward": 1.4336766912192358,
+      "resolution_rate": 0.255,
+      "escalation_rate": 0.685
+    },
+    {
+      "timesteps": 240000,
+      "mean_reward": 1.528845293940069,
+      "resolution_rate": 0.07,
+      "escalation_rate": 0.905
+    },
+    {
+      "timesteps": 250000,
+      "mean_reward": 1.4206545019475494,
+      "resolution_rate": 0.25,
+      "escalation_rate": 0.68
+    },
+    {
+      "timesteps": 260000,
+      "mean_reward": 1.182111974877291,
+      "resolution_rate": 0.33,
+      "escalation_rate": 0.52
+    },
+    {
+      "timesteps": 270000,
+      "mean_reward": 1.4600348146581286,
+      "resolution_rate": 0.24,
+      "escalation_rate": 0.695
+    },
+    {
+      "timesteps": 280000,
+      "mean_reward": 1.4749642313491496,
+      "resolution_rate": 0.2,
+      "escalation_rate": 0.74
+    },
+    {
+      "timesteps": 290000,
+      "mean_reward": 1.483578439741136,
+      "resolution_rate": 0.2,
+      "escalation_rate": 0.75
+    },
+    {
+      "timesteps": 300000,
+      "mean_reward": 1.337871193646329,
+      "resolution_rate": 0.245,
+      "escalation_rate": 0.68
+    },
+    {
+      "timesteps": 310000,
+      "mean_reward": 1.4061715325298147,
+      "resolution_rate": 0.19,
+      "escalation_rate": 0.735
+    },
+    {
+      "timesteps": 320000,
+      "mean_reward": 1.5380745249448204,
+      "resolution_rate": 0.08,
+      "escalation_rate": 0.89
+    },
+    {
+      "timesteps": 330000,
+      "mean_reward": 1.558651041920215,
+      "resolution_rate": 0.17,
+      "escalation_rate": 0.785
+    },
+    {
+      "timesteps": 340000,
+      "mean_reward": 1.4824380204123506,
+      "resolution_rate": 0.175,
+      "escalation_rate": 0.765
+    },
+    {
+      "timesteps": 350000,
+      "mean_reward": 1.563274399580764,
+      "resolution_rate": 0.13,
+      "escalation_rate": 0.845
+    },
+    {
+      "timesteps": 360000,
+      "mean_reward": 1.564898935254835,
+      "resolution_rate": 0.145,
+      "escalation_rate": 0.825
+    },
+    {
+      "timesteps": 370000,
+      "mean_reward": 1.2782843104161963,
+      "resolution_rate": 0.295,
+      "escalation_rate": 0.605
+    },
+    {
+      "timesteps": 380000,
+      "mean_reward": 1.5915097815097903,
+      "resolution_rate": 0.175,
+      "escalation_rate": 0.785
+    },
+    {
+      "timesteps": 390000,
+      "mean_reward": 1.5313862430115217,
+      "resolution_rate": 0.2,
+      "escalation_rate": 0.755
+    },
+    {
+      "timesteps": 400000,
+      "mean_reward": 1.403704446299954,
+      "resolution_rate": 0.275,
+      "escalation_rate": 0.655
+    },
+    {
+      "timesteps": 410000,
+      "mean_reward": 1.5036645341858468,
+      "resolution_rate": 0.17,
+      "escalation_rate": 0.78
+    },
+    {
+      "timesteps": 420000,
+      "mean_reward": 1.5366451457311825,
+      "resolution_rate": 0.095,
+      "escalation_rate": 0.875
+    },
+    {
+      "timesteps": 430000,
+      "mean_reward": 1.5450638407636763,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.865
+    },
+    {
+      "timesteps": 440000,
+      "mean_reward": 1.5786076836180292,
+      "resolution_rate": 0.13,
+      "escalation_rate": 0.84
+    },
+    {
+      "timesteps": 450000,
+      "mean_reward": 1.557728085551447,
+      "resolution_rate": 0.19,
+      "escalation_rate": 0.77
+    },
+    {
+      "timesteps": 460000,
+      "mean_reward": 1.596758655909731,
+      "resolution_rate": 0.1,
+      "escalation_rate": 0.875
+    },
+    {
+      "timesteps": 470000,
+      "mean_reward": 1.51260537799014,
+      "resolution_rate": 0.15,
+      "escalation_rate": 0.815
+    },
+    {
+      "timesteps": 480000,
+      "mean_reward": 1.385980213663292,
+      "resolution_rate": 0.28,
+      "escalation_rate": 0.66
+    },
+    {
+      "timesteps": 490000,
+      "mean_reward": 1.511419003802546,
+      "resolution_rate": 0.13,
+      "escalation_rate": 0.835
+    },
+    {
+      "timesteps": 500000,
+      "mean_reward": 1.3905272461737304,
+      "resolution_rate": 0.19,
+      "escalation_rate": 0.765
+    },
+    {
+      "timesteps": 510000,
+      "mean_reward": 1.3971710302160076,
+      "resolution_rate": 0.215,
+      "escalation_rate": 0.735
+    },
+    {
+      "timesteps": 520000,
+      "mean_reward": 1.400609428525922,
+      "resolution_rate": 0.195,
+      "escalation_rate": 0.745
+    },
+    {
+      "timesteps": 530000,
+      "mean_reward": 1.459924703875345,
+      "resolution_rate": 0.155,
+      "escalation_rate": 0.8
+    },
+    {
+      "timesteps": 540000,
+      "mean_reward": 1.4181739619696092,
+      "resolution_rate": 0.22,
+      "escalation_rate": 0.73
+    },
+    {
+      "timesteps": 550000,
+      "mean_reward": 1.5130266340891418,
+      "resolution_rate": 0.215,
+      "escalation_rate": 0.745
+    },
+    {
+      "timesteps": 560000,
+      "mean_reward": 1.3348292570457714,
+      "resolution_rate": 0.265,
+      "escalation_rate": 0.66
+    },
+    {
+      "timesteps": 570000,
+      "mean_reward": 1.4418790426643604,
+      "resolution_rate": 0.185,
+      "escalation_rate": 0.765
+    },
+    {
+      "timesteps": 580000,
+      "mean_reward": 1.5383253296253951,
+      "resolution_rate": 0.19,
+      "escalation_rate": 0.77
+    },
+    {
+      "timesteps": 590000,
+      "mean_reward": 1.5809955140772656,
+      "resolution_rate": 0.1,
+      "escalation_rate": 0.875
+    },
+    {
+      "timesteps": 600000,
+      "mean_reward": 1.5723349132811375,
+      "resolution_rate": 0.1,
+      "escalation_rate": 0.875
+    },
+    {
+      "timesteps": 610000,
+      "mean_reward": 1.5192248568315034,
+      "resolution_rate": 0.175,
+      "escalation_rate": 0.78
+    },
+    {
+      "timesteps": 620000,
+      "mean_reward": 1.5150421405230725,
+      "resolution_rate": 0.075,
+      "escalation_rate": 0.895
+    },
+    {
+      "timesteps": 630000,
+      "mean_reward": 1.549526313347032,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.865
+    },
+    {
+      "timesteps": 640000,
+      "mean_reward": 1.5401315085171126,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.86
+    },
+    {
+      "timesteps": 650000,
+      "mean_reward": 1.532236519641178,
+      "resolution_rate": 0.21,
+      "escalation_rate": 0.745
+    },
+    {
+      "timesteps": 660000,
+      "mean_reward": 1.4594825586389544,
+      "resolution_rate": 0.17,
+      "escalation_rate": 0.785
+    },
+    {
+      "timesteps": 670000,
+      "mean_reward": 1.537050295965217,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.86
+    },
+    {
+      "timesteps": 680000,
+      "mean_reward": 1.3325732348435173,
+      "resolution_rate": 0.235,
+      "escalation_rate": 0.695
+    },
+    {
+      "timesteps": 690000,
+      "mean_reward": 1.570902190999518,
+      "resolution_rate": 0.165,
+      "escalation_rate": 0.8
+    },
+    {
+      "timesteps": 700000,
+      "mean_reward": 1.5213991590823517,
+      "resolution_rate": 0.07,
+      "escalation_rate": 0.905
+    },
+    {
+      "timesteps": 710000,
+      "mean_reward": 1.5542704243944376,
+      "resolution_rate": 0.095,
+      "escalation_rate": 0.875
+    },
+    {
+      "timesteps": 720000,
+      "mean_reward": 1.5460083837611054,
+      "resolution_rate": 0.08,
+      "escalation_rate": 0.89
+    },
+    {
+      "timesteps": 730000,
+      "mean_reward": 1.5530974487155162,
+      "resolution_rate": 0.085,
+      "escalation_rate": 0.885
+    },
+    {
+      "timesteps": 740000,
+      "mean_reward": 1.5476745269512049,
+      "resolution_rate": 0.1,
+      "escalation_rate": 0.865
+    },
+    {
+      "timesteps": 750000,
+      "mean_reward": 1.5766132621408562,
+      "resolution_rate": 0.095,
+      "escalation_rate": 0.875
+    },
+    {
+      "timesteps": 760000,
+      "mean_reward": 1.5400621767881961,
+      "resolution_rate": 0.095,
+      "escalation_rate": 0.87
+    },
+    {
+      "timesteps": 770000,
+      "mean_reward": 1.6065357479067237,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.87
+    },
+    {
+      "timesteps": 780000,
+      "mean_reward": 1.6164110092188775,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.87
+    },
+    {
+      "timesteps": 790000,
+      "mean_reward": 1.5396623957623752,
+      "resolution_rate": 0.13,
+      "escalation_rate": 0.825
+    },
+    {
+      "timesteps": 800000,
+      "mean_reward": 1.5397380378970096,
+      "resolution_rate": 0.14,
+      "escalation_rate": 0.82
+    },
+    {
+      "timesteps": 810000,
+      "mean_reward": 1.394301120880331,
+      "resolution_rate": 0.22,
+      "escalation_rate": 0.715
+    },
+    {
+      "timesteps": 820000,
+      "mean_reward": 1.4810288972516992,
+      "resolution_rate": 0.185,
+      "escalation_rate": 0.765
+    },
+    {
+      "timesteps": 830000,
+      "mean_reward": 1.481242751372014,
+      "resolution_rate": 0.145,
+      "escalation_rate": 0.81
+    },
+    {
+      "timesteps": 840000,
+      "mean_reward": 1.4498847518147466,
+      "resolution_rate": 0.16,
+      "escalation_rate": 0.785
+    },
+    {
+      "timesteps": 850000,
+      "mean_reward": 1.5445499069701987,
+      "resolution_rate": 0.18,
+      "escalation_rate": 0.77
+    },
+    {
+      "timesteps": 860000,
+      "mean_reward": 1.5288699440512448,
+      "resolution_rate": 0.12,
+      "escalation_rate": 0.845
+    },
+    {
+      "timesteps": 870000,
+      "mean_reward": 1.5582243415012274,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.86
+    },
+    {
+      "timesteps": 880000,
+      "mean_reward": 1.556630717196705,
+      "resolution_rate": 0.125,
+      "escalation_rate": 0.83
+    },
+    {
+      "timesteps": 890000,
+      "mean_reward": 1.5519296253854356,
+      "resolution_rate": 0.1,
+      "escalation_rate": 0.865
+    },
+    {
+      "timesteps": 900000,
+      "mean_reward": 1.5102417193083226,
+      "resolution_rate": 0.08,
+      "escalation_rate": 0.885
+    },
+    {
+      "timesteps": 910000,
+      "mean_reward": 1.5479939990957403,
+      "resolution_rate": 0.115,
+      "escalation_rate": 0.85
+    },
+    {
+      "timesteps": 920000,
+      "mean_reward": 1.5173920612189915,
+      "resolution_rate": 0.09,
+      "escalation_rate": 0.875
+    },
+    {
+      "timesteps": 930000,
+      "mean_reward": 1.501319243971202,
+      "resolution_rate": 0.12,
+      "escalation_rate": 0.84
+    },
+    {
+      "timesteps": 940000,
+      "mean_reward": 1.5027594050838495,
+      "resolution_rate": 0.105,
+      "escalation_rate": 0.855
+    },
+    {
+      "timesteps": 950000,
+      "mean_reward": 1.4938825069562154,
+      "resolution_rate": 0.19,
+      "escalation_rate": 0.755
+    },
+    {
+      "timesteps": 960000,
+      "mean_reward": 1.351883794771424,
+      "resolution_rate": 0.25,
+      "escalation_rate": 0.675
+    },
+    {
+      "timesteps": 970000,
+      "mean_reward": 1.3803348705825345,
+      "resolution_rate": 0.28,
+      "escalation_rate": 0.64
+    },
+    {
+      "timesteps": 980000,
+      "mean_reward": 1.3955144636542274,
+      "resolution_rate": 0.3,
+      "escalation_rate": 0.615
+    },
+    {
+      "timesteps": 990000,
+      "mean_reward": 1.3963540344719687,
+      "resolution_rate": 0.23,
+      "escalation_rate": 0.71
+    },
+    {
+      "timesteps": 1000000,
+      "mean_reward": 1.4887648760061207,
+      "resolution_rate": 0.115,
+      "escalation_rate": 0.845
     }
   ]
 }

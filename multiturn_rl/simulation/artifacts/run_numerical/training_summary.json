@@ -1,13 +1,13 @@
 {
-  "total_timesteps": 150000,
-  "training_time_seconds": 1045.3126528263092,
+  "total_timesteps": 1000000,
+  "training_time_seconds": 876.826420545578,
   "curriculum_enabled": true,
-  "reward_shaping_enabled": false,
+  "reward_shaping_enabled": true,
   "nlg_enabled": false,
-  "best_eval_reward": 0.5043681046103444,
-  "baseline_beaten": false,
-  "baseline_beaten_step": null,
-  "final_resolution_rate": 0.7192702394526795,
+  "best_eval_reward": 1.6164110092188775,
+  "baseline_beaten": true,
+  "baseline_beaten_step": 20000,
+  "final_resolution_rate": 0.15630856194894166,
   "n_envs": 1,
   "seed": 42
 }
