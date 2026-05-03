@@ -1,0 +1,617 @@
+{
+  "timestamp": "2026-04-28T06:29:39.160943",
+  "n_episodes": 100,
+  "metrics": {
+    "resolution_rate_pct": 0.0,
+    "escalation_rate_pct": 0.0,
+    "total_steps": 462,
+    "avg_steps_per_episode": 4.62
+  },
+  "outcomes": {
+    "escalation": 79,
+    "success": 10,
+    "dropout": 11
+  },
+  "episode_data": [
+    {
+      "episode": 1,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 2,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 3,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 4,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 5,
+      "steps": 16,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 6,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 7,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 8,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 9,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 10,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 11,
+      "steps": 11,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 12,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 13,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 14,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 15,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 16,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 17,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 18,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 19,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 20,
+      "steps": 3,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 21,
+      "steps": 11,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 22,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 23,
+      "steps": 7,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 24,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 25,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 26,
+      "steps": 5,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 27,
+      "steps": 8,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 28,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 29,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 30,
+      "steps": 6,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 31,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 32,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 33,
+      "steps": 2,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 34,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 35,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 36,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 37,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 38,
+      "steps": 8,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 39,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 40,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 41,
+      "steps": 8,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 42,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 43,
+      "steps": 8,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 44,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 45,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 46,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 47,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 48,
+      "steps": 7,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 49,
+      "steps": 5,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 50,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 51,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 52,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 53,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 54,
+      "steps": 3,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 55,
+      "steps": 7,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 56,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 57,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 58,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 59,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 60,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 61,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 62,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 63,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 64,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 65,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 66,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 67,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 68,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 69,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 70,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 71,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 72,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 73,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 74,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 75,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 76,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 77,
+      "steps": 4,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 78,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 79,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 80,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 81,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 82,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 83,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 84,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 85,
+      "steps": 9,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 86,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 87,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 88,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 89,
+      "steps": 7,
+      "outcome": "success",
+      "resolved": false
+    },
+    {
+      "episode": 90,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 91,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 92,
+      "steps": 9,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 93,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 94,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 95,
+      "steps": 2,
+      "outcome": "dropout",
+      "resolved": false
+    },
+    {
+      "episode": 96,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 97,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 98,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 99,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    },
+    {
+      "episode": 100,
+      "steps": 4,
+      "outcome": "escalation",
+      "resolved": false
+    }
+  ]
+}

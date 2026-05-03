@@ -69,6 +69,11 @@ class NLPObservationWrapper(gym.Wrapper):
     def ACTION_NAMES(self) -> dict[int, str]:
         return getattr(self.env, "ACTION_NAMES", {})
 
+    @property
+    def state(self):
+        """Expose underlying env's state for bandit context extraction."""
+        return getattr(self.env, "state", {})
+
     def set_subflow_filter(self, subflow_filter: list[str] | None) -> None:
         if hasattr(self.env, "set_subflow_filter"):
             self.env.set_subflow_filter(subflow_filter)

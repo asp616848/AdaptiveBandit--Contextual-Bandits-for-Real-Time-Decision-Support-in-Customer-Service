@@ -34,6 +34,7 @@ class SupportEnv(gym.Env):
         artifacts_root: str,
         nlg_enabled: bool = False,
         subflow_filter: list[str] | None = None,
+        dense_reward_enabled: bool = True,
     ):
         super().__init__()
         self.T_max = 20
@@ -77,6 +78,7 @@ class SupportEnv(gym.Env):
             self._resolve_artifact(["phase 6/tier_config.json", "phase6/tier_config.json"])
         )
         self.subflow_stats = self._load_subflow_stats()
+        self.dense_reward_enabled = bool(dense_reward_enabled)
 
         self.state_engine = StateEngine(self.transition_params, self.psuccess_params)
         reward_payload = self._build_reward_payload(self.reward_model, self.tier_config)
@@ -124,6 +126,7 @@ class SupportEnv(gym.Env):
         self.system_prompt: str | None = None
         self.conversation_history: list[dict[str, str]] = []
         self.last_transition_outcome: dict[str, Any] = {}
+        self.episode_step_logs: list[dict[str, Any]] = []
 
     def _resolve_artifact(self, candidates: list[str]) -> Path:
         for rel in candidates:
@@ -187,6 +190,19 @@ class SupportEnv(gym.Env):
         payload.setdefault("parameters", {})
         payload["parameters"]["escalation_costs"] = tier_config.get("escalation_cost_by_tier", {})
         payload["parameters"]["lambda_turn"] = 0.15
+        payload["dense_reward"] = {
+            "enabled": bool(self.dense_reward_enabled),
+            "w_delta_sentiment": 0.5,
+            "w_delta_frustration": -0.3,
+            "w_delta_progress": 0.3,
+            "w_delta_info": 0.2,
+            "step_penalty": -0.05,
+            "terminal_success": 2.0,
+            "terminal_escalation": -1.5,
+            "terminal_dropout": -1.2,
+            "terminal_timeout": -0.8,
+            "terminal_unresolved_close": -0.8,
+        }
 
         # Phase 6 churn coefficients were calibrated to this selected set.
         payload["churn_model"] = {
@@ -381,6 +397,7 @@ class SupportEnv(gym.Env):
         }
 
         self.last_transition_outcome = {}
+        self.episode_step_logs = []
         self.conversation_history = []
         self.slot_tracker = None
         self.rag_context = {}
@@ -452,11 +469,37 @@ class SupportEnv(gym.Env):
 
         raise ValueError(f"Unsupported action_name={action_name}")
 
+    def action_masks(self) -> np.ndarray:
+        """Return action mask: boolean array where True = valid action, False = invalid.
+        
+        Policy:
+        - Before turn 3: Block Escalate (action 3)
+        - From turn 3+: Allow all actions
+        """
+        mask = np.ones(5, dtype=bool)  # [AskInfo, ProvideSolution, AffectiveRepair, Escalate, Close]
+        
+        # Block escalation until turn_count >= 3
+        turn_count = int(self.state.get("turn_count", 0))
+        if turn_count < 3:
+            mask[3] = False  # Escalate
+        
+        return mask
+
     def step(self, action: int, agent_text: str | None = None):
         assert action in range(5), f"Invalid action {action}"
+        pre_state = dict(self.state)
+        
+        # ENFORCE ACTION MASKING: If action is invalid, select first valid action
+        masks = self.action_masks()
+        original_action = action
+        if not masks[action]:
+            # Fallback to first valid action (typically AskInfo=0)
+            valid_actions = np.where(masks)[0]
+            action = int(valid_actions[0])
+            # Note: Action overridden silently to avoid console spam during evaluation
+        
         action_name = self.ACTION_NAMES[action]
 
-        reward = self.reward_engine.per_turn_reward()
         transition_outcome = self._dispatch_transition(action_name)
         if action_name == "Close" and not bool(transition_outcome.get("resolved", False)):
             transition_outcome["terminal_type"] = "unresolved_close"
@@ -491,6 +534,9 @@ class SupportEnv(gym.Env):
         self.state, timeout_outcome = self.state_engine.advance_turn_and_apply_timeout(self.state, self.T_max)
         transition_outcome.update(timeout_outcome)
 
+        reward_components = self.reward_engine.compute_per_turn_components(pre_state, self.state)
+        reward = float(reward_components["per_turn_reward"])
+
         terminal_reward = 0.0
         if bool(self.state["done"]):
             terminal_type = transition_outcome.get("terminal_type", "timeout")
@@ -505,8 +551,29 @@ class SupportEnv(gym.Env):
         reward = float(np.clip(reward, -5.0, 5.0))
 
         self.last_transition_outcome = dict(transition_outcome)
-        self.last_transition_outcome["per_turn_reward"] = self.reward_engine.per_turn_reward()
+        self.last_transition_outcome.update(reward_components)
+        self.last_transition_outcome["reward_per_turn"] = reward_components["per_turn_reward"]
         self.last_transition_outcome["terminal_reward"] = terminal_reward
+
+        step_log = {
+            "turn": int(self.state.get("turn_count", 0)),
+            "action": int(action),
+            "action_name": action_name,
+            "masked_action_overridden": bool(original_action != action),
+            "delta_sentiment": float(reward_components.get("delta_sentiment", 0.0)),
+            "delta_frustration": float(reward_components.get("delta_frustration", 0.0)),
+            "delta_progress": float(reward_components.get("delta_progress", 0.0)),
+            "delta_info": float(reward_components.get("delta_info", 0.0)),
+            "reward_per_turn": float(reward_components.get("per_turn_reward", 0.0)),
+            "terminal_reward": float(terminal_reward),
+            "reward_total_step": float(reward),
+            "terminal_type": transition_outcome.get("terminal_type"),
+            "sentiment": float(1.0 - float(self.state.get("frustration", 0.0))),
+            "frustration": float(self.state.get("frustration", 0.0)),
+            "progress": float(self.state.get("progress", 0.0)),
+            "information": float(self.state.get("information", 0.0)),
+        }
+        self.episode_step_logs.append(step_log)
 
         return self._get_obs(), reward, bool(self.state["done"]), False, self._get_info()
 
@@ -547,7 +614,15 @@ class SupportEnv(gym.Env):
             "conversation_history": self.conversation_history if self.nlg_enabled else [],
             "last_transition_outcome": self.last_transition_outcome,
             "transition_outcome": self.last_transition_outcome,
+            "delta_sentiment": float(self.last_transition_outcome.get("delta_sentiment", 0.0)),
+            "delta_frustration": float(self.last_transition_outcome.get("delta_frustration", 0.0)),
+            "delta_progress": float(self.last_transition_outcome.get("delta_progress", 0.0)),
+            "delta_info": float(self.last_transition_outcome.get("delta_info", 0.0)),
+            "reward_per_turn": float(self.last_transition_outcome.get("reward_per_turn", 0.0)),
+            "terminal_reward": float(self.last_transition_outcome.get("terminal_reward", 0.0)),
         }
+        if bool(self.state.get("done", False)):
+            info["episode_step_logs"] = list(self.episode_step_logs)
         if self.slot_tracker is not None:
             info["revealed_context"] = self.slot_tracker.get_revealed_context()
             info["information_proxy_slots"] = self.slot_tracker.information_proxy(

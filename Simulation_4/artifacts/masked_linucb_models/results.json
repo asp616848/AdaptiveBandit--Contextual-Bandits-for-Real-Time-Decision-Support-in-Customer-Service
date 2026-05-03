@@ -1,0 +1,14 @@
+{
+  "policy_type": "Per-Turn LinUCB (Masked Actions)",
+  "outcomes": {
+    "resolved": 0,
+    "escalated": 0,
+    "dropout": 43,
+    "timeout": 0,
+    "other": 107
+  },
+  "resolution_rate": 0.0,
+  "escalation_rate": 0.0,
+  "mean_turns": 7.613333333333333,
+  "invalid_action_attempts": 396
+}

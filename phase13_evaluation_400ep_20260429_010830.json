@@ -1,0 +1,3685 @@
+{
+  "timestamp": "2026-04-29 01:08:30",
+  "configuration": {
+    "model_path": "RL Out/models/best_model.zip",
+    "n_episodes": 400,
+    "artifacts_root": "Simulation_4/artifacts"
+  },
+  "timing": {
+    "duration_seconds": 13223.126231908798,
+    "episodes_per_minute": 1.8150019578642054
+  },
+  "resolution_rate": 0.4875,
+  "escalation_rate": 0.0,
+  "dropout_rate": 0.5025,
+  "timeout_rate": 0.01,
+  "terminal_counts": {
+    "success": 195,
+    "escalation": 0,
+    "dropout": 201,
+    "timeout": 4
+  },
+  "reward": {
+    "mean": -0.018694200139422835,
+    "std": 3.3700739644340487,
+    "min": -5.447143393078633,
+    "max": 3.6499999999999995,
+    "median": -1.025051700700943
+  },
+  "turns_analysis": {
+    "mean_turns_to_resolution": 11.035897435897436,
+    "std_turns_to_resolution": 2.2924052064384792,
+    "min_turns": 9,
+    "max_turns": 19
+  },
+  "satisfaction": {
+    "mean_satisfaction_proxy": 0.42902500000000005,
+    "std_satisfaction_proxy": 0.4221028303328467
+  },
+  "by_tier": {
+    "Free": {
+      "count": 85,
+      "resolution_rate": 0.4823529411764706,
+      "escalation_rate": 0.0
+    },
+    "Pro": {
+      "count": 102,
+      "resolution_rate": 0.45098039215686275,
+      "escalation_rate": 0.0
+    },
+    "Business": {
+      "count": 92,
+      "resolution_rate": 0.5,
+      "escalation_rate": 0.0
+    },
+    "Enterprise": {
+      "count": 121,
+      "resolution_rate": 0.512396694214876,
+      "escalation_rate": 0.0
+    }
+  },
+  "by_persona": {
+    "high_engagement_resolver": {
+      "count": 190,
+      "resolution_rate": 0.41578947368421054,
+      "escalation_rate": 0.0
+    },
+    "low_engagement_resolver": {
+      "count": 158,
+      "resolution_rate": 0.6329113924050633,
+      "escalation_rate": 0.0
+    },
+    "silent_dropout": {
+      "count": 29,
+      "resolution_rate": 0.20689655172413793,
+      "escalation_rate": 0.0
+    },
+    "escalation_prone": {
+      "count": 23,
+      "resolution_rate": 0.43478260869565216,
+      "escalation_rate": 0.0
+    }
+  },
+  "episode_logs": [
+    {
+      "episode_id": 0,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 1,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 2,
+      "reward": -1.9188335293040644,
+      "turns": 8,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.06999999999999999
+    },
+    {
+      "episode_id": 3,
+      "reward": -2.9187223325039993,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 4,
+      "reward": -3.669628104344792,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 5,
+      "reward": -3.43550273405042,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 6,
+      "reward": -3.531460758672793,
+      "turns": 8,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.06999999999999999
+    },
+    {
+      "episode_id": 7,
+      "reward": -3.892739275424557,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 8,
+      "reward": 2.6,
+      "turns": 16,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.76
+    },
+    {
+      "episode_id": 9,
+      "reward": -1.8021571179368534,
+      "turns": 8,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.06999999999999999
+    },
+    {
+      "episode_id": 10,
+      "reward": -3.970814764510502,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 11,
+      "reward": -4.1823979132927604,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 12,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 13,
+      "reward": -2.1039352146756554,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 14,
+      "reward": -5.447143393078633,
+      "turns": 19,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 15,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 16,
+      "reward": -2.247265034798963,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 17,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 18,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 19,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 20,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 21,
+      "reward": -3.4219972596422465,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 22,
+      "reward": -0.8543471834440475,
+      "turns": 1,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.30000000000000004
+    },
+    {
+      "episode_id": 23,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 24,
+      "reward": -4.152335520846787,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 25,
+      "reward": -2.0132781352318228,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 26,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 27,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 28,
+      "reward": -4.408627276785724,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 29,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 30,
+      "reward": -1.8517055053855611,
+      "turns": 7,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.09
+    },
+    {
+      "episode_id": 31,
+      "reward": -4.0880146113597435,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 32,
+      "reward": -4.925451807744336,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 33,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 34,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 35,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 36,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 37,
+      "reward": -2.4164019603709725,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 38,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 39,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 40,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 41,
+      "reward": -2.8005459203028873,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 42,
+      "reward": -4.195066164111825,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 43,
+      "reward": -2.128631957766011,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 44,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 45,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 46,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 47,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 48,
+      "reward": -5.10034653056601,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 49,
+      "reward": -2.404611414128685,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 50,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 51,
+      "reward": -2.2896382923034486,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 52,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 53,
+      "reward": -3.330209634031677,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 54,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 55,
+      "reward": -1.2264465563546574,
+      "turns": 6,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.10999999999999999
+    },
+    {
+      "episode_id": 56,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 57,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 58,
+      "reward": -5.010073075217695,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 59,
+      "reward": -3.5743317622501567,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 60,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 61,
+      "reward": -5.102168471272037,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 62,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 63,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 64,
+      "reward": -3.685971999907996,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 65,
+      "reward": -2.1557919715789504,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 66,
+      "reward": -4.3927919003514795,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 67,
+      "reward": -2.1653976225135567,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 68,
+      "reward": -2.7298413596338293,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 69,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 70,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 71,
+      "reward": 2.45,
+      "turns": 17,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.74
+    },
+    {
+      "episode_id": 72,
+      "reward": -5.091412466490684,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 73,
+      "reward": -2.2312455100100683,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 74,
+      "reward": -2.7069654511878913,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 75,
+      "reward": -3.5423042385633376,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 76,
+      "reward": -2.4399482991774835,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 77,
+      "reward": -2.4378334870155554,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 78,
+      "reward": -5.054807981593504,
+      "turns": 19,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 79,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 80,
+      "reward": -4.544686771195201,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 81,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 82,
+      "reward": -1.6968187390054879,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 83,
+      "reward": -1.8485994596918296,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 84,
+      "reward": -4.296541372418494,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 85,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 86,
+      "reward": -3.961233968671632,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 87,
+      "reward": -3.1711947041392055,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 88,
+      "reward": -3.576347146367884,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 89,
+      "reward": -2.6411281792537245,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 90,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 91,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 92,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 93,
+      "reward": -4.208376058602895,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 94,
+      "reward": -4.678989851067111,
+      "turns": 20,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 95,
+      "reward": -4.451751643786019,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 96,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 97,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 98,
+      "reward": -1.6456988438857816,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 99,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 100,
+      "reward": -4.64691776919229,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 101,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 102,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 103,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 104,
+      "reward": -3.500337486017765,
+      "turns": 5,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.13
+    },
+    {
+      "episode_id": 105,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 106,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 107,
+      "reward": -3.690898001679872,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 108,
+      "reward": -2.8710566718450585,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 109,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 110,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 111,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 112,
+      "reward": -0.9209706573316064,
+      "turns": 4,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.15
+    },
+    {
+      "episode_id": 113,
+      "reward": -3.069828627058528,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 114,
+      "reward": -2.861009237966254,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 115,
+      "reward": -2.163944740946712,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 116,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 117,
+      "reward": -3.609620627835354,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 118,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 119,
+      "reward": -2.404229282375642,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 120,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 121,
+      "reward": -0.7480895610840597,
+      "turns": 1,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.30000000000000004
+    },
+    {
+      "episode_id": 122,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 123,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 124,
+      "reward": 2.45,
+      "turns": 17,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.74
+    },
+    {
+      "episode_id": 125,
+      "reward": -3.953712555838213,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 126,
+      "reward": -1.8644052127825639,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 127,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 128,
+      "reward": -5.207666082149188,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 129,
+      "reward": -1.3499602892252407,
+      "turns": 7,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.09
+    },
+    {
+      "episode_id": 130,
+      "reward": -2.54444970230455,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 131,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 132,
+      "reward": -3.038455908833119,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 133,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 134,
+      "reward": -3.054883102340198,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 135,
+      "reward": -2.0647182150805663,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 136,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 137,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 138,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 139,
+      "reward": -1.0038413731361546,
+      "turns": 2,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.25
+    },
+    {
+      "episode_id": 140,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 141,
+      "reward": -2.2912131620200284,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 142,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 143,
+      "reward": -4.058688384194254,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 144,
+      "reward": -3.6314773790187136,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 145,
+      "reward": -4.625070477967732,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 146,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 147,
+      "reward": -2.770717447698083,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 148,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 149,
+      "reward": -3.0480661350214904,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 150,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 151,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 152,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 153,
+      "reward": 2.6,
+      "turns": 16,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.76
+    },
+    {
+      "episode_id": 154,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 155,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 156,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 157,
+      "reward": -4.112282044428684,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 158,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 159,
+      "reward": -3.048354656062342,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 160,
+      "reward": -4.100999808553761,
+      "turns": 20,
+      "terminal_type": "timeout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 161,
+      "reward": -2.4923961620334394,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 162,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 163,
+      "reward": -2.596271620212169,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 164,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 165,
+      "reward": -2.7036556300124763,
+      "turns": 8,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.06999999999999999
+    },
+    {
+      "episode_id": 166,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 167,
+      "reward": -1.6446105263243473,
+      "turns": 7,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.09
+    },
+    {
+      "episode_id": 168,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 169,
+      "reward": -3.829728981157702,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 170,
+      "reward": -3.079802666952732,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 171,
+      "reward": -2.934778624498726,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 172,
+      "reward": -4.199517177461494,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 173,
+      "reward": -2.124415080974199,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 174,
+      "reward": -0.9813301170979144,
+      "turns": 4,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.15
+    },
+    {
+      "episode_id": 175,
+      "reward": 2.45,
+      "turns": 17,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.74
+    },
+    {
+      "episode_id": 176,
+      "reward": -3.0774748349153387,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 177,
+      "reward": -1.7545064405550526,
+      "turns": 7,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.09
+    },
+    {
+      "episode_id": 178,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 179,
+      "reward": -4.381842081655518,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 180,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 181,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 182,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 183,
+      "reward": -2.9357849497388484,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 184,
+      "reward": -1.952490235489043,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 185,
+      "reward": -4.310081675358067,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 186,
+      "reward": -1.0462620282657316,
+      "turns": 5,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.13
+    },
+    {
+      "episode_id": 187,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 188,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 189,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 190,
+      "reward": -2.365782357578608,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 191,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 192,
+      "reward": -3.731793821501043,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 193,
+      "reward": -2.99366110668369,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 194,
+      "reward": -4.18889296026884,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 195,
+      "reward": -3.1932608855257687,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 196,
+      "reward": -3.8712789806503247,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 197,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 198,
+      "reward": -4.470389315493726,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 199,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 200,
+      "reward": -2.7242682911051634,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 201,
+      "reward": -4.605918581910262,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 202,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 203,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 204,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 205,
+      "reward": -2.369890889801051,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 206,
+      "reward": -3.178316130549887,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 207,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 208,
+      "reward": -3.6717210418046013,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 209,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 210,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 211,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 212,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 213,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 214,
+      "reward": -2.57839451322236,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 215,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 216,
+      "reward": -3.973999408218747,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 217,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 218,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 219,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 220,
+      "reward": 2.6,
+      "turns": 16,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.76
+    },
+    {
+      "episode_id": 221,
+      "reward": -3.622462989630993,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 222,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 223,
+      "reward": -3.760918789279459,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 224,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 225,
+      "reward": -2.725856732135821,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 226,
+      "reward": -4.279046307139754,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 227,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 228,
+      "reward": -2.4401611102338934,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 229,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 230,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 231,
+      "reward": -2.384935985533476,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 232,
+      "reward": -4.212596905788632,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 233,
+      "reward": -2.458852919377293,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 234,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 235,
+      "reward": -2.4804127772189575,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 236,
+      "reward": -2.485927251314917,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 237,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 238,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 239,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 240,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 241,
+      "reward": -3.5760171131100345,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 242,
+      "reward": -4.4137957299476165,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 243,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 244,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 245,
+      "reward": -2.2448955783250146,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 246,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 247,
+      "reward": -3.726315512821122,
+      "turns": 20,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 248,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 249,
+      "reward": -4.083543059558271,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 250,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 251,
+      "reward": -4.779422013430658,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 252,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 253,
+      "reward": -4.076336528846646,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 254,
+      "reward": -3.827454346995255,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 255,
+      "reward": -2.4021756498401645,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 256,
+      "reward": -2.4398673066199557,
+      "turns": 5,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.13
+    },
+    {
+      "episode_id": 257,
+      "reward": -3.6747038882781684,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 258,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 259,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 260,
+      "reward": -4.993293386840493,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 261,
+      "reward": -2.812997640994314,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 262,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 263,
+      "reward": -3.030551221841734,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 264,
+      "reward": -4.066948535541952,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 265,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 266,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 267,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 268,
+      "reward": -2.839635151050587,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 269,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 270,
+      "reward": 2.1500000000000004,
+      "turns": 19,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.7
+    },
+    {
+      "episode_id": 271,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 272,
+      "reward": -2.5929427176849082,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 273,
+      "reward": -3.764934796052551,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 274,
+      "reward": -2.5494846815419847,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 275,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 276,
+      "reward": -2.3787770845360647,
+      "turns": 4,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.15
+    },
+    {
+      "episode_id": 277,
+      "reward": -1.825962550211674,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 278,
+      "reward": -4.98822656149799,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 279,
+      "reward": -2.6188511663762415,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 280,
+      "reward": -5.087145038273118,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 281,
+      "reward": -3.834733472866583,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.04999999999999999
+    },
+    {
+      "episode_id": 282,
+      "reward": -3.007946811429626,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 283,
+      "reward": -3.0526199033584422,
+      "turns": 20,
+      "terminal_type": "timeout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 284,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 285,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 286,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 287,
+      "reward": -4.121627660781244,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 288,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 289,
+      "reward": -2.5744083594168523,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 290,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 291,
+      "reward": -5.115080411867229,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 292,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 293,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 294,
+      "reward": -2.435628965154553,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 295,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 296,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 297,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 298,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 299,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 300,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 301,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 302,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 303,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 304,
+      "reward": -3.0277570334492903,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 305,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 306,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 307,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 308,
+      "reward": -3.209098773732385,
+      "turns": 19,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 309,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 310,
+      "reward": -4.335881368980847,
+      "turns": 10,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.03
+    },
+    {
+      "episode_id": 311,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 312,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 313,
+      "reward": -3.7948128626186945,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 314,
+      "reward": -4.0205614190882475,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 315,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 316,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 317,
+      "reward": -4.270363662861455,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 318,
+      "reward": -3.2029788817119327,
+      "turns": 17,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 319,
+      "reward": -4.268654085719255,
+      "turns": 19,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 320,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 321,
+      "reward": -3.0488683714478206,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 322,
+      "reward": -2.1702437092218005,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 323,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 324,
+      "reward": -3.8475194167391233,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 325,
+      "reward": -2.393977887413789,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 326,
+      "reward": 2.45,
+      "turns": 17,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.74
+    },
+    {
+      "episode_id": 327,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 328,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 329,
+      "reward": -1.7980984460246692,
+      "turns": 8,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.06999999999999999
+    },
+    {
+      "episode_id": 330,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 331,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 332,
+      "reward": -2.7184711007364006,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 333,
+      "reward": -3.8274029417853086,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 334,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 335,
+      "reward": -2.2782529446656286,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 336,
+      "reward": -2.8363026289564783,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 337,
+      "reward": -2.491390793962218,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 338,
+      "reward": -3.0139265745786954,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 339,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 340,
+      "reward": -2.610923345329305,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 341,
+      "reward": -2.4489559335678135,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 342,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 343,
+      "reward": -1.9900690888053827,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 344,
+      "reward": -2.442294302359749,
+      "turns": 4,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.15
+    },
+    {
+      "episode_id": 345,
+      "reward": -4.649934319613336,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 346,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 347,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 348,
+      "reward": -4.87614123059206,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 349,
+      "reward": -1.9602125981809624,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 350,
+      "reward": -3.721830868796417,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 351,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 352,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 353,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 354,
+      "reward": 2.1500000000000004,
+      "turns": 19,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.7
+    },
+    {
+      "episode_id": 355,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 356,
+      "reward": -3.736118597502446,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 357,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 358,
+      "reward": -3.7439099523895036,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 359,
+      "reward": -3.549111944597902,
+      "turns": 20,
+      "terminal_type": "timeout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 360,
+      "reward": -4.317656633134566,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 361,
+      "reward": -2.9004046956981098,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 362,
+      "reward": -3.3769803678888515,
+      "turns": 18,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 363,
+      "reward": -5.165843238879521,
+      "turns": 19,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 364,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 365,
+      "reward": 3.2,
+      "turns": 12,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.84
+    },
+    {
+      "episode_id": 366,
+      "reward": -2.436547425601601,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 367,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 368,
+      "reward": -3.143991879387639,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 369,
+      "reward": -4.418559851808899,
+      "turns": 15,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 370,
+      "reward": -2.39628341025752,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 371,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 372,
+      "reward": -3.428064335683851,
+      "turns": 20,
+      "terminal_type": "timeout",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 373,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 374,
+      "reward": -2.7174352350844178,
+      "turns": 16,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 375,
+      "reward": 2.45,
+      "turns": 17,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.74
+    },
+    {
+      "episode_id": 376,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 377,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 378,
+      "reward": -4.613938719543485,
+      "turns": 14,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 379,
+      "reward": -2.281715351004709,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 380,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 381,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 382,
+      "reward": -4.6199249946737995,
+      "turns": 12,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 383,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 384,
+      "reward": 3.05,
+      "turns": 13,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8200000000000001
+    },
+    {
+      "episode_id": 385,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 386,
+      "reward": -2.5819227350997744,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 387,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 388,
+      "reward": 2.75,
+      "turns": 15,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.78
+    },
+    {
+      "episode_id": 389,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 390,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Business",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 391,
+      "reward": -3.638376970303462,
+      "turns": 19,
+      "terminal_type": "dropout",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 392,
+      "reward": 3.3499999999999996,
+      "turns": 11,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.86
+    },
+    {
+      "episode_id": 393,
+      "reward": 3.5,
+      "turns": 10,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.88
+    },
+    {
+      "episode_id": 394,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 395,
+      "reward": 3.6499999999999995,
+      "turns": 9,
+      "terminal_type": "success",
+      "tier": "Enterprise",
+      "persona": "low_engagement_resolver",
+      "satisfaction_proxy": 0.9
+    },
+    {
+      "episode_id": 396,
+      "reward": 2.9000000000000004,
+      "turns": 14,
+      "terminal_type": "success",
+      "tier": "Pro",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.8
+    },
+    {
+      "episode_id": 397,
+      "reward": -3.2866958058746416,
+      "turns": 11,
+      "terminal_type": "dropout",
+      "tier": "Business",
+      "persona": "silent_dropout",
+      "satisfaction_proxy": 0.009999999999999981
+    },
+    {
+      "episode_id": 398,
+      "reward": -2.2505250830592263,
+      "turns": 13,
+      "terminal_type": "dropout",
+      "tier": "Free",
+      "persona": "high_engagement_resolver",
+      "satisfaction_proxy": 0.0
+    },
+    {
+      "episode_id": 399,
+      "reward": -4.042363669787036,
+      "turns": 9,
+      "terminal_type": "dropout",
+      "tier": "Enterprise",
+      "persona": "escalation_prone",
+      "satisfaction_proxy": 0.04999999999999999
+    }
+  ]
+}

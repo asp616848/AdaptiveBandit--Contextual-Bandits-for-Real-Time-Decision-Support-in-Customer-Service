@@ -1,0 +1,29 @@
+{
+  "n_episodes": 200,
+  "outcomes": {
+    "resolved": 0,
+    "escalated": 0,
+    "dropout": 36,
+    "timeout": 0,
+    "other": 164
+  },
+  "resolution_rate": 0.0,
+  "escalation_rate": 0.0,
+  "strategy_performance": {
+    "escalate_fast": {
+      "episodes": 8,
+      "resolved": 0,
+      "resolution_rate": 0.0
+    },
+    "solve_patiently": {
+      "episodes": 75,
+      "resolved": 3,
+      "resolution_rate": 4.0
+    },
+    "hybrid_adaptive": {
+      "episodes": 117,
+      "resolved": 10,
+      "resolution_rate": 8.547008547008547
+    }
+  }
+}

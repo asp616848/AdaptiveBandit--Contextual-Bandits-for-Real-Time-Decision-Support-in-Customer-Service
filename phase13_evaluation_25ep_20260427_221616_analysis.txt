@@ -1,0 +1,52 @@
+
+======================================================================
+STATISTICAL ANALYSIS
+======================================================================
+
+1. OVERALL PERFORMANCE
+----------------------------------------------------------------------
+  Total Episodes: 25
+  Duration: 37.7s (39.8 ep/min)
+  Primary Metric (Resolution): 0.00%
+  Expected Resolution for Random Policy: ~25%
+  Improvement Factor: 0.00x
+
+2. REWARD ANALYSIS
+----------------------------------------------------------------------
+  Mean Reward: -1.3943
+  Std Dev: 1.9488
+  Range: [-4.1576, +0.8292]
+  Coefficient of Variation: 1.40
+
+3. EFFICIENCY ANALYSIS
+----------------------------------------------------------------------
+  Mean Turns to Resolution: 0.0
+  Std Dev: 0.0
+  Range: 0-0 turns
+
+4. CUSTOMER SATISFACTION (PROXY)
+----------------------------------------------------------------------
+  Mean Satisfaction: 0.800/1.0
+  Std Dev: 0.000
+  Interpretation: Very Good
+
+5. PERFORMANCE BY TIER
+----------------------------------------------------------------------
+  Free        : n=  6 | Res=  0.0% | Esc=100.0%
+  Pro         : n=  7 | Res=  0.0% | Esc=100.0%
+  Business    : n=  3 | Res=  0.0% | Esc=100.0%
+  Enterprise  : n=  9 | Res=  0.0% | Esc=100.0%
+
+6. PERFORMANCE BY PERSONA
+----------------------------------------------------------------------
+  high_engagement_resolver : n= 13 | Res=  0.0% | Esc=100.0%
+  low_engagement_resolver  : n=  9 | Res=  0.0% | Esc=100.0%
+  silent_dropout           : n=  3 | Res=  0.0% | Esc=100.0%
+
+7. KEY OBSERVATIONS
+----------------------------------------------------------------------
+  ⚠  Model failed to resolve any cases (0% resolution, 100.0% escalation)
+  ✓ Very low dropout rate (0.0%)
+  ✓ Strong satisfaction proxy (0.800)
+
+======================================================================

@@ -1,0 +1,40 @@
+[ActionCB] algo=linucb horizon=5 seed=1
+DocumentStore loaded:
+  lumo_doc1_company_product_overview.md: 22 chunks
+  lumo_doc2_support_policies.md: 48 chunks
+  lumo_doc3_issue_playbooks.md: 59 chunks
+  Total chunks: 129
+  Mean chunk size: 787 characters
+  Min chunk size: 45 characters
+  Max chunk size: 1000 characters
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6347.44it/s]
+[StrategyCB] algo=linucb horizon=5 seed=1
+DocumentStore loaded:
+  lumo_doc1_company_product_overview.md: 22 chunks
+  lumo_doc2_support_policies.md: 48 chunks
+  lumo_doc3_issue_playbooks.md: 59 chunks
+  Total chunks: 129
+  Mean chunk size: 787 characters
+  Min chunk size: 45 characters
+  Max chunk size: 1000 characters
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8709.42it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/tishabhavsar/RL_Project /AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/contextual_bandits/main.py", line 595, in <module>
+    main()
+    ~~~~^^
+  File "/Users/tishabhavsar/RL_Project /AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/contextual_bandits/main.py", line 539, in main
+    strategy_res, strategy_logs = run_strategy_bandit(
+                                  ~~~~~~~~~~~~~~~~~~~^
+        algorithm=algo,
+        ^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        seed=seed,
+        ^^^^^^^^^^
+    )
+    ^
+  File "/Users/tishabhavsar/RL_Project /AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/contextual_bandits/main.py", line 214, in run_strategy_bandit
+    context = extract_strategy_context(env.state)
+                                       ^^^^^^^^^
+AttributeError: 'ActionMaskedEnv' object has no attribute 'state'

@@ -1,0 +1,25 @@
+{
+  "run_id": "20260503_210853",
+  "config": {
+    "artifacts_root": "Simulation_4/artifacts",
+    "collect_episodes": 40,
+    "eval_episodes": 30,
+    "horizons": [
+      5,
+      8
+    ],
+    "seeds": [
+      1
+    ],
+    "algorithms": [
+      "linucb",
+      "epsilon"
+    ],
+    "hybrid_k": [
+      1
+    ],
+    "output_root": "/Users/tishabhavsar/RL_Project /AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/output/Contextual_bandit"
+  },
+  "n_rows": 12,
+  "output_dir": "/Users/tishabhavsar/RL_Project /AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/output/Contextual_bandit/20260503_210853"
+}

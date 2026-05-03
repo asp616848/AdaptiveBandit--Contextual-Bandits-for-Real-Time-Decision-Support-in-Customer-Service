@@ -8,6 +8,11 @@ class ActionMaskedEnv(Wrapper):
     def __init__(self, env):
         super().__init__(env)
 
+    @property
+    def state(self):
+        """Expose underlying env's state for bandit context extraction."""
+        return getattr(self.env, "state", {})
+
     def action_masks(self) -> np.ndarray:
         mask = np.ones(5, dtype=bool)
         # Block Escalate (action 3) in the first 3 turns to prevent the
