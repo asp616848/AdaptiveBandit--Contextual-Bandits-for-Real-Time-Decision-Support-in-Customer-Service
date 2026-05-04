@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulator Dashboard</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    body { margin: 0; font-family: "Segoe UI", Tahoma, sans-serif; background: #0d1b2a; color: #e0e7ef; }
+    header { padding: 14px 18px; background: #10253e; border-bottom: 1px solid #1f3a5a; }
+    .wrap { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; padding: 14px; }
+    .card { background: #13293f; border: 1px solid #204768; border-radius: 10px; padding: 10px; }
+    .controls { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
+    button { background:#2c6fb7; color:#fff; border:none; border-radius:6px; padding:6px 10px; cursor:pointer; }
+    #conversation { max-height: 360px; overflow-y: auto; background:#0f2235; padding:10px; border-radius:8px; }
+    .agent { color:#92c5ff; }
+    .customer { color:#f4d68d; }
+    .label { display:inline-block; padding:2px 6px; border-radius:999px; font-size:11px; background:#1d4060; margin-left:6px; }
+    .side { display:grid; gap:12px; }
+    .rag { font-size: 13px; background:#0f2235; border-radius:8px; padding:8px; }
+  </style>
+</head>
+<body>
+<header>
+  <h2 style="margin:0;">Simulation Explainability Dashboard</h2>
+</header>
+<div class="wrap">
+  <div class="card">
+    <div class="controls">
+      <input type="file" id="jsonInput" accept=".json" />
+      <button id="playBtn" disabled>Play</button>
+      <button id="pauseBtn" disabled>Pause</button>
+      <button id="stepBtn" disabled>Step</button>
+    </div>
+    <div id="conversation"></div>
+    <canvas id="beliefChart" height="120"></canvas>
+    <canvas id="rewardChart" height="120"></canvas>
+  </div>
+  <div class="side">
+    <div class="card">
+      <canvas id="actionPie" height="180"></canvas>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Top-2 Retrieved Conversations</h3>
+      <div id="ragPanel" class="rag"></div>
+    </div>
+  </div>
+</div>
+<script>
+let trace = [];
+let idx = 0;
+let timer = null;
+const actionCounts = {};
+
+const beliefChart = new Chart(document.getElementById("beliefChart"), {
+  type: "line",
+  data: { labels: [], datasets: [
+    { label: "Belief Frustration", data: [], borderColor: "#ff7b7b", tension: 0.2 },
+    { label: "Belief Sentiment", data: [], borderColor: "#74c0fc", tension: 0.2 }
+  ] },
+  options: { animation: false }
+});
+
+const rewardChart = new Chart(document.getElementById("rewardChart"), {
+  type: "line",
+  data: { labels: [], datasets: [{ label: "Cumulative Reward", data: [], borderColor: "#8ce99a", tension: 0.2 }] },
+  options: { animation: false }
+});
+
+const pie = new Chart(document.getElementById("actionPie"), {
+  type: "pie",
+  data: { labels: [], datasets: [{ data: [] }] },
+  options: { animation: false }
+});
+
+function resetView() {
+  idx = 0;
+  for (const k in actionCounts) delete actionCounts[k];
+  beliefChart.data.labels = []; beliefChart.data.datasets[0].data = []; beliefChart.data.datasets[1].data = [];
+  rewardChart.data.labels = []; rewardChart.data.datasets[0].data = [];
+  document.getElementById("conversation").innerHTML = "";
+  document.getElementById("ragPanel").innerHTML = "";
+  beliefChart.update(); rewardChart.update(); pie.update();
+}
+
+function renderStep() {
+  if (idx >= trace.length) { clearInterval(timer); return; }
+  const s = trace[idx];
+  const conv = document.getElementById("conversation");
+  const action = s.action || "Unknown";
+  actionCounts[action] = (actionCounts[action] || 0) + 1;
+
+  const node = document.createElement("div");
+  node.innerHTML = `<div class='agent'>Agent: ${s.agent_text || action}<span class='label'>${action}</span></div>
+                    <div class='customer'>Customer: ${s.customer_text || ""}</div>`;
+  conv.appendChild(node);
+  conv.scrollTop = conv.scrollHeight;
+
+  beliefChart.data.labels.push(String(idx + 1));
+  beliefChart.data.datasets[0].data.push(Number(s.belief_frustration || 0));
+  beliefChart.data.datasets[1].data.push(Number(s.belief_sentiment || 0));
+  beliefChart.update();
+
+  const prev = rewardChart.data.datasets[0].data.length ? rewardChart.data.datasets[0].data[rewardChart.data.datasets[0].data.length - 1] : 0;
+  rewardChart.data.labels.push(String(idx + 1));
+  rewardChart.data.datasets[0].data.push(prev + Number(s.reward || 0));
+  rewardChart.update();
+
+  pie.data.labels = Object.keys(actionCounts);
+  pie.data.datasets[0].data = Object.values(actionCounts);
+  pie.update();
+
+  if (idx === 0) {
+    const rag = (s.retrieved_contexts || []).slice(0, 2);
+    document.getElementById("ragPanel").innerHTML = rag.map((r, i) => `<div><b>#${i + 1}</b> ${r}</div>`).join("") || "No RAG contexts available.";
+  }
+
+  idx += 1;
+}
+
+document.getElementById("jsonInput").addEventListener("change", async (e) => {
+  const f = e.target.files[0];
+  if (!f) return;
+  const parsed = JSON.parse(await f.text());
+  trace = Array.isArray(parsed) ? parsed : (parsed.trace || []);
+  resetView();
+  document.getElementById("playBtn").disabled = false;
+  document.getElementById("pauseBtn").disabled = false;
+  document.getElementById("stepBtn").disabled = false;
+});
+
+document.getElementById("playBtn").addEventListener("click", () => {
+  clearInterval(timer);
+  timer = setInterval(renderStep, 600);
+});
+
+document.getElementById("pauseBtn").addEventListener("click", () => clearInterval(timer));
+document.getElementById("stepBtn").addEventListener("click", renderStep);
+</script>
+</body>
+</html>
