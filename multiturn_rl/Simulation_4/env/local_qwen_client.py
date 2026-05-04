@@ -40,7 +40,6 @@ class LocalQwenChatClient:
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.model_path,
             trust_remote_code=True,
-            local_files_only=True,
         )
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
@@ -53,9 +52,9 @@ class LocalQwenChatClient:
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_path,
             trust_remote_code=True,
-            local_files_only=True,
             torch_dtype=dtype,
             device_map=self.device_map if torch.cuda.is_available() else None,
+            offload_folder="/tmp/offload_qwen"
         )
         self.model.eval()
 

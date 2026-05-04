@@ -1,0 +1,8 @@
+{
+  "timesteps": 5120,
+  "total_timesteps": 5000,
+  "progress_percent": 100.0,
+  "elapsed_seconds": 6.078,
+  "steps_per_second": 842.374687,
+  "eta_seconds": 0.0
+}

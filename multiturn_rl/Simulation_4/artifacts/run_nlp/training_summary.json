@@ -1,0 +1,23 @@
+{
+  "total_timesteps": 5000,
+  "training_time_seconds": 6.125415325164795,
+  "curriculum_enabled": true,
+  "reward_shaping_enabled": true,
+  "nlg_enabled": true,
+  "observation_mode": "nlp",
+  "text_only_observation": false,
+  "nlp_observation": true,
+  "text_observation_dim": 512,
+  "intent_model": "local-qwen",
+  "agent_model": "local-qwen",
+  "best_eval_reward": -44.01258714803214,
+  "baseline_beaten": false,
+  "baseline_beaten_step": null,
+  "final_resolution_rate": 0.4842105263157895,
+  "n_envs": 1,
+  "seed": 42,
+  "run_id": "20260504_192214",
+  "run_dir": "/home/abhi/College/RL/AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/multiturn_rl/Simulation_4/artifacts/run_nlp/runs/20260504_192214",
+  "metrics_eval_freq": 500,
+  "heartbeat_freq_steps": 25
+}

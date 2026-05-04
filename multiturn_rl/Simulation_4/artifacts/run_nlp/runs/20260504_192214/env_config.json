@@ -1,0 +1,7 @@
+{
+  "backend": "local",
+  "model_path": "abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b",
+  "customer_model": "local-qwen",
+  "intent_model": "local-qwen",
+  "agent_model": "local-qwen"
+}

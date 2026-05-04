@@ -36,6 +36,10 @@ HF_MODEL_PATH="${HF_MODEL_PATH:-}"
 OLLAMA_MODEL="${OLLAMA_MODEL:-llama3}"
 OLLAMA_ENDPOINT="${OLLAMA_ENDPOINT:-http://localhost:11434/v1}"
 
+# ── Override paths for NLP (Simulation_4 and Qwen server scripts) ──────────
+ARTIFACTS_ROOT="$ROOT_DIR/multiturn_rl/Simulation_4/artifacts"
+PIPELINE_SCRIPT="$ROOT_DIR/multiturn_rl/Simulation_4/rl_training_server/scripts/train_rl_qwen.py"
+
 # ── Resolve LLM backend ────────────────────────────────────────────────────
 if [ -n "$HF_MODEL_PATH" ]; then
   _llm_backend="hf"
@@ -67,17 +71,13 @@ _banner "NLP multi-turn RL  (PPO · NLG enabled · ${NUM_TIMESTEPS} steps · $_b
 mkdir -p output/nlp-multi-turn
 
 # shellcheck disable=SC2086
+export SUPPORT_SIM_LOCAL_MODEL_PATH="$HF_MODEL_PATH"
 python "$PIPELINE_SCRIPT" \
   --artifacts-root "$ARTIFACTS_ROOT" \
   --output-subdir  run_nlp \
   --timesteps      "$NUM_TIMESTEPS" \
-  --eval-episodes  "$EVAL_EPISODES" \
   --n-envs         "$N_ENVS" \
-  --continue-from  _none_ \
-  --skip-validation \
-  --nlg-enabled \
-  --llm-backend    "$_llm_backend" \
-  $_llm_extra
+  --model-path     "${HF_MODEL_PATH:-abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b}"
 
 python "$EXPORT_SCRIPT" \
   --artifacts-root "$ARTIFACTS_ROOT" \

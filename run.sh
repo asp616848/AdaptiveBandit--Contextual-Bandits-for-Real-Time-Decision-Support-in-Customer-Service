@@ -134,9 +134,9 @@ echo ""
 echo "  [3/3] Contextual bandit..."
 
 _CB_DIR="$ROOT_DIR/Contextual Bandits"
-_CB_OUT="$ROOT_DIR/output/Contextual_bandit"
+_CB_OUT="$ROOT_DIR/output/contextual-bandit"
 
-if ! _is_done "output/Contextual_bandit"; then
+if ! _is_done "output/contextual-bandit"; then
   if [ -f "$_CB_DIR/main.py" ]; then
     mkdir -p "$_CB_OUT/plots"
 
@@ -169,7 +169,7 @@ echo "╔═══════════════════════�
 echo "║   All done.                                                           ║"
 echo "║     output/numerical-multi-turn/                                      ║"
 echo "║     output/nlp-multi-turn/                                            ║"
-echo "║     output/Contextual_bandit/                                         ║"
+echo "║     output/contextual-bandit/                                         ║"
 echo "║     best_model/numerical/                                             ║"
 echo "║     best_model/nlp/                                                   ║"
 echo "╚══════════════════════════════════════════════════════════════════════╝"
