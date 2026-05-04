@@ -1,0 +1,54 @@
+
+======================================================================
+STATISTICAL ANALYSIS
+======================================================================
+
+1. OVERALL PERFORMANCE
+----------------------------------------------------------------------
+  Total Episodes: 400
+  Duration: 80824.4s (0.3 ep/min)
+  Primary Metric (Resolution): 56.50%
+  Expected Resolution for Random Policy: ~25%
+  Improvement Factor: 2.26x
+
+2. REWARD ANALYSIS
+----------------------------------------------------------------------
+  Mean Reward: +0.3381
+  Std Dev: 3.2183
+  Range: [-5.8251, +3.8000]
+  Coefficient of Variation: 9.52
+
+3. EFFICIENCY ANALYSIS
+----------------------------------------------------------------------
+  Mean Turns to Resolution: 12.7
+  Std Dev: 2.3
+  Range: 8-19 turns
+  Efficiency (1/avg_turns): 0.078
+
+4. CUSTOMER SATISFACTION (PROXY)
+----------------------------------------------------------------------
+  Mean Satisfaction: 0.474/1.0
+  Std Dev: 0.403
+  Interpretation: Fair
+
+5. PERFORMANCE BY TIER
+----------------------------------------------------------------------
+  Free        : n= 85 | Res= 50.6% | Esc=  0.0%
+  Pro         : n=102 | Res= 50.0% | Esc=  0.0%
+  Business    : n= 92 | Res= 59.8% | Esc=  0.0%
+  Enterprise  : n=121 | Res= 63.6% | Esc=  0.0%
+
+6. PERFORMANCE BY PERSONA
+----------------------------------------------------------------------
+  high_engagement_resolver : n=190 | Res= 52.6% | Esc=  0.0%
+  low_engagement_resolver  : n=158 | Res= 69.0% | Esc=  0.0%
+  silent_dropout           : n= 29 | Res= 24.1% | Esc=  0.0%
+  escalation_prone         : n= 23 | Res= 43.5% | Esc=  0.0%
+
+7. KEY OBSERVATIONS
+----------------------------------------------------------------------
+  ✓ Model heavily favors resolution (escalation 0.0% of success rate)
+  ⚠  High dropout rate (41.0%) - customers leaving
+  ⚠  Low satisfaction proxy (0.474)
+
+======================================================================
