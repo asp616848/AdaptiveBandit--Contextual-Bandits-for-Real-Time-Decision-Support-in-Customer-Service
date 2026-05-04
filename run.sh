@@ -47,11 +47,11 @@ export N_ENVS="${N_ENVS:-1}"
 
 # ── Step counts (change these to control how long each method runs) ──────────
 # [1/3] Numerical PPO — state-only, no LLM; fast (~20-30 min on CPU at 1M steps)
-_NUM_NUMERICAL="${NUM_TIMESTEPS_NUMERICAL:-5}"
+_NUM_NUMERICAL="${NUM_TIMESTEPS_NUMERICAL:-1000000}"
 
-# [3/3] Contextual bandit episodes
-_CB_COLLECT="${CB_COLLECT_EPISODES:-5}"
-_CB_EVAL="${CB_EVAL_EPISODES:-5}"
+# [3/3] Contextual bandit episodes (collect + eval = 500 total)
+_CB_COLLECT="${CB_COLLECT_EPISODES:-300}"
+_CB_EVAL="${CB_EVAL_EPISODES:-200}"
 
 # NLP PPO — each env step calls the 7B LLM; much slower per step
 # Auto-set based on GPU availability if not overridden.
@@ -75,10 +75,10 @@ if [ -n "$_NUM_NLG_OVERRIDE" ]; then
   _NUM_NLG="$_NUM_NLG_OVERRIDE"
 else
   if python -c "import torch; exit(0 if torch.cuda.is_available() else 1)" 2>/dev/null; then
-    _NUM_NLG=5
+    _NUM_NLG=500000
     echo "  [setup] GPU detected — NLG training: ${_NUM_NLG} steps"
   else
-    _NUM_NLG=5
+    _NUM_NLG=500000
     echo "  [setup] No GPU — NLG training: ${_NUM_NLG} steps (CPU-safe demo)"
   fi
 fi
