@@ -70,7 +70,7 @@ def make_env(
             artifacts_root=artifacts_root,
             nlg_enabled=bool(nlg_enabled),
             subflow_filter=subflow_filter,
-            observation_mode="full",
+            observation_mode="public",
         )
         env = RewardShapedWrapper(env, reward_shaper)
         env = ActionMaskedEnv(env)
