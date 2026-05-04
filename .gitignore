@@ -14,6 +14,6 @@ __pycache__/
 dataset/abcd_v1.1.json
 
 # Generated training outputs
-output/
+# output/
 best_model/
 /multiturn_rl/simulation/training/__pycache__

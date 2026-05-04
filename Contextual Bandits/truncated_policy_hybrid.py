@@ -5,7 +5,7 @@ from typing import Any
 
 import numpy as np
 
-from .strategy_policies import BalancedStrategy
+from strategy_policies import BalancedStrategy
 
 
 @dataclass

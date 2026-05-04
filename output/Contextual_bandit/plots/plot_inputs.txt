@@ -1,0 +1,4 @@
+summary_rows=270
+aggregate_rows=90
+modes=action_cb, strategy_cb, truncated_hybrid
+horizons=1, 2, 3, 5, 8, 20
