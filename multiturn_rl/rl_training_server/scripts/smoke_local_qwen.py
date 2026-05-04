@@ -18,7 +18,7 @@ from Simulation_4.env.local_qwen_client import get_local_qwen_client
 OUT_DIR = ROOT / "rl_training_server" / "runs" / "smoke"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-MODEL_PATH = Path(os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", ROOT / "Qwen2.5-7B-Instruct-merged"))
+MODEL_PATH_STR = os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b")
 BEHAVIOR_RE = re.compile(r"<behavior>\s*(\{.*?\})\s*</behavior>", re.DOTALL)
 
 
@@ -72,12 +72,20 @@ PROMPTS = [
 
 
 def main() -> None:
-    if not MODEL_PATH.exists():
-        raise FileNotFoundError(f"Local Qwen model folder not found: {MODEL_PATH}")
+    is_hf_id = "/" in MODEL_PATH_STR and not Path(MODEL_PATH_STR).expanduser().exists() and not MODEL_PATH_STR.startswith(".") and not MODEL_PATH_STR.startswith("/")
+    if not is_hf_id:
+        p = Path(MODEL_PATH_STR).expanduser()
+        if not p.is_absolute():
+            p = Path.cwd() / p
+        if not p.exists():
+            raise FileNotFoundError(f"Local Qwen model folder not found: {p}")
+        model_path = str(p)
+    else:
+        model_path = MODEL_PATH_STR
 
     os.environ["SUPPORT_SIM_LLM_BACKEND"] = "local"
-    os.environ["SUPPORT_SIM_LOCAL_MODEL_PATH"] = str(MODEL_PATH)
-    client = get_local_qwen_client(str(MODEL_PATH))
+    os.environ["SUPPORT_SIM_LOCAL_MODEL_PATH"] = model_path
+    client = get_local_qwen_client(model_path)
 
     out_path = OUT_DIR / f"local_qwen_behavior_{time.strftime('%Y%m%d_%H%M%S')}.jsonl"
     rows = []

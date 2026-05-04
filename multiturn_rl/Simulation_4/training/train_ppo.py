@@ -344,7 +344,12 @@ def continue_ppo_from_checkpoint(
         baseline_reward=0.99,
         verbose=1,
     )
-    callbacks = [heartbeat_callback, metrics_callback, best_model_callback]
+    checkpoint_callback = CheckpointCallback(
+        save_freq=max(1, 5000 // n_envs),
+        save_path=str(save_dir),
+        name_prefix="rl_model",
+    )
+    callbacks = [heartbeat_callback, metrics_callback, best_model_callback, checkpoint_callback]
 
     if curriculum is not None:
         callbacks.append(CurriculumCallback(curriculum, train_env, verbose=1))

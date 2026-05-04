@@ -6,7 +6,7 @@ TIMESTEPS="${TIMESTEPS:-150000}"
 N_ENVS="${N_ENVS:-1}"
 OUTPUT_SUBDIR="${OUTPUT_SUBDIR:-rl_qwen_long}"
 RUN_ID="${RUN_ID:-$(date +%Y%m%d_%H%M%S)}"
-MODEL_PATH="${SUPPORT_SIM_LOCAL_MODEL_PATH:-Qwen2.5-7B-Instruct-merged}"
+MODEL_PATH="${SUPPORT_SIM_LOCAL_MODEL_PATH:-abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b}"
 CUSTOMER_MODEL="${SUPPORT_SIM_LLM_MODEL:-local-qwen}"
 INTENT_MODEL="${SUPPORT_SIM_INTENT_MODEL:-$CUSTOMER_MODEL}"
 AGENT_MODEL="${SUPPORT_SIM_AGENT_MODEL:-$CUSTOMER_MODEL}"
@@ -19,9 +19,9 @@ if [[ "$N_ENVS" != "1" ]]; then
   exit 1
 fi
 
-if [[ ! -d "$ROOT_DIR/$MODEL_PATH" && ! -d "$MODEL_PATH" ]]; then
+if [[ ! "$MODEL_PATH" == *"/"* ]] && [[ ! -d "$ROOT_DIR/$MODEL_PATH" && ! -d "$MODEL_PATH" ]]; then
   echo "Local Qwen model folder not found: $MODEL_PATH" >&2
-  echo "Expected something like: $ROOT_DIR/Qwen2.5-7B-Instruct-merged" >&2
+  echo "Expected something like: $ROOT_DIR/Qwen2.5-7B-Instruct-merged or a Hugging Face ID like abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b" >&2
   exit 1
 fi
 

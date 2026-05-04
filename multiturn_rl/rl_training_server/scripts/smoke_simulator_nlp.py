@@ -21,7 +21,7 @@ OUT_DIR = ROOT / "rl_training_server" / "runs" / "smoke"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 os.environ.setdefault("SUPPORT_SIM_LLM_BACKEND", "local")
-os.environ.setdefault("SUPPORT_SIM_LOCAL_MODEL_PATH", str(ROOT / "Qwen2.5-7B-Instruct-merged"))
+os.environ.setdefault("SUPPORT_SIM_LOCAL_MODEL_PATH", "abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b")
 os.environ.setdefault("SUPPORT_SIM_LLM_MODEL", "local-qwen")
 os.environ.setdefault("SUPPORT_SIM_AGENT_MODEL", os.environ["SUPPORT_SIM_LLM_MODEL"])
 os.environ.setdefault("SUPPORT_SIM_INTENT_MODEL", os.environ["SUPPORT_SIM_LLM_MODEL"])

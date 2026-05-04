@@ -117,10 +117,14 @@ def get_local_qwen_client(
     device_map: str | None = None,
     max_input_tokens: int | None = None,
 ) -> LocalQwenChatClient:
-    path = model_path or os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "Qwen2.5-7B-Instruct-merged")
+    path = model_path or os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b")
     dev_map = device_map or os.getenv("SUPPORT_SIM_LOCAL_DEVICE_MAP", "auto")
     max_tokens = int(max_input_tokens or os.getenv("SUPPORT_SIM_LOCAL_MAX_INPUT_TOKENS", "3072"))
-    key = (str(Path(path).expanduser()), dev_map)
+    
+    is_hf_id = "/" in path and not Path(path).expanduser().exists() and not path.startswith(".") and not path.startswith("/")
+    path_key = path if is_hf_id else str(Path(path).expanduser())
+    
+    key = (path_key, dev_map)
     with _LOCK:
         client = _CLIENTS.get(key)
         if client is None:

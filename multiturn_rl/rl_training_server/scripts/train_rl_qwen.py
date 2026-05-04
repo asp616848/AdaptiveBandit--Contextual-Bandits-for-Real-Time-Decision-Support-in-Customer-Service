@@ -21,7 +21,7 @@ def main() -> None:
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--n-envs", type=int, default=1)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--model-path", default=os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "Qwen2.5-7B-Instruct-merged"))
+    parser.add_argument("--model-path", default=os.getenv("SUPPORT_SIM_LOCAL_MODEL_PATH", "abhi6168/ABCD_CustomerAgent_Qwen_2.5_7b"))
     parser.add_argument("--intent-model", default=os.getenv("SUPPORT_SIM_INTENT_MODEL", "local-qwen"))
     parser.add_argument("--agent-model", default=os.getenv("SUPPORT_SIM_AGENT_MODEL", "local-qwen"))
     parser.add_argument("--customer-model", default=os.getenv("SUPPORT_SIM_LLM_MODEL", "local-qwen"))
@@ -32,11 +32,18 @@ def main() -> None:
     parser.add_argument("--no-shaping", action="store_true")
     args = parser.parse_args()
 
-    model_path = Path(args.model_path).expanduser()
-    if not model_path.is_absolute():
-        model_path = REPO_ROOT / model_path
-    if not model_path.exists():
-        raise FileNotFoundError(f"Local Qwen model path not found: {model_path}")
+    model_path_str = args.model_path
+    is_hf_id = "/" in model_path_str and not Path(model_path_str).expanduser().exists() and not model_path_str.startswith(".") and not model_path_str.startswith("/")
+    
+    if is_hf_id:
+        model_path = model_path_str
+    else:
+        p = Path(model_path_str).expanduser()
+        if not p.is_absolute():
+            p = Path.cwd() / p
+        if not p.exists():
+            raise FileNotFoundError(f"Local Qwen model path not found: {p}")
+        model_path = str(p)
 
     os.environ["SUPPORT_SIM_LLM_BACKEND"] = "local"
     os.environ["SUPPORT_SIM_LOCAL_MODEL_PATH"] = str(model_path)
