@@ -45,13 +45,15 @@ def plot_resolution_vs_horizon(summary_df: pd.DataFrame, plots_dir: Path) -> Non
     Main figure: Resolution vs Horizon with error bars (std over seeds).
     This is the key finding that Strategy CB improves with horizon while Action CB plateaus.
     """
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(11, 7))
     found = False
     
-    # Color scheme for consistency
-    colors = {"action_cb": "#1f77b4", "strategy_cb": "#ff7f0e", "ppo": "#2ca02c"}
-    line_styles = {"action_cb": "-", "strategy_cb": "-", "ppo": "--"}
+    # Refined color scheme with visual hierarchy
+    colors = {"action_cb": "#4C72B0", "strategy_cb": "#DD8452", "ppo": "#55A868"}
+    line_styles = {"action_cb": "--", "strategy_cb": "-", "ppo": "--"}
+    line_widths = {"action_cb": 2, "strategy_cb": 3.5, "ppo": 2}
 
+    strategy_data = None
     for mode, label in [("action_cb", "Action CB"), ("strategy_cb", "Strategy CB"), ("ppo", "PPO")]:
         subset = summary_df[summary_df["mode"] == mode]
         if subset.empty:
@@ -70,27 +72,59 @@ def plot_resolution_vs_horizon(summary_df: pd.DataFrame, plots_dir: Path) -> Non
             grouped_mean.values, 
             yerr=grouped_std.values,
             marker="o",
-            markersize=7,
-            linewidth=2,
+            markersize=8,
+            linewidth=line_widths.get(mode, 2),
             capsize=5,
             capthick=1.5,
             label=label,
             color=colors.get(mode),
             linestyle=line_styles.get(mode),
-            alpha=0.85
+            alpha=0.9,
+            zorder=3 if mode == "strategy_cb" else 2
         )
+        
+        # Store Strategy CB data for annotation
+        if mode == "strategy_cb":
+            strategy_data = (grouped_mean, grouped_std)
+        
         found = True
 
+    # Annotate peak Strategy CB result
+    if strategy_data is not None:
+        mean_vals, std_vals = strategy_data
+        peak_idx = mean_vals.idxmax()
+        peak_val = mean_vals[peak_idx]
+        ax.annotate(
+            f"Peak: {peak_val:.1%}",
+            xy=(peak_idx, peak_val),
+            xytext=(peak_idx - 2, peak_val + 0.025),
+            fontsize=10,
+            fontweight="bold",
+            color="#DD8452",
+            arrowprops=dict(arrowstyle="->", color="#DD8452", lw=1.5, alpha=0.7),
+            bbox=dict(boxstyle="round,pad=0.4", facecolor="white", edgecolor="#DD8452", linewidth=1.5, alpha=0.9)
+        )
+
     horizons = sorted(summary_df["horizon"].dropna().unique().tolist())
-    ax.set_xlabel("Horizon (turns)", fontsize=12, fontweight="bold")
-    ax.set_ylabel("Resolution Rate", fontsize=12, fontweight="bold")
-    ax.set_title("Figure 1: Resolution Rate vs Horizon", fontsize=14, fontweight="bold", pad=20)
+    ax.set_xlabel("Horizon (turns)", fontsize=13, fontweight="bold")
+    ax.set_ylabel("Resolution Rate", fontsize=13, fontweight="bold")
+    ax.set_title(
+        "Strategy-Level Bandits Improve with Horizon\nWhile Action-Level Bandits Plateau",
+        fontsize=14,
+        fontweight="bold",
+        pad=20
+    )
     if horizons:
         ax.set_xticks(horizons)
-    ax.set_ylim(0.0, 1.0)
-    ax.grid(True, alpha=0.3, linestyle="--")
+    
+    # Tight y-axis to emphasize differences
+    y_min, y_max = 0.0, max(0.2, summary_df["resolution_rate"].max() * 1.15)
+    ax.set_ylim(y_min, y_max)
+    
+    ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.6, zorder=0)
+    ax.set_axisbelow(True)
     if found:
-        ax.legend(fontsize=11, loc="best", framealpha=0.9)
+        ax.legend(fontsize=12, loc="upper left", framealpha=0.95, edgecolor="black", fancybox=True)
     fig.tight_layout()
     fig.savefig(plots_dir / "01_main_resolution_vs_horizon.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -101,7 +135,7 @@ def plot_model_comparison(summary_df: pd.DataFrame, plots_dir: Path) -> None:
     """
     Secondary figure: Compare Action CB vs Strategy CB vs Hybrid with error bars and value labels.
     """
-    fig, ax = plt.subplots(figsize=(9, 6))
+    fig, ax = plt.subplots(figsize=(10, 7))
 
     order = ["action_cb", "strategy_cb", "truncated_hybrid"]
     labels = ["Action CB", "Strategy CB", "Hybrid"]
@@ -126,9 +160,9 @@ def plot_model_comparison(summary_df: pd.DataFrame, plots_dir: Path) -> None:
         plt.close(fig)
         return
 
-    # Bar chart with error bars
-    colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]
-    bars = ax.bar(used_labels, values, color=colors[:len(used_labels)], alpha=0.7, edgecolor="black", linewidth=1.5)
+    # Bar chart with refined colors
+    colors = ["#4C72B0", "#DD8452", "#55A868"]
+    bars = ax.bar(used_labels, values, color=colors[:len(used_labels)], alpha=0.8, edgecolor="black", linewidth=1.5)
     
     # Add error bars
     ax.errorbar(
@@ -137,10 +171,10 @@ def plot_model_comparison(summary_df: pd.DataFrame, plots_dir: Path) -> None:
         yerr=stds,
         fmt="none",
         color="black",
-        capsize=5,
-        capthick=2,
+        capsize=6,
+        capthick=2.5,
         elinewidth=2,
-        alpha=0.7
+        alpha=0.8
     )
     
     # Add value labels on bars
@@ -148,18 +182,23 @@ def plot_model_comparison(summary_df: pd.DataFrame, plots_dir: Path) -> None:
         height = bar.get_height()
         ax.text(
             bar.get_x() + bar.get_width() / 2,
-            height + std + 0.02,
+            height + std + 0.008,
             f"{val:.1%}\n±{std:.1%}",
             ha="center",
             va="bottom",
-            fontsize=11,
+            fontsize=12,
             fontweight="bold"
         )
     
-    ax.set_ylabel("Resolution Rate", fontsize=12, fontweight="bold")
+    ax.set_ylabel("Resolution Rate", fontsize=13, fontweight="bold")
     ax.set_title("Figure 2: Method Comparison", fontsize=14, fontweight="bold", pad=20)
-    ax.set_ylim(0.0, 1.0)
-    ax.grid(True, alpha=0.3, axis="y", linestyle="--")
+    
+    # Tighter y-axis to reduce empty space
+    y_max = max(0.1, max(values) + max(stds) + 0.03)
+    ax.set_ylim(0.0, y_max)
+    
+    ax.grid(True, alpha=0.4, axis="y", linestyle="--", linewidth=0.5)
+    ax.set_axisbelow(True)
     fig.tight_layout()
     fig.savefig(plots_dir / "02_model_comparison.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -175,7 +214,8 @@ def plot_reward_vs_horizon(summary_df: pd.DataFrame, plots_dir: Path) -> None:
     found = False
 
     reward_column = "mean_episode_reward" if "mean_episode_reward" in summary_df.columns else "avg_per_turn_reward"
-    colors = {"action_cb": "#1f77b4", "strategy_cb": "#ff7f0e", "truncated_hybrid": "#2ca02c"}
+    colors = {"action_cb": "#4C72B0", "strategy_cb": "#DD8452", "truncated_hybrid": "#55A868"}
+    line_widths = {"action_cb": 2, "strategy_cb": 2.5, "truncated_hybrid": 2}
 
     for mode, label in [("action_cb", "Action CB"), ("strategy_cb", "Strategy CB"), ("truncated_hybrid", "Hybrid")]:
         subset = summary_df[summary_df["mode"] == mode]
@@ -194,12 +234,12 @@ def plot_reward_vs_horizon(summary_df: pd.DataFrame, plots_dir: Path) -> None:
             yerr=grouped_std.values,
             marker="o",
             markersize=6,
-            linewidth=2,
+            linewidth=line_widths.get(mode, 2),
             capsize=4,
             capthick=1.5,
             label=label,
             color=colors.get(mode),
-            alpha=0.75
+            alpha=0.85
         )
         found = True
 
@@ -209,9 +249,10 @@ def plot_reward_vs_horizon(summary_df: pd.DataFrame, plots_dir: Path) -> None:
     ax.set_title("Supporting Analysis: Reward vs Horizon", fontsize=13, fontweight="bold", pad=20)
     if horizons:
         ax.set_xticks(horizons)
-    ax.grid(True, alpha=0.3, linestyle="--")
+    ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.6)
+    ax.set_axisbelow(True)
     if found:
-        ax.legend(fontsize=11, loc="best")
+        ax.legend(fontsize=11, loc="best", framealpha=0.95)
     fig.tight_layout()
     fig.savefig(plots_dir / "03_supporting_reward_vs_horizon.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -295,6 +336,18 @@ def plot_algorithm_comparison(summary_df: pd.DataFrame, plots_dir: Path) -> None
 
 
 def main() -> None:
+    # Set publication-quality font defaults
+    plt.rcParams.update({
+        "font.size": 11,
+        "axes.titlesize": 14,
+        "axes.labelsize": 12,
+        "xtick.labelsize": 11,
+        "ytick.labelsize": 11,
+        "legend.fontsize": 11,
+        "figure.titlesize": 15,
+        "font.family": "sans-serif"
+    })
+    
     args = parse_args()
     run_dir = Path(args.run_dir)
     plots_dir = _ensure_plots_dir(run_dir)
