@@ -456,7 +456,7 @@ def print_results_summary(df: pd.DataFrame, out_dir: Path) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run contextual bandit experiment suite")
-    parser.add_argument("--artifacts-root", type=str, default="Simulation_4/artifacts")
+    parser.add_argument("--artifacts-root", type=str, default=str(REPO_ROOT / "multiturn_rl" / "simulation" / "artifacts"))
     parser.add_argument("--collect-episodes", type=int, default=300)
     parser.add_argument("--eval-episodes", type=int, default=200)
     parser.add_argument("--horizons", type=str, default="1,2,3,5,8,20")
@@ -485,8 +485,8 @@ def main() -> None:
         output_root=args.output_root,
     )
 
-    run_id = time.strftime("%Y%m%d_%H%M%S")
-    out_dir = Path(cfg.output_root) / run_id
+    # Use output_root directly to match other RL components
+    out_dir = Path(cfg.output_root)
     logs_dir = out_dir / "logs"
     models_dir = out_dir / "models"
     plots_dir = out_dir / "plots"
@@ -559,7 +559,6 @@ def main() -> None:
     aggregate.to_csv(out_dir / "aggregate.csv", index=False)
 
     results_payload = {
-        "run_id": run_id,
         "config": asdict(cfg),
         "n_rows": int(len(df)),
         "output_dir": str(out_dir),

@@ -130,45 +130,38 @@ if ! _is_done "output/nlp-multi-turn"; then
 fi
 
 # ── [3/3] Contextual bandit ───────────────────────────────────────────────
-# Convention (for @BG & @tisha Pu):
-#   Contextual Bandits/main.py        — training; saves logs/csv/json to output/Contextual_bandit/
-#   Contextual Bandits/requirements.txt
-#   Contextual Bandits/visualize.py   — reads output/Contextual_bandit/, writes plots to output/Contextual_bandit/plots/
-#
-# Uncomment the block below once main.py and visualize.py are committed.
 echo ""
 echo "  [3/3] Contextual bandit..."
 
-# ──────────────────────────────────────────────────────────────────────────
-# UNCOMMENT WHEN TEAM CODE IS READY:
-#
-# _CB_DIR="$ROOT_DIR/Contextual Bandits"
-# _CB_OUT="$ROOT_DIR/output/Contextual_bandit"
-#
-# if [ -f "$_CB_DIR/main.py" ]; then
-#   mkdir -p "$_CB_OUT/plots"
-#
-#   # Install contextual bandit dependencies
-#   if [ -f "$_CB_DIR/requirements.txt" ]; then
-#     python -m pip install -r "$_CB_DIR/requirements.txt" -q
-#   fi
-#
-#   # Train
-#   echo "  Running Contextual Bandit training..."
-#   python "$_CB_DIR/main.py"
-#
-#   # Visualize
-#   if [ -f "$_CB_DIR/visualize.py" ]; then
-#     echo "  Generating Contextual Bandit plots..."
-#     python "$_CB_DIR/visualize.py"
-#   fi
-# else
-#   echo "  [skip] Contextual Bandits/main.py not found — team code pending."
-# fi
-# ──────────────────────────────────────────────────────────────────────────
+_CB_DIR="$ROOT_DIR/Contextual Bandits"
+_CB_OUT="$ROOT_DIR/output/Contextual_bandit"
 
-echo "  [skip] Contextual bandit code pending (team: @BG & @tisha Pu)."
-mkdir -p "$ROOT_DIR/output/Contextual_bandit/plots"
+if ! _is_done "output/Contextual_bandit"; then
+  if [ -f "$_CB_DIR/main.py" ]; then
+    mkdir -p "$_CB_OUT/plots"
+
+    # Install contextual bandit dependencies
+    if [ -f "$_CB_DIR/requirements.txt" ]; then
+      echo "  [setup] Installing Contextual Bandit dependencies..."
+      python -m pip install -r "$_CB_DIR/requirements.txt" -q
+    fi
+
+    # Train
+    echo "  Running Contextual Bandit training (this may take a bit)..."
+    python "$_CB_DIR/main.py" --output-root "$_CB_OUT"
+
+    # Visualize
+    if [ -f "$_CB_DIR/plot_bandit_results.py" ]; then
+      echo "  Generating Contextual Bandit plots..."
+      python "$_CB_DIR/plot_bandit_results.py" --run-dir "$_CB_OUT"
+    fi
+
+    # Mark as done
+    echo '{"status": "completed"}' > "$_CB_OUT/training_summary.json"
+  else
+    echo "  [skip] Contextual Bandits/main.py not found."
+  fi
+fi
 
 # ── Summary ───────────────────────────────────────────────────────────────
 echo ""
