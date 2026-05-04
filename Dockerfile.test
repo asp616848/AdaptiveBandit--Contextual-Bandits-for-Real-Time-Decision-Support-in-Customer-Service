@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
 
-# Minimal dependencies only - no build-essential
+# Minimal dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 python3-pip python3-venv \
     git curl ca-certificates \
@@ -11,12 +11,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /workspace
 
-COPY . /workspace/
+# Clone repo from GitHub
+RUN git clone https://github.com/abhi6168/AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service.git . && \
+    git config --global --add safe.directory /workspace
 
+# Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
+# Set environment variables for reduced training timesteps
 ENV NUM_TIMESTEPS_NUMERICAL=2
 ENV NUM_TIMESTEPS_NLG=2
 
+# Run the full pipeline
 CMD ["bash", "run.sh"]
