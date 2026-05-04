@@ -1,0 +1,142 @@
+{
+  "subflow": "mistimed_billing_never_bought",
+  "tier": "Free",
+  "persona": "high_engagement_resolver",
+  "rho": 0.7205100842777737,
+  "sigma": 0.3813727663790684,
+  "tau": 0.826629248640968,
+  "initial_customer_message": "I'm really hoping you can help me with this issue. Our company credit card was suddenly charged $174 by Lumo on March 10th, but we don't even have a Lumo account as a company - and no one was authorized to create one. I think it's possible that a former employee may have created a workspace with our company card before they left the company.",
+  "outcome": "escalated",
+  "total_reward": -4.51455787616616,
+  "turns": 5,
+  "episode_log": [
+    {
+      "turn": 1,
+      "action": "AskInfo",
+      "agent_text": "Hi, could you mention company name and transaction number so that i can look it up in our database?",
+      "customer_utterance": "I'm not sure how to find or shut down a workspace I didn't create, and I'd appreciate any guidance you can offer on resolving this situation.",
+      "state_post": {
+        "information": 0.2355,
+        "progress": 0.0763,
+        "frustration": 0.3267,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": false,
+        "gain_occurred": false,
+        "delta_i": 0.0,
+        "delta_cumulative_values": 0.0,
+        "slots_to_reveal": 0,
+        "outcome": "no_gain",
+        "terminal_type": null,
+        "slots_revealed": [],
+        "revealed_slots": [],
+        "customer_utterance": "I'm not sure how to find or shut down a workspace I didn't create, and I'd appreciate any guidance you can offer on resolving this situation.",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "action": "AskInfo",
+      "agent_text": "Could you please tell me the last 4 digits of the company card that was charged? And also rhe billing email address associated with the card.",
+      "customer_utterance": "I'm not sure what my former employee would have used to create a workspace or how I can find it without knowing their login credentials.",
+      "state_post": {
+        "information": 0.2355,
+        "progress": 0.0763,
+        "frustration": 0.3451,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": false,
+        "gain_occurred": false,
+        "delta_i": 0.0,
+        "delta_cumulative_values": 0.0,
+        "slots_to_reveal": 0,
+        "outcome": "no_gain",
+        "terminal_type": null,
+        "slots_revealed": [],
+        "revealed_slots": [],
+        "customer_utterance": "I'm not sure what my former employee would have used to create a workspace or how I can find it without knowing their login credentials.",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 3,
+      "action": "AskInfo",
+      "agent_text": "Any documentation of the employee's departure?",
+      "customer_utterance": "I'm not sure what my former employee would have used to create a workspace or how I can find it without knowing their login credentials.",
+      "state_post": {
+        "information": 0.2355,
+        "progress": 0.0763,
+        "frustration": 0.3634,
+        "failed_streak": 0
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "AskInfo",
+        "gain_occurs": false,
+        "gain_occurred": false,
+        "delta_i": 0.0,
+        "delta_cumulative_values": 0.0,
+        "slots_to_reveal": 0,
+        "outcome": "no_gain",
+        "terminal_type": null,
+        "slots_revealed": [],
+        "revealed_slots": [],
+        "customer_utterance": "I'm not sure what my former employee would have used to create a workspace or how I can find it without knowing their login credentials.",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 4,
+      "action": "ProvideSolution",
+      "agent_text": "Alright. i will give u a refund for it.",
+      "customer_utterance": "Ugh, I was really hoping you had a solution for me by now. Unfortunately, your previous suggestion didn't help at all.",
+      "state_post": {
+        "information": 0.2355,
+        "progress": 0.0763,
+        "frustration": 0.475,
+        "failed_streak": 1
+      },
+      "reward": -0.1,
+      "transition": {
+        "action": "ProvideSolution",
+        "outcome": "failure",
+        "p_success_used": 0.0341,
+        "terminal_type": null,
+        "customer_utterance": "Ugh, I was really hoping you had a solution for me by now. Unfortunately, your previous suggestion didn't help at all.",
+        "per_turn_reward": -0.1,
+        "terminal_reward": 0.0
+      }
+    },
+    {
+      "turn": 5,
+      "action": "Escalate",
+      "agent_text": "let me escalate it to a human agent..",
+      "customer_utterance": "Are you kidding me? You're just passing it off to someone else without even trying to help me resolve this issue?! I'm so frustrated and annoyed at this point, I don't know what to do anymore. Can you please explain why you can't handle this simple problem yourself?!",
+      "state_post": {
+        "information": 0.2355,
+        "progress": 0.0763,
+        "frustration": 0.475,
+        "failed_streak": 1
+      },
+      "reward": -4.1146,
+      "transition": {
+        "action": "Escalate",
+        "outcome": "escalated",
+        "terminal_type": "escalation",
+        "resolved": false,
+        "customer_utterance": "Are you kidding me? You're just passing it off to someone else without even trying to help me resolve this issue?! I'm so frustrated and annoyed at this point, I don't know what to do anymore. Can you please explain why you can't handle this simple problem yourself?!",
+        "per_turn_reward": -0.1,
+        "terminal_reward": -4.0146
+      }
+    }
+  ]
+}

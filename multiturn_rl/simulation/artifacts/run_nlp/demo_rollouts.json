@@ -1,0 +1,290 @@
+[
+  {
+    "episode": 0,
+    "subflow": "manage_downgrade",
+    "tier": "Enterprise",
+    "persona": "low_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.1766243065827531,
+        "pre_information": 0.04798433413347136,
+        "pre_progress": 0.024225744885432568,
+        "pre_frustration": 0.07412311908530124,
+        "post_information": 0.04798433413347136,
+        "post_progress": 0.024225744885432568,
+        "post_frustration": 0.07412311908530124,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 1,
+    "subflow": "out_of_stock_general",
+    "tier": "Free",
+    "persona": "high_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -1.6537284919841175,
+        "pre_information": 0.08774588964271211,
+        "pre_progress": 0.0243946898552153,
+        "pre_frustration": 0.14379535633682924,
+        "post_information": 0.08774588964271211,
+        "post_progress": 0.0243946898552153,
+        "post_frustration": 0.14379535633682924,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 2,
+    "subflow": "status_delivery_date",
+    "tier": "Pro",
+    "persona": "silent_dropout",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -1.3413225355728937,
+        "pre_information": 0.15488244118789,
+        "pre_progress": 0.06565491236325699,
+        "pre_frustration": 0.2811229657617997,
+        "post_information": 0.15488244118789,
+        "post_progress": 0.06565491236325699,
+        "post_frustration": 0.2811229657617997,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 3,
+    "subflow": "boots_other_2",
+    "tier": "Enterprise",
+    "persona": "high_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.19871861714461764,
+        "pre_information": 0.08647176469424622,
+        "pre_progress": 0.054205040175155594,
+        "pre_frustration": 0.45917100043788966,
+        "post_information": 0.08647176469424622,
+        "post_progress": 0.054205040175155594,
+        "post_frustration": 0.45917100043788966,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 4,
+    "subflow": "manage_change_address",
+    "tier": "Business",
+    "persona": "low_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.17845420220330238,
+        "pre_information": 0.21277090917716604,
+        "pre_progress": 0.0623797632887555,
+        "pre_frustration": 0.16964908483376726,
+        "post_information": 0.21277090917716604,
+        "post_progress": 0.0623797632887555,
+        "post_frustration": 0.16964908483376726,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 5,
+    "subflow": "status_credit_missing",
+    "tier": "Free",
+    "persona": "high_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -1.6544539275369166,
+        "pre_information": 0.06110761827733332,
+        "pre_progress": 0.06311317764420293,
+        "pre_frustration": 0.17531419268100534,
+        "post_information": 0.06110761827733332,
+        "post_progress": 0.06311317764420293,
+        "post_frustration": 0.17531419268100534,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 6,
+    "subflow": "status_service_added",
+    "tier": "Enterprise",
+    "persona": "low_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.1845928295304341,
+        "pre_information": 0.06172875286174189,
+        "pre_progress": 0.020608128387273942,
+        "pre_frustration": 0.07350113332849956,
+        "post_information": 0.06172875286174189,
+        "post_progress": 0.020608128387273942,
+        "post_frustration": 0.07350113332849956,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 7,
+    "subflow": "jeans_other_3",
+    "tier": "Business",
+    "persona": "escalation_prone",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.2905832676016884,
+        "pre_information": 0.23258440964261945,
+        "pre_progress": 0.03295383717165188,
+        "pre_frustration": 0.13423109591992788,
+        "post_information": 0.23258440964261945,
+        "post_progress": 0.03295383717165188,
+        "post_frustration": 0.13423109591992788,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 8,
+    "subflow": "pricing_3",
+    "tier": "Pro",
+    "persona": "high_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -1.303490845333037,
+        "pre_information": 0.4487088092388353,
+        "pre_progress": 0.07418082545817586,
+        "pre_frustration": 0.28581494840304766,
+        "post_information": 0.4487088092388353,
+        "post_progress": 0.07418082545817586,
+        "post_frustration": 0.28581494840304766,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 9,
+    "subflow": "recover_username",
+    "tier": "Business",
+    "persona": "escalation_prone",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.2514344631959338,
+        "pre_information": 0.030760599152739987,
+        "pre_progress": 0.012073163290704519,
+        "pre_frustration": 0.14863192009977075,
+        "post_information": 0.030760599152739987,
+        "post_progress": 0.012073163290704519,
+        "post_frustration": 0.14863192009977075,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 10,
+    "subflow": "recover_username",
+    "tier": "Business",
+    "persona": "low_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.17449137602480883,
+        "pre_information": 0.23398541633520023,
+        "pre_progress": 0.06578484652180742,
+        "pre_frustration": 0.18944657930418168,
+        "post_information": 0.23398541633520023,
+        "post_progress": 0.06578484652180742,
+        "post_frustration": 0.18944657930418168,
+        "terminal_type": "escalation"
+      }
+    ]
+  },
+  {
+    "episode": 11,
+    "subflow": "manage_cancel",
+    "tier": "Enterprise",
+    "persona": "high_engagement_resolver",
+    "turn_count": 1,
+    "resolved": 0,
+    "escalated": 1,
+    "dropped_off": 0,
+    "terminal_type": "escalation",
+    "trajectory": [
+      {
+        "action": "Escalate",
+        "reward": -0.19572917712047694,
+        "pre_information": 0.11961522501027019,
+        "pre_progress": 0.019815697358346967,
+        "pre_frustration": 0.2260543709874586,
+        "post_information": 0.11961522501027019,
+        "post_progress": 0.019815697358346967,
+        "post_frustration": 0.2260543709874586,
+        "terminal_type": "escalation"
+      }
+    ]
+  }
+]

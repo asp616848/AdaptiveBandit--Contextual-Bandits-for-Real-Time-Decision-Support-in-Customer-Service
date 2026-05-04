@@ -1,0 +1,110 @@
+ROW_COUNTS
+extract1_conversation_stats.csv: 10042
+extract2_action_sequences.csv: 10042
+extract3_subflow_stats.csv: 96
+extract4_information_by_turn.csv: 36482
+extract5_behavioral_feature_table.csv: 10042
+abcd_phase1_overview.csv: 4
+
+OVERVIEW_FULL
+member_level  conversations  mean_turns  p95_turns  resolution_rate  escalation_rate  dropout_rate  mean_action_count
+       guest           2592   22.096836      36.00         0.855710         0.063657      0.006944           3.575617
+        gold           2586   21.859629      35.00         0.880124         0.047564      0.009281           3.677108
+      silver           2462   22.151909      35.95         0.866369         0.060926      0.006905           3.658408
+      bronze           2402   21.915487      35.00         0.853039         0.063281      0.007077           3.621149
+
+FULL_CORPUS_RATES
+resolution_rate=0.863971
+escalation_rate=0.058753
+
+TOP_10_SUBFLOWS_BY_ESCALATION_RATE
+                      subflow  mean_turns  mean_action_count  resolution_rate  escalation_rate  conversation_count
+         out_of_stock_general   20.221429           2.785714         0.028571         0.971429                 140
+        out_of_stock_one_item   21.480315           3.716535         0.078740         0.913386                 127
+                   slow_speed   20.844000           2.880000         0.484000         0.500000                 250
+             manage_extension   24.127273           4.290909         0.618182         0.339394                 165
+               search_results   21.544402           2.571429         0.667954         0.247104                 259
+                boots_other_3   17.529412           3.382353         0.705882         0.235294                  34
+          manage_dispute_bill   24.878947           4.315789         0.810526         0.105263                 190
+mistimed_billing_never_bought   23.935252           4.208633         0.856115         0.064748                 139
+                boots_other_1   16.238095           2.857143         0.904762         0.047619                  42
+          bad_price_yesterday   23.877698           3.877698         0.913669         0.035971                 139
+
+TOP_10_SUBFLOWS_BY_MEAN_TURNS
+              subflow  mean_turns  mean_action_count  resolution_rate  escalation_rate  conversation_count
+          return_size   29.575916           4.712042         0.895288         0.020942                 191
+         return_stain   28.604790           4.640719         0.904192         0.023952                 167
+         return_color   28.394444           4.638889         0.916667         0.011111                 180
+      refund_initiate   28.159091           4.857955         0.937500         0.000000                 176
+manage_payment_method   27.916667           4.111111         0.888889         0.000000                  36
+        manage_cancel   27.560000           4.512000         0.952000         0.000000                 125
+              missing   26.865900           4.616858         0.923372         0.003831                 261
+     status_questions   26.366667           4.533333         0.900000         0.000000                  30
+manage_change_address   26.176471           4.372549         0.882353         0.019608                  51
+               status   26.123134           4.518657         0.929104         0.007463                 268
+
+ESCALATION_SAMPLES
+--- convo_id=131 ---
+t01 [agent] Hi, how can I help you today?
+t02 [customer] Hi There, trying to navigate your site however it's running really slow
+t03 [customer] Images are taking way to long to load, and I know it's not on my side ... any ideas?
+t04 [agent] Have you tried logging out and back in again?
+t05 [customer] I have not, give me a sec and let me try that
+t06 [agent] Ok, let me know how that goes!
+t07 [customer] ok logged back in, still slow
+t08 [customer] In fact it's still sitting here spinning trying to go to next page
+t09 [agent] I see you mentioned that you don't think it's an error on your end, so you haven't been having any issues with other websites loading slowly?
+t10 [customer] No i haven't I was just another site and it worked great, this is one super slow
+t11 [customer] do you think maybe there is an issue on your end and maybe try at later time?
+t12 [agent] If you have a lot of tabs or other programs open this can also cause a slowdown on our website loading times. Would you mind double checking this for me? If it doesn't help then it's most likely on our end and I can write up a report for our website
+t13 [customer] I do have a few tabs open, let me close them and i will log back in
+t14 [agent] Ok, thank you for checking this.
+t15 [customer] Yay! that seemed to work!  working much better now, Thanks! : )
+t16 [agent] Great, I'm so glad to hear that!
+t17 [agent] Is there anything else I can help you with today?
+t18 [customer] No that was it, thanks again.  Have a great day!
+t19 [agent] Thanks, you too!
+t20 [action] Agent is looking for solutions ... | action=instructions
+t21 [action] The  has been notified. | action=notify-team
+t22 [action] Details of  have been entered. | action=enter-details
+t23 [action] Agent is looking for solutions ... | action=instructions
+--- convo_id=148 ---
+t01 [customer] ok
+t02 [customer] it's sanya afzal, 398-287-9118, 7767 2nd ave, brighton ca 3549
+t03 [customer] hi there
+t04 [agent] Hello how can I help you today?
+t05 [customer] i'm trying to get into my account to check on my order, but unfortunately, i seem to have forgotten my username :/
+t06 [customer] what do i do?
+t07 [agent] Okay Okay I just need to verify your Identity.
+t08 [customer] sure
+t09 [agent] I need your full name address and your phone number or email
+t10 [agent] Do you ee your user name on the screen?
+t11 [customer] i don't, no
+t12 [customer] it says "account has been pulled up for ." just a period
+t13 [agent] Okay give me a minute to find out why that is not working.
+t14 [customer] sure
+t15 [agent] I am going to notify the Internal team to see if we can get this issue resolved. You should here from them soon
+t16 [customer] ok, thanks
+t17 [agent] Sorry I could not help you at the moment. Thank you for your business and patience.
+t18 [customer] no worries, thanks again
+t19 [action] Identity verification in progess ... | action=verify-identity
+t22 [action] Account has been pulled up for . | action=pull-up-account
+t23 [action] The  has been notified. | action=notify-team
+--- convo_id=181 ---
+t01 [agent] Hi! How may I help you?
+t02 [customer] Hello, I keep looking for a few different items but they all seem to be out of stock every time I check.
+t03 [agent] I'm so sorry to hear that! Let me see what I can do.
+t04 [agent] Ok. I have notified the purchasing department of your complaint. May I help you with anything else?
+t05 [customer] That's all. Just want to give you some money but the site won't let me! :)
+t06 [agent] So sorry about that again! Have a great day :)
+t07 [action] Searching the FAQ pages ... | action=search-faq
+t08 [action] System Action: search pricing | action=search-pricing
+t09 [action] System Action: search timing | action=search-timing
+t10 [action] System Action: search membership | action=search-membership
+t11 [action] System Action: search policy | action=search-policy
+t12 [action] System Action: search pricing | action=search-pricing
+t13 [action] System Action: search timing | action=search-timing
+t14 [action] System Action: search membership | action=search-membership
+t15 [action] System Action: search policy | action=search-policy
+t16 [action] Agent is looking for solutions ... | action=try-again
+t17 [action] The purchasing department has been notified. | action=notify-team

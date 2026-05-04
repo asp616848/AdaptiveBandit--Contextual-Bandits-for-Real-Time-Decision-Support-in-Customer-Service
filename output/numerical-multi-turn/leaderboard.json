@@ -1,0 +1,26 @@
+[
+  {
+    "policy": "ppo_trained",
+    "mean_reward": 0.5624855946270815
+  },
+  {
+    "policy": "document_guided",
+    "mean_reward": 0.4700265616367298
+  },
+  {
+    "policy": "always_escalate",
+    "mean_reward": -0.9014466349639414
+  },
+  {
+    "policy": "random",
+    "mean_reward": -1.1382871875107319
+  },
+  {
+    "policy": "threshold_escalate",
+    "mean_reward": -1.4544238469502242
+  },
+  {
+    "policy": "always_solve",
+    "mean_reward": -1.7712954166216417
+  }
+]

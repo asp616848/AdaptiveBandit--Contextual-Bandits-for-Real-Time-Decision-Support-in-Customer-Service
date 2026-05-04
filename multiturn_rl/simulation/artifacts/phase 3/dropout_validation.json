@@ -1,0 +1,85 @@
+{
+  "formula": "sigmoid(-5.00 + 3.5*f + 0.3*failed_streak + 0.1*turn_count - 2.0*tau)",
+  "coefficients": {
+    "intercept": -5.0,
+    "frustration": 3.5,
+    "failed_streak": 0.3,
+    "turn_count": 0.1,
+    "tau": -2.0
+  },
+  "empirical_dropout_rate": 0.007568213503286198,
+  "state_evaluations": [
+    {
+      "state": "State 1",
+      "f": 0.1,
+      "failed_streak": 0,
+      "turn_count": 5,
+      "tau": 0.7,
+      "p_dropout": 0.0038724034406710283,
+      "p_dropout_rounded_2dp": 0.0,
+      "expected_range": [
+        0.0,
+        0.02
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "State 2",
+      "f": 0.3,
+      "failed_streak": 0,
+      "turn_count": 10,
+      "tau": 0.6,
+      "p_dropout": 0.015519756578408886,
+      "p_dropout_rounded_2dp": 0.02,
+      "expected_range": [
+        0.02,
+        0.05
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "State 3",
+      "f": 0.5,
+      "failed_streak": 1,
+      "turn_count": 15,
+      "tau": 0.5,
+      "p_dropout": 0.07943854918397836,
+      "p_dropout_rounded_2dp": 0.08,
+      "expected_range": [
+        0.05,
+        0.15
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "State 4",
+      "f": 0.7,
+      "failed_streak": 2,
+      "turn_count": 18,
+      "tau": 0.3,
+      "p_dropout": 0.320821300824607,
+      "p_dropout_rounded_2dp": 0.32,
+      "expected_range": [
+        0.15,
+        0.35
+      ],
+      "within_expected_range": true
+    },
+    {
+      "state": "State 5",
+      "f": 0.9,
+      "failed_streak": 3,
+      "turn_count": 20,
+      "tau": 0.2,
+      "p_dropout": 0.6570104626734987,
+      "p_dropout_rounded_2dp": 0.66,
+      "expected_range": [
+        0.35,
+        1.0
+      ],
+      "within_expected_range": true
+    }
+  ],
+  "coefficients_adjusted": true,
+  "all_states_within_expected_range": true
+}

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  adaptive-bandit-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      NUM_TIMESTEPS_NUMERICAL: "2"
+      NUM_TIMESTEPS_NLG: "2"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./output:/workspace/output
+      - ./best_model:/workspace/best_model
+    container_name: adaptive-bandit-validation
+    command: /bin/bash -c "echo 'Pipeline completed! Check output/ and best_model/ directories'"

@@ -1,0 +1,6 @@
+
+══════════════════════════════════════════════════════════════════════
+  NLP multi-turn RL  (PPO · NLG enabled · 50 steps · ollama (llama3 @ http://localhost:11434/v1))
+══════════════════════════════════════════════════════════════════════
+Using cuda device
+Logging to /home/abhi/College/RL/AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/multiturn_rl/Simulation_4/artifacts/run_nlp/tensorboard/PPO_2

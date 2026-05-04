@@ -1,0 +1,61 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+MILESTONES
+600000: resolution_rate=0.5100, mean_reward=1.3404, escalation_rate=0.3100
+700000: resolution_rate=0.5050, mean_reward=1.2838, escalation_rate=0.3000
+800000: resolution_rate=0.5400, mean_reward=1.3799, escalation_rate=0.2700
+900000: resolution_rate=0.5800, mean_reward=1.3583, escalation_rate=0.2000
+1000000: resolution_rate=0.6000, mean_reward=1.5080, escalation_rate=0.1950
+TABLE_MASKED
+PPO v3	1.242456	0.562000	0.171000	0.226000	0.041000	10.118000
+document_guided	0.294265	0.514000	0.136000	0.235000	0.063000	11.562000
+threshold_escalate	-1.528155	0.012000	0.024000	0.042000	0.001000	3.743000
+random	-1.589286	0.002000	0.494000	0.017000	0.000000	2.482000
+always_escalate	-1.629675	0.000000	1.000000	0.000000	0.000000	1.000000
+always_solve	-1.993573	0.053000	0.000000	0.947000	0.000000	7.256000
+TABLE_UNMASKED
+PPO v3	1.242456	0.562000	0.171000	0.226000	0.041000	10.118000
+document_guided	0.294265	0.514000	0.136000	0.235000	0.063000	11.562000
+threshold_escalate	-1.528155	0.012000	0.024000	0.042000	0.001000	3.743000
+random	-1.589286	0.002000	0.494000	0.017000	0.000000	2.482000
+always_escalate	-1.629675	0.000000	1.000000	0.000000	0.000000	1.000000
+always_solve	-1.993573	0.053000	0.000000	0.947000	0.000000	7.256000
+DocumentStore loaded:
+  lumo_doc1_company_product_overview.md: 22 chunks
+  lumo_doc2_support_policies.md: 48 chunks
+  lumo_doc3_issue_playbooks.md: 59 chunks
+  Total chunks: 129
+  Mean chunk size: 787 characters
+  Min chunk size: 45 characters
+  Max chunk size: 1000 characters
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5190.72it/s]
+[1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.[0m
+CLOSE_BREAKDOWN
+total_close_actions=0
+ORDER_UNMASKED
+PPO v3 > document_guided > threshold_escalate > random > always_escalate > always_solve
+CRITERIA
+1_masked_resolution_gt_50=True
+2_unmasked_resolution_gt_40=True
+3_gap_lt_15pp=True
+4_unmasked_mean_turns_gt_8=True
+5_close_lt20_lt10pct=True
+6_enterprise_escalation_gt_free=True
+7_policy_ordering=True
+criteria_pass_count=7/7
+MEAN_TURNS
+masked=10.118000
+unmasked=10.118000
+ESC_TIER_UNMASKED
+Free=0.000000
+Pro=0.000000
+Business+=0.043269
+Enterprise=0.635294
+ADDITIONAL_TRAINING_TIME_SECONDS=1145.7399837970734
+INITIAL_TIMESTEPS=500000
+FINAL_TIMESTEPS=1007904

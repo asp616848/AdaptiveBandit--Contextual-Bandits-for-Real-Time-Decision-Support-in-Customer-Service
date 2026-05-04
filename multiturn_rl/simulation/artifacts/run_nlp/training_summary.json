@@ -1,0 +1,13 @@
+{
+  "total_timesteps": 5000,
+  "training_time_seconds": 19.560574054718018,
+  "curriculum_enabled": true,
+  "reward_shaping_enabled": true,
+  "nlg_enabled": true,
+  "best_eval_reward": -Infinity,
+  "baseline_beaten": false,
+  "baseline_beaten_step": null,
+  "final_resolution_rate": 0.022608695652173914,
+  "n_envs": 1,
+  "seed": 42
+}

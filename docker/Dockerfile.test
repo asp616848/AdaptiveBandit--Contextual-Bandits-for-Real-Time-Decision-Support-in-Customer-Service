@@ -1,0 +1,33 @@
+FROM ubuntu:22.04
+
+# Prevent interactive prompts during build
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-venv \
+    python3-pip \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy the entire repo into the container
+COPY . /workspace/
+
+# Run the end-to-end pipeline with minimal steps
+# 2 timesteps each for numerical, NLG, and contextual bandit
+RUN NUM_TIMESTEPS_NUMERICAL=2 \
+    NUM_TIMESTEPS_NLG=2 \
+    bash /workspace/run.sh
+
+# Output summary
+RUN echo "Pipeline execution completed!" && \
+    ls -lah /workspace/output/ && \
+    ls -lah /workspace/best_model/
+
+CMD ["/bin/bash"]

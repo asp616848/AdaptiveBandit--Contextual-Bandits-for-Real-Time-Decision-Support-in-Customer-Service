@@ -1,15 +1,18 @@
-/OpenAssistant Conversations Dataset
-/twitter
-/Ubuntu
-/Submissions_AML
-<<<<<<< HEAD
-.qodo
-_pycache_
-=======
-current report.txt
-<<<<<<< HEAD
->>>>>>> cc3432e9f69061b550ff08c5ed80572737bd9f02
-=======
-/Simulation/artifacts
->>>>>>> 48a79ed639df2b550b2af01a04bf54864cfae3d4
-/.linux_deploy
+.venv/
+.venv_smoke/
+
+__pycache__/
+**/__pycache__/
+*.pyc
+
+.pytest_cache/
+.mypy_cache/
+
+*.parquet
+/multiturn_rl/Qwen2.5-7B-Instruct-merged
+dataset/abcd_v1.1.json
+
+# Generated training outputs
+# output/
+best_model/
+/multiturn_rl/simulation/training/__pycache__

@@ -1,0 +1,34 @@
+{
+  "config": {
+    "artifacts_root": "/home/abhi/College/RL/AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/multiturn_rl/simulation/artifacts",
+    "collect_episodes": 300,
+    "eval_episodes": 200,
+    "horizons": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      20
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "algorithms": [
+      "linucb",
+      "thompson",
+      "epsilon"
+    ],
+    "hybrid_k": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "output_root": "/home/abhi/College/RL/AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/output/Contextual_bandit"
+  },
+  "n_rows": 270,
+  "output_dir": "/home/abhi/College/RL/AdaptiveBandit--Contextual-Bandits-for-Real-Time-Decision-Support-in-Customer-Service/output/Contextual_bandit"
+}

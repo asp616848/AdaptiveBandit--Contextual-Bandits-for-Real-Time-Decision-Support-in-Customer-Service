@@ -1,0 +1,19 @@
+# Minimal dependencies to run the end-to-end pipeline in Ubuntu 22.04
+# (NLP features are implemented with an offline-safe hashing fallback.)
+
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.7
+
+gymnasium>=0.29
+stable-baselines3>=2.2.1
+tensorboard>=2.10
+
+# RAG retriever (pre-built index at Multi-Turn RL/Simulation_4/rag/index/)
+faiss-cpu>=1.7
+
+# NLG layer uses the openai client to talk to ollama's OpenAI-compatible API
+openai>=1.0
+
+# NLGLayer.check_ollama_available() uses requests
+requests>=2.28

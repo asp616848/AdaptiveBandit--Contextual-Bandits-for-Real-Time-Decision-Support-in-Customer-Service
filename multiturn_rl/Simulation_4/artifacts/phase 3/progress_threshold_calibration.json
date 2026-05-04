@@ -1,0 +1,13 @@
+{
+  "n_resolved_with_solution_attempt": 4687,
+  "mean_progress_at_resolution": 0.8865026080185806,
+  "median_progress_at_resolution": 0.9777158774373257,
+  "p25_progress_at_resolution": 0.8403755868544601,
+  "fraction_progress_lt_0_5": 0.05845956902069554,
+  "fraction_progress_0_5_to_0_7": 0.10198421164924258,
+  "fraction_progress_0_7_to_0_85": 0.11243866012374654,
+  "fraction_progress_0_85_to_1_0": 0.7271175592063154,
+  "recommended_auto_resolve_threshold": 0.8403755868544601,
+  "threshold_changed": false,
+  "auto_resolve_threshold_final": 0.85
+}

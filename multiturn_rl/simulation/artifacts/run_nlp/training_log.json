@@ -1,0 +1,15 @@
+{
+  "metrics_history": [
+    {
+      "timesteps": 5000,
+      "mean_reward_100ep": -0.96633434,
+      "mean_episode_length_100ep": 2.46,
+      "resolution_rate": 0.022608695652173914,
+      "escalation_rate": 0.948695652173913,
+      "dropout_rate": 0.028695652173913042,
+      "timeout_rate": 0.0,
+      "episodes_seen": 2029
+    }
+  ],
+  "eval_history": []
+}

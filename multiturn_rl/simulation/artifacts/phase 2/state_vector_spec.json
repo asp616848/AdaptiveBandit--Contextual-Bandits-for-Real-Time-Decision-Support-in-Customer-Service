@@ -1,0 +1,312 @@
+{
+  "state_vector_version": "1.0",
+  "data_source": "ABCD v1.1",
+  "static_variables": {
+    "subflow": {
+      "type": "categorical",
+      "n_values": 55,
+      "init": "sample from empirical subflow frequency in ABCD train split",
+      "subflow_frequencies_top10": [
+        {
+          "subflow": "recover_username",
+          "frequency": 0.03594901414060944
+        },
+        {
+          "subflow": "reset_2fa",
+          "frequency": 0.03495319657438757
+        },
+        {
+          "subflow": "recover_password",
+          "frequency": 0.03345947022505477
+        },
+        {
+          "subflow": "bad_price",
+          "frequency": 0.028679545907189803
+        },
+        {
+          "subflow": "membership",
+          "frequency": 0.027982473610834495
+        },
+        {
+          "subflow": "pricing",
+          "frequency": 0.02758414658434575
+        },
+        {
+          "subflow": "mistimed_billing",
+          "frequency": 0.02748456482772356
+        },
+        {
+          "subflow": "policy",
+          "frequency": 0.027086237801234814
+        },
+        {
+          "subflow": "status",
+          "frequency": 0.026687910774746068
+        },
+        {
+          "subflow": "out_of_stock_general",
+          "frequency": 0.026588329018123878
+        }
+      ],
+      "effect": "determines difficulty prior, mu_ask_conditional, alpha_subflow offset"
+    },
+    "tier": {
+      "type": "categorical",
+      "values": [
+        "guest",
+        "bronze",
+        "silver",
+        "gold",
+        "platinum",
+        "vip"
+      ],
+      "init_frequencies": {
+        "guest": 0.2581159131647082,
+        "bronze": 0.23919537940649274,
+        "silver": 0.24517028480382394,
+        "gold": 0.2575184226249751,
+        "platinum": 0.0,
+        "vip": 0.0
+      },
+      "effect": "reward function only - escalation cost and churn value"
+    },
+    "difficulty": {
+      "type": "continuous",
+      "range": [
+        0,
+        1
+      ],
+      "init": "Beta(alpha_subflow, beta_subflow) - see difficulty_beta_params.csv",
+      "mean_alpha_across_subflows": 5.627310267404449,
+      "mean_beta_across_subflows": 3.1496682963889406,
+      "difficulty_proxy": {
+        "definition": "action_count_only",
+        "formula": "subflow_relative_action_count / subflow_mean_action_count",
+        "normalization": "global p95 cap across all conversations, clipped to [0.01, 0.99]",
+        "source_features": [
+          "mean_action_count"
+        ],
+        "source_files": [
+          "extract3"
+        ],
+        "n_subflows": 55,
+        "top5_hardest": [
+          "status_due_amount",
+          "refund_initiate",
+          "return_size",
+          "status_due_date",
+          "return_stain"
+        ],
+        "top5_easiest": [
+          "refund_status",
+          "shopping_cart",
+          "search_results",
+          "credit_card",
+          "recover_username"
+        ]
+      },
+      "normalization_cap_p95": 1.525515743756786,
+      "hardest_subflows": [
+        {
+          "subflow": "promo_code_invalid",
+          "fitted_mean_difficulty_proxy": 1.0
+        },
+        {
+          "subflow": "return_stain",
+          "fitted_mean_difficulty_proxy": 0.9961514692586037
+        },
+        {
+          "subflow": "cost",
+          "fitted_mean_difficulty_proxy": 0.995668169446671
+        },
+        {
+          "subflow": "status_mystery_fee",
+          "fitted_mean_difficulty_proxy": 0.9956364811020878
+        },
+        {
+          "subflow": "recover_password",
+          "fitted_mean_difficulty_proxy": 0.9954369640060469
+        }
+      ],
+      "easiest_subflows": [
+        {
+          "subflow": "refund_status",
+          "fitted_mean_difficulty_proxy": 0.9298175461762502
+        },
+        {
+          "subflow": "status_questions",
+          "fitted_mean_difficulty_proxy": 0.9308939411169239
+        },
+        {
+          "subflow": "shopping_cart",
+          "fitted_mean_difficulty_proxy": 0.9414809558149476
+        },
+        {
+          "subflow": "boots_how",
+          "fitted_mean_difficulty_proxy": 0.9416537947482574
+        },
+        {
+          "subflow": "manage_upgrade",
+          "fitted_mean_difficulty_proxy": 0.9461584491956451
+        }
+      ],
+      "effect": "scales AskInfo information gain via (1 - 0.4*d) term"
+    },
+    "persona": {
+      "type": "categorical",
+      "values": [
+        "high_engagement_resolver",
+        "low_engagement_resolver",
+        "silent_dropout",
+        "escalation_prone"
+      ],
+      "init_frequencies": {
+        "high_engagement_resolver": 0.4704242182832105,
+        "low_engagement_resolver": 0.3935471021708823,
+        "silent_dropout": 0.07727544313881697,
+        "escalation_prone": 0.05875323640709022
+      },
+      "parameters": {
+        "rho": "patience - slows frustration growth",
+        "sigma": "sensitivity - amplifies failure frustration spikes",
+        "tau": "failure tolerance - reduces repeated-failure amplification"
+      },
+      "persona_rho_sigma_tau": {
+        "high_engagement_resolver": {
+          "frequency": 0.4704242182832105,
+          "rho_mean": 0.7387250310095653,
+          "sigma_mean": 0.2124180044298864,
+          "tau_mean": 0.7454326250057871
+        },
+        "low_engagement_resolver": {
+          "frequency": 0.3935471021708823,
+          "rho_mean": 0.5466648660082561,
+          "sigma_mean": 0.35546620917319294,
+          "tau_mean": 0.606940775289163
+        },
+        "silent_dropout": {
+          "frequency": 0.07727544313881697,
+          "rho_mean": 0.33228849363336294,
+          "sigma_mean": 0.42940421958030817,
+          "tau_mean": 0.1741543220837629
+        },
+        "escalation_prone": {
+          "frequency": 0.05875323640709022,
+          "rho_mean": 0.23428395251982287,
+          "sigma_mean": 0.8937201787148821,
+          "tau_mean": 0.15892853651854738
+        }
+      },
+      "effect": "modulates all transition dynamics"
+    }
+  },
+  "dynamic_variables": {
+    "information": {
+      "type": "continuous",
+      "range": [
+        0,
+        1
+      ],
+      "meaning": "cumulative_values_provided / subflow_mean_total_values",
+      "init_distribution": "Beta(0.5000, 1.6611)",
+      "init_mean": 0.23136567142437092,
+      "empirical_mean_at_first_action_turn": 0.2146913916987712,
+      "effect": "primary predictor in p_success model (theta_i = 5.324596)"
+    },
+    "progress": {
+      "type": "continuous",
+      "range": [
+        0,
+        1
+      ],
+      "meaning": "actions_completed / subflow_mean_action_count",
+      "init": "0.3 * information_0 + Normal(0, 0.02), clipped to [0,1]",
+      "empirical_info_progress_correlation": 0.6747143739200296,
+      "mean_progress_information_ratio_at_first_solution": 0.5593027760548186,
+      "auto_resolve_threshold": 0.85,
+      "effect": "determines close_score and auto-resolve trigger"
+    },
+    "frustration": {
+      "type": "continuous",
+      "range": [
+        0,
+        1
+      ],
+      "meaning": "latent readiness to escalate or abandon",
+      "init_distribution": "Beta(1.5, 8.0)",
+      "init_mean": 0.16,
+      "empirical_validation": {
+        "mean_turn_at_first_escalation": 13.818342151675486,
+        "fraction_escalating_turns_1_5": 0.0582010582010582,
+        "fraction_escalating_turns_6_10": 0.3386243386243386,
+        "fraction_escalating_turns_11_15": 0.2839506172839506,
+        "fraction_escalating_turns_16_plus": 0.31922398589065254
+      },
+      "effect": "drives dropout_probability and escalation_probability - NOT p_success directly",
+      "frustration_not_in_psuccess_note": "Frustration removed from p_success - confounded with info_proxy. See psuccess_model.json."
+    },
+    "failed_streak": {
+      "type": "integer",
+      "range": [
+        0,
+        "unbounded"
+      ],
+      "meaning": "consecutive unsuccessful ProvideSolution attempts",
+      "init": 0,
+      "effect": "amplifies frustration on failure and contributes to dropout_probability"
+    },
+    "turn_count": {
+      "type": "integer",
+      "range": [
+        0,
+        20
+      ],
+      "meaning": "number of agent actions taken so far",
+      "init": 0,
+      "T_max": 20,
+      "T_max_rationale": "40-60% conversations complete within 20 turns; keep 20 for RL tractability",
+      "effect": "per-turn cost in reward; hard episode termination at T_max"
+    },
+    "resolved": {
+      "type": "binary",
+      "range": [
+        0,
+        1
+      ],
+      "meaning": "episode terminal flag",
+      "init": 0,
+      "detection": "closing phrase regex fires and no escalation (resolution_flag from Extract 1)",
+      "note": "nextstep=end_conversation does not exist in ABCD v1.1; resolution detected via closing phrase pattern",
+      "effect": "triggers terminal reward; ends episode"
+    }
+  },
+  "derived_variable": {
+    "p_success": {
+      "formula": "sigmoid(theta_0 + theta_i * information + alpha_subflow + alpha_action)",
+      "theta_0": -4.6336969678123054,
+      "theta_i": 5.324595781646885,
+      "theta_d": null,
+      "theta_f": null,
+      "note": "theta_d and theta_f removed. Difficulty captured by alpha_subflow; frustration confounded with info_proxy.",
+      "never_stored": true,
+      "recomputed_every_step": true
+    }
+  },
+  "observation_vector": {
+    "for_rl_agent": [
+      "subflow_id",
+      "tier_id",
+      "difficulty",
+      "information",
+      "progress",
+      "frustration",
+      "failed_streak_norm",
+      "turn_count_norm",
+      "resolved"
+    ],
+    "encoding": "subflow and tier integer-encoded (or one-hot/embedded); all continuous in [0,1]",
+    "dimension": "9 with integer encoding for subflow and tier; larger with one-hot",
+    "p_success_excluded": true,
+    "p_success_excluded_note": "Agent must infer p_success from state; not provided directly"
+  }
+}
