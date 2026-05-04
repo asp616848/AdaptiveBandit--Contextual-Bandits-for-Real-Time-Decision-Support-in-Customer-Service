@@ -3,9 +3,9 @@
 # End-to-end submission runner — works on a fresh Ubuntu 22.04 install.
 #
 # Runs all three approaches in order:
-#   [1/3] Numerical multi-turn RL  →  output/numerical-multi-turn/
-#   [2/3] NLP multi-turn RL        →  output/nlp-multi-turn/
-#   [3/3] Contextual bandit        →  output/contextual-bandit/
+#   [1/3] Contextual bandit        →  output/contextual-bandit/
+#   [2/3] Numerical multi-turn RL  →  output/numerical-multi-turn/
+#   [3/3] NLP multi-turn RL        →  output/nlp-multi-turn/  (skipped gracefully on OOM)
 #
 # Idempotent: if an approach already has output, it is skipped.
 # Delete the output directory to re-run that approach.
@@ -124,35 +124,8 @@ echo "  NLG       : ${_NUM_NLG} steps  (model: ${_HF_MODEL})"
 echo "  Bandit    : collect=${_CB_COLLECT} eval=${_CB_EVAL} episodes"
 echo ""
 
-# ── [1/3] Numerical multi-turn RL ─────────────────────────────────────────
-echo "  [1/3] Numerical multi-turn RL..."
-if ! _is_done "output/numerical-multi-turn"; then
-  NUM_TIMESTEPS="$_NUM_NUMERICAL" bash "$ROOT_DIR/scripts/train_numerical.sh"
-fi
-
-# ── [2/3] NLP multi-turn RL ───────────────────────────────────────────────
-echo ""
-echo "  [2/3] NLP multi-turn RL  (HuggingFace backend)..."
-if ! _is_done "output/nlp-multi-turn"; then
-  if NUM_TIMESTEPS="$_NUM_NLG" \
-     HF_MODEL_PATH="$_HF_MODEL" \
-     bash "$ROOT_DIR/scripts/train_nlp.sh"; then
-    echo "  [2/3] NLP training complete."
-  else
-    _exit=$?
-    echo ""
-    echo "  [warn] NLP training failed (exit code $_exit)."
-    echo "  [warn] Most likely cause: out-of-memory loading the 7B model on CPU."
-    echo "  [warn] Skipping NLP step — continuing to contextual bandit."
-    mkdir -p "$ROOT_DIR/output/nlp-multi-turn"
-    echo '{"status":"skipped","reason":"NLP training failed — likely OOM on CPU-only host"}' \
-      > "$ROOT_DIR/output/nlp-multi-turn/training_summary.json"
-  fi
-fi
-
-# ── [3/3] Contextual bandit ───────────────────────────────────────────────
-echo ""
-echo "  [3/3] Contextual bandit..."
+# ── [1/3] Contextual bandit ───────────────────────────────────────────────
+echo "  [1/3] Contextual bandit..."
 
 _CB_DIR="$ROOT_DIR/Contextual Bandits"
 _CB_OUT="$ROOT_DIR/output/contextual-bandit"
@@ -161,29 +134,51 @@ if ! _is_done "output/contextual-bandit"; then
   if [ -f "$_CB_DIR/main.py" ]; then
     mkdir -p "$_CB_OUT/plots"
 
-    # Install contextual bandit dependencies
     if [ -f "$_CB_DIR/requirements.txt" ]; then
       echo "  [setup] Installing Contextual Bandit dependencies..."
       python -m pip install -r "$_CB_DIR/requirements.txt" -q
     fi
 
-    # Train
-    echo "  Running Contextual Bandit training (this may take a bit)..."
+    echo "  Running Contextual Bandit training..."
     python "$_CB_DIR/main.py" \
       --output-root "$_CB_OUT" \
       --collect-episodes "$_CB_COLLECT" \
       --eval-episodes "$_CB_EVAL"
 
-    # Visualize
     if [ -f "$_CB_DIR/plot_bandit_results.py" ]; then
       echo "  Generating Contextual Bandit plots..."
       python "$_CB_DIR/plot_bandit_results.py" --run-dir "$_CB_OUT"
     fi
 
-    # Mark as done
     echo '{"status": "completed"}' > "$_CB_OUT/training_summary.json"
   else
     echo "  [skip] Contextual Bandits/main.py not found."
+  fi
+fi
+
+# ── [2/3] Numerical multi-turn RL ─────────────────────────────────────────
+echo ""
+echo "  [2/3] Numerical multi-turn RL..."
+if ! _is_done "output/numerical-multi-turn"; then
+  NUM_TIMESTEPS="$_NUM_NUMERICAL" bash "$ROOT_DIR/scripts/train_numerical.sh"
+fi
+
+# ── [3/3] NLP multi-turn RL ───────────────────────────────────────────────
+echo ""
+echo "  [3/3] NLP multi-turn RL  (HuggingFace backend)..."
+if ! _is_done "output/nlp-multi-turn"; then
+  if NUM_TIMESTEPS="$_NUM_NLG" \
+     HF_MODEL_PATH="$_HF_MODEL" \
+     bash "$ROOT_DIR/scripts/train_nlp.sh"; then
+    echo "  [3/3] NLP training complete."
+  else
+    _exit=$?
+    echo ""
+    echo "  [warn] NLP training failed (exit code $_exit) — likely OOM loading the 7B model on CPU."
+    echo "  [warn] Skipping NLP step."
+    mkdir -p "$ROOT_DIR/output/nlp-multi-turn"
+    echo '{"status":"skipped","reason":"NLP training failed — likely OOM on CPU-only host"}' \
+      > "$ROOT_DIR/output/nlp-multi-turn/training_summary.json"
   fi
 fi
 
