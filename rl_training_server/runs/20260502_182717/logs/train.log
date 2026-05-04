@@ -1,0 +1,34 @@
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:00<00:06,  1.29it/s]Loading checkpoint shards:  22%|██▏       | 2/9 [00:01<00:05,  1.25it/s]Loading checkpoint shards:  33%|███▎      | 3/9 [00:02<00:05,  1.18it/s]Loading checkpoint shards:  44%|████▍     | 4/9 [00:03<00:03,  1.28it/s]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:04<00:03,  1.22it/s]Loading checkpoint shards:  67%|██████▋   | 6/9 [00:04<00:02,  1.22it/s]Loading checkpoint shards:  78%|███████▊  | 7/9 [00:05<00:01,  1.30it/s]Loading checkpoint shards:  89%|████████▉ | 8/9 [00:06<00:00,  1.48it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:06<00:00,  1.74it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:06<00:00,  1.41it/s]
+Traceback (most recent call last):
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/rl_training_server/scripts/train_rl_qwen.py", line 95, in <module>
+    main()
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/rl_training_server/scripts/train_rl_qwen.py", line 64, in main
+    summary = continue_ppo_from_checkpoint(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/AdaptiveBandit/AdaptiveBandit/Simulation_4/training/train_ppo.py", line 311, in continue_ppo_from_checkpoint
+    model = PPO.load(checkpoint_path, env=train_env, custom_objects=custom_objects)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/venv/lib64/python3.11/site-packages/stable_baselines3/common/base_class.py", line 681, in load
+    data, params, pytorch_variables = load_from_zip_file(
+                                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/venv/lib64/python3.11/site-packages/stable_baselines3/common/save_util.py", line 403, in load_from_zip_file
+    file = open_path(load_path, "r", verbose=verbose, suffix="zip")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/functools.py", line 909, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/venv/lib64/python3.11/site-packages/stable_baselines3/common/save_util.py", line 240, in open_path_str
+    return open_path_pathlib(pathlib.Path(path), mode, verbose, suffix)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/venv/lib64/python3.11/site-packages/stable_baselines3/common/save_util.py", line 291, in open_path_pathlib
+    return open_path_pathlib(path, mode, verbose, suffix)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/interns/studentiotlab/venv/lib64/python3.11/site-packages/stable_baselines3/common/save_util.py", line 272, in open_path_pathlib
+    raise error
+  File "/data/interns/studentiotlab/venv/lib64/python3.11/site-packages/stable_baselines3/common/save_util.py", line 264, in open_path_pathlib
+    return open_path(path.open("rb"), mode, verbose, suffix)
+                     ^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Simulation_4/artifacts/rl_qwen_long/models/best_model.zip.zip'
