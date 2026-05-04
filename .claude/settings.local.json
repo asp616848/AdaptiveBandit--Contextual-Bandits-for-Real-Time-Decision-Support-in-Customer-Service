@@ -15,7 +15,12 @@
       "Bash(mkdir -p best_model/numerical)",
       "Bash(cp \"Multi-Turn RL/Simulation_4/artifacts/run_numerical/models/best_model.zip\" best_model/numerical/)",
       "Bash(python -c \"import json; d=json.load\\(open\\('output/numerical-multi-turn/leaderboard.json'\\)\\); [print\\(f'  {r[\\\\\"policy\\\\\"]:<20} reward={r[\\\\\"mean_reward\\\\\"]:.3f}'\\) for r in d]\")",
-      "Bash(python -c \"import json; d=json.load\\(open\\('output/numerical-multi-turn/training_summary.json'\\)\\); [print\\(f'{k}: {v}'\\) for k,v in d.items\\(\\)]\")"
+      "Bash(python -c \"import json; d=json.load\\(open\\('output/numerical-multi-turn/training_summary.json'\\)\\); [print\\(f'{k}: {v}'\\) for k,v in d.items\\(\\)]\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -c \"import matplotlib; print\\(matplotlib.__version__\\)\")",
+      "Read(//Users/abhijeet/**)",
+      "Bash(/Users/abhijeet/Documents/GitHub/studybuddy-ai/venv/bin/python3 -c \"import matplotlib; print\\('ok'\\)\")",
+      "Bash(/Users/abhijeet/Documents/GitHub/studybuddy-ai/venv/bin/python3 tools/generate_demo.py)"
     ]
   }
 }
