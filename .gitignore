@@ -8,7 +8,6 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
-*.csv
 *.parquet
 /multiturn_rl/Qwen2.5-7B-Instruct-merged
 dataset/abcd_v1.1.json
