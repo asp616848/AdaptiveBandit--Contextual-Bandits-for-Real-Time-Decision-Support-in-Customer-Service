@@ -30,10 +30,11 @@ cd "$ROOT_DIR"
 
 # ── 0. System dependencies ─────────────────────────────────────────────────
 # Ubuntu 22.04 docker image ships python3 but not python3-venv / python3-pip.
-if ! python3 -m venv --help >/dev/null 2>&1 || ! python3 -m pip --version >/dev/null 2>&1; then
+if ! python3 -c "import venv, ensurepip" >/dev/null 2>&1 || ! python3 -m pip --version >/dev/null 2>&1; then
   echo "  [setup] Installing python3-venv and python3-pip..."
-  apt-get update -qq
-  apt-get install -y python3-venv python3-pip
+  export DEBIAN_FRONTEND=noninteractive
+  apt-get update -qq || true
+  apt-get install -y python3-venv python3-pip || true
 fi
 
 # ── 1. Configuration ───────────────────────────────────────────────────────
