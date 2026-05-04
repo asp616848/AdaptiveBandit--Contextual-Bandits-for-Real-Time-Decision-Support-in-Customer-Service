@@ -125,9 +125,20 @@ fi
 echo ""
 echo "  [2/3] NLP multi-turn RL  (HuggingFace backend)..."
 if ! _is_done "output/nlp-multi-turn"; then
-  NUM_TIMESTEPS="$_NUM_NLG" \
-  HF_MODEL_PATH="$_HF_MODEL" \
-  bash "$ROOT_DIR/scripts/train_nlp.sh"
+  if NUM_TIMESTEPS="$_NUM_NLG" \
+     HF_MODEL_PATH="$_HF_MODEL" \
+     bash "$ROOT_DIR/scripts/train_nlp.sh"; then
+    echo "  [2/3] NLP training complete."
+  else
+    _exit=$?
+    echo ""
+    echo "  [warn] NLP training failed (exit code $_exit)."
+    echo "  [warn] Most likely cause: out-of-memory loading the 7B model on CPU."
+    echo "  [warn] Skipping NLP step — continuing to contextual bandit."
+    mkdir -p "$ROOT_DIR/output/nlp-multi-turn"
+    echo '{"status":"skipped","reason":"NLP training failed — likely OOM on CPU-only host"}' \
+      > "$ROOT_DIR/output/nlp-multi-turn/training_summary.json"
+  fi
 fi
 
 # ── [3/3] Contextual bandit ───────────────────────────────────────────────

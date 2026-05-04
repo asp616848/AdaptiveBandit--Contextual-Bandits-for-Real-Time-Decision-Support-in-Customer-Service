@@ -45,16 +45,20 @@ class LocalQwenChatClient:
             self.tokenizer.pad_token = self.tokenizer.eos_token
             self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
 
-        dtype = torch.float32
         if torch.cuda.is_available():
             dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+            device_map = self.device_map
+        else:
+            dtype = torch.float16  # ~14 GB vs ~28 GB for float32
+            device_map = None
 
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_path,
             trust_remote_code=True,
             torch_dtype=dtype,
-            device_map=self.device_map if torch.cuda.is_available() else None,
-            offload_folder="/tmp/offload_qwen"
+            device_map=device_map,
+            offload_folder="/tmp/offload_qwen",
+            low_cpu_mem_usage=True,
         )
         self.model.eval()
 
