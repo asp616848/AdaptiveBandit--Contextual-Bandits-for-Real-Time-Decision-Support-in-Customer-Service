@@ -5,7 +5,6 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![SB3](https://img.shields.io/badge/Stable--Baselines3-2.2%2B-green)
 ![Gymnasium](https://img.shields.io/badge/Gymnasium-0.29%2B-orange)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
@@ -28,8 +27,11 @@ The agent learns when to gather information, repair customer sentiment, and prov
 - [MDP & Reward Model](#mdp--reward-model)
 - [Training Results](#training-results)
 - [File Structure](#file-structure)
+- [Output Structure](#output-structure)
 - [Running Approaches Individually](#running-approaches-individually)
 - [Hardware Notes](#hardware-notes)
+- [Dataset](#dataset)
+- [Dependencies](#dependencies)
 
 ---
 
